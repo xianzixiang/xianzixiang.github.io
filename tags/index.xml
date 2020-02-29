@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags | Zixiang&#39;s Personal Page</title>
+    <link>https://academic.faithio.cn/tags/</link>
+      <atom:link href="https://academic.faithio.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>https://academic.faithio.cn/img/icon-192.png</url>
+      <title>Tags</title>
+      <link>https://academic.faithio.cn/tags/</link>
+    </image>
+    
+  </channel>
+</rss>
