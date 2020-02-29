@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Zixiang Xian">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Introduction A hypothesis h(x), takes an input and gives us the estimated output value.
+This hypothesis can be a as simple as a one variable linear equation, .. up to a very complicated and long multivariate equation with respect to the type of the algorithm we’re using (i.e. linear regression, logistic regression..etc).
+Our task is to find the best Parameters (a.k.a Thetas or Weights) that give us the least error in predicting the output.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/">
+
+  
+
+
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="../../css/academic.min.aa68453ded573cf5cbcec742bfaa8beb.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-159321957-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="../../index.webmanifest">
+  <link rel="icon" type="image/png" href="../../img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
+
+  <link rel="canonical" href="https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/">
+
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Zixiang&#39;s Personal Page">
+  <meta property="og:url" content="https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/">
+  <meta property="og:title" content="Logistic Regression   Solvers&#39; Defintions in Sklearn | Zixiang&#39;s Personal Page">
+  <meta property="og:description" content="Introduction A hypothesis h(x), takes an input and gives us the estimated output value.
+This hypothesis can be a as simple as a one variable linear equation, .. up to a very complicated and long multivariate equation with respect to the type of the algorithm we’re using (i.e. linear regression, logistic regression..etc).
+Our task is to find the best Parameters (a.k.a Thetas or Weights) that give us the least error in predicting the output."><meta property="og:image" content="https://academic.faithio.cn/img/code.jpg">
+  <meta property="twitter:image" content="https://academic.faithio.cn/img/code.jpg"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-02-29T02:46:04-05:00">
+    
+    <meta property="article:modified_time" content="2020-02-29T02:50:03-05:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Logistic Regression   Solvers&#39; Defintions in Sklearn | Zixiang&#39;s Personal Page</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="../../"><img src="../../img/code.jpg" alt="Zixiang&#39;s Personal Page"></a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../cv/zixiangxian-cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Logistic Regression   Solvers&#39; Defintions in Sklearn</h1>
+
+  
+
+  
+    
+
+
+
+<meta content="2020-02-29 02:46:04 -0500 EST" itemprop="datePublished">
+<meta content="2020-02-29 02:50:03 -0500 EST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    <time>Feb 29, 2020</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/&amp;text=Logistic%20Regression%20%20%20Solvers&amp;#39;%20Defintions%20in%20Sklearn" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/&amp;t=Logistic%20Regression%20%20%20Solvers&amp;#39;%20Defintions%20in%20Sklearn" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Logistic%20Regression%20%20%20Solvers&amp;#39;%20Defintions%20in%20Sklearn&amp;body=https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/&amp;title=Logistic%20Regression%20%20%20Solvers&amp;#39;%20Defintions%20in%20Sklearn" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Logistic%20Regression%20%20%20Solvers&amp;#39;%20Defintions%20in%20Sklearn%20https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/&amp;title=Logistic%20Regression%20%20%20Solvers&amp;#39;%20Defintions%20in%20Sklearn" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="introduction">Introduction</h2>
+
+<p>A hypothesis <code>h(x)</code>, takes an <em>input</em> and gives us the <em>estimated output value</em>.</p>
+
+<p>This hypothesis can be a as simple as a one variable linear equation, .. up to a very complicated and long multivariate equation with respect to the type of the algorithm we’re using (<em>i.e. linear regression, logistic regression..etc</em>).</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9e4pcalj308k05xgls.jpg" alt="h(x)" /></p>
+
+<p>Our task is to find the <strong>best Parameters</strong> (a.k.a Thetas or Weights) that give us the <strong>least error</strong> in predicting the output. We call this error a <strong>Cost or Loss Function</strong> and apparently our goal is to <strong>minimize</strong> it in order to get the best predicted output!</p>
+
+<p>One more thing to recall, that the relation between the parameter value and its effect on the cost function (i.e. the error) looks like a <strong>bell curve</strong> (i.e. <strong>Quadratic</strong>; recall this because it’s very important) .</p>
+
+<p>So if we start at any point in that curve and if we keep taking the derivative (i.e. tangent line) of each point we stop at, we will end up at what so called the <strong>Global Optima</strong> as shown in this image:
+<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9empzi9j30bm07twem.jpg" alt="J(w) bell curve" /></p>
+
+<p>If we take the partial derivative at minimum cost point (i.e. global optima) we find the <strong>slope</strong> of the tangent line = <strong>0</strong> (then we know that we reached our target).</p>
+
+<p>That’s valid only if we have <em>Convex</em> Cost Function, but if we don’t, we may end up stuck at what so called <strong>Local Optima</strong>; consider this non-convex function:</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9ffxzczj30ac07qwex.jpg" alt="non-convex" /></p>
+
+<p>Now you should have the intuition about the hack relationship between what we are doing and the terms: <em>Deravative</em>, <em>Tangent Line</em>, <em>Cost Function</em>, <em>Hypothesis</em> ..etc.</p>
+
+<p><em>Side Note: The above mentioned intuition also related to the Gradient Descent Algorithm (see later).</em></p>
+
+<hr />
+
+<h2 id="background">Background</h2>
+
+<p><strong>Linear Approximation:</strong></p>
+
+<p>Given a function, <code>f(x)</code>, we can find its tangent at <code>x=a</code>. The equation of the tangent line L(x) is: <code>L(x)=f(a)+f′(a)(x−a)</code>.</p>
+
+<p>Take a look at the following graph of a function and its tangent line:</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9dc2jkaj309r05tq2w.jpg" alt="tangent line" /></p>
+
+<p>From this graph we can see that near <code>x=a</code>, the tangent line and the function have nearly the same graph. On occasion we will use the tangent line, <code>L(x)</code>, as an approximation to the function, <code>f(x)</code>, near <code>x=a</code>. In these cases we call the tangent line the linear approximation to the function at <code>x=a</code>.</p>
+
+<p><strong>Quadratic Approximation:</strong></p>
+
+<p>Same like linear approximation but this time we are dealing with a curve but we <strong>cannot</strong> find the point near to <strong>0</strong> by using the tangent line.</p>
+
+<p>Instead, we use a <strong>parabola</strong> (<em>which is a curve where any point is at an equal distance from a fixed point or a fixed straight line</em>), like this:</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9dhnyppj30ay075mxe.jpg" alt="quadratic function" /></p>
+
+<p>And in order to fit a good parabola, both parabola and quadratic function should have same value, same first derivative, AND second derivative, &hellip; the formula will be (<em>just out of curiosity</em>): <code>Qa(x) = f(a) + f'(a)(x-a) + f''(a)(x-a)2/2</code></p>
+
+<p><em>Now we should be ready to do the comparison in details.</em></p>
+
+<hr />
+
+<h2 id="comparison-between-the-methods">Comparison between the methods</h2>
+
+<h3 id="1-newton-s-method-newton-cg"><strong>1. Newton’s Method(newton-cg):</strong></h3>
+
+<p>Recall the motivation for gradient descent step at x: we minimize the quadratic function (i.e. Cost Function).</p>
+
+<p>Newton’s method uses in a sense a <strong>better</strong> quadratic function minimisation. A better because it uses the quadratic approximation (i.e. first AND <em>second</em> partial derivatives).</p>
+
+<p>You can imagine it as a twisted Gradient Descent with The Hessian (<em>The Hessian is a square matrix of second-order partial derivatives of order nxn</em>).</p>
+
+<p>Moreover, the geometric interpretation of Newton&rsquo;s method is that at each iteration one approximates <code>f(x)</code> by a quadratic function around <code>xn</code>, and then takes a step towards the maximum/minimum of that quadratic function (in higher dimensions, this may also be a saddle point). Note that if <code>f(x)</code> happens to be a quadratic function, then the exact extremum is found in one step.</p>
+
+<p><strong>Drawbacks:</strong></p>
+
+<ol>
+<li>It’s computationally <strong>expensive</strong> because of The Hessian Matrix (i.e. second partial derivatives calculations).</li>
+<li>It attracts to <strong>Saddle Points</strong> which are common in multivariable optimization (i.e. a point its partial derivatives disagree over whether this input should be a maximum or a minimum point!).</li>
+</ol>
+
+<h3 id="2-limited-memory-broyden-fletcher-goldfarb-shanno-algorithm-lbfgs"><strong>2. Limited-memory Broyden–Fletcher–Goldfarb–Shanno Algorithm(lbfgs):</strong></h3>
+
+<p>In a nutshell, it is analogue of the Newton’s Method but here the Hessian matrix is <strong>approximated</strong> using updates specified by gradient evaluations (or approximate gradient evaluations). In other words, using an estimation to the inverse Hessian matrix.</p>
+
+<p>The term Limited-memory simply means it stores only a few vectors that represent the approximation implicitly.</p>
+
+<p>If I dare say that when dataset is <strong>small</strong>, L-BFGS relatively performs the best compared to other methods especially it saves a lot of memory, however there are some “*serious*” drawbacks such that if it is unsafeguarded, it may not converge to anything.</p>
+
+<h3 id="3-a-library-for-large-linear-classification-liblinear"><strong>3. A Library for Large Linear Classification(liblinear):</strong></h3>
+
+<p>It’s a linear classification that supports logistic regression and linear support vector machines (<em>A linear classifier achieves this by making a classification decision based on the value of a linear combination of the characteristics i.e feature value</em>).</p>
+
+<p>The solver uses a coordinate descent (CD) algorithm that solves optimization problems by successively performing approximate minimization along coordinate directions or coordinate hyperplanes.</p>
+
+<p><code>LIBLINEAR</code> is the winner of ICML 2008 large-scale learning challenge. It applies <em>Automatic parameter selection</em> (a.k.a L1 Regularization) and it’s recommended when you have high dimension dataset (<em>recommended for solving large-scale classification problems</em>)</p>
+
+<p><strong>Drawbacks:</strong></p>
+
+<ol>
+<li>It may get stuck at a <em>non-stationary point</em> (i.e. non-optima) if the level curves of a function are not smooth.</li>
+<li>Also cannot run in parallel.</li>
+<li>It cannot learn a true multinomial (multiclass) model; instead, the optimization problem is decomposed in a “one-vs-rest” fashion so separate binary classifiers are trained for all classes.</li>
+</ol>
+
+<p><em>Side note: According to Scikit Documentation: The “liblinear” solver is used by default for historical reasons.</em></p>
+
+<h3 id="4-stochastic-average-gradient-sag"><strong>4. Stochastic Average Gradient(sag):</strong></h3>
+
+<p>SAG method optimizes the sum of a finite number of smooth convex functions. Like stochastic gradient (SG) methods, the SAG method&rsquo;s iteration cost is independent of the number of terms in the sum. However, by <strong>incorporating a memory of previous gradient values the SAG method achieves a faster convergence rate</strong> than black-box SG methods.</p>
+
+<p>It is <strong>faster</strong> than other solvers for <em>large</em> datasets, when both the number of samples and the number of features are large.</p>
+
+<p><strong>Drawbacks:</strong></p>
+
+<ol>
+<li>It only supports L2 penalization.</li>
+<li>Its memory cost of <code>O(N)</code>, which can make it impractical for large N (<em>because it remembers the most recently computed values for approx. all gradients</em>).</li>
+</ol>
+
+<h3 id="5-saga-saga"><strong>5. SAGA(saga):</strong></h3>
+
+<p>The SAGA solver is a <em>variant</em> of SAG that also supports the non-smooth <em>penalty=l1</em> option (i.e. L1 Regularization). This is therefore the solver of choice for <strong>sparse</strong> multinomial logistic regression and it’s also suitable <strong>very Large</strong> dataset.</p>
+
+<p><em>Side note: According to Scikit Documentation: The SAGA solver is often the best choice.</em></p>
+
+<hr />
+
+<h2 id="summary">Summary</h2>
+
+<p>The following table is taken from <a href="http://scikit-learn.org/stable/modules/linear_model.html" target="_blank">Scikit Documentation</a></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9g3deuhj30ik04ejs7.jpg" alt="Solver Comparison" /></p>
+
+    </div>
+
+    
+
+
+    
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="../../authors/admin/avatar_hu1b23c38995cf82eb274855ad3fbd1075_9028_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="https://academic.faithio.cn/">Zixiang Xian</a></h5>
+      <h6 class="card-subtitle">Master Student of Concordia University</h6>
+      <p class="card-text" itemprop="description">My research interests include Computer Vision, Machine Learning, especially Expectation Propagation.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+          <li>
+            <a itemprop="sameAs" href="mailto:xianzixiang@gmail.com" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://scholar.google.co.uk/citations?user=EmA1SAkAAAAJ" target="_blank" rel="noopener">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/iamfaith" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="../../img/wechat.jpg" >
+              <i class="fab fa-weixin"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="../../cv/zixiangxian-cv.pdf" >
+              <i class="ai ai-cv"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.zhihu.com/people/xian-zi-xiang" target="_blank" rel="noopener">
+              <i class="fab fa-zhihu"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://paypal.me/xianzixiang" target="_blank" rel="noopener">
+              <i class="fas fa-donate"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+</div>
+
+    </div>
+    
+
+    
+<section id="comments">
+  
+    <div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js" defer></script>
+
+  
+</section>
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+    <script src="../../js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="../../js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+   
+      <p>&copy; Faith 29/02/2020 &middot;
+                    Built with <a href="https://github.com/gohugoio/hugo">Hugo</a>
+
+       <a href="https://github.com/iamfaith"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path></svg>
+</span><span class="username">iamfaith</span></a>
+
+
+
+</p>
+
+
+
+
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

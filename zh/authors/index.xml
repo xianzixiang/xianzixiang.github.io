@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | Faith写字的地方</title>
+    <link>https://academic.faithio.cn/zh/authors/</link>
+      <atom:link href="https://academic.faithio.cn/zh/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language>
+    <image>
+      <url>https://academic.faithio.cn/img/code.jpg</url>
+      <title>Authors</title>
+      <link>https://academic.faithio.cn/zh/authors/</link>
+    </image>
+    
+    <item>
+      <title></title>
+      <link>https://academic.faithio.cn/zh/authors/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://academic.faithio.cn/zh/authors/admin/</guid>
+      <description>&lt;p&gt;Zixiang Xian is a master student of Machine Learning at Concordia University AI Lab. His research interests include Machine Learning and Computer Vision. He is under the supervision of Professor Nizar Bouguila.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://academic.faithio.cn/zh/authors/zi_xian/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://academic.faithio.cn/zh/authors/zi_xian/</guid>
+      <description>&lt;p&gt;冼子翔是康考迪亚大学AI实验室的硕士。他的研究兴趣包括机器学习和计算机视觉。他的导师是Nizar Bouguila教授。&lt;/p&gt;
+
+&lt;p&gt;他曾经是金山公司（WPS）的高级后端工程师，擅长Golang，Java，JavaScript和Python。&lt;/p&gt;
+
+&lt;p&gt;他对探索计算机科学的新世界充满热情。&lt;/p&gt;
+
+&lt;p&gt;请随时联系我探讨计算机领域的知识。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

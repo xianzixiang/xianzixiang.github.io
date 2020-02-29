@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</loc>
+    <lastmod>2020-02-29T02:50:03-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://academic.faithio.cn/post/</loc>
+    <lastmod>2020-02-29T02:50:03-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://academic.faithio.cn/zh/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://academic.faithio.cn/post/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://academic.faithio.cn/</loc>
+    <lastmod>2020-02-29T02:50:03-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://academic.faithio.cn/zh/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://academic.faithio.cn/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://academic.faithio.cn/authors/admin/</loc>
+    <lastmod>2020-02-29T02:50:03-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://academic.faithio.cn/zh/authors/admin/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://academic.faithio.cn/authors/admin/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://academic.faithio.cn/authors/zi_xian/</loc>
+    <lastmod>2020-02-29T02:50:03-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://academic.faithio.cn/zh/authors/zi_xian/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://academic.faithio.cn/authors/zi_xian/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://academic.faithio.cn/authors/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://academic.faithio.cn/zh/authors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://academic.faithio.cn/authors/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://academic.faithio.cn/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://academic.faithio.cn/zh/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://academic.faithio.cn/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://academic.faithio.cn/publication_types/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://academic.faithio.cn/zh/publication_types/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://academic.faithio.cn/publication_types/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://academic.faithio.cn/publication/</loc>
+    <lastmod>2020-02-29T02:50:03-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://academic.faithio.cn/zh/publication/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://academic.faithio.cn/publication/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://academic.faithio.cn/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://academic.faithio.cn/zh/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://academic.faithio.cn/tags/"
+                />
+  </url>
+  
+</urlset>

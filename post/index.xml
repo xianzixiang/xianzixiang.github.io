@@ -5,7 +5,7 @@
     <link>https://academic.faithio.cn/post/</link>
       <atom:link href="https://academic.faithio.cn/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 28 Feb 2020 18:30:36 -0500</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 29 Feb 2020 02:46:04 -0500</lastBuildDate>
     <image>
       <url>https://academic.faithio.cn/img/code.jpg</url>
       <title>Posts</title>
@@ -13,71 +13,136 @@
     </image>
     
     <item>
-      <title>什么是最大期望算法(EM Algorithm)</title>
-      <link>https://academic.faithio.cn/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/</link>
-      <pubDate>Fri, 28 Feb 2020 18:30:36 -0500</pubDate>
-      <guid>https://academic.faithio.cn/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/</guid>
+      <title>Logistic Regression   Solvers&#39; Defintions in Sklearn</title>
+      <link>https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</link>
+      <pubDate>Sat, 29 Feb 2020 02:46:04 -0500</pubDate>
+      <guid>https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</guid>
       <description>
 
-&lt;p&gt;本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，深度学习并不适合，这时才是传统机器学习算法发挥作用的时候，废话不多说，下面直接进入学习。&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;最大期望算法出现在很多涉及概率模型的计算生物学的应用中，那么它有什好处，它的原理是什么？&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;A hypothesis &lt;code&gt;h(x)&lt;/code&gt;, takes an &lt;em&gt;input&lt;/em&gt; and gives us the &lt;em&gt;estimated output value&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;概率模型，例如隐马尔可夫模型或者贝叶斯网络会被用于建模生物学数据。它们因为高效以及高容错的参数学习因此很流行被广泛应用。但是，给概率模型训练的数据往往不是完整的，缺失数据经常会发生。譬如，在医学诊断，通常病人的患病历史只会有有限的医学测试。换句话说，在基因的聚类表达中，数据不完整是因为在这个概率模型中有意忽略了基因到聚类的分配产生。然而最大期望算法支持在概率模型用不完整的数据进行参数估计。&lt;/p&gt;
+&lt;p&gt;This hypothesis can be a as simple as a one variable linear equation, .. up to a very complicated and long multivariate equation with respect to the type of the algorithm we’re using (&lt;em&gt;i.e. linear regression, logistic regression..etc&lt;/em&gt;).&lt;/p&gt;
 
-&lt;h3 id=&#34;以投硬币实验为例&#34;&gt;以投硬币实验为例&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9e4pcalj308k05xgls.jpg&#34; alt=&#34;h(x)&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;假设我们有一组硬币A和B，它们都是不均衡的硬币，假设θA 和 θB 分别是A和B正面朝上的概率。&lt;/p&gt;
+&lt;p&gt;Our task is to find the &lt;strong&gt;best Parameters&lt;/strong&gt; (a.k.a Thetas or Weights) that give us the &lt;strong&gt;least error&lt;/strong&gt; in predicting the output. We call this error a &lt;strong&gt;Cost or Loss Function&lt;/strong&gt; and apparently our goal is to &lt;strong&gt;minimize&lt;/strong&gt; it in order to get the best predicted output!&lt;/p&gt;
 
-&lt;p&gt;现在我们目标是估计θA 和 θB，通过&lt;strong&gt;随机&lt;/strong&gt;挑选A或者B进行10次的投币实验，然后可以通过绘制下面表格很轻易的计算出它们的概率。&lt;/p&gt;
+&lt;p&gt;One more thing to recall, that the relation between the parameter value and its effect on the cost function (i.e. the error) looks like a &lt;strong&gt;bell curve&lt;/strong&gt; (i.e. &lt;strong&gt;Quadratic&lt;/strong&gt;; recall this because it’s very important) .&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006tNbRwgy1gb5sxzy4ujj30g806yq4b.jpg&#34; alt=&#34;image-20200122112520254&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;So if we start at any point in that curve and if we keep taking the derivative (i.e. tangent line) of each point we stop at, we will end up at what so called the &lt;strong&gt;Global Optima&lt;/strong&gt; as shown in this image:
+&lt;img src=&#34;https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9empzi9j30bm07twem.jpg&#34; alt=&#34;J(w) bell curve&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;现在我们把难度加大一点，假设我们不知道每次实验是挑选哪组硬币，换句话说，就是我们只有以下实验的结果，怎么估算出A和B的概率呢？&lt;/p&gt;
+&lt;p&gt;If we take the partial derivative at minimum cost point (i.e. global optima) we find the &lt;strong&gt;slope&lt;/strong&gt; of the tangent line = &lt;strong&gt;0&lt;/strong&gt; (then we know that we reached our target).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006tNbRwgy1gb5t12ar0yj304m03it92.jpg&#34; alt=&#34;image-20200122112826852&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;That’s valid only if we have &lt;em&gt;Convex&lt;/em&gt; Cost Function, but if we don’t, we may end up stuck at what so called &lt;strong&gt;Local Optima&lt;/strong&gt;; consider this non-convex function:&lt;/p&gt;
 
-&lt;p&gt;这里我们引入z作为隐变量(hidden variables)或者潜在变量(latent factors)，z定义了每一组实验选用A还是B硬币作为实验。在这个情况下，z就是缺失的数据。这里我们就必须引入最大期望算法来进行计算。怎么做呢？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9ffxzczj30ac07qwex.jpg&#34; alt=&#34;non-convex&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;首先我先初始化θA 和 θB，在这里我们分别初始化为0.6和0.5，然后我们假设数据是正确的，利用最大似然估计(MLE)分别算出A和B硬币的概率。在这里由于抛硬币是离散分布，并且符合二项分布(Binomial distribution)。所以以第二组为例，我们可以分别算出θA 和 θB。&lt;/p&gt;
+&lt;p&gt;Now you should have the intuition about the hack relationship between what we are doing and the terms: &lt;em&gt;Deravative&lt;/em&gt;, &lt;em&gt;Tangent Line&lt;/em&gt;, &lt;em&gt;Cost Function&lt;/em&gt;, &lt;em&gt;Hypothesis&lt;/em&gt; ..etc.&lt;/p&gt;
 
-&lt;p&gt;根据二项分布的公式： $$ p_i(k)=\left({10\atop k}\right) \theta_i^k (1-\theta_i)^{10-k}\;. $$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Side Note: The above mentioned intuition also related to the Gradient Descent Algorithm (see later).&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;$$ \theta_A^9 (1-\theta_A)^{10-9}\simeq0.004 $$&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;$$ \theta_B^9 (1-\theta_B)^{10-9}\simeq0.001\;, $$&lt;/p&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 
-&lt;p&gt;最后可以算出A的新概率为： $$ \frac{0.004}{0.004+0.001}=0.8 $$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Linear Approximation:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;B的新概率为: $$ \frac{0.001}{0.004+0.001}=0.2 $$&lt;/p&gt;
+&lt;p&gt;Given a function, &lt;code&gt;f(x)&lt;/code&gt;, we can find its tangent at &lt;code&gt;x=a&lt;/code&gt;. The equation of the tangent line L(x) is: &lt;code&gt;L(x)=f(a)+f′(a)(x−a)&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;其实上述公式是根据贝叶斯公式得到，&lt;/p&gt;
+&lt;p&gt;Take a look at the following graph of a function and its tangent line:&lt;/p&gt;
 
-&lt;p&gt;由于 $$ 𝑃(𝐴)=0.5=𝑃(𝐵) $$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9dc2jkaj309r05tq2w.jpg&#34; alt=&#34;tangent line&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;$$ P(A|H_9T_1) = \frac{P(A) \cdot P(H_9T_1|A)}{P(H_9T_1)} = \frac{P(A) \cdot P(H_9T_1|A)}{P(A) \cdot P(H_9T_1|A) + P(B) \cdot P(H_9T_1|B)} = \frac{0.5 \cdot 0.004}{0.5 \cdot 0.004 + 0.5 \cdot 0.001} = 0.8$$&lt;/p&gt;
+&lt;p&gt;From this graph we can see that near &lt;code&gt;x=a&lt;/code&gt;, the tangent line and the function have nearly the same graph. On occasion we will use the tangent line, &lt;code&gt;L(x)&lt;/code&gt;, as an approximation to the function, &lt;code&gt;f(x)&lt;/code&gt;, near &lt;code&gt;x=a&lt;/code&gt;. In these cases we call the tangent line the linear approximation to the function at &lt;code&gt;x=a&lt;/code&gt;.&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;上述步骤称作E-step，用于估计在出现H 9次 T 1次的情况下，分别是A或者B硬币的概率，至此我们可以计算出每组实验的A和B硬币的权重。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Quadratic Approximation:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;其实从数学的角度来考虑就是，我们通过最大似然估计计算了 $$ g(\theta) = logP(x; \theta) $$ 这个函数的下界。然后后面会不断更新这个下界，直到这个函数收敛。EM算法的最大好处就是不会出现overfit。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Same like linear approximation but this time we are dealing with a curve but we &lt;strong&gt;cannot&lt;/strong&gt; find the point near to &lt;strong&gt;0&lt;/strong&gt; by using the tangent line.&lt;/p&gt;
 
-&lt;p&gt;接下来就是M-step，就是利用带权重的数据进行计算，重新更新θA 和 θB，一直迭代到参数收敛。&lt;/p&gt;
+&lt;p&gt;Instead, we use a &lt;strong&gt;parabola&lt;/strong&gt; (&lt;em&gt;which is a curve where any point is at an equal distance from a fixed point or a fixed straight line&lt;/em&gt;), like this:&lt;/p&gt;
 
-&lt;p&gt;整个过程如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9dhnyppj30ay075mxe.jpg&#34; alt=&#34;quadratic function&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006tNbRwgy1gb5uxybu99j30iz0cpwfz.jpg&#34; alt=&#34;image-20200122121719055&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;And in order to fit a good parabola, both parabola and quadratic function should have same value, same first derivative, AND second derivative, &amp;hellip; the formula will be (&lt;em&gt;just out of curiosity&lt;/em&gt;): &lt;code&gt;Qa(x) = f(a) + f&#39;(a)(x-a) + f&#39;&#39;(a)(x-a)2/2&lt;/code&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;在第十次迭代的过程，A的概率已经是首次实验的结果，而B也是趋向于0.45。但是在nonconcave functions, EM算法有可能会陷入局部最优解。同样的，梯度下降算法(gradient descent)或者牛顿法(Newton-Raphson)也可以用作数值优化拟合，但是EM算法因简单健壮并且易于实现而被广泛应用。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;Now we should be ready to do the comparison in details.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;应用场景&#34;&gt;应用场景&lt;/h3&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;譬如在基因簇表达的情形下，我们需要通过观察的显性特征去分组相关的基因簇，就是分辨出哪些基因簇影响这个特征。这种情况下可以特征参数对应不同基因的多参数高斯分布，这个情况下x就是测量特征，z就是对应的基因簇，参数$ \theta$ 就包括多参数高斯分布的均值和协方差。然后EM算法的步骤就是E-step计算属于各个基因簇的概率，M-step去分别更新参数$ \theta$, 一直到收敛。&lt;/p&gt;
+&lt;h2 id=&#34;comparison-between-the-methods&#34;&gt;Comparison between the methods&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-newton-s-method-newton-cg&#34;&gt;&lt;strong&gt;1. Newton’s Method(newton-cg):&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;Recall the motivation for gradient descent step at x: we minimize the quadratic function (i.e. Cost Function).&lt;/p&gt;
+
+&lt;p&gt;Newton’s method uses in a sense a &lt;strong&gt;better&lt;/strong&gt; quadratic function minimisation. A better because it uses the quadratic approximation (i.e. first AND &lt;em&gt;second&lt;/em&gt; partial derivatives).&lt;/p&gt;
+
+&lt;p&gt;You can imagine it as a twisted Gradient Descent with The Hessian (&lt;em&gt;The Hessian is a square matrix of second-order partial derivatives of order nxn&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Moreover, the geometric interpretation of Newton&amp;rsquo;s method is that at each iteration one approximates &lt;code&gt;f(x)&lt;/code&gt; by a quadratic function around &lt;code&gt;xn&lt;/code&gt;, and then takes a step towards the maximum/minimum of that quadratic function (in higher dimensions, this may also be a saddle point). Note that if &lt;code&gt;f(x)&lt;/code&gt; happens to be a quadratic function, then the exact extremum is found in one step.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Drawbacks:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;It’s computationally &lt;strong&gt;expensive&lt;/strong&gt; because of The Hessian Matrix (i.e. second partial derivatives calculations).&lt;/li&gt;
+&lt;li&gt;It attracts to &lt;strong&gt;Saddle Points&lt;/strong&gt; which are common in multivariable optimization (i.e. a point its partial derivatives disagree over whether this input should be a maximum or a minimum point!).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;2-limited-memory-broyden-fletcher-goldfarb-shanno-algorithm-lbfgs&#34;&gt;&lt;strong&gt;2. Limited-memory Broyden–Fletcher–Goldfarb–Shanno Algorithm(lbfgs):&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;In a nutshell, it is analogue of the Newton’s Method but here the Hessian matrix is &lt;strong&gt;approximated&lt;/strong&gt; using updates specified by gradient evaluations (or approximate gradient evaluations). In other words, using an estimation to the inverse Hessian matrix.&lt;/p&gt;
+
+&lt;p&gt;The term Limited-memory simply means it stores only a few vectors that represent the approximation implicitly.&lt;/p&gt;
+
+&lt;p&gt;If I dare say that when dataset is &lt;strong&gt;small&lt;/strong&gt;, L-BFGS relatively performs the best compared to other methods especially it saves a lot of memory, however there are some “*serious*” drawbacks such that if it is unsafeguarded, it may not converge to anything.&lt;/p&gt;
+
+&lt;h3 id=&#34;3-a-library-for-large-linear-classification-liblinear&#34;&gt;&lt;strong&gt;3. A Library for Large Linear Classification(liblinear):&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;It’s a linear classification that supports logistic regression and linear support vector machines (&lt;em&gt;A linear classifier achieves this by making a classification decision based on the value of a linear combination of the characteristics i.e feature value&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;The solver uses a coordinate descent (CD) algorithm that solves optimization problems by successively performing approximate minimization along coordinate directions or coordinate hyperplanes.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;LIBLINEAR&lt;/code&gt; is the winner of ICML 2008 large-scale learning challenge. It applies &lt;em&gt;Automatic parameter selection&lt;/em&gt; (a.k.a L1 Regularization) and it’s recommended when you have high dimension dataset (&lt;em&gt;recommended for solving large-scale classification problems&lt;/em&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Drawbacks:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;It may get stuck at a &lt;em&gt;non-stationary point&lt;/em&gt; (i.e. non-optima) if the level curves of a function are not smooth.&lt;/li&gt;
+&lt;li&gt;Also cannot run in parallel.&lt;/li&gt;
+&lt;li&gt;It cannot learn a true multinomial (multiclass) model; instead, the optimization problem is decomposed in a “one-vs-rest” fashion so separate binary classifiers are trained for all classes.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;Side note: According to Scikit Documentation: The “liblinear” solver is used by default for historical reasons.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;4-stochastic-average-gradient-sag&#34;&gt;&lt;strong&gt;4. Stochastic Average Gradient(sag):&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;SAG method optimizes the sum of a finite number of smooth convex functions. Like stochastic gradient (SG) methods, the SAG method&amp;rsquo;s iteration cost is independent of the number of terms in the sum. However, by &lt;strong&gt;incorporating a memory of previous gradient values the SAG method achieves a faster convergence rate&lt;/strong&gt; than black-box SG methods.&lt;/p&gt;
+
+&lt;p&gt;It is &lt;strong&gt;faster&lt;/strong&gt; than other solvers for &lt;em&gt;large&lt;/em&gt; datasets, when both the number of samples and the number of features are large.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Drawbacks:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;It only supports L2 penalization.&lt;/li&gt;
+&lt;li&gt;Its memory cost of &lt;code&gt;O(N)&lt;/code&gt;, which can make it impractical for large N (&lt;em&gt;because it remembers the most recently computed values for approx. all gradients&lt;/em&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;5-saga-saga&#34;&gt;&lt;strong&gt;5. SAGA(saga):&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;The SAGA solver is a &lt;em&gt;variant&lt;/em&gt; of SAG that also supports the non-smooth &lt;em&gt;penalty=l1&lt;/em&gt; option (i.e. L1 Regularization). This is therefore the solver of choice for &lt;strong&gt;sparse&lt;/strong&gt; multinomial logistic regression and it’s also suitable &lt;strong&gt;very Large&lt;/strong&gt; dataset.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Side note: According to Scikit Documentation: The SAGA solver is often the best choice.&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;The following table is taken from &lt;a href=&#34;http://scikit-learn.org/stable/modules/linear_model.html&#34; target=&#34;_blank&#34;&gt;Scikit Documentation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9g3deuhj30ik04ejs7.jpg&#34; alt=&#34;Solver Comparison&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
