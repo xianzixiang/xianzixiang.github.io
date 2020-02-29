@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，">
+  <meta name="description" content="机会成本 Opportunity Cost 对Machine Learning熟悉的朋友，肯定看过线性回归问题，我们会定义一个Cost Function，然后采用梯度下降的方法">
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/">
 
   
 
@@ -112,7 +112,7 @@
   <link rel="icon" type="image/png" href="../../../img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../img/icon-192.png">
 
-  <link rel="canonical" href="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="canonical" href="https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/">
 
   
   
@@ -124,15 +124,15 @@
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Faith写字的地方">
-  <meta property="og:url" content="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
-  <meta property="og:title" content="什么是最大期望算法(EM Algorithm) | Faith写字的地方">
-  <meta property="og:description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，"><meta property="og:image" content="https://academic.faithio.cn/img/code.jpg">
+  <meta property="og:url" content="https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/">
+  <meta property="og:title" content="为什么我会在工作五年后选择去读研 | Faith写字的地方">
+  <meta property="og:description" content="机会成本 Opportunity Cost 对Machine Learning熟悉的朋友，肯定看过线性回归问题，我们会定义一个Cost Function，然后采用梯度下降的方法"><meta property="og:image" content="https://academic.faithio.cn/img/code.jpg">
   <meta property="twitter:image" content="https://academic.faithio.cn/img/code.jpg"><meta property="og:locale" content="zh-Hans">
   
     
-      <meta property="article:published_time" content="2020-02-28T18:30:36-05:00">
+      <meta property="article:published_time" content="2019-08-01T18:30:36-05:00">
     
-    <meta property="article:modified_time" content="2020-02-28T18:30:36-05:00">
+    <meta property="article:modified_time" content="2020-08-01T18:30:36-05:00">
   
 
   
@@ -141,7 +141,7 @@
   <script data-ad-client="ca-pub-1438507724851578" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <title>什么是最大期望算法(EM Algorithm) | Faith写字的地方</title>
+  <title>为什么我会在工作五年后选择去读研 | Faith写字的地方</title>
 
 </head>
 
@@ -358,7 +358,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">什么是最大期望算法(EM Algorithm)</h1>
+  <h1 itemprop="name">为什么我会在工作五年后选择去读研</h1>
 
   
 
@@ -367,8 +367,8 @@
 
 
 
-<meta content="2020-02-28 18:30:36 -0500 EST" itemprop="datePublished">
-<meta content="2020-02-28 18:30:36 -0500 EST" itemprop="dateModified">
+<meta content="2019-08-01 18:30:36 -0500 -0500" itemprop="datePublished">
+<meta content="2020-08-01 18:30:36 -0500 -0500" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -380,8 +380,10 @@
     
     
       
+          最近更新于
+      
     
-    <time>Feb 28, 2020</time>
+    <time>Aug 1, 2020</time>
   </span>
   
 
@@ -390,7 +392,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 （分钟）预计阅读
+    5 （分钟）预计阅读
   </span>
   
 
@@ -414,7 +416,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/&amp;text=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -427,7 +429,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;t=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/&amp;t=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -440,7 +442,7 @@
       
       
       <li>
-        <a href="mailto:?subject=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29&amp;body=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94&amp;body=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -453,7 +455,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/&amp;title=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -466,7 +468,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29%20https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94%20https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -479,7 +481,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/&amp;title=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -525,65 +527,105 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<p>本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，深度学习并不适合，这时才是传统机器学习算法发挥作用的时候，废话不多说，下面直接进入学习。</p>
+<h3 id="机会成本-opportunity-cost">机会成本 Opportunity Cost</h3>
 
 <blockquote>
-<p>最大期望算法出现在很多涉及概率模型的计算生物学的应用中，那么它有什好处，它的原理是什么？</p>
+<p>对Machine Learning熟悉的朋友，肯定看过线性回归问题，我们会定义一个Cost Function，然后采用梯度下降的方法，通过求偏导数，使得Cost Function最小。</p>
 </blockquote>
 
-<p>概率模型，例如隐马尔可夫模型或者贝叶斯网络会被用于建模生物学数据。它们因为高效以及高容错的参数学习因此很流行被广泛应用。但是，给概率模型训练的数据往往不是完整的，缺失数据经常会发生。譬如，在医学诊断，通常病人的患病历史只会有有限的医学测试。换句话说，在基因的聚类表达中，数据不完整是因为在这个概率模型中有意忽略了基因到聚类的分配产生。然而最大期望算法支持在概率模型用不完整的数据进行参数估计。</p>
+<p>那么，考虑一件事情是否值得去做，应该先从理性分析，我们先考虑机会成本<code>OC</code>。</p>
 
-<h3 id="以投硬币实验为例">以投硬币实验为例</h3>
+<p>对于F君而言，则是放弃2年的工作时间，而去读研丧失的机会成本。经过深思熟虑，结合当前的经济环境，结论是： <strong>值得的</strong></p>
 
-<p>假设我们有一组硬币A和B，它们都是不均衡的硬币，假设θA 和 θB 分别是A和B正面朝上的概率。</p>
+<h4 id="经济形势角度">经济形势角度</h4>
 
-<p>现在我们目标是估计θA 和 θB，通过<strong>随机</strong>挑选A或者B进行10次的投币实验，然后可以通过绘制下面表格很轻易的计算出它们的概率。</p>
+<p>现在知乎有一个很火的话题就是，<strong>高房价和低工资是否正在毁掉年轻人的未来？</strong></p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5sxzy4ujj30g806yq4b.jpg" alt="image-20200122112520254" /></p>
+<p><a href="https://www.zhihu.com/question/339165510/answer/779490338" target="_blank">https://www.zhihu.com/question/339165510/answer/779490338</a></p>
 
-<p>现在我们把难度加大一点，假设我们不知道每次实验是挑选哪组硬币，换句话说，就是我们只有以下实验的结果，怎么估算出A和B的概率呢？</p>
+<p>对于普通人的角度，粗俗的认为读研或者读博就是为了更好的生活更好的发展，可能也就是为了在一线城市买下一套安身立命的房子。</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5t12ar0yj304m03it92.jpg" alt="image-20200122112826852" /></p>
+<p>但是，如果是前两，三年读研或者读博的同学可能机会成本会更大，为什么？因为刚好经历了中国房地产的洗礼，暴涨，本科毕业的同学已经经历过最原始的资本积累，甚至上车了。（<del>各位看官别打我，事实如此</del>）而这批人等于正好享受了经济膨胀（fang di chan）的好处，错过了这波红利的人只能在毕业后更加努力付出更多的金钱来弥补这个cost of opportunity</p>
 
-<p>这里我们引入z作为隐变量(hidden variables)或者潜在变量(latent factors)，z定义了每一组实验选用A还是B硬币作为实验。在这个情况下，z就是缺失的数据。这里我们就必须引入最大期望算法来进行计算。怎么做呢？</p>
+<p>对于现在经济形势而言，就连VC等投资人都变得谨慎，P2P不断暴雷，还是保持现金为王，并且未来在种经济形势下，随着持续增加的计算机专业的毕业生不断涌入人才市场， 资本家会考虑采用廉价的市场劳动力来取代一些“性价比不高”的老员工，还有可能出现裁员潮。</p>
 
-<p>首先我先初始化θA 和 θB，在这里我们分别初始化为0.6和0.5，然后我们假设数据是正确的，利用最大似然估计(MLE)分别算出A和B硬币的概率。在这里由于抛硬币是离散分布，并且符合二项分布(Binomial distribution)。所以以第二组为例，我们可以分别算出θA 和 θB。</p>
+<p>所以在这个经济形势下，最好的方式就是投资自己，提高自己，况且在这个本科文凭泛滥的年代，追求更高学历永远是值得的，对自己的投资也是最好的投资。</p>
 
-<p>根据二项分布的公式： $$ p_i(k)=\left({10\atop k}\right) \theta_i^k (1-\theta_i)^{10-k}\;. $$</p>
+<p>F君成功上车，现在还年轻，可以投资自己。</p>
 
-<p>$$ \theta_A^9 (1-\theta_A)^{10-9}\simeq0.004 $$</p>
+<h4 id="个人情结">个人情结</h4>
 
-<p>$$ \theta_B^9 (1-\theta_B)^{10-9}\simeq0.001\;, $$</p>
+<p>具体可以参见《程序人生之路-开篇》</p>
 
-<p>最后可以算出A的新概率为： $$ \frac{0.004}{0.004+0.001}=0.8 $$</p>
+<p><a href="https://mp.weixin.qq.com/s/wSpC7g533pbXGYg9pi10dw" target="_blank">https://mp.weixin.qq.com/s/wSpC7g533pbXGYg9pi10dw</a></p>
 
-<p>B的新概率为: $$ \frac{0.001}{0.004+0.001}=0.2 $$</p>
+<p>F君不是知乎大牛，人均985<del>当然那时分数能上边远985</del>，当年去读了文科学校的金融，没想到阴差阳错来到计算机这行。</p>
 
-<p>其实上述公式是根据贝叶斯公式得到，</p>
+<p>对于paranoid的F君来说，很希望再次接受高等教育，去真正地钻研一把，总不能让自己最奋斗最努力的时刻仅仅留在高考那年吧？</p>
 
-<p>由于 $$ 𝑃(𝐴)=0.5=𝑃(𝐵) $$</p>
+<p>再者，需要再次“刷“一次学历，希望能读个更好的学校。</p>
 
-<p>$$ P(A|H_9T_1) = \frac{P(A) \cdot P(H_9T_1|A)}{P(H_9T_1)} = \frac{P(A) \cdot P(H_9T_1|A)}{P(A) \cdot P(H_9T_1|A) + P(B) \cdot P(H_9T_1|B)} = \frac{0.5 \cdot 0.004}{0.5 \cdot 0.004 + 0.5 \cdot 0.001} = 0.8$$</p>
+<h4 id="职业发展角度">职业发展角度</h4>
+
+<p>任何行业都存在二八原则，不论是互联网行业还是传统制造业。</p>
+
+<p>就算是同一个企业，如航空母舰般的腾讯等大厂也存在2/8原则，80%的工作都是写重复性的业务代码，20%的人真正做的是不可以替代性有技术含量的工作，包括框架设计/基础算法研究等等。</p>
+
+<p>所以导致以下问题：</p>
+
+<ol>
+<li>有不少人是工作了十年确只有一年的工作经验？为啥？因为一份经验用了十年。殊不知已经被市场所淘汰，如果保持温水煮青蛙的态度度日，在未来肯定会新人所淘汰。</li>
+<li>国内的互联网企业对于技术人员是非常苛刻的，划分35岁工作年龄的分界线，如果你处于80%的人群并且想做技术一辈子，以后的处境是艰难的。基本大多数企业都要考虑盈利大于人情，那么写出来的代码差异不大的情况下，该用廉价的员工还是炒掉老员工呢？不打算转管理的程序员可以深入探讨一下这个问题。</li>
+<li>AI is future. 随着CPU/GPU的硬件发展，AI也得到大规模的发展，目前除了几个卖课的，尚没看到有批量产出ML工程师的培训机构。所以这行确实存在一些门槛（<del>别拿调参工程师来杠我</del>）俗话说，在风口上的猪都会飞，那么我不愿错过那个风口。</li>
+</ol>
+
+<p>就目前我的工作经验来说，延长自己的工业界的职业生涯，只能努力去增加自己不可替代性。譬如：</p>
+
+<ol>
+<li>进入大厂的基础架构设计部门，看看人家的是怎么设计的；</li>
+<li>写业务代码的，譬如签到系统，考虑下如何支持1亿用户打卡？如何设计这样存储？如何处理并发？</li>
+<li>如果上述都没条件，没有这个PV级别的应用也不能进基础架构部，那么考虑学习一下算法吧？其实对于大多数人来说，这也是很好的选择。</li>
+</ol>
+
+<p>所以我考虑 入坑 <strong>Computer Vision</strong>，其实我也试过自学，除了懂一些皮毛以外，还是不够系统。希望能以全日制的方式并且取得相关学位<del>可能我太笨了吧，天赋不够只能后台来补</del></p>
+
+<p>从知乎的统计来看，今年考研/考公的人太热了（一定程度反映经济问题，大家趋于稳定或者深造），而计算机的方向ML/CV太火了，可以看到目前市场还是未饱和状态，赶紧做第一个吃螃蟹的人。</p>
 
 <blockquote>
-<p>上述步骤称作E-step，用于估计在出现H 9次 T 1次的情况下，分别是A或者B硬币的概率，至此我们可以计算出每组实验的A和B硬币的权重。</p>
+<p>为什么不考虑国企公务员？</p>
 
-<p>其实从数学的角度来考虑就是，我们通过最大似然估计计算了 $$ g(\theta) = logP(x; \theta) $$ 这个函数的下界。然后后面会不断更新这个下界，直到这个函数收敛。EM算法的最大好处就是不会出现overfit。</p>
+<p>我相信做技术or工程师这行的，<strong>都有一种执念，反正F君就是打算一条路走到黑了</strong><del>或许天生劳碌命</del>，也感谢CS给我饭碗。暂时来说，计算机行业的技术大多数都是靠私企引导的，或许老了以后再去国企养老呢？Who knows？</p>
 </blockquote>
 
-<p>接下来就是M-step，就是利用带权重的数据进行计算，重新更新θA 和 θB，一直迭代到参数收敛。</p>
+<p><strong>既然分析了那么多，那么去哪读？费用如何呢？</strong></p>
 
-<p>整个过程如下图：</p>
+<h4 id="读研费用问题">读研费用问题</h4>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5uxybu99j30iz0cpwfz.jpg" alt="image-20200122121719055" /></p>
+<p>先澄清一点，英语是决定一个工程师的上限，用百度的程序员永远比不上用Google的程序员，用英文搜索也能更好搜索出答案，不接受任何辩解。</p>
 
 <blockquote>
-<p>在第十次迭代的过程，A的概率已经是首次实验的结果，而B也是趋向于0.45。但是在nonconcave functions, EM算法有可能会陷入局部最优解。同样的，梯度下降算法(gradient descent)或者牛顿法(Newton-Raphson)也可以用作数值优化拟合，但是EM算法因简单健壮并且易于实现而被广泛应用。</p>
+<p>学好英语还有什么用呢？可以去当Freelancer，成为签约远程职业者，赚取美刀，花人民币啊。</p>
+
+<p>譬如，Toptal 平台的收入情况如下，全职的话，一年赚10w美刀不在话下，前提是英文要够好啊。（与一般的外包平台不一样，主要是给硅谷初创公司提供签约的远程开发者，可见10w刀在硅谷并不是什么高工资……）</p>
+
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79ly1g5zaml1xklj30gc0sywhn.jpg" alt="IMG_8413" /></p>
 </blockquote>
 
-<h3 id="应用场景">应用场景</h3>
+<p>无奈F君是英语渣渣，所以是极其希望能提高自己的英文水平，同时深知自己是学渣，考试/考研的方式并不适合我，况且还要被zheng zhi呢……</p>
 
-<p>譬如在基因簇表达的情形下，我们需要通过观察的显性特征去分组相关的基因簇，就是分辨出哪些基因簇影响这个特征。这种情况下可以特征参数对应不同基因的多参数高斯分布，这个情况下x就是测量特征，z就是对应的基因簇，参数$ \theta$ 就包括多参数高斯分布的均值和协方差。然后EM算法的步骤就是E-step计算属于各个基因簇的概率，M-step去分别更新参数$ \theta$, 一直到收敛。</p>
+<p>首先排除了澳洲，第一是地方小，与世隔绝，第二是有点歧视华人还是啥的，第三是机器学习方面真的不是特别强，<del>但是Spring框架是澳大利亚发明的</del>，第五，<strong>费用太贵了</strong></p>
+
+<p>其次也排除了米国，考虑到国际形势，还有1:7的汇率，并且那边的硕士基本不会有奖的，就算是最便宜的UTD、Florida 一年也有2.7w刀的学费，两年至少是5w+，折合学费已经超过35w了，h1b还是不定数，何时回本不知道，机会成本太高了。</p>
+
+<p>英国也是太贵了，相对F君而言，比米国性价比低多了，欧洲其他国家同理。</p>
+
+<p>香港地区？暴乱……排斥大陆人（那时还没有），不过那几所港校的导师几乎只招C9应届生，前三所只招清北的学生。读授课？不，恐怕CV的皮毛都接触不到，写个thesis的话就算皮毛没学到英文也会好点啊！</p>
+
+<p>澳门，小地方，本地没有啥IT企业，同时也没啥好学校。甚至毕业后在澳门工作也不给户口，格局太小，pass。</p>
+
+<p>想了一圈，好像没有合适的？翻了下地图发现还有…………</p>
+
+<p>未完，待续。</p>
 
     </div>
 
@@ -759,9 +801,10 @@
   
   
   <div class="post-nav-item">
-    <div class="meta-nav">上一页</div>
-    <a href="../../../zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" rel="prev">记一次树莓派Trojan的分析</a>
+    <div class="meta-nav">下一页</div>
+    <a href="../../../zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%8C/" rel="next">为什么我会在工作五年后选择去读研（二）</a>
   </div>
+  
   
 
 

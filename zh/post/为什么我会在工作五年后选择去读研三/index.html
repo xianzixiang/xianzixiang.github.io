@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，">
+  <meta name="description" content="事实上，做IT这一行是充满焦虑的，至少在国内，是的。 部分公司会选择裁掉35岁程序员，40岁还做一线技术会被嘲笑……至少感觉做管理会比做纯技术">
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%B8%89/">
 
   
 
@@ -112,7 +112,7 @@
   <link rel="icon" type="image/png" href="../../../img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../img/icon-192.png">
 
-  <link rel="canonical" href="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="canonical" href="https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%B8%89/">
 
   
   
@@ -124,15 +124,15 @@
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Faith写字的地方">
-  <meta property="og:url" content="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
-  <meta property="og:title" content="什么是最大期望算法(EM Algorithm) | Faith写字的地方">
-  <meta property="og:description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，"><meta property="og:image" content="https://academic.faithio.cn/img/code.jpg">
+  <meta property="og:url" content="https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%B8%89/">
+  <meta property="og:title" content="为什么我会在工作五年后选择去读研（三） | Faith写字的地方">
+  <meta property="og:description" content="事实上，做IT这一行是充满焦虑的，至少在国内，是的。 部分公司会选择裁掉35岁程序员，40岁还做一线技术会被嘲笑……至少感觉做管理会比做纯技术"><meta property="og:image" content="https://academic.faithio.cn/img/code.jpg">
   <meta property="twitter:image" content="https://academic.faithio.cn/img/code.jpg"><meta property="og:locale" content="zh-Hans">
   
     
-      <meta property="article:published_time" content="2020-02-28T18:30:36-05:00">
+      <meta property="article:published_time" content="2019-08-03T18:30:36-05:00">
     
-    <meta property="article:modified_time" content="2020-02-28T18:30:36-05:00">
+    <meta property="article:modified_time" content="2020-08-03T18:30:36-05:00">
   
 
   
@@ -141,7 +141,7 @@
   <script data-ad-client="ca-pub-1438507724851578" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <title>什么是最大期望算法(EM Algorithm) | Faith写字的地方</title>
+  <title>为什么我会在工作五年后选择去读研（三） | Faith写字的地方</title>
 
 </head>
 
@@ -358,7 +358,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">什么是最大期望算法(EM Algorithm)</h1>
+  <h1 itemprop="name">为什么我会在工作五年后选择去读研（三）</h1>
 
   
 
@@ -367,8 +367,8 @@
 
 
 
-<meta content="2020-02-28 18:30:36 -0500 EST" itemprop="datePublished">
-<meta content="2020-02-28 18:30:36 -0500 EST" itemprop="dateModified">
+<meta content="2019-08-03 18:30:36 -0500 -0500" itemprop="datePublished">
+<meta content="2020-08-03 18:30:36 -0500 -0500" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -380,8 +380,10 @@
     
     
       
+          最近更新于
+      
     
-    <time>Feb 28, 2020</time>
+    <time>Aug 3, 2020</time>
   </span>
   
 
@@ -390,7 +392,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 （分钟）预计阅读
+    4 （分钟）预计阅读
   </span>
   
 
@@ -414,7 +416,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%B8%89/&amp;text=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94%ef%bc%88%e4%b8%89%ef%bc%89" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -427,7 +429,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;t=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%B8%89/&amp;t=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94%ef%bc%88%e4%b8%89%ef%bc%89" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -440,7 +442,7 @@
       
       
       <li>
-        <a href="mailto:?subject=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29&amp;body=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94%ef%bc%88%e4%b8%89%ef%bc%89&amp;body=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%B8%89/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -453,7 +455,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%B8%89/&amp;title=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94%ef%bc%88%e4%b8%89%ef%bc%89" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -466,7 +468,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29%20https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94%ef%bc%88%e4%b8%89%ef%bc%89%20https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%B8%89/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -479,7 +481,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%B8%89/&amp;title=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94%ef%bc%88%e4%b8%89%ef%bc%89" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -523,67 +525,43 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
+      <p>事实上，做IT这一行是充满焦虑的，至少在国内，是的。</p>
 
-<p>本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，深度学习并不适合，这时才是传统机器学习算法发挥作用的时候，废话不多说，下面直接进入学习。</p>
+<p>部分公司会选择裁掉35岁程序员，40岁还做一线技术会被嘲笑……至少感觉做管理会比做纯技术好</p>
 
-<blockquote>
-<p>最大期望算法出现在很多涉及概率模型的计算生物学的应用中，那么它有什好处，它的原理是什么？</p>
-</blockquote>
+<p>程序员是青春饭么？其实是的，其实也不完全是。</p>
 
-<p>概率模型，例如隐马尔可夫模型或者贝叶斯网络会被用于建模生物学数据。它们因为高效以及高容错的参数学习因此很流行被广泛应用。但是，给概率模型训练的数据往往不是完整的，缺失数据经常会发生。譬如，在医学诊断，通常病人的患病历史只会有有限的医学测试。换句话说，在基因的聚类表达中，数据不完整是因为在这个概率模型中有意忽略了基因到聚类的分配产生。然而最大期望算法支持在概率模型用不完整的数据进行参数估计。</p>
+<p>回想一下十年来的技术发展？现在入行的程序员还需要学习十年的技术嘛？在互联网如此发达的年代，做个Web后端程序员，靠互联网上的知识完全足够了啊！</p>
 
-<h3 id="以投硬币实验为例">以投硬币实验为例</h3>
+<p>然而不完全是青春饭的原因是，只能勉强认为有了技术积累，学习新技术会更快。就像新手读一篇paper需要一周的时间，然而prof. 可能只需要一个小时。</p>
 
-<p>假设我们有一组硬币A和B，它们都是不均衡的硬币，假设θA 和 θB 分别是A和B正面朝上的概率。</p>
+<p>但是我仍然焦虑，每天坐着重复性的业务工作，没有突破口，没有技术挑战，我永远是居安思危的人。其实再过个几年，我的老底会吃光，再工作下去可能充其量，一个工作三年的人完全可以胜任，毕竟不是研究工作，也没有很多深度。甚至，我曾经会为了研究一门技术琢磨到凌晨1点多，第二天照常上班。我对于技术的渴望是超越常人的，但是这种状态不是长久之计……</p>
 
-<p>现在我们目标是估计θA 和 θB，通过<strong>随机</strong>挑选A或者B进行10次的投币实验，然后可以通过绘制下面表格很轻易的计算出它们的概率。</p>
+<p>其实曾经有后悔过毕业选择在安逸的城市，当年轻去到大城市，无论是薪资还是技术都是几何级成长的，虽然可能刚毕业的时候看起来差距不大。（毫不夸张的地说，同年毕业去大城市打拼的朋友扣的五险一金和税都比在珠海税后收入高）</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5sxzy4ujj30g806yq4b.jpg" alt="image-20200122112520254" /></p>
+<p>然而，还年轻，还有机会，种一棵树最好的时间就是十年前，还有现在。当我决定做一件事的时候，我会竭尽全力去做。但是前提是需要伴侣的支持，只有大家的方向是一致的，才能所向披靡。</p>
 
-<p>现在我们把难度加大一点，假设我们不知道每次实验是挑选哪组硬币，换句话说，就是我们只有以下实验的结果，怎么估算出A和B的概率呢？</p>
+<p>同时，我自己也有一个执念，只有不断一步步地往上爬，为下一代创造更好的机会，这个家庭、家族才会不断强大。所以我情愿住老破旧，也为孩子可以上一个好的学校；所以我不仅需要我能接受国际化的视野与教育，我也更希望下一代能接触到。或许是因为身份改变了才会有如此想法吧？以前都是自己怎么开心怎么快活就怎么来。</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5t12ar0yj304m03it92.jpg" alt="image-20200122112826852" /></p>
-
-<p>这里我们引入z作为隐变量(hidden variables)或者潜在变量(latent factors)，z定义了每一组实验选用A还是B硬币作为实验。在这个情况下，z就是缺失的数据。这里我们就必须引入最大期望算法来进行计算。怎么做呢？</p>
-
-<p>首先我先初始化θA 和 θB，在这里我们分别初始化为0.6和0.5，然后我们假设数据是正确的，利用最大似然估计(MLE)分别算出A和B硬币的概率。在这里由于抛硬币是离散分布，并且符合二项分布(Binomial distribution)。所以以第二组为例，我们可以分别算出θA 和 θB。</p>
-
-<p>根据二项分布的公式： $$ p_i(k)=\left({10\atop k}\right) \theta_i^k (1-\theta_i)^{10-k}\;. $$</p>
-
-<p>$$ \theta_A^9 (1-\theta_A)^{10-9}\simeq0.004 $$</p>
-
-<p>$$ \theta_B^9 (1-\theta_B)^{10-9}\simeq0.001\;, $$</p>
-
-<p>最后可以算出A的新概率为： $$ \frac{0.004}{0.004+0.001}=0.8 $$</p>
-
-<p>B的新概率为: $$ \frac{0.001}{0.004+0.001}=0.2 $$</p>
-
-<p>其实上述公式是根据贝叶斯公式得到，</p>
-
-<p>由于 $$ 𝑃(𝐴)=0.5=𝑃(𝐵) $$</p>
-
-<p>$$ P(A|H_9T_1) = \frac{P(A) \cdot P(H_9T_1|A)}{P(H_9T_1)} = \frac{P(A) \cdot P(H_9T_1|A)}{P(A) \cdot P(H_9T_1|A) + P(B) \cdot P(H_9T_1|B)} = \frac{0.5 \cdot 0.004}{0.5 \cdot 0.004 + 0.5 \cdot 0.001} = 0.8$$</p>
+<p>那时候我已经开始联系导师，像新加坡那边基本0回复，也是基于之前说的原因基本放弃了。这时，其实是了解到加拿大百万immigrant计划，而且刚好了解到人工智能在那边那么强势，所以决定全力套辞那边的老师的。Plan A就是学到真材实料，拿到学位，顺便把绿卡也拿了，以后孩子的教育还可以中英结合吧（那边移民监没那么长）</p>
 
 <blockquote>
-<p>上述步骤称作E-step，用于估计在出现H 9次 T 1次的情况下，分别是A或者B硬币的概率，至此我们可以计算出每组实验的A和B硬币的权重。</p>
-
-<p>其实从数学的角度来考虑就是，我们通过最大似然估计计算了 $$ g(\theta) = logP(x; \theta) $$ 这个函数的下界。然后后面会不断更新这个下界，直到这个函数收敛。EM算法的最大好处就是不会出现overfit。</p>
+<p>说实话珠海的教育资源是非常不均衡的，一中和其他学校的差距非常大，就算是第二名的学校也是勉强和县城的高中挂钩而已。然而本小区上一中的比率才8%-10%左右，其实广东省的教育资源就是不平均，经济发达，但是好的学校真的没几所。或许是因为本身不是学霸级也受够了应试教育，希望下一代能摆脱这个魔咒吧，还是希望全面发展，不再想题海战术……</p>
 </blockquote>
 
-<p>接下来就是M-step，就是利用带权重的数据进行计算，重新更新θA 和 θB，一直迭代到参数收敛。</p>
+<p>记得那时候压力超级大，每天都在看各种教授的主页以及发邮件度过（甚至开发了一个chrome插件，直接拉去教授的评分以及研究方向，便于套瓷），还有和雅思奋斗，大学那会考了几次都是6的水平，毕业后几年都没怎么碰过英语了。每天都在熬夜和早起学英语，必须要考到6.5以上……</p>
 
-<p>整个过程如下图：</p>
+<p>对于大神级别的朋友来说，可能是小case，对于我这种小县城来的，说和写才是最大的问题。同时还要面对发了将近100封邮件也石沉大海的压力，急的还长满满了痘痘。（其实也理解那些教授，不是名校毕业，二没什么出色的研究成果只有水论文，三还不是应届生，基本可以刷掉了）</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5uxybu99j30iz0cpwfz.jpg" alt="image-20200122121719055" /></p>
+<p>非常感谢嘟嘟一直的鼓励与支持，甚至陪我考试的经历，每天晚上陪我练speaking 的画面仍然记忆犹新，在我前两次失利的情况下仍对我支持鼓舞。我觉得这一路走来很不容易，但是缺少你，是永远成功不了。</p>
 
-<blockquote>
-<p>在第十次迭代的过程，A的概率已经是首次实验的结果，而B也是趋向于0.45。但是在nonconcave functions, EM算法有可能会陷入局部最优解。同样的，梯度下降算法(gradient descent)或者牛顿法(Newton-Raphson)也可以用作数值优化拟合，但是EM算法因简单健壮并且易于实现而被广泛应用。</p>
-</blockquote>
+<p>在一次次石沉大海的邮件，终于有零星的几个回复，然后面试……还依稀记得面对教授磕磕巴巴说着英语……其实有时候真的想放弃，我也没指着要去读名校，再说也读不起，只希望有一个还不错的学校，并且方向必须是CV/NLP/ML其中一个方向就好了。功夫不负有心人，最后终于有一个不错的教授accept我了，让我提交申请。</p>
 
-<h3 id="应用场景">应用场景</h3>
+<p>对于毕业几年的朋友来说，最麻烦的就是老师推荐信以及学校原版中英文成绩单，现在也感谢那位在校同学愿意帮助我，同时也感谢本科时的老师，愿意做我的推荐人。其实这里每个环节都是我自己弄，比找中介省了4w多吧？</p>
 
-<p>譬如在基因簇表达的情形下，我们需要通过观察的显性特征去分组相关的基因簇，就是分辨出哪些基因簇影响这个特征。这种情况下可以特征参数对应不同基因的多参数高斯分布，这个情况下x就是测量特征，z就是对应的基因簇，参数$ \theta$ 就包括多参数高斯分布的均值和协方差。然后EM算法的步骤就是E-step计算属于各个基因簇的概率，M-step去分别更新参数$ \theta$, 一直到收敛。</p>
+<p>材料准备完了还要写各种Personal Statement/CV……</p>
+
+<p>未完 待续</p>
 
     </div>
 
@@ -759,8 +737,15 @@
   
   
   <div class="post-nav-item">
+    <div class="meta-nav">下一页</div>
+    <a href="../../../zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E5%8E%BB%E8%AF%BB%E7%A0%94%E5%9B%9B/" rel="next">为什么我会在工作五年后选择去读研（四）</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
     <div class="meta-nav">上一页</div>
-    <a href="../../../zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" rel="prev">记一次树莓派Trojan的分析</a>
+    <a href="../../../zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%8C/" rel="prev">为什么我会在工作五年后选择去读研（二）</a>
   </div>
   
 

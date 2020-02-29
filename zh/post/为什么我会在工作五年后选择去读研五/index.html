@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，">
+  <meta name="description" content="这边的主旋律是自由，No judgement！譬如学校的工作人员可以纹身，可以穿花里胡哨，头发可以奇奇怪怪，也不会有人说你；大街上也能开大越野">
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%94/">
 
   
 
@@ -112,7 +112,7 @@
   <link rel="icon" type="image/png" href="../../../img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../img/icon-192.png">
 
-  <link rel="canonical" href="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="canonical" href="https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%94/">
 
   
   
@@ -124,15 +124,15 @@
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Faith写字的地方">
-  <meta property="og:url" content="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
-  <meta property="og:title" content="什么是最大期望算法(EM Algorithm) | Faith写字的地方">
-  <meta property="og:description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，"><meta property="og:image" content="https://academic.faithio.cn/img/code.jpg">
+  <meta property="og:url" content="https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%94/">
+  <meta property="og:title" content="为什么我会在工作五年后选择去读研（五） | Faith写字的地方">
+  <meta property="og:description" content="这边的主旋律是自由，No judgement！譬如学校的工作人员可以纹身，可以穿花里胡哨，头发可以奇奇怪怪，也不会有人说你；大街上也能开大越野"><meta property="og:image" content="https://academic.faithio.cn/img/code.jpg">
   <meta property="twitter:image" content="https://academic.faithio.cn/img/code.jpg"><meta property="og:locale" content="zh-Hans">
   
     
-      <meta property="article:published_time" content="2020-02-28T18:30:36-05:00">
+      <meta property="article:published_time" content="2019-08-05T18:30:36-05:00">
     
-    <meta property="article:modified_time" content="2020-02-28T18:30:36-05:00">
+    <meta property="article:modified_time" content="2020-08-05T18:30:36-05:00">
   
 
   
@@ -141,7 +141,7 @@
   <script data-ad-client="ca-pub-1438507724851578" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <title>什么是最大期望算法(EM Algorithm) | Faith写字的地方</title>
+  <title>为什么我会在工作五年后选择去读研（五） | Faith写字的地方</title>
 
 </head>
 
@@ -358,7 +358,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">什么是最大期望算法(EM Algorithm)</h1>
+  <h1 itemprop="name">为什么我会在工作五年后选择去读研（五）</h1>
 
   
 
@@ -367,8 +367,8 @@
 
 
 
-<meta content="2020-02-28 18:30:36 -0500 EST" itemprop="datePublished">
-<meta content="2020-02-28 18:30:36 -0500 EST" itemprop="dateModified">
+<meta content="2019-08-05 18:30:36 -0500 -0500" itemprop="datePublished">
+<meta content="2020-08-05 18:30:36 -0500 -0500" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -380,8 +380,10 @@
     
     
       
+          最近更新于
+      
     
-    <time>Feb 28, 2020</time>
+    <time>Aug 5, 2020</time>
   </span>
   
 
@@ -390,7 +392,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 （分钟）预计阅读
+    4 （分钟）预计阅读
   </span>
   
 
@@ -414,7 +416,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%94/&amp;text=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94%ef%bc%88%e4%ba%94%ef%bc%89" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -427,7 +429,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;t=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%94/&amp;t=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94%ef%bc%88%e4%ba%94%ef%bc%89" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -440,7 +442,7 @@
       
       
       <li>
-        <a href="mailto:?subject=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29&amp;body=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94%ef%bc%88%e4%ba%94%ef%bc%89&amp;body=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%94/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -453,7 +455,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%94/&amp;title=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94%ef%bc%88%e4%ba%94%ef%bc%89" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -466,7 +468,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29%20https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94%ef%bc%88%e4%ba%94%ef%bc%89%20https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%94/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -479,7 +481,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%94/&amp;title=%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e4%bc%9a%e5%9c%a8%e5%b7%a5%e4%bd%9c%e4%ba%94%e5%b9%b4%e5%90%8e%e9%80%89%e6%8b%a9%e5%8e%bb%e8%af%bb%e7%a0%94%ef%bc%88%e4%ba%94%ef%bc%89" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -525,65 +527,61 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<p>本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，深度学习并不适合，这时才是传统机器学习算法发挥作用的时候，废话不多说，下面直接进入学习。</p>
+<p>这边的主旋律是自由，No judgement！譬如学校的工作人员可以纹身，可以穿花里胡哨，头发可以奇奇怪怪，也不会有人说你；大街上也能开大越野车，皮卡，甚至奇形怪状的车，也没有交警查你；这里的车牌在后面，前面是不用挂牌的，看到有人挂“OJBK”也没交警找你麻烦……甚至同性恋可以结婚……</p>
 
-<blockquote>
-<p>最大期望算法出现在很多涉及概率模型的计算生物学的应用中，那么它有什好处，它的原理是什么？</p>
-</blockquote>
+<p>但是我还是要吐槽下生活中两个痛点！并和国内做个对比！</p>
 
-<p>概率模型，例如隐马尔可夫模型或者贝叶斯网络会被用于建模生物学数据。它们因为高效以及高容错的参数学习因此很流行被广泛应用。但是，给概率模型训练的数据往往不是完整的，缺失数据经常会发生。譬如，在医学诊断，通常病人的患病历史只会有有限的医学测试。换句话说，在基因的聚类表达中，数据不完整是因为在这个概率模型中有意忽略了基因到聚类的分配产生。然而最大期望算法支持在概率模型用不完整的数据进行参数估计。</p>
+<p>既然有对比，那么我们就要用批判性的态度对待，以下开始。</p>
 
-<h3 id="以投硬币实验为例">以投硬币实验为例</h3>
+<h3 id="银行">银行</h3>
 
-<p>假设我们有一组硬币A和B，它们都是不均衡的硬币，假设θA 和 θB 分别是A和B正面朝上的概率。</p>
+<h4 id="pros">pros</h4>
 
-<p>现在我们目标是估计θA 和 θB，通过<strong>随机</strong>挑选A或者B进行10次的投币实验，然后可以通过绘制下面表格很轻易的计算出它们的概率。</p>
+<p>感觉老外是真的不喜欢存钱，据说这边有一万加币的客户已经是大客户了。反而和国内不一样，你带个五万块RMB去银行，人家可能真的不鸟你。</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5sxzy4ujj30g806yq4b.jpg" alt="image-20200122112520254" /></p>
+<p>因此，导致了银行的业务人员很少，我去的scotia bank办业务，基本就是一个印度的banker在大厅，开始我以为她是银行的大堂经理，没想到她直接操作电脑就开始办业务了。</p>
 
-<p>现在我们把难度加大一点，假设我们不知道每次实验是挑选哪组硬币，换句话说，就是我们只有以下实验的结果，怎么估算出A和B的概率呢？</p>
+<p>连叫号，统一的工服都没……没有……然后也没有看到很多柜台，不过这边的办事效率真的慢，你开个卡，不清楚的话，她要事无巨细地跟你讲清楚，比较耐心。</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5t12ar0yj304m03it92.jpg" alt="image-20200122112826852" /></p>
+<p>可能是因为不用排队吧，体验还行</p>
 
-<p>这里我们引入z作为隐变量(hidden variables)或者潜在变量(latent factors)，z定义了每一组实验选用A还是B硬币作为实验。在这个情况下，z就是缺失的数据。这里我们就必须引入最大期望算法来进行计算。怎么做呢？</p>
+<h4 id="cons">cons</h4>
 
-<p>首先我先初始化θA 和 θB，在这里我们分别初始化为0.6和0.5，然后我们假设数据是正确的，利用最大似然估计(MLE)分别算出A和B硬币的概率。在这里由于抛硬币是离散分布，并且符合二项分布(Binomial distribution)。所以以第二组为例，我们可以分别算出θA 和 θB。</p>
+<p>但是，这里比较大的银行一般是TD或者RBC（据说待遇也很高）就不太一样了，里面装饰比较豪华，并且RBC都是有统一的工作服，而且需要办某些复杂的业务还需要提前预约！！搁在国内早就三下五除二办完啦。</p>
 
-<p>根据二项分布的公式： $$ p_i(k)=\left({10\atop k}\right) \theta_i^k (1-\theta_i)^{10-k}\;. $$</p>
+<p>另外这边的储蓄卡debit card分为两个账户，一个是saving account，主要存放利息，另外一个是cheque account，那就是你真实的账户，用于刷卡消费等。你还需要把利息提取出来才能用……麻烦……好在利息利率比较高1.1%，<del>如果我没听错的话</del></p>
 
-<p>$$ \theta_A^9 (1-\theta_A)^{10-9}\simeq0.004 $$</p>
+<p>另外跨行ATM取现要手续就不说了，然后再说存钱……国内的童鞋们应该无法想象，是去到ATM取一个信封，对，你没听错，是信封，把钱放进去，写好名字啥的，然后放进去，等过几天审核了才能入账……简直%¥%听着这么麻烦我就不想试了。</p>
 
-<p>$$ \theta_B^9 (1-\theta_B)^{10-9}\simeq0.001\;, $$</p>
+<p>除了银行卡，这边也有支票，如果没有debit card，但是不能用现金支付的话，还有一种方式叫money order，就是一张纸，上面写着你要支付商家的信息，但是……买了350刀要收7.5的手续费，这比高利贷还好赚……</p>
 
-<p>最后可以算出A的新概率为： $$ \frac{0.004}{0.004+0.001}=0.8 $$</p>
+<h4 id="总结">总结</h4>
 
-<p>B的新概率为: $$ \frac{0.001}{0.004+0.001}=0.2 $$</p>
+<p>这边是信用社会，信用卡/账单地址非常重要，信用累计不是看消费的金额和次数，而是看你及时还款的次数，次数越多，信用越多，以后买房买车才能有更好的贷款，不像国内几千块工资，造造流水能贷款100多万，这边感觉会严一点。（所以感觉那些流浪汉很有可能是信用破产了，贷款贷不到，也租不到房，租房也看信用的）</p>
 
-<p>其实上述公式是根据贝叶斯公式得到，</p>
+<p>这边虽然不用支付宝/微信支付，但是一般都是拿卡滴一下就好，其实也很方便的，类似国内的Quick Pass，通过NFC的方式把！是免密小额支付！</p>
 
-<p>由于 $$ 𝑃(𝐴)=0.5=𝑃(𝐵) $$</p>
+<p>这边的银行工作真的很轻松，没看到野蛮的客户，因为他们都当homeless了？LOL，在这当个银行工作者也不错哦！</p>
 
-<p>$$ P(A|H_9T_1) = \frac{P(A) \cdot P(H_9T_1|A)}{P(H_9T_1)} = \frac{P(A) \cdot P(H_9T_1|A)}{P(A) \cdot P(H_9T_1|A) + P(B) \cdot P(H_9T_1|B)} = \frac{0.5 \cdot 0.004}{0.5 \cdot 0.004 + 0.5 \cdot 0.001} = 0.8$$</p>
+<h3 id="网络以及手机运营商">网络以及手机运营商</h3>
 
-<blockquote>
-<p>上述步骤称作E-step，用于估计在出现H 9次 T 1次的情况下，分别是A或者B硬币的概率，至此我们可以计算出每组实验的A和B硬币的权重。</p>
+<p>这边由于地大，人口少，建基站的成本很大，所以造就了全世界最贵的电话/网络套餐！！</p>
 
-<p>其实从数学的角度来考虑就是，我们通过最大似然估计计算了 $$ g(\theta) = logP(x; \theta) $$ 这个函数的下界。然后后面会不断更新这个下界，直到这个函数收敛。EM算法的最大好处就是不会出现overfit。</p>
-</blockquote>
+<p>我觉得像中国的人口大国，已经没有哪个国家可以比得上它的廉价套餐了，譬如移动的38块无限流量，对标这边的差不多45刀，8/9G流量，还是税前！！，税后奔50刀去了，接近260RMB的一个月的电话费，放在国内，很多人不得骂街了吗？</p>
 
-<p>接下来就是M-step，就是利用带权重的数据进行计算，重新更新θA 和 θB，一直迭代到参数收敛。</p>
+<p>这边是三大顶级运营商Rogers/Tellus/Bell，由于是资本主义社会，他们又有子公司，对应的是不同消费层级的人群，譬如Rogers底下的fido，面向留学生群体，相对便宜点……我是办了最便宜的fizz，6G，税后30刀……肉疼，肝疼……</p>
 
-<p>整个过程如下图：</p>
+<p>然后再吐槽宽带，你需要无限流量（unlimited）起码要50刀一个月起步……what？宽带还按照流量算的？</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5uxybu99j30iz0cpwfz.jpg" alt="image-20200122121719055" /></p>
+<p>对的……还有150G/250G一个月的……</p>
 
-<blockquote>
-<p>在第十次迭代的过程，A的概率已经是首次实验的结果，而B也是趋向于0.45。但是在nonconcave functions, EM算法有可能会陷入局部最优解。同样的，梯度下降算法(gradient descent)或者牛顿法(Newton-Raphson)也可以用作数值优化拟合，但是EM算法因简单健壮并且易于实现而被广泛应用。</p>
-</blockquote>
+<p>另外，之前提到过电话卡/宽带办理需要通讯地址，宽带可以理解，电话卡呢？其实这个地址是和你这个人绑定的！就算是租房，你网上办理了电话卡，会快递过来直接贴到你的门上的……对……这个操作惊呆了……由于我之前支付失败了几次，这个地址居然被运营商锁定了，所以要换朋友的地址。刚好他住在townhouse，然后那个电话卡就贴在大门口，前面的就是大街……</p>
 
-<h3 id="应用场景">应用场景</h3>
+<p>万一被别人拿走了，激活用了咋办……真是懵逼……</p>
 
-<p>譬如在基因簇表达的情形下，我们需要通过观察的显性特征去分组相关的基因簇，就是分辨出哪些基因簇影响这个特征。这种情况下可以特征参数对应不同基因的多参数高斯分布，这个情况下x就是测量特征，z就是对应的基因簇，参数$ \theta$ 就包括多参数高斯分布的均值和协方差。然后EM算法的步骤就是E-step计算属于各个基因簇的概率，M-step去分别更新参数$ \theta$, 一直到收敛。</p>
+<p>吐槽归吐槽，也是“真香”，该用还得用了。</p>
+
+<p>移动/联通粑粑，我错了，我以后再也不嫌弃你们了！！！！</p>
 
     </div>
 
@@ -759,8 +757,15 @@
   
   
   <div class="post-nav-item">
+    <div class="meta-nav">下一页</div>
+    <a href="../../../zh/post/%E5%85%B3%E4%BA%8E%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%95%99%E5%AD%A6%E7%AD%89%E4%B8%80%E5%88%87%E9%83%BD%E5%9C%A8%E8%BF%99%E4%BA%86/" rel="next">关于加拿大留学等一切都在这了（一）</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
     <div class="meta-nav">上一页</div>
-    <a href="../../../zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" rel="prev">记一次树莓派Trojan的分析</a>
+    <a href="../../../zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E5%8E%BB%E8%AF%BB%E7%A0%94%E5%9B%9B/" rel="prev">为什么我会在工作五年后选择去读研（四）</a>
   </div>
   
 

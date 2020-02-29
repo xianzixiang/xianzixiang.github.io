@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，">
+  <meta name="description" content="因朋友的缘故，希望我仔细讲讲这个历程，所以现在把整个过程说下。 ####起源 F君并不是擅长考试的人，并且经过应试教育十几年的洗礼，加上职场经历">
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://academic.faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/">
 
   
 
@@ -112,7 +112,7 @@
   <link rel="icon" type="image/png" href="../../../img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../img/icon-192.png">
 
-  <link rel="canonical" href="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="canonical" href="https://academic.faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/">
 
   
   
@@ -124,15 +124,15 @@
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Faith写字的地方">
-  <meta property="og:url" content="https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
-  <meta property="og:title" content="什么是最大期望算法(EM Algorithm) | Faith写字的地方">
-  <meta property="og:description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，"><meta property="og:image" content="https://academic.faithio.cn/img/code.jpg">
+  <meta property="og:url" content="https://academic.faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/">
+  <meta property="og:title" content="如何从零开始DIY申请研究生-申请奖学金 | Faith写字的地方">
+  <meta property="og:description" content="因朋友的缘故，希望我仔细讲讲这个历程，所以现在把整个过程说下。 ####起源 F君并不是擅长考试的人，并且经过应试教育十几年的洗礼，加上职场经历"><meta property="og:image" content="https://academic.faithio.cn/img/code.jpg">
   <meta property="twitter:image" content="https://academic.faithio.cn/img/code.jpg"><meta property="og:locale" content="zh-Hans">
   
     
-      <meta property="article:published_time" content="2020-02-28T18:30:36-05:00">
+      <meta property="article:published_time" content="2020-02-10T18:30:36-05:00">
     
-    <meta property="article:modified_time" content="2020-02-28T18:30:36-05:00">
+    <meta property="article:modified_time" content="2020-02-10T18:30:36-05:00">
   
 
   
@@ -141,7 +141,7 @@
   <script data-ad-client="ca-pub-1438507724851578" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <title>什么是最大期望算法(EM Algorithm) | Faith写字的地方</title>
+  <title>如何从零开始DIY申请研究生-申请奖学金 | Faith写字的地方</title>
 
 </head>
 
@@ -358,7 +358,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">什么是最大期望算法(EM Algorithm)</h1>
+  <h1 itemprop="name">如何从零开始DIY申请研究生-申请奖学金</h1>
 
   
 
@@ -367,8 +367,8 @@
 
 
 
-<meta content="2020-02-28 18:30:36 -0500 EST" itemprop="datePublished">
-<meta content="2020-02-28 18:30:36 -0500 EST" itemprop="dateModified">
+<meta content="2020-02-10 18:30:36 -0500 EST" itemprop="datePublished">
+<meta content="2020-02-10 18:30:36 -0500 EST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -381,7 +381,7 @@
     
       
     
-    <time>Feb 28, 2020</time>
+    <time>Feb 10, 2020</time>
   </span>
   
 
@@ -390,7 +390,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 （分钟）预计阅读
+    4 （分钟）预计阅读
   </span>
   
 
@@ -414,7 +414,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://academic.faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/&amp;text=%e5%a6%82%e4%bd%95%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8bDIY%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f-%e7%94%b3%e8%af%b7%e5%a5%96%e5%ad%a6%e9%87%91" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -427,7 +427,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;t=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://academic.faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/&amp;t=%e5%a6%82%e4%bd%95%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8bDIY%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f-%e7%94%b3%e8%af%b7%e5%a5%96%e5%ad%a6%e9%87%91" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -440,7 +440,7 @@
       
       
       <li>
-        <a href="mailto:?subject=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29&amp;body=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=%e5%a6%82%e4%bd%95%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8bDIY%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f-%e7%94%b3%e8%af%b7%e5%a5%96%e5%ad%a6%e9%87%91&amp;body=https://academic.faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -453,7 +453,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://academic.faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/&amp;title=%e5%a6%82%e4%bd%95%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8bDIY%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f-%e7%94%b3%e8%af%b7%e5%a5%96%e5%ad%a6%e9%87%91" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -466,7 +466,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29%20https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=%e5%a6%82%e4%bd%95%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8bDIY%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f-%e7%94%b3%e8%af%b7%e5%a5%96%e5%ad%a6%e9%87%91%20https://academic.faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -479,7 +479,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://academic.faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/&amp;title=%e5%a6%82%e4%bd%95%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8bDIY%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f-%e7%94%b3%e8%af%b7%e5%a5%96%e5%ad%a6%e9%87%91" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -525,65 +525,75 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<p>本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，深度学习并不适合，这时才是传统机器学习算法发挥作用的时候，废话不多说，下面直接进入学习。</p>
+<p>因朋友的缘故，希望我仔细讲讲这个历程，所以现在把整个过程说下。</p>
+
+<p>####起源</p>
+
+<p>F君并不是擅长考试的人，并且经过应试教育十几年的洗礼，加上职场经历，已经没有动力再去考研读国内的研究生。（<del>尤其是还要考政治这一科，不知道为啥读个研还要考zz？</del>）</p>
+
+<p>所以对于工作党，出境出国留学是相对容易的选择。</p>
+
+<p>当你下了这个决心，你需要先决定去哪个地方，澳门，香港（当前状况不建议去），新加坡？加拿大美国澳洲？</p>
+
+<p>这一切都需要根据你的实际情况来考虑。当选定学校后，就需要考虑申请什么项目。一般来说，都存在两种研究生项目，授课型（course-base）和研究型（thesis-based）。前者有点像国内的专硕，基本就是以上课修学分为主，一般来说是不允许继续读博的（当然也有少数例外），所以这种授课型基本是不带奖学金的。后者就像国内的学硕，是有固定的导师的，一般情况下是带奖学金的，也就是所谓的funding。毕竟这就像给导师打工，然后一般是有几门必修的课，毕业的话主要是看导师是否签字，是否认可了你的学术研究。</p>
+
+<h4 id="套辞选导师">套辞选导师</h4>
+
+<p>这里主要讲一下套辞选导师的情况，如果申请授课型的同学可以略过这一步。</p>
+
+<p>首先，你需要明确你要做什么方向，譬如你想读计算机的硕士，有图形学，软件工程，深度学习等等，就像现在大火的AI方向，也有很多细分方向，所以你需要去学校的官网上去搜一下是否有跟你研究兴趣比较一致的导师。具体搜索方法很简单，以康大为例，直接搜你的keyword，后面加上该学校的导师页面的地址，就有很多相关信息了。</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc5yyq6p1rj30mt0p0aet.jpg" alt="image-20200222181403357" /></p>
+
+<p>接下来就是挨个去查导师的页面，看看他们是否招人。一般都会有prospective students这一项。</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc5z4lme6aj310w03hwf7.jpg" alt="image-20200222181946497" /></p>
 
 <blockquote>
-<p>最大期望算法出现在很多涉及概率模型的计算生物学的应用中，那么它有什好处，它的原理是什么？</p>
+<p>一般来说，assistant professor（助理教授）的资金是最充足的，因为境外的学校一般都会给新来的导师一大笔资金招人，然后他们会有5年的考核，来决定他们是否能拿到终身教职。反正据我了解的，助理教授基本都是给全奖，基本就是不用教学费，还有覆盖一部分的生活费，如果能争取做一下TA的话，基本还有盈余。</p>
+
+<p>当然有可能压力也会相对大，因为助理教授急需出成果，但是他们都会比较耐心的手把手教你。</p>
 </blockquote>
 
-<p>概率模型，例如隐马尔可夫模型或者贝叶斯网络会被用于建模生物学数据。它们因为高效以及高容错的参数学习因此很流行被广泛应用。但是，给概率模型训练的数据往往不是完整的，缺失数据经常会发生。譬如，在医学诊断，通常病人的患病历史只会有有限的医学测试。换句话说，在基因的聚类表达中，数据不完整是因为在这个概率模型中有意忽略了基因到聚类的分配产生。然而最大期望算法支持在概率模型用不完整的数据进行参数估计。</p>
+<p>确定老师后，就可以先发邮件给这个导师了解一下情况。一般来说就是在邮件里面开门见山，写一下你现在的情况，以及为什么对他的研究感兴趣，并且附上你的CV。切忌写一大段话，附一大堆东西，一般来说，教授都很忙，也不会去仔细看。节约别人的时间也是一种美德。</p>
 
-<h3 id="以投硬币实验为例">以投硬币实验为例</h3>
+<p><strong>当然这也和找工作一样，如果有认识那个老师的学生找他们内推一下，成功率会高非常多。</strong></p>
 
-<p>假设我们有一组硬币A和B，它们都是不均衡的硬币，假设θA 和 θB 分别是A和B正面朝上的概率。</p>
+<h4 id="准备材料">准备材料</h4>
 
-<p>现在我们目标是估计θA 和 θB，通过<strong>随机</strong>挑选A或者B进行10次的投币实验，然后可以通过绘制下面表格很轻易的计算出它们的概率。</p>
+<p>当联系好导师后，我们就可以着手申请。这时候你需要有你的语言成绩，中英文的大学本科成绩单（带有学校盖章），并且找好两到三个推荐人，最好有两个都是大学时的老师。</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5sxzy4ujj30g806yq4b.jpg" alt="image-20200122112520254" /></p>
+<ol>
+<li>语言成绩</li>
+</ol>
 
-<p>现在我们把难度加大一点，假设我们不知道每次实验是挑选哪组硬币，换句话说，就是我们只有以下实验的结果，怎么估算出A和B的概率呢？</p>
+<p>雅思或者托福，这个要根据学校的要求。像澳门或者香港的学校可能还接受六级成绩，这个要具体学校具体分析。</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5t12ar0yj304m03it92.jpg" alt="image-20200122112826852" /></p>
+<ol>
+<li>本科成绩单</li>
+</ol>
 
-<p>这里我们引入z作为隐变量(hidden variables)或者潜在变量(latent factors)，z定义了每一组实验选用A还是B硬币作为实验。在这个情况下，z就是缺失的数据。这里我们就必须引入最大期望算法来进行计算。怎么做呢？</p>
+<p>如果是工作党的话，可以找学校的学弟学妹帮忙打印一下，并且准备一下带有骑缝章的学校信封，以防到时要寄出去。</p>
 
-<p>首先我先初始化θA 和 θB，在这里我们分别初始化为0.6和0.5，然后我们假设数据是正确的，利用最大似然估计(MLE)分别算出A和B硬币的概率。在这里由于抛硬币是离散分布，并且符合二项分布(Binomial distribution)。所以以第二组为例，我们可以分别算出θA 和 θB。</p>
+<ol>
+<li>推荐信</li>
+</ol>
 
-<p>根据二项分布的公式： $$ p_i(k)=\left({10\atop k}\right) \theta_i^k (1-\theta_i)^{10-k}\;. $$</p>
+<p>主要是找一个同事和两个大学时的教授帮忙推荐就好了。一般来说都是自己写好推荐信，然后拜托他们帮你上传的。一般学校都是在你申请的时候，会发一个推荐信的链接到推荐人的邮箱，然后通过推荐人上传这个推荐信。有的老师会直接转发邮件给你，让你自己处理，甚至会给你邮箱账号密码，这个你懂的。</p>
 
-<p>$$ \theta_A^9 (1-\theta_A)^{10-9}\simeq0.004 $$</p>
+<ol>
+<li>CV 和 个人陈述</li>
+</ol>
 
-<p>$$ \theta_B^9 (1-\theta_B)^{10-9}\simeq0.001\;, $$</p>
+<p>接下来就是写自己英文简历，和写一下个人陈述，具体每个学校的个人陈述要求都有不同的要求，但是会有一个大致的整体结构。这里就不展开细说了。</p>
 
-<p>最后可以算出A的新概率为： $$ \frac{0.004}{0.004+0.001}=0.8 $$</p>
+<p>CV的话建议用latex写，当然用word也是可以的。</p>
 
-<p>B的新概率为: $$ \frac{0.001}{0.004+0.001}=0.2 $$</p>
+<h4 id="结语">结语</h4>
 
-<p>其实上述公式是根据贝叶斯公式得到，</p>
+<p>大家有什么想要了解，可以在下面👇留言给我，下期我会讲讲在蒙特利尔每个月的生活花费。</p>
 
-<p>由于 $$ 𝑃(𝐴)=0.5=𝑃(𝐵) $$</p>
-
-<p>$$ P(A|H_9T_1) = \frac{P(A) \cdot P(H_9T_1|A)}{P(H_9T_1)} = \frac{P(A) \cdot P(H_9T_1|A)}{P(A) \cdot P(H_9T_1|A) + P(B) \cdot P(H_9T_1|B)} = \frac{0.5 \cdot 0.004}{0.5 \cdot 0.004 + 0.5 \cdot 0.001} = 0.8$$</p>
-
-<blockquote>
-<p>上述步骤称作E-step，用于估计在出现H 9次 T 1次的情况下，分别是A或者B硬币的概率，至此我们可以计算出每组实验的A和B硬币的权重。</p>
-
-<p>其实从数学的角度来考虑就是，我们通过最大似然估计计算了 $$ g(\theta) = logP(x; \theta) $$ 这个函数的下界。然后后面会不断更新这个下界，直到这个函数收敛。EM算法的最大好处就是不会出现overfit。</p>
-</blockquote>
-
-<p>接下来就是M-step，就是利用带权重的数据进行计算，重新更新θA 和 θB，一直迭代到参数收敛。</p>
-
-<p>整个过程如下图：</p>
-
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5uxybu99j30iz0cpwfz.jpg" alt="image-20200122121719055" /></p>
-
-<blockquote>
-<p>在第十次迭代的过程，A的概率已经是首次实验的结果，而B也是趋向于0.45。但是在nonconcave functions, EM算法有可能会陷入局部最优解。同样的，梯度下降算法(gradient descent)或者牛顿法(Newton-Raphson)也可以用作数值优化拟合，但是EM算法因简单健壮并且易于实现而被广泛应用。</p>
-</blockquote>
-
-<h3 id="应用场景">应用场景</h3>
-
-<p>譬如在基因簇表达的情形下，我们需要通过观察的显性特征去分组相关的基因簇，就是分辨出哪些基因簇影响这个特征。这种情况下可以特征参数对应不同基因的多参数高斯分布，这个情况下x就是测量特征，z就是对应的基因簇，参数$ \theta$ 就包括多参数高斯分布的均值和协方差。然后EM算法的步骤就是E-step计算属于各个基因簇的概率，M-step去分别更新参数$ \theta$, 一直到收敛。</p>
+<p>祝大家在2020年offer多多！！</p>
 
     </div>
 
@@ -759,8 +769,15 @@
   
   
   <div class="post-nav-item">
+    <div class="meta-nav">下一页</div>
+    <a href="../../../zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" rel="next">记一次树莓派Trojan的分析</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
     <div class="meta-nav">上一页</div>
-    <a href="../../../zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" rel="prev">记一次树莓派Trojan的分析</a>
+    <a href="../../../zh/post/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%95%99%E5%AD%A6%E8%B4%B9%E7%94%A8%E5%A4%A7%E8%B5%B7%E5%BA%95%E5%8F%8A%E6%84%9F%E6%82%9F/" rel="prev">加拿大留学费用大起底及感悟</a>
   </div>
   
 
