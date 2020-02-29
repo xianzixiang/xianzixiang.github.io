@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors | Zixiang&#39;s Personal Page</title>
-    <link>https://academic.faithio.cn/authors/</link>
-      <atom:link href="https://academic.faithio.cn/authors/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://faithio.cn/authors/</link>
+      <atom:link href="https://faithio.cn/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
     <image>
-      <url>https://academic.faithio.cn/img/code.jpg</url>
+      <url>https://faithio.cn/img/code.jpg</url>
       <title>Authors</title>
-      <link>https://academic.faithio.cn/authors/</link>
+      <link>https://faithio.cn/authors/</link>
     </image>
     
     <item>
       <title></title>
-      <link>https://academic.faithio.cn/authors/admin/</link>
+      <link>https://faithio.cn/authors/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://academic.faithio.cn/authors/admin/</guid>
+      <guid>https://faithio.cn/authors/admin/</guid>
       <description>&lt;p&gt;Zixiang Xian is a master student of Machine Learning at Concordia University AI Lab. His research interests include Machine Learning and Computer Vision. He is under the supervision of Professor Nizar Bouguila.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://academic.faithio.cn/authors/zi_xian/</link>
+      <link>https://faithio.cn/authors/zi_xian/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://academic.faithio.cn/authors/zi_xian/</guid>
+      <guid>https://faithio.cn/authors/zi_xian/</guid>
       <description>&lt;p&gt;Xian Zixiang is a master student of Machine Learning at Concordia University AI Lab. His research interests include Machine Learning and Computer Vision. He is under the supervision of Professor Nizar Bouguila.&lt;/p&gt;
 
 &lt;p&gt;Before his graduate study, he is a senior backend engineer at Kingsoft Company, skilling at Golang, Java, JavaScript, and Python.&lt;/p&gt;

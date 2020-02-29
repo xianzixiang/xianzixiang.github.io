@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Faith写字的地方</title>
-    <link>https://academic.faithio.cn/zh/authors/zi_xian/</link>
-      <atom:link href="https://academic.faithio.cn/zh/authors/zi_xian/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://faithio.cn/zh/authors/zi_xian/</link>
+      <atom:link href="https://faithio.cn/zh/authors/zi_xian/index.xml" rel="self" type="application/rss+xml" />
     <description>Faith写字的地方</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language>
     <image>
-      <url>https://academic.faithio.cn/img/code.jpg</url>
+      <url>https://faithio.cn/img/code.jpg</url>
       <title>Faith写字的地方</title>
-      <link>https://academic.faithio.cn/zh/authors/zi_xian/</link>
+      <link>https://faithio.cn/zh/authors/zi_xian/</link>
     </image>
     
   </channel>

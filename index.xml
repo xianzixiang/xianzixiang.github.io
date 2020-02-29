@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zixiang&#39;s Personal Page</title>
-    <link>https://academic.faithio.cn/</link>
-      <atom:link href="https://academic.faithio.cn/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://faithio.cn/</link>
+      <atom:link href="https://faithio.cn/index.xml" rel="self" type="application/rss+xml" />
     <description>Zixiang&#39;s Personal Page</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 29 Feb 2020 11:34:28 -0500</lastBuildDate>
     <image>
-      <url>https://academic.faithio.cn/img/code.jpg</url>
+      <url>https://faithio.cn/img/code.jpg</url>
       <title>Zixiang&#39;s Personal Page</title>
-      <link>https://academic.faithio.cn/</link>
+      <link>https://faithio.cn/</link>
     </image>
     
     <item>
       <title>Stochastic Expectation Propagation</title>
-      <link>https://academic.faithio.cn/post/stochastic-expectation-propagation/</link>
+      <link>https://faithio.cn/post/stochastic-expectation-propagation/</link>
       <pubDate>Sat, 29 Feb 2020 11:34:28 -0500</pubDate>
-      <guid>https://academic.faithio.cn/post/stochastic-expectation-propagation/</guid>
+      <guid>https://faithio.cn/post/stochastic-expectation-propagation/</guid>
       <description>
 
 &lt;h1 id=&#34;math-formula&#34;&gt;Math Formula&lt;/h1&gt;
@@ -25,9 +25,9 @@
     
     <item>
       <title>Logistic Regression   Solvers&#39; Defintions in Sklearn</title>
-      <link>https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</link>
+      <link>https://faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</link>
       <pubDate>Sat, 29 Feb 2020 02:46:04 -0500</pubDate>
-      <guid>https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</guid>
+      <guid>https://faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts | Faith写字的地方</title>
-    <link>https://academic.faithio.cn/zh/post/</link>
-      <atom:link href="https://academic.faithio.cn/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://faithio.cn/zh/post/</link>
+      <atom:link href="https://faithio.cn/zh/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language>
     <image>
-      <url>https://academic.faithio.cn/img/code.jpg</url>
+      <url>https://faithio.cn/img/code.jpg</url>
       <title>Posts</title>
-      <link>https://academic.faithio.cn/zh/post/</link>
+      <link>https://faithio.cn/zh/post/</link>
     </image>
     
     <item>
       <title>什么是最大期望算法(EM Algorithm)</title>
-      <link>https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/</link>
+      <link>https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/</link>
       <pubDate>Fri, 28 Feb 2020 18:30:36 -0500</pubDate>
-      <guid>https://academic.faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/</guid>
+      <guid>https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/</guid>
       <description>
 
 &lt;p&gt;本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，深度学习并不适合，这时才是传统机器学习算法发挥作用的时候，废话不多说，下面直接进入学习。&lt;/p&gt;
@@ -83,9 +83,9 @@
     
     <item>
       <title>记一次树莓派Trojan的分析</title>
-      <link>https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/</link>
+      <link>https://faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/</link>
       <pubDate>Thu, 20 Feb 2020 18:30:36 -0500</pubDate>
-      <guid>https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/</guid>
+      <guid>https://faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -298,9 +298,9 @@ fi
     
     <item>
       <title>DIY 申请研究生</title>
-      <link>https://academic.faithio.cn/zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/</link>
+      <link>https://faithio.cn/zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/</link>
       <pubDate>Mon, 10 Feb 2020 18:30:36 -0500</pubDate>
-      <guid>https://academic.faithio.cn/zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/</guid>
+      <guid>https://faithio.cn/zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -448,9 +448,9 @@ fi
     
     <item>
       <title>如何从零开始DIY申请研究生-申请奖学金</title>
-      <link>https://academic.faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/</link>
+      <link>https://faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/</link>
       <pubDate>Mon, 10 Feb 2020 18:30:36 -0500</pubDate>
-      <guid>https://academic.faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/</guid>
+      <guid>https://faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/</guid>
       <description>
 
 &lt;p&gt;因朋友的缘故，希望我仔细讲讲这个历程，所以现在把整个过程说下。&lt;/p&gt;
@@ -527,9 +527,9 @@ fi
     
     <item>
       <title>加拿大留学费用大起底及感悟</title>
-      <link>https://academic.faithio.cn/zh/post/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%95%99%E5%AD%A6%E8%B4%B9%E7%94%A8%E5%A4%A7%E8%B5%B7%E5%BA%95%E5%8F%8A%E6%84%9F%E6%82%9F/</link>
+      <link>https://faithio.cn/zh/post/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%95%99%E5%AD%A6%E8%B4%B9%E7%94%A8%E5%A4%A7%E8%B5%B7%E5%BA%95%E5%8F%8A%E6%84%9F%E6%82%9F/</link>
       <pubDate>Sat, 01 Feb 2020 18:30:36 -0500</pubDate>
-      <guid>https://academic.faithio.cn/zh/post/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%95%99%E5%AD%A6%E8%B4%B9%E7%94%A8%E5%A4%A7%E8%B5%B7%E5%BA%95%E5%8F%8A%E6%84%9F%E6%82%9F/</guid>
+      <guid>https://faithio.cn/zh/post/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%95%99%E5%AD%A6%E8%B4%B9%E7%94%A8%E5%A4%A7%E8%B5%B7%E5%BA%95%E5%8F%8A%E6%84%9F%E6%82%9F/</guid>
       <description>
 
 &lt;h4 id=&#34;感想&#34;&gt;感想&lt;/h4&gt;
@@ -636,9 +636,9 @@ fi
     
     <item>
       <title>关于加拿大留学等一切都在这了（一）</title>
-      <link>https://academic.faithio.cn/zh/post/%E5%85%B3%E4%BA%8E%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%95%99%E5%AD%A6%E7%AD%89%E4%B8%80%E5%88%87%E9%83%BD%E5%9C%A8%E8%BF%99%E4%BA%86/</link>
+      <link>https://faithio.cn/zh/post/%E5%85%B3%E4%BA%8E%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%95%99%E5%AD%A6%E7%AD%89%E4%B8%80%E5%88%87%E9%83%BD%E5%9C%A8%E8%BF%99%E4%BA%86/</link>
       <pubDate>Wed, 01 Jan 2020 18:30:36 -0500</pubDate>
-      <guid>https://academic.faithio.cn/zh/post/%E5%85%B3%E4%BA%8E%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%95%99%E5%AD%A6%E7%AD%89%E4%B8%80%E5%88%87%E9%83%BD%E5%9C%A8%E8%BF%99%E4%BA%86/</guid>
+      <guid>https://faithio.cn/zh/post/%E5%85%B3%E4%BA%8E%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%95%99%E5%AD%A6%E7%AD%89%E4%B8%80%E5%88%87%E9%83%BD%E5%9C%A8%E8%BF%99%E4%BA%86/</guid>
       <description>
 
 &lt;p&gt;新的一年后台收到不少粉丝的私信让讲讲加拿大的留学，在这里F君再给大家讲下吧。&lt;/p&gt;
@@ -727,9 +727,9 @@ fi
     
     <item>
       <title>为什么我会在工作五年后选择去读研（五）</title>
-      <link>https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%94/</link>
+      <link>https://faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%94/</link>
       <pubDate>Mon, 05 Aug 2019 18:30:36 -0500</pubDate>
-      <guid>https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%94/</guid>
+      <guid>https://faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%94/</guid>
       <description>
 
 &lt;p&gt;这边的主旋律是自由，No judgement！譬如学校的工作人员可以纹身，可以穿花里胡哨，头发可以奇奇怪怪，也不会有人说你；大街上也能开大越野车，皮卡，甚至奇形怪状的车，也没有交警查你；这里的车牌在后面，前面是不用挂牌的，看到有人挂“OJBK”也没交警找你麻烦……甚至同性恋可以结婚……&lt;/p&gt;
@@ -792,9 +792,9 @@ fi
     
     <item>
       <title>为什么我会在工作五年后选择去读研（四）</title>
-      <link>https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E5%8E%BB%E8%AF%BB%E7%A0%94%E5%9B%9B/</link>
+      <link>https://faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E5%8E%BB%E8%AF%BB%E7%A0%94%E5%9B%9B/</link>
       <pubDate>Sun, 04 Aug 2019 18:30:36 -0500</pubDate>
-      <guid>https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E5%8E%BB%E8%AF%BB%E7%A0%94%E5%9B%9B/</guid>
+      <guid>https://faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E5%8E%BB%E8%AF%BB%E7%A0%94%E5%9B%9B/</guid>
       <description>
 
 &lt;p&gt;不知不觉已经在这呆了好几天了，对于这儿的留学生也略微接触了一点。&lt;/p&gt;
@@ -869,9 +869,9 @@ fi
     
     <item>
       <title>为什么我会在工作五年后选择去读研（三）</title>
-      <link>https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%B8%89/</link>
+      <link>https://faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%B8%89/</link>
       <pubDate>Sat, 03 Aug 2019 18:30:36 -0500</pubDate>
-      <guid>https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%B8%89/</guid>
+      <guid>https://faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%B8%89/</guid>
       <description>&lt;p&gt;事实上，做IT这一行是充满焦虑的，至少在国内，是的。&lt;/p&gt;
 
 &lt;p&gt;部分公司会选择裁掉35岁程序员，40岁还做一线技术会被嘲笑……至少感觉做管理会比做纯技术好&lt;/p&gt;
@@ -914,9 +914,9 @@ fi
     
     <item>
       <title>为什么我会在工作五年后选择去读研（二）</title>
-      <link>https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%8C/</link>
+      <link>https://faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%8C/</link>
       <pubDate>Fri, 02 Aug 2019 18:30:36 -0500</pubDate>
-      <guid>https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%8C/</guid>
+      <guid>https://faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94%E4%BA%8C/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -1007,9 +1007,9 @@ fi
     
     <item>
       <title>为什么我会在工作五年后选择去读研</title>
-      <link>https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/</link>
+      <link>https://faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/</link>
       <pubDate>Thu, 01 Aug 2019 18:30:36 -0500</pubDate>
-      <guid>https://academic.faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/</guid>
+      <guid>https://faithio.cn/zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/</guid>
       <description>
 
 &lt;h3 id=&#34;机会成本-opportunity-cost&#34;&gt;机会成本 Opportunity Cost&lt;/h3&gt;
