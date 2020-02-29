@@ -3,13 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</loc>
-    <lastmod>2020-02-29T02:50:03-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://academic.faithio.cn/post/</loc>
-    <lastmod>2020-02-29T02:50:03-05:00</lastmod>
+    <lastmod>2020-02-29T12:11:18-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -23,8 +18,13 @@
   </url>
   
   <url>
+    <loc>https://academic.faithio.cn/post/stochastic-expectation-propagation/</loc>
+    <lastmod>2020-02-29T12:11:18-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://academic.faithio.cn/</loc>
-    <lastmod>2020-02-29T02:50:03-05:00</lastmod>
+    <lastmod>2020-02-29T12:11:18-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -35,6 +35,11 @@
                 hreflang="en"
                 href="https://academic.faithio.cn/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://academic.faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</loc>
+    <lastmod>2020-02-29T02:50:03-05:00</lastmod>
   </url>
   
   <url>

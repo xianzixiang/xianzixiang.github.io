@@ -5,12 +5,23 @@
     <link>https://academic.faithio.cn/post/</link>
       <atom:link href="https://academic.faithio.cn/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 29 Feb 2020 02:46:04 -0500</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 29 Feb 2020 11:34:28 -0500</lastBuildDate>
     <image>
       <url>https://academic.faithio.cn/img/code.jpg</url>
       <title>Posts</title>
       <link>https://academic.faithio.cn/post/</link>
     </image>
+    
+    <item>
+      <title>Stochastic Expectation Propagation</title>
+      <link>https://academic.faithio.cn/post/stochastic-expectation-propagation/</link>
+      <pubDate>Sat, 29 Feb 2020 11:34:28 -0500</pubDate>
+      <guid>https://academic.faithio.cn/post/stochastic-expectation-propagation/</guid>
+      <description>
+
+&lt;h1 id=&#34;math-formula&#34;&gt;Math Formula&lt;/h1&gt;
+</description>
+    </item>
     
     <item>
       <title>Logistic Regression   Solvers&#39; Defintions in Sklearn</title>
