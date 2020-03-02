@@ -1,0 +1,148 @@
+---
+# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+
+title: "Logistic Regression   Solvers' Defintions in Sklearn"
+subtitle: ""
+summary: ""
+authors: []
+tags: []
+categories: []
+date: 2020-02-29T02:46:04-05:00
+lastmod: 2020-02-29T02:46:04-05:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+---
+
+## Introduction
+
+A hypothesis `h(x)`, takes an *input* and gives us the *estimated output value*.
+
+This hypothesis can be a as simple as a one variable linear equation, .. up to a very complicated and long multivariate equation with respect to the type of the algorithm we’re using (*i.e. linear regression, logistic regression..etc*).
+
+![h(x)](https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9e4pcalj308k05xgls.jpg)
+
+Our task is to find the **best Parameters** (a.k.a Thetas or Weights) that give us the **least error** in predicting the output. We call this error a **Cost or Loss Function** and apparently our goal is to **minimize** it in order to get the best predicted output!
+
+One more thing to recall, that the relation between the parameter value and its effect on the cost function (i.e. the error) looks like a **bell curve** (i.e. **Quadratic**; recall this because it’s very important) .
+
+So if we start at any point in that curve and if we keep taking the derivative (i.e. tangent line) of each point we stop at, we will end up at what so called the **Global Optima** as shown in this image:
+![J(w) bell curve](https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9empzi9j30bm07twem.jpg)
+
+If we take the partial derivative at minimum cost point (i.e. global optima) we find the **slope** of the tangent line = **0** (then we know that we reached our target).
+
+That’s valid only if we have *Convex* Cost Function, but if we don’t, we may end up stuck at what so called **Local Optima**; consider this non-convex function:
+
+![non-convex](https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9ffxzczj30ac07qwex.jpg)
+
+Now you should have the intuition about the hack relationship between what we are doing and the terms: *Deravative*, *Tangent Line*, *Cost Function*, *Hypothesis* ..etc.
+
+*Side Note: The above mentioned intuition also related to the Gradient Descent Algorithm (see later).*
+
+------
+
+## Background
+
+**Linear Approximation:**
+
+Given a function, `f(x)`, we can find its tangent at `x=a`. The equation of the tangent line L(x) is: `L(x)=f(a)+f′(a)(x−a)`.
+
+Take a look at the following graph of a function and its tangent line:
+
+![tangent line](https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9dc2jkaj309r05tq2w.jpg)
+
+From this graph we can see that near `x=a`, the tangent line and the function have nearly the same graph. On occasion we will use the tangent line, `L(x)`, as an approximation to the function, `f(x)`, near `x=a`. In these cases we call the tangent line the linear approximation to the function at `x=a`.
+
+**Quadratic Approximation:**
+
+Same like linear approximation but this time we are dealing with a curve but we **cannot** find the point near to **0** by using the tangent line.
+
+Instead, we use a **parabola** (*which is a curve where any point is at an equal distance from a fixed point or a fixed straight line*), like this:
+
+![quadratic function](https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9dhnyppj30ay075mxe.jpg)
+
+And in order to fit a good parabola, both parabola and quadratic function should have same value, same first derivative, AND second derivative, ... the formula will be (*just out of curiosity*): `Qa(x) = f(a) + f'(a)(x-a) + f''(a)(x-a)2/2`
+
+*Now we should be ready to do the comparison in details.*
+
+------
+
+## Comparison between the methods
+
+### **1. Newton’s Method(newton-cg):**
+
+Recall the motivation for gradient descent step at x: we minimize the quadratic function (i.e. Cost Function).
+
+Newton’s method uses in a sense a **better** quadratic function minimisation. A better because it uses the quadratic approximation (i.e. first AND *second* partial derivatives).
+
+You can imagine it as a twisted Gradient Descent with The Hessian (*The Hessian is a square matrix of second-order partial derivatives of order nxn*).
+
+Moreover, the geometric interpretation of Newton's method is that at each iteration one approximates `f(x)` by a quadratic function around `xn`, and then takes a step towards the maximum/minimum of that quadratic function (in higher dimensions, this may also be a saddle point). Note that if `f(x)` happens to be a quadratic function, then the exact extremum is found in one step.
+
+**Drawbacks:**
+
+1. It’s computationally **expensive** because of The Hessian Matrix (i.e. second partial derivatives calculations).
+2. It attracts to **Saddle Points** which are common in multivariable optimization (i.e. a point its partial derivatives disagree over whether this input should be a maximum or a minimum point!).
+
+### **2. Limited-memory Broyden–Fletcher–Goldfarb–Shanno Algorithm(lbfgs):**
+
+In a nutshell, it is analogue of the Newton’s Method but here the Hessian matrix is **approximated** using updates specified by gradient evaluations (or approximate gradient evaluations). In other words, using an estimation to the inverse Hessian matrix.
+
+The term Limited-memory simply means it stores only a few vectors that represent the approximation implicitly.
+
+If I dare say that when dataset is **small**, L-BFGS relatively performs the best compared to other methods especially it saves a lot of memory, however there are some “*serious*” drawbacks such that if it is unsafeguarded, it may not converge to anything.
+
+### **3. A Library for Large Linear Classification(liblinear):**
+
+It’s a linear classification that supports logistic regression and linear support vector machines (*A linear classifier achieves this by making a classification decision based on the value of a linear combination of the characteristics i.e feature value*).
+
+The solver uses a coordinate descent (CD) algorithm that solves optimization problems by successively performing approximate minimization along coordinate directions or coordinate hyperplanes.
+
+`LIBLINEAR` is the winner of ICML 2008 large-scale learning challenge. It applies *Automatic parameter selection* (a.k.a L1 Regularization) and it’s recommended when you have high dimension dataset (*recommended for solving large-scale classification problems*)
+
+**Drawbacks:**
+
+1. It may get stuck at a *non-stationary point* (i.e. non-optima) if the level curves of a function are not smooth.
+2. Also cannot run in parallel.
+3. It cannot learn a true multinomial (multiclass) model; instead, the optimization problem is decomposed in a “one-vs-rest” fashion so separate binary classifiers are trained for all classes.
+
+*Side note: According to Scikit Documentation: The “liblinear” solver is used by default for historical reasons.*
+
+### **4. Stochastic Average Gradient(sag):**
+
+SAG method optimizes the sum of a finite number of smooth convex functions. Like stochastic gradient (SG) methods, the SAG method's iteration cost is independent of the number of terms in the sum. However, by **incorporating a memory of previous gradient values the SAG method achieves a faster convergence rate** than black-box SG methods.
+
+It is **faster** than other solvers for *large* datasets, when both the number of samples and the number of features are large.
+
+**Drawbacks:**
+
+1. It only supports L2 penalization.
+2. Its memory cost of `O(N)`, which can make it impractical for large N (*because it remembers the most recently computed values for approx. all gradients*).
+
+### **5. SAGA(saga):**
+
+The SAGA solver is a *variant* of SAG that also supports the non-smooth *penalty=l1* option (i.e. L1 Regularization). This is therefore the solver of choice for **sparse** multinomial logistic regression and it’s also suitable **very Large** dataset.
+
+*Side note: According to Scikit Documentation: The SAGA solver is often the best choice.*
+
+------
+
+## Summary
+
+The following table is taken from [Scikit Documentation](http://scikit-learn.org/stable/modules/linear_model.html)
+
+![Solver Comparison](https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9g3deuhj30ik04ejs7.jpg)
