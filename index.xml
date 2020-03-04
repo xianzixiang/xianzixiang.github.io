@@ -71,6 +71,8 @@
 &lt;p&gt;$$ P(x) \cdot  P(y_1|x) \cdot P(y_2|x)  \rightarrow   p(y_i|x) = (0.5)\mathcal{N}(y_i; x, 1) + (0.5)\mathcal{N} (y_i;0,10)$$&lt;/p&gt;
 
 &lt;p&gt;2 points have 4 Gaussians -&amp;gt; N points $$2^N$$ Gaussians&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gcibv8mbitj30le0fuq57.jpg&#34; alt=&#34;image-20200304104720503&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
