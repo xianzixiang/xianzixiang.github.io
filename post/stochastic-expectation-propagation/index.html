@@ -31,9 +31,9 @@
   <meta name="description" content="Math Formula Factor graphs Shows how a function of several variables can be factored into a product of simpler functions.
  $$ f(x,y,z) = (x&#43;y) \cdot (y &#43; z) \cdot (x &#43;z) $$
  Very useful for representing posteriors.
- $$P(x1, &hellip;, x_n) = P(x_1) \Pi P( x_i | x_{i-1} )$$
- $$ P(m|x1, &hellip;, x_n) = P(m) \cdot \Pi P(x_i|m)$$
-  modeling  What graph should I use for this data?">
+$ $$ P(x1, ..., x_n) = P(x_1) \Pi P( x_i | x_{i-1} ) $$ $
+$$ P(m|x1, &hellip;, x_n) = P(m) \cdot \Pi P(x_i|m)$$
+modeling  What graph should I use for this data?">
 
   
   <link rel="alternate" hreflang="en-us" href="https://faithio.cn/post/stochastic-expectation-propagation/">
@@ -278,15 +278,15 @@
   <meta property="og:description" content="Math Formula Factor graphs Shows how a function of several variables can be factored into a product of simpler functions.
  $$ f(x,y,z) = (x&#43;y) \cdot (y &#43; z) \cdot (x &#43;z) $$
  Very useful for representing posteriors.
- $$P(x1, &hellip;, x_n) = P(x_1) \Pi P( x_i | x_{i-1} )$$
- $$ P(m|x1, &hellip;, x_n) = P(m) \cdot \Pi P(x_i|m)$$
-  modeling  What graph should I use for this data?"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+$ $$ P(x1, ..., x_n) = P(x_1) \Pi P( x_i | x_{i-1} ) $$ $
+$$ P(m|x1, &hellip;, x_n) = P(m) \cdot \Pi P(x_i|m)$$
+modeling  What graph should I use for this data?"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2020-02-29T11:34:28-05:00">
     
-    <meta property="article:modified_time" content="2020-03-09T21:05:29-04:00">
+    <meta property="article:modified_time" content="2020-03-09T22:22:27-04:00">
   
 
   
@@ -315,7 +315,7 @@
   "headline": "Stochastic Expectation Propagation",
   
   "datePublished": "2020-02-29T11:34:28-05:00",
-  "dateModified": "2020-03-09T21:05:29-04:00",
+  "dateModified": "2020-03-09T22:22:27-04:00",
   
   "author": {
     "@type": "Person",
@@ -330,7 +330,7 @@
       "url": "https://faithio.cn/images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Math Formula Factor graphs Shows how a function of several variables can be factored into a product of simpler functions.\n $$ f(x,y,z) = (x+y) \\cdot (y + z) \\cdot (x +z) $$\n Very useful for representing posteriors.\n $$P(x1, \u0026hellip;, x_n) = P(x_1) \\Pi P( x_i | x_{i-1} )$$\n $$ P(m|x1, \u0026hellip;, x_n) = P(m) \\cdot \\Pi P(x_i|m)$$\n  modeling  What graph should I use for this data?"
+  "description": "Math Formula Factor graphs Shows how a function of several variables can be factored into a product of simpler functions.\n $$ f(x,y,z) = (x+y) \\cdot (y + z) \\cdot (x +z) $$\n Very useful for representing posteriors.\n$ $$ P(x1, ..., x_n) = P(x_1) \\Pi P( x_i | x_{i-1} ) $$ $\n$$ P(m|x1, \u0026hellip;, x_n) = P(m) \\cdot \\Pi P(x_i|m)$$\nmodeling  What graph should I use for this data?"
 }
 </script>
 
@@ -343,6 +343,43 @@
 
 
   <script data-ad-client="ca-pub-1438507724851578" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+<style type="text/css">
+code.has-jax {font: inherit;
+              font-size: 100%;
+              background: inherit;
+              border: inherit;
+              color: #515151;}
+</style>
+
 
 
   <title>Stochastic Expectation Propagation | Zixiang&#39;s Personal Page</title>
@@ -680,11 +717,13 @@
 
 <p>Very useful for representing posteriors.</p>
 
-<ul>
-<li><p>$$P(x1, &hellip;, x_n) = P(x_1) \Pi P( x_i | x_{i-1} )$$</p></li>
+<p><code>$ 
+$$
+P(x1, ..., x_n) = P(x_1) \Pi P( x_i | x_{i-1} )
+$$
+$</code></p>
 
-<li><p>$$ P(m|x1, &hellip;, x_n) = P(m) \cdot \Pi P(x_i|m)$$</p></li>
-</ul>
+<p>$$ P(m|x1, &hellip;, x_n) = P(m) \cdot \Pi P(x_i|m)$$</p>
 
 <h4 id="modeling">modeling</h4>
 
@@ -728,14 +767,12 @@
 <p><img src="https://pic4.zhimg.com/80/v2-1186de08c2ac2ef05b30cd88b5260707_720w.jpg" alt="img" /></p>
 
 <blockquote>
-<p><a href="https://zhuanlan.zhihu.com/p/75617364" target="_blank">https://zhuanlan.zhihu.com/p/75617364</a></p>
-</blockquote>
-
-<p>$$
+<p><a href="https://zhuanlan.zhihu.com/p/75617364" target="_blank">https://zhuanlan.zhihu.com/p/75617364</a>
+$$
 p(z | w)=\frac{p(w | z) p(z)}{p(w)}=\frac{p(w | z) p(z)}{\int_{z} p(w | z) p(z) d z}
-$$</p>
-
-<p>Because it extends belief propagation. Belief propagation passes the entire distribution is the message. While EP will only pass onto the distribution certain expectation distribution allows you to you get a very compact message.</p>
+$$
+Because it extends belief propagation. Belief propagation passes the entire distribution is the message. While EP will only pass onto the distribution certain expectation distribution allows you to you get a very compact message.</p>
+</blockquote>
 
 <h3 id="expectation-propagation">Expectation Propagation</h3>
 
@@ -755,41 +792,54 @@ $$</p>
 
 <h3 id="agm">AGM</h3>
 
-<p>$$
-p(\mathbf{X} | \Theta)=\sum<em>{j=1}^{M} p</em>{j} p\left(\mathbf{X} | \xi_{j}\right)
-$$</p>
+<p><code>$
+$$
+p(\mathbf{X} | \Theta)=\sum_{j=1}^{M} p_{j} p\left(\mathbf{X} | \xi_{j}\right)
+$$
+$</code></p>
 
 <ul>
-<li>$\xi_j $ is the set of the parameters of component j.</li>
+<li>$\xi_j$ is the set of the parameters of component j.</li>
 <li>$ p_j$ are the mixing proptions which must be positive and sum to one.</li>
 <li>$\Theta = {p_1, \ldots, p_M, \xi_1, \ldots, \xi_M}$ is the complete set of parameters fully characterizing the mixture.</li>
 <li>$ M \geq 1$ is number of components in the mixture.</li>
 </ul>
 
-<p>$$
-p\left(\vec{X} | \xi<em>{j}\right)=\prod</em>{d=1}^{D} \sqrt{\frac{2}{\pi}} \frac{1}{\left(\sigma<em>{l</em>{j d}}+\sigma<em>{r</em>{\mu}}\right)} \times\left{\begin{array}{ll}\exp \left[-\frac{\left(X<em>{d}-\mu</em>{j d}\right)^{2}}{2 \sigma<em>{l, d}^{2}}\right] &amp; \text { if } X</em>{d}&lt;\mu<em>{j d} \ \exp \left[-\frac{\left(X</em>{d}-\mu<em>{j d}\right)^{2}}{2 \sigma</em>{r<em>{j d}}^{2}}\right] &amp; \text { if } X</em>{d} \geq \mu_{j d}\end{array}\right.
-$$</p>
+<p><code>$
+$$
+p\left(\vec{X} | \xi_{j}\right)=\prod_{d=1}^{D} \sqrt{\frac{2}{\pi}} \frac{1}{\left(\sigma_{l_{j d}}+\sigma_{r_{j d}}\right)} \times\left\{\begin{array}{ll}\exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{l_{j d} }^{2}}\right] &amp; \text { if } X_{d}&lt;\mu_{j d} \\ \exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{r_{j d}}^{2}}\right] &amp; \text { if } X_{d} \geq \mu_{j d}\end{array}\right.
+$$
+$</code></p>
 
 <ul>
-<li>$\xi<em>{j}=\left(\vec{\mu}</em>{j}, \vec{\sigma}<em>{l</em>{j}}, \vec{\sigma}<em>{r</em>{j}}\right)$ is the set of the parameters of components $j$</li>
-<li>$\vec{\mu}<em>{j}=\left(\mu</em>{j 1}, \ldots, \mu_{j D}\right)$ is the mean</li>
-<li>$\vec{\sigma}<em>{l</em>{j}}=\left(\vec{\sigma}<em>{l</em>{j 1}}, \ldots, \vec{\sigma}<em>{l</em>{j D}}\right)$ is the left standard deviation</li>
-<li>$\vec{\sigma}<em>{r</em>{j}}=\left(\vec{\sigma}<em>{r</em>{j 1}}, \ldots, \vec{\sigma}<em>{r</em>{j D}}\right)$ is the right standard deviation</li>
+<li><code>$\xi_{j}=\left(\vec{\mu}_{j}, \vec{\sigma}_{l_{j}}, \vec{\sigma}_{r_{j}}\right)$</code> is the set of the parameters of components $j$</li>
+<li><code>$\vec{\mu}_{j}=\left(\mu_{j 1}, \ldots, \mu_{j D}\right)$</code> is the mean</li>
+<li><code>$\vec{\sigma}_{l_{j}}=\left(\vec{\sigma}_{l_{j 1}}, \ldots, \vec{\sigma}_{l_{j D}}\right)$</code> is the left standard deviation</li>
+<li><code>$\vec{\sigma}_{r_{j}}=\left(\vec{\sigma}_{r_{j 1}}, \ldots, \vec{\sigma}_{r_{j D}}\right)$</code> is the right standard deviation</li>
 </ul>
 
 <hr />
 
-<p>$$
-p\left(\xi<em>{j} | \vec{X} \right)= \frac{p(\xi</em>{j})\times p\left(\vec{X} | \xi_{j}\right)}{p(\vec{X})}
+<p><code>$
 $$
-Here, $p(\vec{X})$ is very intractable to calculate.</p>
-
-<p>Now, The approximation, $q\left(\xi<em>{j} \right)$ , of the posterior,  $p\left(\xi</em>{j} | \vec{X} \right)$ , is assumed to have same functional form.
+p\left(\xi_{j} | \vec{X} \right)= \frac{p(\xi_{j})\times p\left(\vec{X} | \xi_{j}\right)}{p(\vec{X})}
 $$
-q(\xi<em>{j})=\frac{1}{Z} \prod</em>{i} \widetilde{f}<em>{i}(\xi</em>{j})
-$$</p>
+$</code></p>
 
-<p>$\widetilde{f}<em>{i}(\boldsymbol{\xi</em>{j}})$ is a asymetric Gaussian.</p>
+<p>Here, $p(\vec{X})$ is very intractable to calculate.</p>
+
+<p>Now, The approximation, $q\left(\xi_j \right)$ , of the posterior,  $p\left( \xi_j | \vec{X} \right)$ , is assumed to have same functional form.
+<code>$
+$$
+q(\xi_{j})=\frac{1}{Z} \prod_{i} \widetilde{f}_{i}(\xi_{j})
+$$
+$</code></p>
+
+<p><code>$ 
+$$
+\widetilde{f}_{i}(\boldsymbol{\xi_{j}})
+$$
+$</code> is a asymetric Gaussian.</p>
 
     </div>
 

@@ -59,11 +59,13 @@
 
 &lt;p&gt;Very useful for representing posteriors.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;$$P(x1, &amp;hellip;, x_n) = P(x_1) \Pi P( x_i | x_{i-1} )$$&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;code&gt;$ 
+$$
+P(x1, ..., x_n) = P(x_1) \Pi P( x_i | x_{i-1} )
+$$
+$&lt;/code&gt;&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;$$ P(m|x1, &amp;hellip;, x_n) = P(m) \cdot \Pi P(x_i|m)$$&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;$$ P(m|x1, &amp;hellip;, x_n) = P(m) \cdot \Pi P(x_i|m)$$&lt;/p&gt;
 
 &lt;h4 id=&#34;modeling&#34;&gt;modeling&lt;/h4&gt;
 
@@ -107,14 +109,12 @@
 &lt;p&gt;&lt;img src=&#34;https://pic4.zhimg.com/80/v2-1186de08c2ac2ef05b30cd88b5260707_720w.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/75617364&#34; target=&#34;_blank&#34;&gt;https://zhuanlan.zhihu.com/p/75617364&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;$$
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/75617364&#34; target=&#34;_blank&#34;&gt;https://zhuanlan.zhihu.com/p/75617364&lt;/a&gt;
+$$
 p(z | w)=\frac{p(w | z) p(z)}{p(w)}=\frac{p(w | z) p(z)}{\int_{z} p(w | z) p(z) d z}
-$$&lt;/p&gt;
-
-&lt;p&gt;Because it extends belief propagation. Belief propagation passes the entire distribution is the message. While EP will only pass onto the distribution certain expectation distribution allows you to you get a very compact message.&lt;/p&gt;
+$$
+Because it extends belief propagation. Belief propagation passes the entire distribution is the message. While EP will only pass onto the distribution certain expectation distribution allows you to you get a very compact message.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h3 id=&#34;expectation-propagation&#34;&gt;Expectation Propagation&lt;/h3&gt;
 
@@ -134,41 +134,54 @@ $$&lt;/p&gt;
 
 &lt;h3 id=&#34;agm&#34;&gt;AGM&lt;/h3&gt;
 
-&lt;p&gt;$$
-p(\mathbf{X} | \Theta)=\sum&lt;em&gt;{j=1}^{M} p&lt;/em&gt;{j} p\left(\mathbf{X} | \xi_{j}\right)
-$$&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$
+$$
+p(\mathbf{X} | \Theta)=\sum_{j=1}^{M} p_{j} p\left(\mathbf{X} | \xi_{j}\right)
+$$
+$&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;$\xi_j $ is the set of the parameters of component j.&lt;/li&gt;
+&lt;li&gt;$\xi_j$ is the set of the parameters of component j.&lt;/li&gt;
 &lt;li&gt;$ p_j$ are the mixing proptions which must be positive and sum to one.&lt;/li&gt;
 &lt;li&gt;$\Theta = {p_1, \ldots, p_M, \xi_1, \ldots, \xi_M}$ is the complete set of parameters fully characterizing the mixture.&lt;/li&gt;
 &lt;li&gt;$ M \geq 1$ is number of components in the mixture.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;$$
-p\left(\vec{X} | \xi&lt;em&gt;{j}\right)=\prod&lt;/em&gt;{d=1}^{D} \sqrt{\frac{2}{\pi}} \frac{1}{\left(\sigma&lt;em&gt;{l&lt;/em&gt;{j d}}+\sigma&lt;em&gt;{r&lt;/em&gt;{\mu}}\right)} \times\left{\begin{array}{ll}\exp \left[-\frac{\left(X&lt;em&gt;{d}-\mu&lt;/em&gt;{j d}\right)^{2}}{2 \sigma&lt;em&gt;{l, d}^{2}}\right] &amp;amp; \text { if } X&lt;/em&gt;{d}&amp;lt;\mu&lt;em&gt;{j d} \ \exp \left[-\frac{\left(X&lt;/em&gt;{d}-\mu&lt;em&gt;{j d}\right)^{2}}{2 \sigma&lt;/em&gt;{r&lt;em&gt;{j d}}^{2}}\right] &amp;amp; \text { if } X&lt;/em&gt;{d} \geq \mu_{j d}\end{array}\right.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$
+$$
+p\left(\vec{X} | \xi_{j}\right)=\prod_{d=1}^{D} \sqrt{\frac{2}{\pi}} \frac{1}{\left(\sigma_{l_{j d}}+\sigma_{r_{j d}}\right)} \times\left\{\begin{array}{ll}\exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{l_{j d} }^{2}}\right] &amp;amp; \text { if } X_{d}&amp;lt;\mu_{j d} \\ \exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{r_{j d}}^{2}}\right] &amp;amp; \text { if } X_{d} \geq \mu_{j d}\end{array}\right.
+$$
+$&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;$\xi&lt;em&gt;{j}=\left(\vec{\mu}&lt;/em&gt;{j}, \vec{\sigma}&lt;em&gt;{l&lt;/em&gt;{j}}, \vec{\sigma}&lt;em&gt;{r&lt;/em&gt;{j}}\right)$ is the set of the parameters of components $j$&lt;/li&gt;
-&lt;li&gt;$\vec{\mu}&lt;em&gt;{j}=\left(\mu&lt;/em&gt;{j 1}, \ldots, \mu_{j D}\right)$ is the mean&lt;/li&gt;
-&lt;li&gt;$\vec{\sigma}&lt;em&gt;{l&lt;/em&gt;{j}}=\left(\vec{\sigma}&lt;em&gt;{l&lt;/em&gt;{j 1}}, \ldots, \vec{\sigma}&lt;em&gt;{l&lt;/em&gt;{j D}}\right)$ is the left standard deviation&lt;/li&gt;
-&lt;li&gt;$\vec{\sigma}&lt;em&gt;{r&lt;/em&gt;{j}}=\left(\vec{\sigma}&lt;em&gt;{r&lt;/em&gt;{j 1}}, \ldots, \vec{\sigma}&lt;em&gt;{r&lt;/em&gt;{j D}}\right)$ is the right standard deviation&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$\xi_{j}=\left(\vec{\mu}_{j}, \vec{\sigma}_{l_{j}}, \vec{\sigma}_{r_{j}}\right)$&lt;/code&gt; is the set of the parameters of components $j$&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$\vec{\mu}_{j}=\left(\mu_{j 1}, \ldots, \mu_{j D}\right)$&lt;/code&gt; is the mean&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$\vec{\sigma}_{l_{j}}=\left(\vec{\sigma}_{l_{j 1}}, \ldots, \vec{\sigma}_{l_{j D}}\right)$&lt;/code&gt; is the left standard deviation&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$\vec{\sigma}_{r_{j}}=\left(\vec{\sigma}_{r_{j 1}}, \ldots, \vec{\sigma}_{r_{j D}}\right)$&lt;/code&gt; is the right standard deviation&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;$$
-p\left(\xi&lt;em&gt;{j} | \vec{X} \right)= \frac{p(\xi&lt;/em&gt;{j})\times p\left(\vec{X} | \xi_{j}\right)}{p(\vec{X})}
+&lt;p&gt;&lt;code&gt;$
 $$
-Here, $p(\vec{X})$ is very intractable to calculate.&lt;/p&gt;
-
-&lt;p&gt;Now, The approximation, $q\left(\xi&lt;em&gt;{j} \right)$ , of the posterior,  $p\left(\xi&lt;/em&gt;{j} | \vec{X} \right)$ , is assumed to have same functional form.
+p\left(\xi_{j} | \vec{X} \right)= \frac{p(\xi_{j})\times p\left(\vec{X} | \xi_{j}\right)}{p(\vec{X})}
 $$
-q(\xi&lt;em&gt;{j})=\frac{1}{Z} \prod&lt;/em&gt;{i} \widetilde{f}&lt;em&gt;{i}(\xi&lt;/em&gt;{j})
-$$&lt;/p&gt;
+$&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;$\widetilde{f}&lt;em&gt;{i}(\boldsymbol{\xi&lt;/em&gt;{j}})$ is a asymetric Gaussian.&lt;/p&gt;
+&lt;p&gt;Here, $p(\vec{X})$ is very intractable to calculate.&lt;/p&gt;
+
+&lt;p&gt;Now, The approximation, $q\left(\xi_j \right)$ , of the posterior,  $p\left( \xi_j | \vec{X} \right)$ , is assumed to have same functional form.
+&lt;code&gt;$
+$$
+q(\xi_{j})=\frac{1}{Z} \prod_{i} \widetilde{f}_{i}(\xi_{j})
+$$
+$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ 
+$$
+\widetilde{f}_{i}(\boldsymbol{\xi_{j}})
+$$
+$&lt;/code&gt; is a asymetric Gaussian.&lt;/p&gt;
 </description>
     </item>
     
