@@ -5,12 +5,40 @@
     <link>https://faithio.cn/post/</link>
       <atom:link href="https://faithio.cn/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 29 Feb 2020 11:34:28 -0500</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 09 Mar 2020 13:37:09 -0400</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
       <link>https://faithio.cn/post/</link>
     </image>
+    
+    <item>
+      <title>Run Issue With Matplotlib in Mac OS X</title>
+      <link>https://faithio.cn/post/run-issue-with-matplotlib-in-mac-os-x/</link>
+      <pubDate>Mon, 09 Mar 2020 13:37:09 -0400</pubDate>
+      <guid>https://faithio.cn/post/run-issue-with-matplotlib-in-mac-os-x/</guid>
+      <description>&lt;p&gt;When I run some python code from github, it occur the following problem as screenshot.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gco76fc96qj31fo01paai.jpg&#34; alt=&#34;image-20200309133826149&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;RuntimeError: Python is not installed as a framework. The Mac OS X backend will not be able to function correctly if Python is not installed as a framework. See the Python documentation for more information on installing Python as a framework on Mac OS X. Please either reinstall Python as a framework, or try one of the other backends. If you are using (Ana)Conda please install python.app and replace the use of &amp;lsquo;python&amp;rsquo; with &amp;lsquo;pythonw&amp;rsquo;. See &amp;lsquo;Working with Matplotlib on OSX&amp;rsquo; in the Matplotlib FAQ for more information.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Solution:(&lt;a href=&#34;https://stackoverflow.com/questions/21784641/installation-issue-with-matplotlib-python&#34; target=&#34;_blank&#34;&gt;https://stackoverflow.com/questions/21784641/installation-issue-with-matplotlib-python&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Problem Cause&lt;/strong&gt; In mac os image rendering back end of matplotlib (what-is-a-backend to render using the API of Cocoa by default). There is Qt4Agg and GTKAgg and as a back-end is not the default. Set the back end of macosx that is differ compare with other windows or linux os.&lt;/p&gt;
+
+&lt;p&gt;I resolve this issue following ways:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I assume you have installed the pip matplotlib, there is a directory in you root called &lt;code&gt;~/.matplotlib&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Create a file &lt;code&gt;~/.matplotlib/matplotlibrc&lt;/code&gt; there and add the following code: &lt;code&gt;backend: TkAgg&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;From this &lt;a href=&#34;http://matplotlib.org/examples/index.html&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; you can try different diagram.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Stochastic Expectation Propagation</title>
@@ -72,7 +100,75 @@
 
 &lt;p&gt;2 points have 4 Gaussians -&amp;gt; N points $$2^N$$ Gaussians&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gcibv8mbitj30le0fuq57.jpg&#34; alt=&#34;image-20200304104720503&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gck12m03b5j30nf0f5diu.jpg&#34; alt=&#34;image-20200305220454120&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gck1kw7d6ij30mw0h5mz1.jpg&#34; alt=&#34;image-20200305222232412&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://pic4.zhimg.com/80/v2-1186de08c2ac2ef05b30cd88b5260707_720w.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/75617364&#34; target=&#34;_blank&#34;&gt;https://zhuanlan.zhihu.com/p/75617364&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;$$
+p(z | w)=\frac{p(w | z) p(z)}{p(w)}=\frac{p(w | z) p(z)}{\int_{z} p(w | z) p(z) d z}
+$$&lt;/p&gt;
+
+&lt;p&gt;Because it extends belief propagation. Belief propagation passes the entire distribution is the message. While EP will only pass onto the distribution certain expectation distribution allows you to you get a very compact message.&lt;/p&gt;
+
+&lt;h3 id=&#34;expectation-propagation&#34;&gt;Expectation Propagation&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Fits an exponential-family approximation to the posterior.&lt;/li&gt;
+&lt;li&gt;Belief propagation is a special case&lt;/li&gt;
+&lt;li&gt;Kalman filtering is a special case&lt;/li&gt;
+&lt;li&gt;Does not always converge.
+
+&lt;ol&gt;
+&lt;li&gt;May get stuck due to improper distributions&lt;/li&gt;
+&lt;li&gt;May oscillate due to loopy graph&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;agm&#34;&gt;AGM&lt;/h3&gt;
+
+&lt;p&gt;$$
+p(\mathbf{X} | \Theta)=\sum&lt;em&gt;{j=1}^{M} p&lt;/em&gt;{j} p\left(\mathbf{X} | \xi_{j}\right)
+$$&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$\xi_j $ is the set of the parameters of component j.&lt;/li&gt;
+&lt;li&gt;$ p_j$ are the mixing proptions which must be positive and sum to one.&lt;/li&gt;
+&lt;li&gt;$\Theta = {p_1, \ldots, p_M, \xi_1, \ldots, \xi_M}$ is the complete set of parameters fully characterizing the mixture.&lt;/li&gt;
+&lt;li&gt;$ M \geq 1$ is number of components in the mixture.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;$$
+p\left(\vec{X} | \xi&lt;em&gt;{j}\right)=\prod&lt;/em&gt;{d=1}^{D} \sqrt{\frac{2}{\pi}} \frac{1}{\left(\sigma&lt;em&gt;{l&lt;/em&gt;{j d}}+\sigma&lt;em&gt;{r&lt;/em&gt;{\mu}}\right)} \times\left{\begin{array}{ll}\exp \left[-\frac{\left(X&lt;em&gt;{d}-\mu&lt;/em&gt;{j d}\right)^{2}}{2 \sigma&lt;em&gt;{l, d}^{2}}\right] &amp;amp; \text { if } X&lt;/em&gt;{d}&amp;lt;\mu&lt;em&gt;{j d} \ \exp \left[-\frac{\left(X&lt;/em&gt;{d}-\mu&lt;em&gt;{j d}\right)^{2}}{2 \sigma&lt;/em&gt;{r&lt;em&gt;{j d}}^{2}}\right] &amp;amp; \text { if } X&lt;/em&gt;{d} \geq \mu_{j d}\end{array}\right.
+$$&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$\xi&lt;em&gt;{j}=\left(\vec{\mu}&lt;/em&gt;{j}, \vec{\sigma}&lt;em&gt;{l&lt;/em&gt;{j}}, \vec{\sigma}&lt;em&gt;{r&lt;/em&gt;{j}}\right)$ is the set of the parameters of components $j$&lt;/li&gt;
+&lt;li&gt;$\vec{\mu}&lt;em&gt;{j}=\left(\mu&lt;/em&gt;{j 1}, \ldots, \mu_{j D}\right)$ is the mean&lt;/li&gt;
+&lt;li&gt;$\vec{\sigma}&lt;em&gt;{l&lt;/em&gt;{j}}=\left(\vec{\sigma}&lt;em&gt;{l&lt;/em&gt;{j 1}}, \ldots, \vec{\sigma}&lt;em&gt;{l&lt;/em&gt;{j D}}\right)$ is the left standard deviation&lt;/li&gt;
+&lt;li&gt;$\vec{\sigma}&lt;em&gt;{r&lt;/em&gt;{j}}=\left(\vec{\sigma}&lt;em&gt;{r&lt;/em&gt;{j 1}}, \ldots, \vec{\sigma}&lt;em&gt;{r&lt;/em&gt;{j D}}\right)$ is the right standard deviation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;$$
+p\left(\xi&lt;em&gt;{j} | \vec{X} \right)= \frac{p(\xi&lt;/em&gt;{j})\times p\left(\vec{X} | \xi_{j}\right)}{p(\vec{X})}
+$$
+Here, $p(\vec{X})$ is very intractable to calculate.&lt;/p&gt;
+
+&lt;p&gt;Now, The approximation, $q\left(\xi&lt;em&gt;{j} \right)$ , of the posterior,  $p\left(\xi&lt;/em&gt;{j} | \vec{X} \right)$ , is assumed to have same functional form.
+$$
+q(\xi&lt;em&gt;{j})=\frac{1}{Z} \prod&lt;/em&gt;{i} \widetilde{f}&lt;em&gt;{i}(\xi&lt;/em&gt;{j})
+$$&lt;/p&gt;
+
+&lt;p&gt;$\widetilde{f}&lt;em&gt;{i}(\boldsymbol{\xi&lt;/em&gt;{j}})$ is a asymetric Gaussian.&lt;/p&gt;
 </description>
     </item>
     
