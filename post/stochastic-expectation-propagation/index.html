@@ -286,7 +286,7 @@ modeling  What graph should I use for this data?"><meta property="og:image" cont
     
       <meta property="article:published_time" content="2020-02-29T11:34:28-05:00">
     
-    <meta property="article:modified_time" content="2020-03-09T22:22:27-04:00">
+    <meta property="article:modified_time" content="2020-03-09T22:37:03-04:00">
   
 
   
@@ -315,7 +315,7 @@ modeling  What graph should I use for this data?"><meta property="og:image" cont
   "headline": "Stochastic Expectation Propagation",
   
   "datePublished": "2020-02-29T11:34:28-05:00",
-  "dateModified": "2020-03-09T22:22:27-04:00",
+  "dateModified": "2020-03-09T22:37:03-04:00",
   
   "author": {
     "@type": "Person",
@@ -828,18 +828,13 @@ $</code></p>
 
 <p>Here, $p(\vec{X})$ is very intractable to calculate.</p>
 
-<p>Now, The approximation, $q\left(\xi_j \right)$ , of the posterior,  $p\left( \xi_j | \vec{X} \right)$ , is assumed to have same functional form.
-<code>$
-$$
-q(\xi_{j})=\frac{1}{Z} \prod_{i} \widetilde{f}_{i}(\xi_{j})
-$$
-$</code></p>
+<p>Now, The approximation, $q\left(\xi_j \right)$ , of the posterior,  $p\left( \xi_j | \vec{X} \right)$ , is assumed to have same functional form.</p>
 
-<p><code>$ 
-$$
-\widetilde{f}_{i}(\boldsymbol{\xi_{j}})
-$$
-$</code> is a asymetric Gaussian.</p>
+<p>$$
+q(\xi_j)=\frac{1}{Z} \prod_i \widetilde{f}_i(\xi_j)
+$$</p>
+
+<p>$\widetilde{f}_i(\xi_j) $ is a asymetric Gaussian.</p>
 
     </div>
 

@@ -170,18 +170,13 @@ $&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Here, $p(\vec{X})$ is very intractable to calculate.&lt;/p&gt;
 
-&lt;p&gt;Now, The approximation, $q\left(\xi_j \right)$ , of the posterior,  $p\left( \xi_j | \vec{X} \right)$ , is assumed to have same functional form.
-&lt;code&gt;$
-$$
-q(\xi_{j})=\frac{1}{Z} \prod_{i} \widetilde{f}_{i}(\xi_{j})
-$$
-$&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now, The approximation, $q\left(\xi_j \right)$ , of the posterior,  $p\left( \xi_j | \vec{X} \right)$ , is assumed to have same functional form.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;$ 
-$$
-\widetilde{f}_{i}(\boldsymbol{\xi_{j}})
-$$
-$&lt;/code&gt; is a asymetric Gaussian.&lt;/p&gt;
+&lt;p&gt;$$
+q(\xi_j)=\frac{1}{Z} \prod_i \widetilde{f}_i(\xi_j)
+$$&lt;/p&gt;
+
+&lt;p&gt;$\widetilde{f}_i(\xi_j) $ is a asymetric Gaussian.&lt;/p&gt;
 </description>
     </item>
     
