@@ -149,7 +149,7 @@ $&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;$
 $$
-p\left(\vec{X} | \xi_{j}\right)=\prod_{d=1}^{D} \sqrt{\frac{2}{\pi}} \frac{1}{\left(\sigma_{l_{j d}}+\sigma_{r_{j d}}\right)} \times\left\{\begin{array}{ll}\exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{l_{j d} }^{2}}\right] &amp;amp; \text { if } X_{d}&amp;lt;\mu_{j d} \\ \exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{r_{j d}}^{2}}\right] &amp;amp; \text { if } X_{d} \geq \mu_{j d}\end{array}\right.
+p\left(\vec{X} | \theta_{j}\right)=\prod_{d=1}^{D} \sqrt{\frac{2}{\pi}} \frac{1}{\left(\sigma_{l_{j d}}+\sigma_{r_{j d}}\right)} \times\left\{\begin{array}{ll}\exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{l_{j d} }^{2}}\right] &amp;amp; \text { if } X_{d}&amp;lt;\mu_{j d} \\ \exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{r_{j d}}^{2}}\right] &amp;amp; \text { if } X_{d} \geq \mu_{j d}\end{array}\right.
 $$
 $&lt;/code&gt;&lt;/p&gt;
 
@@ -162,21 +162,188 @@ $&lt;/code&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;code&gt;$
-$$
-p\left(\xi_{j} | \vec{X} \right)= \frac{p(\xi_{j})\times p\left(\vec{X} | \xi_{j}\right)}{p(\vec{X})}
-$$
-$&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Here, $p(\vec{X})$ is very intractable to calculate.&lt;/p&gt;
-
-&lt;p&gt;Now, The approximation, $q\left(\xi_j \right)$ , of the posterior,  $p\left( \xi_j | \vec{X} \right)$ , is assumed to have same functional form.&lt;/p&gt;
-
 &lt;p&gt;$$
-q(\xi_j)=\frac{1}{Z} \prod_i \widetilde{f}_i(\xi_j)
+p\left(\theta_j | \vec{X} \right)= \frac{p(\theta_j)\times p\left(\vec{X} | \theta&lt;em&gt;j\right)}{p(\vec{X})} = \frac{1}{p(\vec{X})} \prod&lt;/em&gt;{i} f_{i}(\boldsymbol{\theta})
 $$&lt;/p&gt;
 
-&lt;p&gt;$\widetilde{f}_i(\xi_j) $ is a asymetric Gaussian.&lt;/p&gt;
+&lt;p&gt;$$
+p(\vec{X})= \int \prod&lt;em&gt;{i} f&lt;/em&gt;{i}(\boldsymbol{\theta}) \mathrm{d} \boldsymbol{\theta}
+$$&lt;/p&gt;
+
+&lt;p&gt;Here, $p(\vec{X})$ is very intractable to calculate and we don&amp;rsquo;t know $ f_{i}(\boldsymbol{\theta}) $.&lt;/p&gt;
+
+&lt;p&gt;Now we consider using  &lt;strong&gt;EP&lt;/strong&gt;. The approximation, $q\left(\theta_j \right)$ , of the posterior,  $p\left( \theta_j | \vec{X} \right)$ , is assumed to have same functional form.
+$$
+q(\theta_j)=\frac{1}{Z} \prod_i \widetilde{f}_i(\theta_j)
+$$&lt;/p&gt;
+
+&lt;p&gt;in which each factor $\widetilde{f}_i(\theta_j)$ in the approximation corresponds to one of the factors
+ $f_i(\theta_j)$ in the true posterior. $\widetilde{f}_i(\theta_j) $ is a asymetric Gaussian.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;$$
+p(\mathbf{X} | \boldsymbol{\theta})=(1-w) \mathcal{A}(\mathbf{X} | \boldsymbol{\theta}, \mathbf{I_l}, \mathbf{I_r})+w \mathcal{A}(\mathbf{X} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r})
+$$&lt;/p&gt;
+
+&lt;p&gt;where w is the proportion of background clutter. And the prior over $\mathbf{\theta}$(mean) is taken to be Asymmetric Gaussian.&lt;/p&gt;
+
+&lt;p&gt;And
+$$
+p(\boldsymbol{\theta})= \mathcal{A}(\mathbf{X} | \mathbf{0}, b \mathbf{I_l}, b \mathbf{I&lt;em&gt;r})
+$$
+$$
+p(\mathcal{X}, \boldsymbol{\theta})=p(\boldsymbol{\theta}) \prod&lt;/em&gt;{n=1}^{N} p\left(\mathbf{x}_{n} | \boldsymbol{\theta}\right)
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;1-initialize-the-approximating-factors&#34;&gt;1. initialize the approximating factors&lt;/h3&gt;
+
+&lt;p&gt;we select an approximating distribution from the exponential family to approximate the stochastic variables $\theta$
+$$
+q(\boldsymbol{\theta})=\mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu}, \mathbf{\sigma_r^2}, \mathbf{\sigma_l^2}) =
+\mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu}, v_l \mathbf{I}, v_r \mathbf{I})&lt;/p&gt;
+
+&lt;p&gt;= \mathcal{A}(\mathbf{X} | \mathbf{0}, b \mathbf{I_l}, b \mathbf{I_r})
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\widetilde{f}_{n}(\boldsymbol{\theta})=s_n \mathcal{A}\left(\boldsymbol{\theta} | \mathbf{\mu}&lt;em&gt;n, \mathbf{\sigma&lt;/em&gt;{r&lt;em&gt;n}^2}, \mathbf{\sigma&lt;/em&gt;{l_n}^2} \right)
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+s&lt;em&gt;n = \prod&lt;/em&gt;{d=1}^{D} \sqrt{\frac{2}{\pi}} \frac{1}{\left(\sigma&lt;em&gt;{l&lt;/em&gt;{d}}+\sigma&lt;em&gt;{r&lt;/em&gt;{d}}\right)}
+$$
+While $\sigma_{l&lt;em&gt;n} \rightarrow \infty,
+  \sigma&lt;/em&gt;{r_n} \rightarrow \infty
+$ and $ \mu_n = 0 $.&lt;/p&gt;
+
+&lt;p&gt;###2. initialize the posterior  approximation $q(\boldsymbol{\theta})$&lt;/p&gt;
+
+&lt;p&gt;We chooses the parameter values a = 10, b = 100 and w = 0.5 and use $v$ denote $ \sigma^2$ as following, then $\mathbf{v_r} = \mathbf{v_l} = b = 100$&lt;/p&gt;
+
+&lt;h3 id=&#34;3-until-all-mu-n-v-l-n-v-r-n-s-n-converge&#34;&gt;3. Until all $(\mu&lt;em&gt;n, v&lt;/em&gt;{l&lt;em&gt;n}, v&lt;/em&gt;{r_n}, s_n)$ converge:&lt;/h3&gt;
+
+&lt;p&gt;$$
+q^{\backslash n}(\boldsymbol{\theta})=\frac{q(\boldsymbol{\theta})}{\widetilde{f}_n(\boldsymbol{\theta})} = \frac{\mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu}, \mathbf{v_r I}, \mathbf{v_l I})}{s_n \mathcal{A}\left(\boldsymbol{\theta} | \mathbf{\mu}&lt;em&gt;n, \mathbf{v&lt;/em&gt;{r&lt;em&gt;n} I}, \mathbf{v&lt;/em&gt;{l_n} I} \right)} &lt;br /&gt;
+\propto \left{\begin{array}{ll}&lt;/p&gt;
+
+&lt;p&gt;{\frac{\exp \left{-\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu})^{T}(v_l \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu})\right}}{\exp \left{-\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu&lt;em&gt;n})^{T}(v&lt;/em&gt;{l_n} \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu_n})\right}}}  &amp;amp;&amp;amp; \text { if } X&amp;lt;\mu \&lt;/p&gt;
+
+&lt;p&gt;{\frac{\exp \left{-\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu})^{T}(v_r \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu})\right}}{\exp \left{-\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu&lt;em&gt;n})^{T}(v&lt;/em&gt;{r_n} \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu_n})\right}}}  &amp;amp;&amp;amp; \text { if } X&amp;gt;\mu&lt;/p&gt;
+
+&lt;p&gt;\end{array}\right. \&lt;/p&gt;
+
+&lt;p&gt;= \left{\begin{array}{ll}&lt;br /&gt;
+\exp \left{-\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu})^{T}(v_l \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu}) + \frac{1}{2}(\boldsymbol{X}-\mathbf{\mu&lt;em&gt;n})^{T}(v&lt;/em&gt;{l_n} \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu_n})\right}   &amp;amp; \text { if } X&amp;lt;\mu &lt;br /&gt;
+\exp \left{-\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu})^{T}(v_r \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu}) +&lt;br /&gt;
+\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu&lt;em&gt;n})^{T}(v&lt;/em&gt;{r_n} \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu_n}) \right} &amp;amp; \text { if } X&amp;gt;\mu
+\end{array}\right.
+$$
+- Remove the current estimate $\widetilde{f}_j(\boldsymbol{\theta})$ from $q(\theta)$, then we has mean and inverse variance given by:
+$$
+\left{\begin{array}{ll}
+\left({v_l}^{\backslash n}\right)^{-1}={v_l}^{-1}-{v&lt;em&gt;l}&lt;/em&gt;{n}^{-1} &amp;amp; \text { if } X&amp;lt;\mu &lt;br /&gt;
+\left({v_r}^{\backslash n}\right)^{-1}={v_r}^{-1}-{v&lt;em&gt;r}&lt;/em&gt;{n}^{-1} &amp;amp; \text { if } X&amp;gt;\mu &lt;br /&gt;
+\end{array}\right.
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\mathbf{\mu}^{\backslash n}= \mathbf{\mu}+&lt;/p&gt;
+
+&lt;p&gt;\left{\begin{array}{ll}
+{v_l}^{\backslash n} {v&lt;em&gt;l}&lt;/em&gt;{n}^{-1}\left(\mathbf{\mu}-\mathbf{\mu}_{n}\right) &amp;amp; \text { if } X&amp;lt;\mu \&lt;/p&gt;
+
+&lt;p&gt;{v_r}^{\backslash n} {v&lt;em&gt;r}&lt;/em&gt;{n}^{-1}\left(\mathbf{\mu}-\mathbf{\mu}_{n}\right) &amp;amp; \text { if } X&amp;gt;\mu \&lt;/p&gt;
+
+&lt;p&gt;\end{array}\right.
+$$
+&amp;gt; Cavity Distribution:
+&amp;gt; $$
+&amp;gt; q^{\backslash j}(\boldsymbol{\theta})=\frac{q(\boldsymbol{\theta})}{\widetilde{f}_{j}(\boldsymbol{\theta})}
+&amp;gt; $$&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Recompute $(\mu, v, Z)$ from $(\mathbf{\mu}^{\backslash n}, {v_l}^{\backslash n}, {v&lt;em&gt;r}^{\backslash n})$
+$$
+Z&lt;/em&gt;{n}=(1-w) \mathcal{A}\left(\mathbf{x}_{n} | \mathbf{\mu}^{\backslash n},\left(v_l^{\backslash n}+1\right) \mathbf{I}, \left(v&lt;em&gt;r^{\backslash n}+1\right) \mathbf{I}\right)+w \mathcal{A}\left(\mathbf{x}&lt;/em&gt;{n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I&lt;em&gt;r}\right)
+$$
+&amp;gt;$$
+&amp;gt;\begin{aligned}
+&amp;gt;Z&lt;/em&gt;{n} &amp;amp;=\int q^{\backslash n}(\boldsymbol{\theta}) f&lt;em&gt;{n}(\boldsymbol{\theta}) \mathrm{d} \boldsymbol{\theta} \
+&amp;gt;&amp;amp;=\int q^{\backslash n}(\boldsymbol{\theta}) \widetilde{f}&lt;/em&gt;{n}(\boldsymbol{\theta}) \mathrm{d} \boldsymbol{\theta} &lt;br /&gt;
+&amp;gt;
+&amp;gt;&amp;amp;=\int \mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu^{\backslash n}}, v_l^{\backslash n} \mathbf{I}, v_r^{\backslash n} \mathbf{I}) \cdot { (1-w) \mathcal{A}(\mathbf{x_n} | \boldsymbol{\mu}, \mathbf{I_l}, \mathbf{I_r})+w \mathcal{A}(\mathbf{x_n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r})} \mathrm{d} \boldsymbol{\theta} &lt;br /&gt;
+&amp;gt;
+&amp;gt;&amp;amp;= (1-w)\int \mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu^{\backslash n}}, v_l^{\backslash n} \mathbf{I}, v_r^{\backslash n} \mathbf{I}) \mathcal{A}(\mathbf{x_n} | \boldsymbol{\mu}, \mathbf{I_l}, \mathbf{I_r}) \mathrm{d} \boldsymbol{\theta} &lt;br /&gt;
+&amp;gt;&amp;amp;+ w \int \mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu^{\backslash n}}, v_l^{\backslash n} \mathbf{I}, v_r^{\backslash n} \mathbf{I})
+&amp;gt;\mathcal{A}(\mathbf{x_n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I&lt;em&gt;r})} \mathrm{d} \boldsymbol{\theta} &lt;br /&gt;
+&amp;gt;&amp;amp;=(1-w) \mathcal{A}\left(\mathbf{x}&lt;/em&gt;{n} | \mathbf{\mu}^{\backslash n},\left(v_l^{\backslash n}+1\right) \mathbf{I}, \left(v&lt;em&gt;r^{\backslash n}+1\right) \mathbf{I}\right)+w \mathcal{A}\left(\mathbf{x}&lt;/em&gt;{n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r}\right)
+&amp;gt;\end{aligned}
+&amp;gt;$$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;we  assumed that  $f&lt;em&gt;{0}(\boldsymbol{\theta})=p(\boldsymbol{\theta})$  and $
+f&lt;/em&gt;{n}(\boldsymbol{\theta})=p\left(\mathbf{x}_{n} | \boldsymbol{\theta}\right) = (1-w) \mathcal{A}(\mathbf{X} | \boldsymbol{\mu}, \mathbf{I_l}, \mathbf{I_r})+w \mathcal{A}(\mathbf{X} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r})
+$, also $q(\boldsymbol{\theta})=\mathcal{A}(\boldsymbol{\theta} | \mathbf{m}, v_l \mathbf{I}, v&lt;em&gt;r \mathbf{I}) $
+$$
+\begin{aligned}
+\rho&lt;/em&gt;{n} &amp;amp;=\frac{1}{Z&lt;em&gt;{n}}(1-w) \mathcal{A}\left(\mathbf{x}&lt;/em&gt;{n} | \mathbf{\mu}^{\backslash n},\left(v_l^{\backslash n}+1\right) \mathbf{I}, \left(v&lt;em&gt;r^{\backslash n}+1\right) \mathbf{I}\right)  &lt;br /&gt;
+&amp;amp;= \frac{1}{Z&lt;/em&gt;{n}}(1-w)\cdot \frac{Z&lt;em&gt;n - w \mathcal{A}\left(\mathbf{x}&lt;/em&gt;{n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r}\right)}{1-w} &lt;br /&gt;
+&amp;amp;= 1 - \frac{w}{Z&lt;em&gt;n} \cdot \mathcal{A}\left(\mathbf{x}&lt;/em&gt;{n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I&lt;em&gt;r}\right)
+\end{aligned}
+$$
+Basic rule for Asymmetric Gaussian:
+$$
+\nabla&lt;/em&gt;{\boldsymbol{\mu}} \mathcal{A}(\mathbf{x} | \boldsymbol{\mu}, \mathbf{v_l}, \mathbf{v_r})=&lt;/p&gt;
+
+&lt;p&gt;\left{\begin{array}{ll}&lt;/p&gt;
+
+&lt;p&gt;\mathcal{A}(\mathbf{x} | \boldsymbol{\mu}, \mathbf{v_l}, \mathbf{v_r}) \cdot(\mathbf{x}-\boldsymbol{\mu}) \mathbf{v_l}^{-1}  &amp;amp; \text { if } X&amp;lt;\mu \&lt;/p&gt;
+
+&lt;p&gt;\mathcal{A}(\mathbf{x} | \boldsymbol{\mu}, \mathbf{v_l}, \mathbf{v_r}) \cdot(\mathbf{x}-\boldsymbol{\mu}) \mathbf{v_r}^{-1}  &amp;amp; \text { if } X&amp;gt;\mu \&lt;/p&gt;
+
+&lt;p&gt;\end{array}\right.
+$$
+So we compute the mean and variance:
+$$
+\mathbf{\mu^{new}}=\mathbf{\mu}^{\backslash n}+&lt;/p&gt;
+
+&lt;p&gt;\left{\begin{array}{ll}&lt;/p&gt;
+
+&lt;p&gt;\rho_{n} \frac{v_l^{\backslash n}}{v&lt;em&gt;l^{\backslash n}+1}\left(\mathbf{x}&lt;/em&gt;{n}-\mathbf{\mu}^{\backslash n}\right)  &amp;amp; \text { if } X&amp;lt;\mu \&lt;/p&gt;
+
+&lt;p&gt;\rho_{n} \frac{v_r^{\backslash n}}{v&lt;em&gt;r^{\backslash n}+1}\left(\mathbf{x}&lt;/em&gt;{n}-\mathbf{\mu}^{\backslash n}\right)  &amp;amp; \text { if } X&amp;gt;\mu \&lt;/p&gt;
+
+&lt;p&gt;\end{array}\right.
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\left{\begin{array}{ll}
+v_l^{new}=v&lt;em&gt;l^{\backslash n}-\rho&lt;/em&gt;{n} \frac{\left(v_l^{\backslash n}\right)^{2}}{v&lt;em&gt;l^{\backslash n}+1}+\rho&lt;/em&gt;{n}\left(1-\rho_{n}\right) \frac{\left(v&lt;em&gt;l^{\backslash n}\right)^{2}\left|\mathbf{x}&lt;/em&gt;{n}-\mathbf{m}^{\backslash n}\right|^{2}}{D\left(v_l^{\backslash n}+1\right)^{2}} &amp;amp; \text { if } X&amp;lt;\mu \&lt;/p&gt;
+
+&lt;p&gt;v_r^{new}=v&lt;em&gt;r^{\backslash n}-\rho&lt;/em&gt;{n} \frac{\left(v_r^{\backslash n}\right)^{2}}{v&lt;em&gt;r^{\backslash n}+1}+\rho&lt;/em&gt;{n}\left(1-\rho_{n}\right) \frac{\left(v&lt;em&gt;r^{\backslash n}\right)^{2}\left|\mathbf{x}&lt;/em&gt;{n}-\mathbf{m}^{\backslash n}\right|^{2}}{D\left(v_r^{\backslash n}+1\right)^{2}}
+&amp;amp; \text { if } X&amp;gt;\mu \&lt;/p&gt;
+
+&lt;p&gt;\end{array}\right.
+$$
+- Evaluate and store the new factor
+$$
+\left{\begin{array}{ll}
+\left({v_{l_n}}\right)^{-1}={(v_l^{new})}^{-1}-({v&lt;em&gt;l}^{\backslash n})^{-1} &amp;amp; \text { if } X&amp;lt;\mu &lt;br /&gt;
+\left({v&lt;/em&gt;{r_n}}\right)^{-1}={(v_r^{new})}^{-1}-({v_r}^{ \backslash n})^{-1} &amp;amp; \text { if } X&amp;gt;\mu &lt;br /&gt;
+\end{array}\right.
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\mathbf{m}_{n}=\mathbf{m}^{\backslash n}+
+\left{\begin{array}{ll}&lt;/p&gt;
+
+&lt;p&gt;\left(v_{n}+v^{\backslash n}\right)\left(v^{\backslash n}\right)^{-1}\left(\mathbf{m}^{\mathrm{new}}-\mathbf{m}^{\backslash n}\right)  &amp;amp; \text { if } X&amp;lt;\mu \&lt;/p&gt;
+
+&lt;p&gt;\left(v_{n}+v^{\backslash n}\right)\left(v^{\backslash n}\right)^{-1}\left(\mathbf{m}^{\mathrm{new}}-\mathbf{m}^{\backslash n}\right)  &amp;amp; \text { if } X&amp;gt;\mu \&lt;/p&gt;
+
+&lt;p&gt;\end{array}\right.
+$$&lt;/p&gt;
 </description>
     </item>
     

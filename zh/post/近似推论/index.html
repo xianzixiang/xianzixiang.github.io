@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="抱歉让各位看官久等了，今天终于稍微安顿下来，有空写点东西了。 Aug 26 - Aug 27 经历了人生最漫长的一次飞行，先从Hong kong 飞到 Vancouver，耗时">
+  <meta name="description" content="本篇文章从机器学习的宏观问题讲述，然后再着重于近似推断，读者读完后会对机器学习的整个问题有大致的理解，全程干货。 前言 频率角度 （本质为优化问题">
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://faithio.cn/zh/post/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%E5%8C%97%E7%BE%8Evs%E5%9B%BD%E5%86%85%E7%AC%AC%E4%B8%80%E5%8D%B0%E8%B1%A1/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://faithio.cn/zh/post/%E8%BF%91%E4%BC%BC%E6%8E%A8%E8%AE%BA/">
 
   
 
@@ -254,7 +254,7 @@
   <link rel="icon" type="image/png" href="../../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://faithio.cn/zh/post/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%E5%8C%97%E7%BE%8Evs%E5%9B%BD%E5%86%85%E7%AC%AC%E4%B8%80%E5%8D%B0%E8%B1%A1/">
+  <link rel="canonical" href="https://faithio.cn/zh/post/%E8%BF%91%E4%BC%BC%E6%8E%A8%E8%AE%BA/">
 
   
   
@@ -268,15 +268,15 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Faith写字的地方">
-  <meta property="og:url" content="https://faithio.cn/zh/post/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%E5%8C%97%E7%BE%8Evs%E5%9B%BD%E5%86%85%E7%AC%AC%E4%B8%80%E5%8D%B0%E8%B1%A1/">
-  <meta property="og:title" content="初来乍到，北美VS国内，第一印象 | Faith写字的地方">
-  <meta property="og:description" content="抱歉让各位看官久等了，今天终于稍微安顿下来，有空写点东西了。 Aug 26 - Aug 27 经历了人生最漫长的一次飞行，先从Hong kong 飞到 Vancouver，耗时"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="https://faithio.cn/zh/post/%E8%BF%91%E4%BC%BC%E6%8E%A8%E8%AE%BA/">
+  <meta property="og:title" content="Approximate Inference 近似推断 | Faith写字的地方">
+  <meta property="og:description" content="本篇文章从机器学习的宏观问题讲述，然后再着重于近似推断，读者读完后会对机器学习的整个问题有大致的理解，全程干货。 前言 频率角度 （本质为优化问题"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     
-      <meta property="article:published_time" content="2020-02-01T18:30:36-05:00">
+      <meta property="article:published_time" content="2020-03-13T18:30:36-05:00">
     
-    <meta property="article:modified_time" content="2020-02-02T18:30:36-05:00">
+    <meta property="article:modified_time" content="2020-03-13T18:30:36-05:00">
   
 
   
@@ -300,12 +300,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://faithio.cn/zh/post/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%E5%8C%97%E7%BE%8Evs%E5%9B%BD%E5%86%85%E7%AC%AC%E4%B8%80%E5%8D%B0%E8%B1%A1/"
+    "@id": "https://faithio.cn/zh/post/%E8%BF%91%E4%BC%BC%E6%8E%A8%E8%AE%BA/"
   },
-  "headline": "初来乍到，北美VS国内，第一印象",
+  "headline": "Approximate Inference 近似推断",
   
-  "datePublished": "2020-02-01T18:30:36-05:00",
-  "dateModified": "2020-02-02T18:30:36-05:00",
+  "datePublished": "2020-03-13T18:30:36-05:00",
+  "dateModified": "2020-03-13T18:30:36-05:00",
   
   "author": {
     "@type": "Person",
@@ -320,7 +320,7 @@
       "url": "https://faithio.cn/images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "抱歉让各位看官久等了，今天终于稍微安顿下来，有空写点东西了。 Aug 26 - Aug 27 经历了人生最漫长的一次飞行，先从Hong kong 飞到 Vancouver，耗时"
+  "description": "本篇文章从机器学习的宏观问题讲述，然后再着重于近似推断，读者读完后会对机器学习的整个问题有大致的理解，全程干货。 前言 频率角度 （本质为优化问题"
 }
 </script>
 
@@ -372,7 +372,7 @@ code.has-jax {font: inherit;
 
 
 
-  <title>初来乍到，北美VS国内，第一印象 | Faith写字的地方</title>
+  <title>Approximate Inference 近似推断 | Faith写字的地方</title>
 
 </head>
 
@@ -605,7 +605,7 @@ code.has-jax {font: inherit;
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">初来乍到，北美VS国内，第一印象</h1>
+  <h1 itemprop="name">Approximate Inference 近似推断</h1>
 
   
 
@@ -623,10 +623,8 @@ code.has-jax {font: inherit;
     
     
       
-          最近更新于
-      
     
-    Feb 2, 2020
+    Mar 13, 2020
   </span>
   
 
@@ -635,7 +633,7 @@ code.has-jax {font: inherit;
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 分钟阅读时长
+    5 分钟阅读时长
   </span>
   
 
@@ -695,69 +693,208 @@ code.has-jax {font: inherit;
     <div class="article-style">
     
 
-<p>抱歉让各位看官久等了，今天终于稍微安顿下来，有空写点东西了。</p>
+<p>本篇文章从机器学习的宏观问题讲述，然后再着重于近似推断，读者读完后会对机器学习的整个问题有大致的理解，全程干货。</p>
 
-<p>Aug 26 - Aug 27  经历了人生最漫长的一次飞行，先从Hong kong 飞到 Vancouver，耗时12小时；然后再从Vancouver飞到Montreal，耗时4小时，中间转机等待7小时。</p>
+<h2 id="前言">前言</h2>
 
-<p>看着飞行路线图，基本都是沿着海岸线和小岛飞行的，基本横跨半个地球。</p>
+<h3 id="频率角度-本质为优化问题">频率角度 （本质为优化问题）</h3>
 
-<p>PS: 飞机后背有一个触屏的屏幕可以显示飞行路线图。</p>
+<h4 id="回归问题">回归问题：</h4>
 
-<p><img src="http://ww2.sinaimg.cn/large/006y8mN6ly1g6gbbuak0pj31400u0e81.jpg" alt="IMG_8532" /></p>
+<p>以最简单的逻辑回归为例：</p>
 
-<p>刚到温哥华的时候被惊艳到了。虽然外面是11:00 PM，但是远处仍然很亮。</p>
+<p>$f(w) = w^{\top}x$,  Dataset = ${(x_i, y_i)}$</p>
 
-<p><img src="http://ww2.sinaimg.cn/large/006y8mN6ly1g6gbqpsz99j31400u0qqk.jpg" alt="IMG_8542" /></p>
+<p>Loss function:</p>
 
-<p>虽然温哥华是加拿大的第三大城市，但是机场的建设和上海，肯定没得比，估计连广州都呛。但是个人觉得发达国家的发达之处在于人文的关怀吧。譬如在机场的候机室，都会有一些儿童乐园，可以给儿童玩或者看电视。</p>
+<p><code>$
+$$
+\left\{\begin{array}{ll}
+L(w)=\sum_{i=1}^{N}|| w^{\top} x_i - y_i\|^{2} \\
+\hat{w}=\arg \min L(w)  \\
+\end{array}\right.
+$$
+</code>$</p>
 
-<p><img src="http://ww4.sinaimg.cn/large/006y8mN6ly1g6gbv7jtacj31400u0tz1.jpg" alt="IMG_8523" /></p>
+<p>解法：</p>
 
-<p>还有这个，不方便拍到里面，一个印度女孩和白人小孩一起看电视。</p>
+<ol>
+<li>解析解（求导，令导数为0， concave）</li>
+</ol>
 
-<p><img src="http://ww4.sinaimg.cn/large/006y8mN6ly1g6gbxkutj0j31hc0u0k4t.jpg" alt="IMG_8549" /></p>
+<p>$$
+\frac{\partial L(W)}{\partial W}=0 \Rightarrow w^{*}=\left(X^{\top} X\right)^{-1} X^{\top} Y
+$$</p>
 
-<p>另外，论干净程度我觉得这里的机场可能没国内干净，我看到有素质比较低游客会直接躺在椅子上，或者随地扔垃圾，但是市区内的街道确是很干净。</p>
+<ol>
+<li>数值解： GD： Gradient Decent/SGD</li>
+</ol>
 
-<p>另外一个就是washroom肯定是秒杀国内的，干净无臭味不说，肯定有厕纸，而且我发现这里基本所有的水龙头都有热水供应。厕所里面擦手的纸也很智能，撕了还会自动伸出来LOL</p>
+<h4 id="svm-有约束优化">SVM（有约束优化）</h4>
 
-<p>另外一个就是所有的厕所都配备有一个残疾人专用或者给婴儿换尿片使用的特殊洗手间。可能单身狗觉得用处不大，但是F君觉得非常有必要，过来人肯定是懂的。如下是温哥华机场的洗手间：</p>
+<p>$$
+f(w)=\operatorname{sign}\left(w^{\top} x+b\right)
+$$</p>
 
-<p><img src="http://ww2.sinaimg.cn/large/006y8mN6ly1g6gc3wpwwtj30u01hcnde.jpg" alt="IMG_8551" /></p>
+<p>Loss function:
+$$
+min \frac{1}{2}w^{\top}w
+$$</p>
 
-<p>又或者学校里面的卫生间也是有同样的配置，可能是对婴儿或者小孩相对友好吧。</p>
+<p>$$</p>
 
-<p><img src="http://ww2.sinaimg.cn/large/006y8mN6ly1g6gc5ssqiej30u0140aw9.jpg" alt="IMG_8642" /></p>
+<p>\begin{array}{l}  <br />
+y_i \cdot \left(w^{\top} x_i+b\right) \geqslant 1
+\ \quad i=l, \cdots, N\end{array}
+$$
+求法： QP/Lagrange/对偶</p>
 
-<h4 id="montreal">Montreal</h4>
+<h4 id="em">EM</h4>
 
-<p>经过四小时的飞行，落地Montreal以后，第一感觉就是这个城市灰头灰脸的，论城建，基建狂魔的中国三线城市基本能吊打这个城市。可以看到这里到处都在修路，而且以他们的工作时长和工作效率，磨磨蹭蹭真的要搞很久，要知道国内很多城市甚至是通宵施工修路的，这里感觉绝对不会。</p>
+<p>$$
+\hat{\theta}=\arg m a x \log P(x | \theta)
+$$</p>
 
-<p><img src="http://ww2.sinaimg.cn/large/006y8mN6ly1g6gdfg6yo2j30u01404qq.jpg" alt="IMG_8633" /></p>
+<p>$$
+\theta^{(t+1)}=\arg \max _{\theta} \int_t \log P(x, z | \theta) \cdot P\left(z | x, \theta^{(t)}\right) d z
+$$</p>
 
-<p>后来通过聊天才知道，这个城市是上世纪60年代建成的，当年是第一大城市，后来闹了两次独立，虽然都公投失败了，但是把这个城市的大企业统统逼去多伦多了，导致多伦多成为加拿大的最大的城市了。然后因为这个城市属于加拿大的魁北克省，所以又得来一个魁独，魁瓜的称号。</p>
+<h3 id="贝叶斯角度-本质为积分问题">贝叶斯角度 （本质为积分问题）</h3>
+
+<h4 id="贝叶斯推断">贝叶斯推断</h4>
+
+<p><img src="https://pic4.zhimg.com/80/v2-1186de08c2ac2ef05b30cd88b5260707_720w.jpg" alt="img" />
+$$
+P(\theta | x)=\frac{P(x | \theta) \cdot P(\theta)}{P(x)}
+$$
+$$
+P(x) = \int_{\theta} P(x | \theta) \cdot P(\theta) d \theta
+$$</p>
+
+<p>Baysian Inference即贝叶斯推断，贝叶斯推断的过程主要是求后验概率(posterior)的过程。</p>
+
+<ol>
+<li>精确推断</li>
+<li>近似推断(Approximate Inference)
+
+<ol>
+<li>确定性推断- deterministic approximation
+
+<ol>
+<li>变分推断（Variational Inference）</li>
+</ol></li>
+<li>随机推断-Stochastic Approximation
+
+<ol>
+<li>MCMC</li>
+<li>MH</li>
+<li>Gibbs Sampling</li>
+</ol></li>
+</ol></li>
+</ol>
+
+<h4 id="贝叶斯决策">贝叶斯决策</h4>
+
+<p>已知有个N个样本数据集 x，求新的样本$\hat{x}$, $P(\hat{x}|x)$ 的概率
+<code>$
+$$
+\begin{aligned} P(\hat{x} | x) &amp;=\int_{\theta} p(\tilde{x}, \theta | x) d \theta \\ 
+&amp;=\int_{\theta} p(\tilde{x} | \theta, \tilde{x}) \cdot p(\theta | x) d \theta \\
+&amp;=\int_{\theta} p(\tilde{x} | \theta) \cdot p(\theta | x) d \theta  \\
+&amp;=E_{\theta | x}[P(\hat{x} | \theta)]
+\end{aligned}
+$$
+$</code></p>
+
+<p>$\tilde{x}, \theta$ 相互独立</p>
+
+<p>因此可以看到，只要求得posterior就可以进行贝叶斯决策，因此求后验分布至关重要。</p>
+
+<h2 id="近似推断">近似推断</h2>
+
+<h3 id="big-picture">Big Picture</h3>
+
+<p>最大似然估计属于频率派统计 (frequentist statistics) 的方法，即对模型的参数 $\theta$ 进行点估计，然后基于该估计对新来的样本做预测。这种视角下：真实参数 $\theta$ 是未知的<strong>定值</strong>，而数据集是由该分布下产生的随机变量。最大似然方法即是一种对真实参数 $\theta$ 进行点估计的方法，做法即是求得参数在数据集上的似然值，取似然值最大的那组参数 $\hat{\theta}$ 来作为真实参数 $\theta$ 的估计。</p>
+
+<p>VI 属于贝叶斯统计 (Bayesian statistics) 的范畴，这种视角下，概率反映的是知识状态的确定性程度。数据集不是随机变量，而是固定的观测。真实参数 $\theta$ 是未知和不确定的，被认为是随机变量。在这个范畴下，由先验概率 $\theta$ 的概念，我们用它来表示对参数$\theta$ 已经有的一些知识。先验 $P(\theta)$ 是关于参数 $\theta$ 的分布，一般将这个分布定义为简单的均匀分布或其他一些熵值较大的分布。</p>
+
+<p>问题所在：</p>
+
+<p>这个模型会含有确定性参数，譬如Z，这有可能存在在数据纬度比较大的情况下，隐藏变量的空间域太大而不能直接计算。在大部分连续型的变量中，需要的积分运算没有很好的解决方案。对于离散型变量，边缘概率涉及到所有因变量的求和，并且在实际运用过程中会有成倍的隐状态，导致计算十分昂贵。</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbu8gupzz7j310u08ugpy.jpg" alt="image-20200212143608778" /></p>
+
+<p>再比如</p>
+
+<p>假设我们观测到了一组样本 ${x^{(1)}, \cdots, x^{}(m)}$ ，此时，我们可以在先验的基础上不断修正 $\theta$ 的分布，使得熵值越来越低，写成贝叶斯规则就是：</p>
+
+<p>$$
+p\left(\theta | x^{(1)}, \cdots, x^{(m)}\right)=\frac{p\left(x^{(1)}, \cdots, x^{(m)} | \theta\right) p(\theta)}{p\left(x^{(1)}, \cdots, x^{(m)}\right)}
+$$
+其中， $
+p\left(x^{(1)}, \cdots, x^{(m)} | \theta\right)
+$ 是参数 $\theta$ 在目前观测下的似然。整个过程直观上理解就是：观测到的样本集合逐步地对参数 $\theta$ 施加影响，由原来熵值较高的先验分布得到了熵值较低的后验分布 (即$\theta$ 只在若干值得较大的概率值，大多数地方取值很小)。</p>
+
+<p>对于新来的数据 $x^{m+1}$ ，最大似然估计使用参数 $\theta$ 的点估计值来对样本的概率值作出预测，而贝叶斯估计则使用参数 $\theta$ 的全分布来进行预测：
+$$
+p\left(x^{(m+1)} | x^{(1)}, \cdots, x^{(m)}\right)=\int p\left(x^{(m+1)} | \theta\right) p\left(\theta | x^{(1)}, \cdots, x^{(m)}\right) d \theta
+$$
+这里可以看出两点：</p>
+
+<ul>
+<li>在贝叶斯估计中，估计的参数$\theta$的不确定性是直接包含在预测过程中的；对应的最大似然估计则是用过预测结果的方差来反映这种不确定性。</li>
+<li>贝叶斯估计的计算量很大，涉及后验概率分布的计算以及参数$\theta$全分布的处理。</li>
+</ul>
+
+<p><strong>所以：</strong></p>
+
+<p>在这个情况，我们需要需要采用approximation schemes，这个scheme分为两大类，分别是stochastic和determini\thetain Monte Carlo，它需要很大的计算量，计算结果产生于有限的CPU时间。在实现运用，采样方法可能会对计算需求很大，因此经常会限制他们，仅用于小规模的问\theta度函数进行估计的方法，另一类方法是基于采样的方法 (Markov chain Monte Carlo, MCMC)，这两类方法可以有一个简单的对比，VI 更适合于大数据集场景下 ( VI 将推断视作优化问题)，而 MCMC 更适合于数据集高质量但是却很少的情况下。</p>
+
+<p>在这个文章，我们首先讨论deterministic approximation。我们统一将approximation techniques称为variational inference或者variantinal bayes（变分推理或者变分贝叶斯）</p>
+
+<h3 id="variational-inference">Variational Inference</h3>
+
+<p>变分方法起源于18世纪Euler, Lagrange的研究。标准的微积分是关注于找到函数的导数，而这个导数就是体现了当我们对输入参数做了极小的改变的时候怎么影响到输出的参数。</p>
+
+<p>同样地，我们可以定义一个函数entropy $$ H[p] $$ ,输入一个概率分布，返回它的quantity。</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbu4er4q6jj307c02at8j.jpg" alt="image-20200212121537815" /></p>
+
+<p>假设我们有一个完全贝叶斯模型，它的所有参数都用于先验分布。这里我们标记Z为隐藏变量，X为观察变量。</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbuo4npynmj30ji0q542e.jpg" alt="image-20200212233801639" /></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbu4v3do41j30fb0550t0.jpg" alt="image-20200212123127470" /></p>
+
+<p>我们的目标是限制$$ q(Z) $$ 的分布为可以运算处理的分布，并且能提供一个很好的后验分布的预估。</p>
+
+<p>用参数分布 $$ q(Z|\omega) $$ 来限制the family of approximating distributions，然后我们可以用非线性优化来找出最优的参数值。譬如，高斯分布就是典型的一个变分分布。</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbu8ktqlmxj30oa0avn0g.jpg" alt="image-20200212143959009" /></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbu8y7h8xlj30on0ghq86.jpg" alt="image-20200212145249625" /></p>
+
+<h4 id="factorized-distributions">Factorized distributions</h4>
+
+<p>$$
+\mu = E(X) \Rightarrow \hat{\mu} =   \frac{\sum_{i=1}^{n}{x_i}}{n} <br />
+$$</p>
+
+<p>$$
+\sigma^2 = E(X-E(X))^2  or E(X^2) - \mu^2
+$$</p>
+
+<p>==&gt; approximate by</p>
+
+<p><code>$
+$$
+\hat{\sigma}^2 = \frac{\sum_{i=1}^{n}{x_i^2}}{n} - { [\frac{\sum_{i=1}^{n}{x_i}}{n}]}^2
+$$
+$</code></p>
 
 <blockquote>
-<p>怎么感觉似曾相熟呢？有点像香港和深圳啊，HK可不要走Montreal的老路啊，正所谓<strong>以铜为镜,*可以*正衣冠，*以史为镜*，*可以知*兴替</strong></p>
-
-<p>HK的未来会走向何处？</p>
+<p><a href="https://blog.csdn.net/KYJL888/article/details/85060883" target="_blank">https://blog.csdn.net/KYJL888/article/details/85060883</a></p>
 </blockquote>
-
-<p>虽然城建不好，但是这个城市可是慢悠悠的，当地人还算比较友好，Please，Thank you，have a good day常挂在嘴边，当然林子大了什么鸟都有也会有奇奇怪怪的人，譬如长发飘飘的怪蜀黍说着不懂的法语，虽然听不懂，但知道肯定不是好话；地铁站的女流浪汉，奇怪还能牵着一只狗乞讨，如果是当地人政府都或许有1k块的补助，足够租房和吃饭，真想不明白为啥要去乞讨，好吃懒做呗？</p>
-
-<p>但是大部分普通人都友好，譬如我们从门口搬行李进去，楼下的大门会自动关闭，刚好一个素不认识的电工刚好要出去，会主动抵着门，让我们慢慢搬行李。然后我的舍友帮忙顶着门让他先去忙，他却慢悠悠地说，it&rsquo;s ok。最后搬完行李还会给我们一个大大微笑，感觉挺 warm的。不知道是教育程度高的原因还是生活节奏慢的原因，这边的电工至少也是要大专毕业吧，起码是持牌上岗，国内的话可能管理不那么严格。</p>
-
-<p>另外一点就是礼让行人了，有一个细节注意到，这边的车辆凡是经过斑马线/人行道都会减速，甚至停下来，不管是有没有行人或者红绿灯。</p>
-
-<h4 id="写在最后">写在最后</h4>
-
-<p>F君现在仍然在倒时差，现在是晚上十点多了，已经昏昏欲睡，眯着眼睛写完了。</p>
-
-<p>后续F君拍到更好的照片会继续分享一波哈</p>
-
-<p>抱歉，因为网还没办好，树莓派还没空部署，因此公众号后台继续暂停哈。</p>
-
-<p>敬请继续关注</p>
 
     </div>
 
@@ -780,7 +917,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/zh/post/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%E5%8C%97%E7%BE%8Evs%E5%9B%BD%E5%86%85%E7%AC%AC%E4%B8%80%E5%8D%B0%E8%B1%A1/&amp;text=%e5%88%9d%e6%9d%a5%e4%b9%8d%e5%88%b0%ef%bc%8c%e5%8c%97%e7%be%8eVS%e5%9b%bd%e5%86%85%ef%bc%8c%e7%ac%ac%e4%b8%80%e5%8d%b0%e8%b1%a1" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/zh/post/%E8%BF%91%E4%BC%BC%E6%8E%A8%E8%AE%BA/&amp;text=Approximate%20Inference%20%e8%bf%91%e4%bc%bc%e6%8e%a8%e6%96%ad" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -793,7 +930,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/zh/post/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%E5%8C%97%E7%BE%8Evs%E5%9B%BD%E5%86%85%E7%AC%AC%E4%B8%80%E5%8D%B0%E8%B1%A1/&amp;t=%e5%88%9d%e6%9d%a5%e4%b9%8d%e5%88%b0%ef%bc%8c%e5%8c%97%e7%be%8eVS%e5%9b%bd%e5%86%85%ef%bc%8c%e7%ac%ac%e4%b8%80%e5%8d%b0%e8%b1%a1" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/zh/post/%E8%BF%91%E4%BC%BC%E6%8E%A8%E8%AE%BA/&amp;t=Approximate%20Inference%20%e8%bf%91%e4%bc%bc%e6%8e%a8%e6%96%ad" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -806,7 +943,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="mailto:?subject=%e5%88%9d%e6%9d%a5%e4%b9%8d%e5%88%b0%ef%bc%8c%e5%8c%97%e7%be%8eVS%e5%9b%bd%e5%86%85%ef%bc%8c%e7%ac%ac%e4%b8%80%e5%8d%b0%e8%b1%a1&amp;body=https://faithio.cn/zh/post/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%E5%8C%97%E7%BE%8Evs%E5%9B%BD%E5%86%85%E7%AC%AC%E4%B8%80%E5%8D%B0%E8%B1%A1/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Approximate%20Inference%20%e8%bf%91%e4%bc%bc%e6%8e%a8%e6%96%ad&amp;body=https://faithio.cn/zh/post/%E8%BF%91%E4%BC%BC%E6%8E%A8%E8%AE%BA/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -819,7 +956,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/zh/post/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%E5%8C%97%E7%BE%8Evs%E5%9B%BD%E5%86%85%E7%AC%AC%E4%B8%80%E5%8D%B0%E8%B1%A1/&amp;title=%e5%88%9d%e6%9d%a5%e4%b9%8d%e5%88%b0%ef%bc%8c%e5%8c%97%e7%be%8eVS%e5%9b%bd%e5%86%85%ef%bc%8c%e7%ac%ac%e4%b8%80%e5%8d%b0%e8%b1%a1" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/zh/post/%E8%BF%91%E4%BC%BC%E6%8E%A8%E8%AE%BA/&amp;title=Approximate%20Inference%20%e8%bf%91%e4%bc%bc%e6%8e%a8%e6%96%ad" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -832,7 +969,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=%e5%88%9d%e6%9d%a5%e4%b9%8d%e5%88%b0%ef%bc%8c%e5%8c%97%e7%be%8eVS%e5%9b%bd%e5%86%85%ef%bc%8c%e7%ac%ac%e4%b8%80%e5%8d%b0%e8%b1%a1%20https://faithio.cn/zh/post/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%E5%8C%97%E7%BE%8Evs%E5%9B%BD%E5%86%85%E7%AC%AC%E4%B8%80%E5%8D%B0%E8%B1%A1/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Approximate%20Inference%20%e8%bf%91%e4%bc%bc%e6%8e%a8%e6%96%ad%20https://faithio.cn/zh/post/%E8%BF%91%E4%BC%BC%E6%8E%A8%E8%AE%BA/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -845,7 +982,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/zh/post/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%E5%8C%97%E7%BE%8Evs%E5%9B%BD%E5%86%85%E7%AC%AC%E4%B8%80%E5%8D%B0%E8%B1%A1/&amp;title=%e5%88%9d%e6%9d%a5%e4%b9%8d%e5%88%b0%ef%bc%8c%e5%8c%97%e7%be%8eVS%e5%9b%bd%e5%86%85%ef%bc%8c%e7%ac%ac%e4%b8%80%e5%8d%b0%e8%b1%a1" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/zh/post/%E8%BF%91%E4%BC%BC%E6%8E%A8%E8%AE%BA/&amp;title=Approximate%20Inference%20%e8%bf%91%e4%bc%bc%e6%8e%a8%e6%96%ad" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1099,15 +1236,8 @@ code.has-jax {font: inherit;
   
   
 <div class="post-nav-item">
-<div class="meta-nav">下一页</div>
-  <a href="../../../zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/" rel="next">如何从零开始DIY申请研究生-申请奖学金</a>
-</div>
-
-  
-  
-<div class="post-nav-item">
 <div class="meta-nav">上一页</div>
-  <a href="../../../zh/post/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%95%99%E5%AD%A6%E8%B4%B9%E7%94%A8%E5%A4%A7%E8%B5%B7%E5%BA%95%E5%8F%8A%E6%84%9F%E6%82%9F/" rel="prev">加拿大留学费用大起底及感悟</a>
+  <a href="../../../zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" rel="prev">什么是最大期望算法(EM Algorithm)</a>
 </div>
 
 </div>

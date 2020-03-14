@@ -286,7 +286,7 @@ modeling  What graph should I use for this data?"><meta property="og:image" cont
     
       <meta property="article:published_time" content="2020-02-29T11:34:28-05:00">
     
-    <meta property="article:modified_time" content="2020-03-09T22:37:03-04:00">
+    <meta property="article:modified_time" content="2020-03-14T00:03:07-04:00">
   
 
   
@@ -315,7 +315,7 @@ modeling  What graph should I use for this data?"><meta property="og:image" cont
   "headline": "Stochastic Expectation Propagation",
   
   "datePublished": "2020-02-29T11:34:28-05:00",
-  "dateModified": "2020-03-09T22:37:03-04:00",
+  "dateModified": "2020-03-14T00:03:07-04:00",
   
   "author": {
     "@type": "Person",
@@ -636,7 +636,7 @@ code.has-jax {font: inherit;
           Last updated on
       
     
-    Mar 9, 2020
+    Mar 14, 2020
   </span>
   
 
@@ -645,7 +645,7 @@ code.has-jax {font: inherit;
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 min read
+    6 min read
   </span>
   
 
@@ -807,7 +807,7 @@ $</code></p>
 
 <p><code>$
 $$
-p\left(\vec{X} | \xi_{j}\right)=\prod_{d=1}^{D} \sqrt{\frac{2}{\pi}} \frac{1}{\left(\sigma_{l_{j d}}+\sigma_{r_{j d}}\right)} \times\left\{\begin{array}{ll}\exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{l_{j d} }^{2}}\right] &amp; \text { if } X_{d}&lt;\mu_{j d} \\ \exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{r_{j d}}^{2}}\right] &amp; \text { if } X_{d} \geq \mu_{j d}\end{array}\right.
+p\left(\vec{X} | \theta_{j}\right)=\prod_{d=1}^{D} \sqrt{\frac{2}{\pi}} \frac{1}{\left(\sigma_{l_{j d}}+\sigma_{r_{j d}}\right)} \times\left\{\begin{array}{ll}\exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{l_{j d} }^{2}}\right] &amp; \text { if } X_{d}&lt;\mu_{j d} \\ \exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{r_{j d}}^{2}}\right] &amp; \text { if } X_{d} \geq \mu_{j d}\end{array}\right.
 $$
 $</code></p>
 
@@ -820,21 +820,188 @@ $</code></p>
 
 <hr />
 
-<p><code>$
-$$
-p\left(\xi_{j} | \vec{X} \right)= \frac{p(\xi_{j})\times p\left(\vec{X} | \xi_{j}\right)}{p(\vec{X})}
-$$
-$</code></p>
-
-<p>Here, $p(\vec{X})$ is very intractable to calculate.</p>
-
-<p>Now, The approximation, $q\left(\xi_j \right)$ , of the posterior,  $p\left( \xi_j | \vec{X} \right)$ , is assumed to have same functional form.</p>
-
 <p>$$
-q(\xi_j)=\frac{1}{Z} \prod_i \widetilde{f}_i(\xi_j)
+p\left(\theta_j | \vec{X} \right)= \frac{p(\theta_j)\times p\left(\vec{X} | \theta<em>j\right)}{p(\vec{X})} = \frac{1}{p(\vec{X})} \prod</em>{i} f_{i}(\boldsymbol{\theta})
 $$</p>
 
-<p>$\widetilde{f}_i(\xi_j) $ is a asymetric Gaussian.</p>
+<p>$$
+p(\vec{X})= \int \prod<em>{i} f</em>{i}(\boldsymbol{\theta}) \mathrm{d} \boldsymbol{\theta}
+$$</p>
+
+<p>Here, $p(\vec{X})$ is very intractable to calculate and we don&rsquo;t know $ f_{i}(\boldsymbol{\theta}) $.</p>
+
+<p>Now we consider using  <strong>EP</strong>. The approximation, $q\left(\theta_j \right)$ , of the posterior,  $p\left( \theta_j | \vec{X} \right)$ , is assumed to have same functional form.
+$$
+q(\theta_j)=\frac{1}{Z} \prod_i \widetilde{f}_i(\theta_j)
+$$</p>
+
+<p>in which each factor $\widetilde{f}_i(\theta_j)$ in the approximation corresponds to one of the factors
+ $f_i(\theta_j)$ in the true posterior. $\widetilde{f}_i(\theta_j) $ is a asymetric Gaussian.</p>
+
+<hr />
+
+<p>$$
+p(\mathbf{X} | \boldsymbol{\theta})=(1-w) \mathcal{A}(\mathbf{X} | \boldsymbol{\theta}, \mathbf{I_l}, \mathbf{I_r})+w \mathcal{A}(\mathbf{X} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r})
+$$</p>
+
+<p>where w is the proportion of background clutter. And the prior over $\mathbf{\theta}$(mean) is taken to be Asymmetric Gaussian.</p>
+
+<p>And
+$$
+p(\boldsymbol{\theta})= \mathcal{A}(\mathbf{X} | \mathbf{0}, b \mathbf{I_l}, b \mathbf{I<em>r})
+$$
+$$
+p(\mathcal{X}, \boldsymbol{\theta})=p(\boldsymbol{\theta}) \prod</em>{n=1}^{N} p\left(\mathbf{x}_{n} | \boldsymbol{\theta}\right)
+$$</p>
+
+<h3 id="1-initialize-the-approximating-factors">1. initialize the approximating factors</h3>
+
+<p>we select an approximating distribution from the exponential family to approximate the stochastic variables $\theta$
+$$
+q(\boldsymbol{\theta})=\mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu}, \mathbf{\sigma_r^2}, \mathbf{\sigma_l^2}) =
+\mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu}, v_l \mathbf{I}, v_r \mathbf{I})</p>
+
+<p>= \mathcal{A}(\mathbf{X} | \mathbf{0}, b \mathbf{I_l}, b \mathbf{I_r})
+$$</p>
+
+<p>$$
+\widetilde{f}_{n}(\boldsymbol{\theta})=s_n \mathcal{A}\left(\boldsymbol{\theta} | \mathbf{\mu}<em>n, \mathbf{\sigma</em>{r<em>n}^2}, \mathbf{\sigma</em>{l_n}^2} \right)
+$$</p>
+
+<p>$$
+s<em>n = \prod</em>{d=1}^{D} \sqrt{\frac{2}{\pi}} \frac{1}{\left(\sigma<em>{l</em>{d}}+\sigma<em>{r</em>{d}}\right)}
+$$
+While $\sigma_{l<em>n} \rightarrow \infty,
+  \sigma</em>{r_n} \rightarrow \infty
+$ and $ \mu_n = 0 $.</p>
+
+<p>###2. initialize the posterior  approximation $q(\boldsymbol{\theta})$</p>
+
+<p>We chooses the parameter values a = 10, b = 100 and w = 0.5 and use $v$ denote $ \sigma^2$ as following, then $\mathbf{v_r} = \mathbf{v_l} = b = 100$</p>
+
+<h3 id="3-until-all-mu-n-v-l-n-v-r-n-s-n-converge">3. Until all $(\mu<em>n, v</em>{l<em>n}, v</em>{r_n}, s_n)$ converge:</h3>
+
+<p>$$
+q^{\backslash n}(\boldsymbol{\theta})=\frac{q(\boldsymbol{\theta})}{\widetilde{f}_n(\boldsymbol{\theta})} = \frac{\mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu}, \mathbf{v_r I}, \mathbf{v_l I})}{s_n \mathcal{A}\left(\boldsymbol{\theta} | \mathbf{\mu}<em>n, \mathbf{v</em>{r<em>n} I}, \mathbf{v</em>{l_n} I} \right)} <br />
+\propto \left{\begin{array}{ll}</p>
+
+<p>{\frac{\exp \left{-\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu})^{T}(v_l \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu})\right}}{\exp \left{-\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu<em>n})^{T}(v</em>{l_n} \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu_n})\right}}}  &amp;&amp; \text { if } X&lt;\mu \</p>
+
+<p>{\frac{\exp \left{-\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu})^{T}(v_r \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu})\right}}{\exp \left{-\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu<em>n})^{T}(v</em>{r_n} \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu_n})\right}}}  &amp;&amp; \text { if } X&gt;\mu</p>
+
+<p>\end{array}\right. \</p>
+
+<p>= \left{\begin{array}{ll}<br />
+\exp \left{-\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu})^{T}(v_l \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu}) + \frac{1}{2}(\boldsymbol{X}-\mathbf{\mu<em>n})^{T}(v</em>{l_n} \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu_n})\right}   &amp; \text { if } X&lt;\mu <br />
+\exp \left{-\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu})^{T}(v_r \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu}) +<br />
+\frac{1}{2}(\boldsymbol{X}-\mathbf{\mu<em>n})^{T}(v</em>{r_n} \mathbf{I})^{-1}(\boldsymbol{X}-\mathbf{\mu_n}) \right} &amp; \text { if } X&gt;\mu
+\end{array}\right.
+$$
+- Remove the current estimate $\widetilde{f}_j(\boldsymbol{\theta})$ from $q(\theta)$, then we has mean and inverse variance given by:
+$$
+\left{\begin{array}{ll}
+\left({v_l}^{\backslash n}\right)^{-1}={v_l}^{-1}-{v<em>l}</em>{n}^{-1} &amp; \text { if } X&lt;\mu <br />
+\left({v_r}^{\backslash n}\right)^{-1}={v_r}^{-1}-{v<em>r}</em>{n}^{-1} &amp; \text { if } X&gt;\mu <br />
+\end{array}\right.
+$$</p>
+
+<p>$$
+\mathbf{\mu}^{\backslash n}= \mathbf{\mu}+</p>
+
+<p>\left{\begin{array}{ll}
+{v_l}^{\backslash n} {v<em>l}</em>{n}^{-1}\left(\mathbf{\mu}-\mathbf{\mu}_{n}\right) &amp; \text { if } X&lt;\mu \</p>
+
+<p>{v_r}^{\backslash n} {v<em>r}</em>{n}^{-1}\left(\mathbf{\mu}-\mathbf{\mu}_{n}\right) &amp; \text { if } X&gt;\mu \</p>
+
+<p>\end{array}\right.
+$$
+&gt; Cavity Distribution:
+&gt; $$
+&gt; q^{\backslash j}(\boldsymbol{\theta})=\frac{q(\boldsymbol{\theta})}{\widetilde{f}_{j}(\boldsymbol{\theta})}
+&gt; $$</p>
+
+<ul>
+<li>Recompute $(\mu, v, Z)$ from $(\mathbf{\mu}^{\backslash n}, {v_l}^{\backslash n}, {v<em>r}^{\backslash n})$
+$$
+Z</em>{n}=(1-w) \mathcal{A}\left(\mathbf{x}_{n} | \mathbf{\mu}^{\backslash n},\left(v_l^{\backslash n}+1\right) \mathbf{I}, \left(v<em>r^{\backslash n}+1\right) \mathbf{I}\right)+w \mathcal{A}\left(\mathbf{x}</em>{n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I<em>r}\right)
+$$
+&gt;$$
+&gt;\begin{aligned}
+&gt;Z</em>{n} &amp;=\int q^{\backslash n}(\boldsymbol{\theta}) f<em>{n}(\boldsymbol{\theta}) \mathrm{d} \boldsymbol{\theta} \
+&gt;&amp;=\int q^{\backslash n}(\boldsymbol{\theta}) \widetilde{f}</em>{n}(\boldsymbol{\theta}) \mathrm{d} \boldsymbol{\theta} <br />
+&gt;
+&gt;&amp;=\int \mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu^{\backslash n}}, v_l^{\backslash n} \mathbf{I}, v_r^{\backslash n} \mathbf{I}) \cdot { (1-w) \mathcal{A}(\mathbf{x_n} | \boldsymbol{\mu}, \mathbf{I_l}, \mathbf{I_r})+w \mathcal{A}(\mathbf{x_n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r})} \mathrm{d} \boldsymbol{\theta} <br />
+&gt;
+&gt;&amp;= (1-w)\int \mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu^{\backslash n}}, v_l^{\backslash n} \mathbf{I}, v_r^{\backslash n} \mathbf{I}) \mathcal{A}(\mathbf{x_n} | \boldsymbol{\mu}, \mathbf{I_l}, \mathbf{I_r}) \mathrm{d} \boldsymbol{\theta} <br />
+&gt;&amp;+ w \int \mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu^{\backslash n}}, v_l^{\backslash n} \mathbf{I}, v_r^{\backslash n} \mathbf{I})
+&gt;\mathcal{A}(\mathbf{x_n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I<em>r})} \mathrm{d} \boldsymbol{\theta} <br />
+&gt;&amp;=(1-w) \mathcal{A}\left(\mathbf{x}</em>{n} | \mathbf{\mu}^{\backslash n},\left(v_l^{\backslash n}+1\right) \mathbf{I}, \left(v<em>r^{\backslash n}+1\right) \mathbf{I}\right)+w \mathcal{A}\left(\mathbf{x}</em>{n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r}\right)
+&gt;\end{aligned}
+&gt;$$</li>
+</ul>
+
+<p>we  assumed that  $f<em>{0}(\boldsymbol{\theta})=p(\boldsymbol{\theta})$  and $
+f</em>{n}(\boldsymbol{\theta})=p\left(\mathbf{x}_{n} | \boldsymbol{\theta}\right) = (1-w) \mathcal{A}(\mathbf{X} | \boldsymbol{\mu}, \mathbf{I_l}, \mathbf{I_r})+w \mathcal{A}(\mathbf{X} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r})
+$, also $q(\boldsymbol{\theta})=\mathcal{A}(\boldsymbol{\theta} | \mathbf{m}, v_l \mathbf{I}, v<em>r \mathbf{I}) $
+$$
+\begin{aligned}
+\rho</em>{n} &amp;=\frac{1}{Z<em>{n}}(1-w) \mathcal{A}\left(\mathbf{x}</em>{n} | \mathbf{\mu}^{\backslash n},\left(v_l^{\backslash n}+1\right) \mathbf{I}, \left(v<em>r^{\backslash n}+1\right) \mathbf{I}\right)  <br />
+&amp;= \frac{1}{Z</em>{n}}(1-w)\cdot \frac{Z<em>n - w \mathcal{A}\left(\mathbf{x}</em>{n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r}\right)}{1-w} <br />
+&amp;= 1 - \frac{w}{Z<em>n} \cdot \mathcal{A}\left(\mathbf{x}</em>{n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I<em>r}\right)
+\end{aligned}
+$$
+Basic rule for Asymmetric Gaussian:
+$$
+\nabla</em>{\boldsymbol{\mu}} \mathcal{A}(\mathbf{x} | \boldsymbol{\mu}, \mathbf{v_l}, \mathbf{v_r})=</p>
+
+<p>\left{\begin{array}{ll}</p>
+
+<p>\mathcal{A}(\mathbf{x} | \boldsymbol{\mu}, \mathbf{v_l}, \mathbf{v_r}) \cdot(\mathbf{x}-\boldsymbol{\mu}) \mathbf{v_l}^{-1}  &amp; \text { if } X&lt;\mu \</p>
+
+<p>\mathcal{A}(\mathbf{x} | \boldsymbol{\mu}, \mathbf{v_l}, \mathbf{v_r}) \cdot(\mathbf{x}-\boldsymbol{\mu}) \mathbf{v_r}^{-1}  &amp; \text { if } X&gt;\mu \</p>
+
+<p>\end{array}\right.
+$$
+So we compute the mean and variance:
+$$
+\mathbf{\mu^{new}}=\mathbf{\mu}^{\backslash n}+</p>
+
+<p>\left{\begin{array}{ll}</p>
+
+<p>\rho_{n} \frac{v_l^{\backslash n}}{v<em>l^{\backslash n}+1}\left(\mathbf{x}</em>{n}-\mathbf{\mu}^{\backslash n}\right)  &amp; \text { if } X&lt;\mu \</p>
+
+<p>\rho_{n} \frac{v_r^{\backslash n}}{v<em>r^{\backslash n}+1}\left(\mathbf{x}</em>{n}-\mathbf{\mu}^{\backslash n}\right)  &amp; \text { if } X&gt;\mu \</p>
+
+<p>\end{array}\right.
+$$</p>
+
+<p>$$
+\left{\begin{array}{ll}
+v_l^{new}=v<em>l^{\backslash n}-\rho</em>{n} \frac{\left(v_l^{\backslash n}\right)^{2}}{v<em>l^{\backslash n}+1}+\rho</em>{n}\left(1-\rho_{n}\right) \frac{\left(v<em>l^{\backslash n}\right)^{2}\left|\mathbf{x}</em>{n}-\mathbf{m}^{\backslash n}\right|^{2}}{D\left(v_l^{\backslash n}+1\right)^{2}} &amp; \text { if } X&lt;\mu \</p>
+
+<p>v_r^{new}=v<em>r^{\backslash n}-\rho</em>{n} \frac{\left(v_r^{\backslash n}\right)^{2}}{v<em>r^{\backslash n}+1}+\rho</em>{n}\left(1-\rho_{n}\right) \frac{\left(v<em>r^{\backslash n}\right)^{2}\left|\mathbf{x}</em>{n}-\mathbf{m}^{\backslash n}\right|^{2}}{D\left(v_r^{\backslash n}+1\right)^{2}}
+&amp; \text { if } X&gt;\mu \</p>
+
+<p>\end{array}\right.
+$$
+- Evaluate and store the new factor
+$$
+\left{\begin{array}{ll}
+\left({v_{l_n}}\right)^{-1}={(v_l^{new})}^{-1}-({v<em>l}^{\backslash n})^{-1} &amp; \text { if } X&lt;\mu <br />
+\left({v</em>{r_n}}\right)^{-1}={(v_r^{new})}^{-1}-({v_r}^{ \backslash n})^{-1} &amp; \text { if } X&gt;\mu <br />
+\end{array}\right.
+$$</p>
+
+<p>$$
+\mathbf{m}_{n}=\mathbf{m}^{\backslash n}+
+\left{\begin{array}{ll}</p>
+
+<p>\left(v_{n}+v^{\backslash n}\right)\left(v^{\backslash n}\right)^{-1}\left(\mathbf{m}^{\mathrm{new}}-\mathbf{m}^{\backslash n}\right)  &amp; \text { if } X&lt;\mu \</p>
+
+<p>\left(v_{n}+v^{\backslash n}\right)\left(v^{\backslash n}\right)^{-1}\left(\mathbf{m}^{\mathrm{new}}-\mathbf{m}^{\backslash n}\right)  &amp; \text { if } X&gt;\mu \</p>
+
+<p>\end{array}\right.
+$$</p>
 
     </div>
 
@@ -1303,7 +1470,7 @@ $$</p>
     
 
    
-      <p>&copy; Faith 09/03/2020 &middot;
+      <p>&copy; Faith 14/03/2020 &middot;
                     Built with <a href="https://github.com/gohugoio/hugo">Hugo</a>
 
        <a href="https://github.com/iamfaith"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path></svg>
