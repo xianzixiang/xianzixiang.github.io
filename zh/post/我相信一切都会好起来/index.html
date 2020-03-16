@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，">
+  <meta name="description" content="F君是一个热血青年，刚刚看到华尔街日报刊登的一篇文章的标题，直接要发飙了，忍不住提笔写写东西。因为华尔街日报用了极具歧视的词汇Sick Man of A">
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://faithio.cn/zh/post/%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E5%88%87%E9%83%BD%E4%BC%9A%E5%A5%BD%E8%B5%B7%E6%9D%A5/">
 
   
 
@@ -254,7 +254,7 @@
   <link rel="icon" type="image/png" href="../../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="canonical" href="https://faithio.cn/zh/post/%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E5%88%87%E9%83%BD%E4%BC%9A%E5%A5%BD%E8%B5%B7%E6%9D%A5/">
 
   
   
@@ -268,15 +268,15 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Faith写字的地方">
-  <meta property="og:url" content="https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
-  <meta property="og:title" content="什么是最大期望算法(EM Algorithm) | Faith写字的地方">
-  <meta property="og:description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="https://faithio.cn/zh/post/%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E5%88%87%E9%83%BD%E4%BC%9A%E5%A5%BD%E8%B5%B7%E6%9D%A5/">
+  <meta property="og:title" content="我相信一切都会好起来！ | Faith写字的地方">
+  <meta property="og:description" content="F君是一个热血青年，刚刚看到华尔街日报刊登的一篇文章的标题，直接要发飙了，忍不住提笔写写东西。因为华尔街日报用了极具歧视的词汇Sick Man of A"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     
-      <meta property="article:published_time" content="2020-02-28T18:30:36-05:00">
+      <meta property="article:published_time" content="2020-03-14T18:30:36-05:00">
     
-    <meta property="article:modified_time" content="2020-02-28T18:30:36-05:00">
+    <meta property="article:modified_time" content="2020-03-14T18:30:36-05:00">
   
 
   
@@ -300,12 +300,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/"
+    "@id": "https://faithio.cn/zh/post/%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E5%88%87%E9%83%BD%E4%BC%9A%E5%A5%BD%E8%B5%B7%E6%9D%A5/"
   },
-  "headline": "什么是最大期望算法(EM Algorithm)",
+  "headline": "我相信一切都会好起来！",
   
-  "datePublished": "2020-02-28T18:30:36-05:00",
-  "dateModified": "2020-02-28T18:30:36-05:00",
+  "datePublished": "2020-03-14T18:30:36-05:00",
+  "dateModified": "2020-03-14T18:30:36-05:00",
   
   "author": {
     "@type": "Person",
@@ -320,7 +320,7 @@
       "url": "https://faithio.cn/images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，"
+  "description": "F君是一个热血青年，刚刚看到华尔街日报刊登的一篇文章的标题，直接要发飙了，忍不住提笔写写东西。因为华尔街日报用了极具歧视的词汇Sick Man of A"
 }
 </script>
 
@@ -372,7 +372,7 @@ code.has-jax {font: inherit;
 
 
 
-  <title>什么是最大期望算法(EM Algorithm) | Faith写字的地方</title>
+  <title>我相信一切都会好起来！ | Faith写字的地方</title>
 
 </head>
 
@@ -605,7 +605,7 @@ code.has-jax {font: inherit;
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">什么是最大期望算法(EM Algorithm)</h1>
+  <h1 itemprop="name">我相信一切都会好起来！</h1>
 
   
 
@@ -624,7 +624,7 @@ code.has-jax {font: inherit;
     
       
     
-    Feb 28, 2020
+    Mar 14, 2020
   </span>
   
 
@@ -633,7 +633,7 @@ code.has-jax {font: inherit;
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 分钟阅读时长
+    2 分钟阅读时长
   </span>
   
 
@@ -691,67 +691,39 @@ code.has-jax {font: inherit;
   <div class="article-container">
 
     <div class="article-style">
-    
+    <p>F君是一个热血青年，刚刚看到华尔街日报刊登的一篇文章的标题，直接要发飙了，忍不住提笔写写东西。因为华尔街日报用了极具歧视的词汇Sick Man of Asia来描述中国。这个词汇就是19世纪常用来讽刺孱弱的吸鸦片的中国人- 东亚病夫。</p>
 
-<p>本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，深度学习并不适合，这时才是传统机器学习算法发挥作用的时候，废话不多说，下面直接进入学习。</p>
+<p>国内大家都在同仇敌忾，众志成城对抗病毒，不少外媒就争先黑China，而且是往死里黑。</p>
 
-<blockquote>
-<p>最大期望算法出现在很多涉及概率模型的计算生物学的应用中，那么它有什好处，它的原理是什么？</p>
-</blockquote>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbpt2qkywqj30u01fgazq.jpg" alt="image-20200208184116142" /></p>
 
-<p>概率模型，例如隐马尔可夫模型或者贝叶斯网络会被用于建模生物学数据。它们因为高效以及高容错的参数学习因此很流行被广泛应用。但是，给概率模型训练的数据往往不是完整的，缺失数据经常会发生。譬如，在医学诊断，通常病人的患病历史只会有有限的医学测试。换句话说，在基因的聚类表达中，数据不完整是因为在这个概率模型中有意忽略了基因到聚类的分配产生。然而最大期望算法支持在概率模型用不完整的数据进行参数估计。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbpt3oxhpnj30u01fwe19.jpg" alt="image-20200208184210548" /></p>
 
-<h3 id="以投硬币实验为例">以投硬币实验为例</h3>
+<p>无可厚非，中国是强大了，所以这也是西方媒体不愿看到。说实话，对比一下香港，不少医生护士，因为害怕病毒申请罢工，国内的一线医护人员，普通人真的已经是很团结努力了！虽然有一些坑害人的“毒王”，但是大家主体的意愿是统一的。</p>
 
-<p>假设我们有一组硬币A和B，它们都是不均衡的硬币，假设θA 和 θB 分别是A和B正面朝上的概率。</p>
+<p>对比同时期，去年美国的流感死了大约6k老百姓，现在的疫情控制还是相当可以了（虽然大家对武汉zf和某red组织不满，但是这个控制结果真的很好了，首先两国国情不一样，北美这边居民区没有国内那么密集，并且没有春运的影响。）</p>
 
-<p>现在我们目标是估计θA 和 θB，通过<strong>随机</strong>挑选A或者B进行10次的投币实验，然后可以通过绘制下面表格很轻易的计算出它们的概率。</p>
+<p>还有，在网上看到一个生活在东北的意大利裔美国人，写了一篇文章对比美国2009年的甲型H1N1流感，当时统计说有18449人死亡，但是后来2012年美国的CDC最终统计死亡的病例超过<strong>30万</strong>。</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5sxzy4ujj30g806yq4b.jpg" alt="image-20200122112520254" /></p>
+<p>你知道那时，美国花了6个月才进入全国紧急状态吗？你知道那时哪有那个国家像公民发出撤侨并且不允许美国游客入境吗？并没有。那那时有人会说这个是American flu 或者 American Virus（美国流感或者美国病毒）吗？没有！</p>
 
-<p>现在我们把难度加大一点，假设我们不知道每次实验是挑选哪组硬币，换句话说，就是我们只有以下实验的结果，怎么估算出A和B的概率呢？</p>
+<p>为什么，为什么现在矛头都指向China，Chinese，China Virus，一切都是因为媒体的蛊惑人心。只有真的强大了，才会让他们闭嘴。一切的媒体报道都或多或少带了zz因素，博弈。</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5t12ar0yj304m03it92.jpg" alt="image-20200122112826852" /></p>
+<p>但是不管怎么样，每当我看到全国各地的医护人员都奔向武汉，我就是知道<strong>一切都会好起来的</strong>。</p>
 
-<p>这里我们引入z作为隐变量(hidden variables)或者潜在变量(latent factors)，z定义了每一组实验选用A还是B硬币作为实验。在这个情况下，z就是缺失的数据。这里我们就必须引入最大期望算法来进行计算。怎么做呢？</p>
+<p><strong>致敬，</strong></p>
 
-<p>首先我先初始化θA 和 θB，在这里我们分别初始化为0.6和0.5，然后我们假设数据是正确的，利用最大似然估计(MLE)分别算出A和B硬币的概率。在这里由于抛硬币是离散分布，并且符合二项分布(Binomial distribution)。所以以第二组为例，我们可以分别算出θA 和 θB。</p>
-
-<p>根据二项分布的公式： $$ p_i(k)=\left({10\atop k}\right) \theta_i^k (1-\theta_i)^{10-k}\;. $$</p>
-
-<p>$$ \theta_A^9 (1-\theta_A)^{10-9}\simeq0.004 $$</p>
-
-<p>$$ \theta_B^9 (1-\theta_B)^{10-9}\simeq0.001\;, $$</p>
-
-<p>最后可以算出A的新概率为： $$ \frac{0.004}{0.004+0.001}=0.8 $$</p>
-
-<p>B的新概率为: $$ \frac{0.001}{0.004+0.001}=0.2 $$</p>
-
-<p>其实上述公式是根据贝叶斯公式得到，</p>
-
-<p>由于 $$ 𝑃(𝐴)=0.5=𝑃(𝐵) $$</p>
-
-<p>$$ P(A|H_9T_1) = \frac{P(A) \cdot P(H_9T_1|A)}{P(H_9T_1)} = \frac{P(A) \cdot P(H_9T_1|A)}{P(A) \cdot P(H_9T_1|A) + P(B) \cdot P(H_9T_1|B)} = \frac{0.5 \cdot 0.004}{0.5 \cdot 0.004 + 0.5 \cdot 0.001} = 0.8$$</p>
+<p><strong>所有的在一线默默奋斗工作人员，默默付出的志愿者。</strong></p>
 
 <blockquote>
-<p>上述步骤称作E-step，用于估计在出现H 9次 T 1次的情况下，分别是A或者B硬币的概率，至此我们可以计算出每组实验的A和B硬币的权重。</p>
+<p>延伸阅读：</p>
 
-<p>其实从数学的角度来考虑就是，我们通过最大似然估计计算了 $$ g(\theta) = logP(x; \theta) $$ 这个函数的下界。然后后面会不断更新这个下界，直到这个函数收敛。EM算法的最大好处就是不会出现overfit。</p>
+<p>1991年，苏联解体后，中国和俄罗斯同时开启了装孙子之旅。叶利钦诚心诚意地请美国的专家设计新制度，普京吵着要加入北约，为了拍小布什的马屁，把祖传的十字架都送给了他。</p>
+
+<p>结果呢，美一面笑嘻嘻表示，we are family！一面在中东俄国的势力范围一点一点地被侵蚀。东欧国家一个一个拉入北约，导弹大炮对准了莫斯科。怂恿乌克兰收回里米亚，这是要把俄罗斯的黑海舰队给废掉。让俄罗斯在西面连个二把刀的出海口都没有。</p>
+
+<p>俄罗斯没有装过孙子？装了！有用吗？现在不也是受到制裁。</p>
 </blockquote>
-
-<p>接下来就是M-step，就是利用带权重的数据进行计算，重新更新θA 和 θB，一直迭代到参数收敛。</p>
-
-<p>整个过程如下图：</p>
-
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5uxybu99j30iz0cpwfz.jpg" alt="image-20200122121719055" /></p>
-
-<blockquote>
-<p>在第十次迭代的过程，A的概率已经是首次实验的结果，而B也是趋向于0.45。但是在nonconcave functions, EM算法有可能会陷入局部最优解。同样的，梯度下降算法(gradient descent)或者牛顿法(Newton-Raphson)也可以用作数值优化拟合，但是EM算法因简单健壮并且易于实现而被广泛应用。</p>
-</blockquote>
-
-<h3 id="应用场景">应用场景</h3>
-
-<p>譬如在基因簇表达的情形下，我们需要通过观察的显性特征去分组相关的基因簇，就是分辨出哪些基因簇影响这个特征。这种情况下可以特征参数对应不同基因的多参数高斯分布，这个情况下x就是测量特征，z就是对应的基因簇，参数$ \theta$ 就包括多参数高斯分布的均值和协方差。然后EM算法的步骤就是E-step计算属于各个基因簇的概率，M-step去分别更新参数$ \theta$, 一直到收敛。</p>
 
     </div>
 
@@ -774,7 +746,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/zh/post/%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E5%88%87%E9%83%BD%E4%BC%9A%E5%A5%BD%E8%B5%B7%E6%9D%A5/&amp;text=%e6%88%91%e7%9b%b8%e4%bf%a1%e4%b8%80%e5%88%87%e9%83%bd%e4%bc%9a%e5%a5%bd%e8%b5%b7%e6%9d%a5%ef%bc%81" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -787,7 +759,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;t=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/zh/post/%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E5%88%87%E9%83%BD%E4%BC%9A%E5%A5%BD%E8%B5%B7%E6%9D%A5/&amp;t=%e6%88%91%e7%9b%b8%e4%bf%a1%e4%b8%80%e5%88%87%e9%83%bd%e4%bc%9a%e5%a5%bd%e8%b5%b7%e6%9d%a5%ef%bc%81" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -800,7 +772,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="mailto:?subject=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29&amp;body=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=%e6%88%91%e7%9b%b8%e4%bf%a1%e4%b8%80%e5%88%87%e9%83%bd%e4%bc%9a%e5%a5%bd%e8%b5%b7%e6%9d%a5%ef%bc%81&amp;body=https://faithio.cn/zh/post/%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E5%88%87%E9%83%BD%E4%BC%9A%E5%A5%BD%E8%B5%B7%E6%9D%A5/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -813,7 +785,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/zh/post/%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E5%88%87%E9%83%BD%E4%BC%9A%E5%A5%BD%E8%B5%B7%E6%9D%A5/&amp;title=%e6%88%91%e7%9b%b8%e4%bf%a1%e4%b8%80%e5%88%87%e9%83%bd%e4%bc%9a%e5%a5%bd%e8%b5%b7%e6%9d%a5%ef%bc%81" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -826,7 +798,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29%20https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=%e6%88%91%e7%9b%b8%e4%bf%a1%e4%b8%80%e5%88%87%e9%83%bd%e4%bc%9a%e5%a5%bd%e8%b5%b7%e6%9d%a5%ef%bc%81%20https://faithio.cn/zh/post/%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E5%88%87%E9%83%BD%E4%BC%9A%E5%A5%BD%E8%B5%B7%E6%9D%A5/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -839,7 +811,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/zh/post/%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E5%88%87%E9%83%BD%E4%BC%9A%E5%A5%BD%E8%B5%B7%E6%9D%A5/&amp;title=%e6%88%91%e7%9b%b8%e4%bf%a1%e4%b8%80%e5%88%87%e9%83%bd%e4%bc%9a%e5%a5%bd%e8%b5%b7%e6%9d%a5%ef%bc%81" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1094,14 +1066,14 @@ code.has-jax {font: inherit;
   
 <div class="post-nav-item">
 <div class="meta-nav">下一页</div>
-  <a href="../../../zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/" rel="next">我知道开始很难，但是也要坚持下去</a>
+  <a href="../../../zh/post/%E5%8C%97%E7%BE%8E%E5%81%A5%E8%BA%AB%E7%BD%91%E7%BA%A2%E7%9A%84%E8%83%8C%E5%90%8E/" rel="next">北美健身网红的背后</a>
 </div>
 
   
   
 <div class="post-nav-item">
 <div class="meta-nav">上一页</div>
-  <a href="../../../zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" rel="prev">记一次树莓派Trojan的分析</a>
+  <a href="../../../zh/post/%E6%9D%8E%E6%96%87%E4%BA%AE%E5%8C%BB%E7%94%9F%E6%98%AF%E4%B8%80%E4%BD%8D%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BA%BA/" rel="prev">李文亮医生是一位怎样的人？</a>
 </div>
 
 </div>

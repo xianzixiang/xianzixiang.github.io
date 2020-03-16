@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，">
+  <meta name="description" content="知乎有一个这个话题 https://www.zhihu.com/question/337568352 为什么好多黑人健身后肌肉很强壮，而在中国却不常见这种肌肉强壮的人呢？ 当时看了几个答案，我觉得其他人已经解释得差不多了，没">
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://faithio.cn/zh/post/%E5%8C%97%E7%BE%8E%E5%81%A5%E8%BA%AB%E7%BD%91%E7%BA%A2%E7%9A%84%E8%83%8C%E5%90%8E/">
 
   
 
@@ -254,7 +254,7 @@
   <link rel="icon" type="image/png" href="../../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="canonical" href="https://faithio.cn/zh/post/%E5%8C%97%E7%BE%8E%E5%81%A5%E8%BA%AB%E7%BD%91%E7%BA%A2%E7%9A%84%E8%83%8C%E5%90%8E/">
 
   
   
@@ -268,15 +268,15 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Faith写字的地方">
-  <meta property="og:url" content="https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
-  <meta property="og:title" content="什么是最大期望算法(EM Algorithm) | Faith写字的地方">
-  <meta property="og:description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="https://faithio.cn/zh/post/%E5%8C%97%E7%BE%8E%E5%81%A5%E8%BA%AB%E7%BD%91%E7%BA%A2%E7%9A%84%E8%83%8C%E5%90%8E/">
+  <meta property="og:title" content="北美健身网红的背后 | Faith写字的地方">
+  <meta property="og:description" content="知乎有一个这个话题 https://www.zhihu.com/question/337568352 为什么好多黑人健身后肌肉很强壮，而在中国却不常见这种肌肉强壮的人呢？ 当时看了几个答案，我觉得其他人已经解释得差不多了，没"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     
-      <meta property="article:published_time" content="2020-02-28T18:30:36-05:00">
+      <meta property="article:published_time" content="2020-03-14T18:50:00-05:00">
     
-    <meta property="article:modified_time" content="2020-02-28T18:30:36-05:00">
+    <meta property="article:modified_time" content="2020-03-14T18:30:50-05:00">
   
 
   
@@ -300,12 +300,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/"
+    "@id": "https://faithio.cn/zh/post/%E5%8C%97%E7%BE%8E%E5%81%A5%E8%BA%AB%E7%BD%91%E7%BA%A2%E7%9A%84%E8%83%8C%E5%90%8E/"
   },
-  "headline": "什么是最大期望算法(EM Algorithm)",
+  "headline": "北美健身网红的背后",
   
-  "datePublished": "2020-02-28T18:30:36-05:00",
-  "dateModified": "2020-02-28T18:30:36-05:00",
+  "datePublished": "2020-03-14T18:50:00-05:00",
+  "dateModified": "2020-03-14T18:30:50-05:00",
   
   "author": {
     "@type": "Person",
@@ -320,7 +320,7 @@
       "url": "https://faithio.cn/images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，"
+  "description": "知乎有一个这个话题 https://www.zhihu.com/question/337568352 为什么好多黑人健身后肌肉很强壮，而在中国却不常见这种肌肉强壮的人呢？ 当时看了几个答案，我觉得其他人已经解释得差不多了，没"
 }
 </script>
 
@@ -372,7 +372,7 @@ code.has-jax {font: inherit;
 
 
 
-  <title>什么是最大期望算法(EM Algorithm) | Faith写字的地方</title>
+  <title>北美健身网红的背后 | Faith写字的地方</title>
 
 </head>
 
@@ -605,7 +605,7 @@ code.has-jax {font: inherit;
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">什么是最大期望算法(EM Algorithm)</h1>
+  <h1 itemprop="name">北美健身网红的背后</h1>
 
   
 
@@ -623,8 +623,10 @@ code.has-jax {font: inherit;
     
     
       
+          最近更新于
+      
     
-    Feb 28, 2020
+    Mar 14, 2020
   </span>
   
 
@@ -633,7 +635,7 @@ code.has-jax {font: inherit;
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 分钟阅读时长
+    7 分钟阅读时长
   </span>
   
 
@@ -693,65 +695,199 @@ code.has-jax {font: inherit;
     <div class="article-style">
     
 
-<p>本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，深度学习并不适合，这时才是传统机器学习算法发挥作用的时候，废话不多说，下面直接进入学习。</p>
+<p>知乎有一个这个话题</p>
+
+<p><a href="https://www.zhihu.com/question/337568352" target="_blank">https://www.zhihu.com/question/337568352</a></p>
 
 <blockquote>
-<p>最大期望算法出现在很多涉及概率模型的计算生物学的应用中，那么它有什好处，它的原理是什么？</p>
+<h1 id="为什么好多黑人健身后肌肉很强壮-而在中国却不常见这种肌肉强壮的人呢">为什么好多黑人健身后肌肉很强壮，而在中国却不常见这种肌肉强壮的人呢？</h1>
 </blockquote>
 
-<p>概率模型，例如隐马尔可夫模型或者贝叶斯网络会被用于建模生物学数据。它们因为高效以及高容错的参数学习因此很流行被广泛应用。但是，给概率模型训练的数据往往不是完整的，缺失数据经常会发生。譬如，在医学诊断，通常病人的患病历史只会有有限的医学测试。换句话说，在基因的聚类表达中，数据不完整是因为在这个概率模型中有意忽略了基因到聚类的分配产生。然而最大期望算法支持在概率模型用不完整的数据进行参数估计。</p>
+<p>当时看了几个答案，我觉得其他人已经解释得差不多了，没什么需要补充，直到我看见赞数最高的答案的时候。</p>
 
-<h3 id="以投硬币实验为例">以投硬币实验为例</h3>
+<p><img src="https://pic4.zhimg.com/80/v2-6d0170e739e6bde7cd291c0499401567_hd.jpg" alt="img" /></p>
 
-<p>假设我们有一组硬币A和B，它们都是不均衡的硬币，假设θA 和 θB 分别是A和B正面朝上的概率。</p>
+<p>答案里就放了这位健美选手的照片，没什么特别。</p>
 
-<p>现在我们目标是估计θA 和 θB，通过<strong>随机</strong>挑选A或者B进行10次的投币实验，然后可以通过绘制下面表格很轻易的计算出它们的概率。</p>
+<p>看了评论以后就提醒了我，这反映了一个很常见的现象，值得讨论一下。</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5sxzy4ujj30g806yq4b.jpg" alt="image-20200122112520254" /></p>
+<p>首先这位健美选手并不是随便一位黑人模特，他的名字是Ulisses Jr，四次Musclemania冠军，在外国的健美世界可以说是挺有名的。</p>
 
-<p>现在我们把难度加大一点，假设我们不知道每次实验是挑选哪组硬币，换句话说，就是我们只有以下实验的结果，怎么估算出A和B的概率呢？</p>
+<p>大家应该认识一下他。</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5t12ar0yj304m03it92.jpg" alt="image-20200122112826852" /></p>
+<p><img src="https://pic3.zhimg.com/80/v2-6caf0bbd4fba72348ba65110a23904fa_hd.jpg" alt="img" /></p>
 
-<p>这里我们引入z作为隐变量(hidden variables)或者潜在变量(latent factors)，z定义了每一组实验选用A还是B硬币作为实验。在这个情况下，z就是缺失的数据。这里我们就必须引入最大期望算法来进行计算。怎么做呢？</p>
+<p>男性乳房发育症在健美世界里是很普遍的一个后卫症，其中一个主要原因是类固醇的副作用。当你做一个类固醇周期的时候，自身的睾酮分泌会下降，同时身体可以把类固醇转换成雌激素和催乳激素。缺乏适量的雌激素阻滞剂的时候，乳房就增大。这个治疗类固醇副作用和恢复自身激素分泌的结后周期叫PCT（Post Cycle Therapy）。</p>
 
-<p>首先我先初始化θA 和 θB，在这里我们分别初始化为0.6和0.5，然后我们假设数据是正确的，利用最大似然估计(MLE)分别算出A和B硬币的概率。在这里由于抛硬币是离散分布，并且符合二项分布(Binomial distribution)。所以以第二组为例，我们可以分别算出θA 和 θB。</p>
+<p>这当然是一个非常简化的说法，至于Ulisses Jr的案件，估计是他的PCT系统出了问题吧。</p>
 
-<p>根据二项分布的公式： $$ p_i(k)=\left({10\atop k}\right) \theta_i^k (1-\theta_i)^{10-k}\;. $$</p>
+<p><img src="https://pic2.zhimg.com/80/v2-76ccfb6d49c225b65395621eedca7775_hd.jpg" alt="img" />这是Ulisses Jr和他同伙Simeon Panda。Ulisses连乳房都长了，而Simeon比Ulisses还要大，他还坚持自称一辈子从来没有碰过类固醇，你觉得呢？</p>
 
-<p>$$ \theta_A^9 (1-\theta_A)^{10-9}\simeq0.004 $$</p>
+<p>简单说，整年保持这个水平的体脂和肌肉，天然的话是不可能的，除非你用克仑特罗或者DNP。</p>
 
-<p>$$ \theta_B^9 (1-\theta_B)^{10-9}\simeq0.001\;, $$</p>
+<p>人家用什么药是他们的事儿，我不在乎，我在乎的是中国人对这方面的误解。</p>
 
-<p>最后可以算出A的新概率为： $$ \frac{0.004}{0.004+0.001}=0.8 $$</p>
+<p>中国的健身文化特别不成熟，普通人缺乏很多这方面的基础学问，结果就很无妨、很天真，把许多许多根本不可能的形象好像视为外国人基因优势的证据。</p>
 
-<p>B的新概率为: $$ \frac{0.001}{0.004+0.001}=0.2 $$</p>
+<p>网络上四处都会有此类型的照片，有模特、演员、运动员，很多影像都满身明显是人工的肌肉，可是当国人看见他们的时候，第一个反应是哇，外国人厉害，而不是他们跑的类固醇堆里用的群勃龙有多少。</p>
 
-<p>其实上述公式是根据贝叶斯公式得到，</p>
+<p>这就是我在之前这个答案的评论区里发现的，没有一个人有这个概念，没有一个人发现这些模特明显是不正常的，没有一个人直接点出这个问题。</p>
 
-<p>由于 $$ 𝑃(𝐴)=0.5=𝑃(𝐵) $$</p>
+<p><img src="https://pic4.zhimg.com/80/v2-0f306bff241e307c208c5bfb0cfbd91b_hd.jpg" alt="img" /></p>
 
-<p>$$ P(A|H_9T_1) = \frac{P(A) \cdot P(H_9T_1|A)}{P(H_9T_1)} = \frac{P(A) \cdot P(H_9T_1|A)}{P(A) \cdot P(H_9T_1|A) + P(B) \cdot P(H_9T_1|B)} = \frac{0.5 \cdot 0.004}{0.5 \cdot 0.004 + 0.5 \cdot 0.001} = 0.8$$</p>
+<p>北美健美运动员Dallas McCarver的验尸报告</p>
 
-<blockquote>
-<p>上述步骤称作E-step，用于估计在出现H 9次 T 1次的情况下，分别是A或者B硬币的概率，至此我们可以计算出每组实验的A和B硬币的权重。</p>
+<p>正常男性的睾酮水平是大概300-1000 ng/dL；他的睾酮水平是550 ng/mL（55000 ng/dL）。</p>
 
-<p>其实从数学的角度来考虑就是，我们通过最大似然估计计算了 $$ g(\theta) = logP(x; \theta) $$ 这个函数的下界。然后后面会不断更新这个下界，直到这个函数收敛。EM算法的最大好处就是不会出现overfit。</p>
-</blockquote>
+<p>正常的睾酮比例（T/EpiT）是4以下；他的比例是130。</p>
 
-<p>接下来就是M-step，就是利用带权重的数据进行计算，重新更新θA 和 θB，一直迭代到参数收敛。</p>
+<p>我还需要说什么？</p>
 
-<p>整个过程如下图：</p>
+<p>当一个人的睾酮水平是正常人的100倍以上，血管里的睾酮是99%人工的，你觉得，到底天赋是他长肌肉的能力，还是他对药物的反应和副作用的抵抗力呢？</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5uxybu99j30iz0cpwfz.jpg" alt="image-20200122121719055" /></p>
+<p><img src="https://pic3.zhimg.com/80/v2-e8ae4cf6c1fbce2e81fac6a818841602_hd.jpg" alt="img" /></p>
 
-<blockquote>
-<p>在第十次迭代的过程，A的概率已经是首次实验的结果，而B也是趋向于0.45。但是在nonconcave functions, EM算法有可能会陷入局部最优解。同样的，梯度下降算法(gradient descent)或者牛顿法(Newton-Raphson)也可以用作数值优化拟合，但是EM算法因简单健壮并且易于实现而被广泛应用。</p>
-</blockquote>
+<p>“我有用（类固醇），一直到比赛的时候，八至九个星期之前，这是每个人都需要用的一个东西，如果你想有机会的话。”</p>
 
-<h3 id="应用场景">应用场景</h3>
+<p>黄金时期的阿诺德施瓦辛格（包括他健美舞台上面对的所有对手）基本上是半人半类固醇，阿诺德本人也承认过用大力补和其他类固醇。</p>
 
-<p>譬如在基因簇表达的情形下，我们需要通过观察的显性特征去分组相关的基因簇，就是分辨出哪些基因簇影响这个特征。这种情况下可以特征参数对应不同基因的多参数高斯分布，这个情况下x就是测量特征，z就是对应的基因簇，参数$ \theta$ 就包括多参数高斯分布的均值和协方差。然后EM算法的步骤就是E-step计算属于各个基因簇的概率，M-step去分别更新参数$ \theta$, 一直到收敛。</p>
+<p>据阿诺德的健美同伙Rick Wayne说，阿诺德从13岁就开始用类固醇。</p>
+
+<p>真相，谁知道呢。</p>
+
+<p>假如年轻的阿诺德是纯天然的话，那他的天赋就确实是很好的。</p>
+
+<p>假如没有类固醇的存在，理论上他应该一样会很有成就。</p>
+
+<p><img src="https://pic1.zhimg.com/80/v2-4d0e59259298f2869e2f6cf8d900da8c_hd.jpg" alt="img" />Chris Bumstead：2019 Mr Olympia Class Physique #1</p>
+
+<p>2019届的奥林匹克先生刚刚结束了，加拿大选手Chris Bumstead就获今年的Classic Physique 冠军。</p>
+
+<p>年轻的他没什么特别，好像没有反映到今天的冠军身材。</p>
+
+<p><img src="https://pic2.zhimg.com/80/v2-894feb9f3316474fb754e5af2e48b589_hd.jpg" alt="img" /></p>
+
+<p>Alina Popa：奥林匹克小姐亚军</p>
+
+<p>你觉得呢？</p>
+
+<p>这儿的意思当然不是说类固醇定夺一切了，可是你自己可以分析一下。</p>
+
+<p>还有另外一个感觉，很多人好像觉得如果一个人不是奥林匹克先生水准的话，他就是天然。</p>
+
+<p>这也是非常天真的。</p>
+
+<p><img src="https://pic1.zhimg.com/80/v2-79f681f21bdc7b78870266eb604fd0d8_hd.jpg" alt="img" />三名北美网红</p>
+
+<p>以上的，你觉得谁有用类固醇呢？</p>
+
+<p>普通人会觉得他们三个都是天然的，对这个方面有熟识的人会觉得左边或者中间的用类固醇，主要是中间的，不过事实是什么？</p>
+
+<p><strong>他们三个都有用类固醇</strong>（左：Test、HGH、Epistane。中：基本上是有两条腿的药库，数不尽。右：Test、Tren、Winstrol）。</p>
+
+<p>其实这三个身体大致上都可以纯天然地练成，除了部分问题（左边的腹部好像有点儿HGH引起的膨胀。中间的，类固醇引致的胸肌和三头肌不符合他的身体比例，整年保持这个水平的体脂也是不可能的），不过在现代社会，尤其是西方世界，谁真的肯什么都不用，花五六年去锻炼自己呢？谁有这股耐性呢？特别是当你有研究显示，如果你用类固醇然后什么东西都不做，你长的肌肉会比你去做天然健身的多（<a href="https://link.zhihu.com/?target=https%3A//www.nejm.org/doi/full/10.1056/NEJM199607043350101" target="_blank">https://www.nejm.org/doi/full/10.1056/NEJM199607043350101</a>）。</p>
+
+<p><img src="https://pic4.zhimg.com/80/v2-704be6fa11f0dd5a6d681fdbce006cbb_hd.jpg" alt="img" /></p>
+
+<p>15岁的“天然”健美：更可怜的是竟然真的有人会相信</p>
+
+<p>在外国，类固醇可以很便宜，也非常普及，很多年轻人在高校学生的年纪的时候就会开始打类固醇针，为了运动效能或者想自己好看一点儿，神不知鬼不觉，有多少人真的可以抵抗到这个引诱？</p>
+
+<p><img src="https://pic2.zhimg.com/80/v2-d3817fd87c8ff038661500e9ffb5a6bd_hd.jpg" alt="img" /></p>
+
+<p>本来健身就已经要求很大的付出：</p>
+
+<ol>
+<li>伙食：给你提供足够微量营养素和宏量营养素的健康饮食，每天吃3000至4000卡路里（然后旺季需要燃脂的时候就减低脂肪或者碳水化合物，保持高蛋白）</li>
+<li>休息：充足的睡眠和休息</li>
+<li>锻炼：渐进超负荷力量训练，一个星期去练五天，每一天针对一两个身体部位，每一组保持在6-12 Rep的范围内</li>
+<li>精神：一股充满上进心的精神，永不放弃，一直保持你的健身计划</li>
+</ol>
+
+<p>当你一至四都执行得完美，一贯在健身房练三四年，实现了你九成以上的个人潜能，以后你很难再会有突破的。</p>
+
+<p>剩下的只有第五。</p>
+
+<p><img src="https://pic4.zhimg.com/80/v2-b73cf49111f223f8c0ee57194be51f73_hd.jpg" alt="img" /></p>
+
+<p>可以参考：<a href="https://www.bilibili.com/video/av40842107/" target="_blank">https://www.bilibili.com/video/av40842107/</a></p>
+
+<p>肌肉还不够大的话，打一点儿Test。</p>
+
+<p>腹肌不够显现，用一点儿Clen。</p>
+
+<p>有种的话，还可以尝试一下Synthol。</p>
+
+<p>挺可惜的，因为：</p>
+
+<p><img src="https://pic1.zhimg.com/80/v2-3c5d6cb9686eec8df763dc5fd9e6b7b0_hd.jpg" alt="img" /></p>
+
+<p>第一：变质</p>
+
+<p>论形态美感，除非你是受了外国的畸形肌肉文化影响，天然总是最舒服的。</p>
+
+<p><img src="https://pic2.zhimg.com/80/v2-89f1562575e505f62cbc47b8920f47c1_hd.jpg" alt="img" />Rich Piana死后，家里被发现有20瓶类固醇，他的粉丝大部分是年轻男士</p>
+
+<p>第二：病态</p>
+
+<p>这个趋势引起体象障碍，带领了许多人，特别是天真的年轻人，去追求一个根本就是病态的外形。无数多的年轻人被误导，牺牲了自己的健康和外表为了肌肉发达。</p>
+
+<p><img src="https://pic3.zhimg.com/80/v2-50c3348ee578082814d8581fd631fc7a_hd.jpg" alt="img" />非天然的健美模特告诉你应该继续努力，买补剂</p>
+
+<p>第三：骗局</p>
+
+<p>大部分模特不是有一个明显是非天然的身材，就是表面看起来天然，背后就暗中用禁药，半年时间练成需要三年的身体，然后从中就哗众取宠，给普通人推销一大群完全没用的补剂和训练计划。</p>
+
+<p><img src="https://pic2.zhimg.com/80/v2-eb7db840a1de6abcd615c44973edd251_hd.jpg" alt="img" />Jesse Ventura：“80年代的时候，类固醇是合法的，当时的摔跤手用类固醇如吃糖果一样。”</p>
+
+<p>第四：假象</p>
+
+<p>为什么白人的肌肉特别大？为什么黑人的肌肉特别大？</p>
+
+<p>无论是模特、运动员、还是演员什么的，他们大部分和类固醇是分不开的，特别是以貌取财的人士，满身肌肉的身材是很多外国模特和演员的饭碗。</p>
+
+<p><img src="https://pic4.zhimg.com/80/v2-44d87d826f91c9b464a0767547094dab_hd.jpg" alt="img" />UFC拳手Alistair Overeem说吃马肉就可以长肌肉，结果他的睾酮比例被验出是14比1</p>
+
+<p>第五：无奈</p>
+
+<p>在很多事业上，唯一存在的就只有竞争。</p>
+
+<p>别人用的话，你怎么呢？</p>
+
+<p>你500ng的天然睾酮对人家5000ng的人工睾酮，你有把握吗？</p>
+
+<p>你会坚持自己的原则，石投大海，还是跟风，然后毁灭你的对手呢？</p>
+
+<p><img src="https://pic2.zhimg.com/80/v2-07968633b0bb685754cfb00b92f356c9_hd.jpg" alt="img" />Eugen Sandow（1867-1925）：现代健美之父</p>
+
+<p>合成代谢类固醇是发明于1930-1940并且流入民间，这个时候Eugen Sandow已经过世了，那我们可以99.9%肯定他的身材是天然健身和超凡基因的产物。</p>
+
+<p>这当然不是说没有人能够超越他。潜力更强的人，虽然罕见，不过依然会有的，哪个民族都会有。只不过，在这个年代，有了类固醇的发明以后，突然间随便一个国外的普通网红或者模特，甚至连一些青少年或者女性的健美运动员，都比Eugen Sandow巨大。</p>
+
+<p>对，现代社会有一些所谓新的练习技巧，可是增肌，归根结底依然是围绕着渐进式超负荷，没什么特别。</p>
+
+<p>至于这些健美界的补剂，就如我刚才说的，事实就是九成以上的补剂都是骗局。会进入你身体的，真正有效的只有食物营养和类固醇。</p>
+
+<p>如果单靠“天赋”这个词语去解释的话，这就真的有点儿不诚实了。</p>
+
+<p>我希望的，就是更多国人可以明白这些道理。</p>
+
+<p>别任何影像都接受，也别为自己立下一些完全不现实的目标。</p>
+
+<p>我觉得，最好自己体验一下。</p>
+
+<p>跟随这四点：</p>
+
+<ol>
+<li>吃一个给你提供足够微量营养素和宏量营养素的健康食谱</li>
+<li>充足的睡眠和休息</li>
+<li>渐进超负荷力量训练</li>
+<li>保持一股充满上进心的精神</li>
+</ol>
+
+<p>去健身三年，之后我保证你会明白。</p>
+
+<p>说不定，可能你有所谓超凡脱族的天赋呢。</p>
 
     </div>
 
@@ -774,7 +910,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/zh/post/%E5%8C%97%E7%BE%8E%E5%81%A5%E8%BA%AB%E7%BD%91%E7%BA%A2%E7%9A%84%E8%83%8C%E5%90%8E/&amp;text=%e5%8c%97%e7%be%8e%e5%81%a5%e8%ba%ab%e7%bd%91%e7%ba%a2%e7%9a%84%e8%83%8c%e5%90%8e" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -787,7 +923,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;t=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/zh/post/%E5%8C%97%E7%BE%8E%E5%81%A5%E8%BA%AB%E7%BD%91%E7%BA%A2%E7%9A%84%E8%83%8C%E5%90%8E/&amp;t=%e5%8c%97%e7%be%8e%e5%81%a5%e8%ba%ab%e7%bd%91%e7%ba%a2%e7%9a%84%e8%83%8c%e5%90%8e" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -800,7 +936,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="mailto:?subject=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29&amp;body=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=%e5%8c%97%e7%be%8e%e5%81%a5%e8%ba%ab%e7%bd%91%e7%ba%a2%e7%9a%84%e8%83%8c%e5%90%8e&amp;body=https://faithio.cn/zh/post/%E5%8C%97%E7%BE%8E%E5%81%A5%E8%BA%AB%E7%BD%91%E7%BA%A2%E7%9A%84%E8%83%8C%E5%90%8E/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -813,7 +949,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/zh/post/%E5%8C%97%E7%BE%8E%E5%81%A5%E8%BA%AB%E7%BD%91%E7%BA%A2%E7%9A%84%E8%83%8C%E5%90%8E/&amp;title=%e5%8c%97%e7%be%8e%e5%81%a5%e8%ba%ab%e7%bd%91%e7%ba%a2%e7%9a%84%e8%83%8c%e5%90%8e" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -826,7 +962,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29%20https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=%e5%8c%97%e7%be%8e%e5%81%a5%e8%ba%ab%e7%bd%91%e7%ba%a2%e7%9a%84%e8%83%8c%e5%90%8e%20https://faithio.cn/zh/post/%E5%8C%97%E7%BE%8E%E5%81%A5%E8%BA%AB%E7%BD%91%E7%BA%A2%E7%9A%84%E8%83%8C%E5%90%8E/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -839,7 +975,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/zh/post/%E5%8C%97%E7%BE%8E%E5%81%A5%E8%BA%AB%E7%BD%91%E7%BA%A2%E7%9A%84%E8%83%8C%E5%90%8E/&amp;title=%e5%8c%97%e7%be%8e%e5%81%a5%e8%ba%ab%e7%bd%91%e7%ba%a2%e7%9a%84%e8%83%8c%e5%90%8e" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1094,14 +1230,14 @@ code.has-jax {font: inherit;
   
 <div class="post-nav-item">
 <div class="meta-nav">下一页</div>
-  <a href="../../../zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/" rel="next">我知道开始很难，但是也要坚持下去</a>
+  <a href="../../../zh/post/vlog1/" rel="next">通过机器翻译的方式自动翻译生成字幕</a>
 </div>
 
   
   
 <div class="post-nav-item">
 <div class="meta-nav">上一页</div>
-  <a href="../../../zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" rel="prev">记一次树莓派Trojan的分析</a>
+  <a href="../../../zh/post/%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E5%88%87%E9%83%BD%E4%BC%9A%E5%A5%BD%E8%B5%B7%E6%9D%A5/" rel="prev">我相信一切都会好起来！</a>
 </div>
 
 </div>

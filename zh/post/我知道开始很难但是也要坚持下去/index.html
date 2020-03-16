@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，">
+  <meta name="description" content="前几天，F君参加了实验室的meeting，被催进度了。 还好，有个快要毕业的小哥給F君讲了下相关的知识点，因为他是实验室唯一研究方向和F君比较">
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://faithio.cn/zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/">
 
   
 
@@ -254,7 +254,7 @@
   <link rel="icon" type="image/png" href="../../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="canonical" href="https://faithio.cn/zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/">
 
   
   
@@ -268,15 +268,15 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Faith写字的地方">
-  <meta property="og:url" content="https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
-  <meta property="og:title" content="什么是最大期望算法(EM Algorithm) | Faith写字的地方">
-  <meta property="og:description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="https://faithio.cn/zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/">
+  <meta property="og:title" content="我知道开始很难，但是也要坚持下去 | Faith写字的地方">
+  <meta property="og:description" content="前几天，F君参加了实验室的meeting，被催进度了。 还好，有个快要毕业的小哥給F君讲了下相关的知识点，因为他是实验室唯一研究方向和F君比较"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     
-      <meta property="article:published_time" content="2020-02-28T18:30:36-05:00">
+      <meta property="article:published_time" content="2020-03-10T18:50:00-05:00">
     
-    <meta property="article:modified_time" content="2020-02-28T18:30:36-05:00">
+    <meta property="article:modified_time" content="2020-03-10T18:30:50-05:00">
   
 
   
@@ -300,12 +300,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/"
+    "@id": "https://faithio.cn/zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/"
   },
-  "headline": "什么是最大期望算法(EM Algorithm)",
+  "headline": "我知道开始很难，但是也要坚持下去",
   
-  "datePublished": "2020-02-28T18:30:36-05:00",
-  "dateModified": "2020-02-28T18:30:36-05:00",
+  "datePublished": "2020-03-10T18:50:00-05:00",
+  "dateModified": "2020-03-10T18:30:50-05:00",
   
   "author": {
     "@type": "Person",
@@ -320,7 +320,7 @@
       "url": "https://faithio.cn/images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，"
+  "description": "前几天，F君参加了实验室的meeting，被催进度了。 还好，有个快要毕业的小哥給F君讲了下相关的知识点，因为他是实验室唯一研究方向和F君比较"
 }
 </script>
 
@@ -372,7 +372,7 @@ code.has-jax {font: inherit;
 
 
 
-  <title>什么是最大期望算法(EM Algorithm) | Faith写字的地方</title>
+  <title>我知道开始很难，但是也要坚持下去 | Faith写字的地方</title>
 
 </head>
 
@@ -605,7 +605,7 @@ code.has-jax {font: inherit;
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">什么是最大期望算法(EM Algorithm)</h1>
+  <h1 itemprop="name">我知道开始很难，但是也要坚持下去</h1>
 
   
 
@@ -623,8 +623,10 @@ code.has-jax {font: inherit;
     
     
       
+          最近更新于
+      
     
-    Feb 28, 2020
+    Mar 10, 2020
   </span>
   
 
@@ -633,7 +635,7 @@ code.has-jax {font: inherit;
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 分钟阅读时长
+    2 分钟阅读时长
   </span>
   
 
@@ -691,67 +693,35 @@ code.has-jax {font: inherit;
   <div class="article-container">
 
     <div class="article-style">
-    
+    <p>前几天，F君参加了实验室的meeting，被催进度了。</p>
 
-<p>本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，深度学习并不适合，这时才是传统机器学习算法发挥作用的时候，废话不多说，下面直接进入学习。</p>
+<p>还好，有个快要毕业的小哥給F君讲了下相关的知识点，因为他是实验室唯一研究方向和F君比较相像的，都是做Stochastic Expectation Propagation。在他的接近2个多小时的讲解下，F君脑瓜终于悟出了什么。</p>
 
-<blockquote>
-<p>最大期望算法出现在很多涉及概率模型的计算生物学的应用中，那么它有什好处，它的原理是什么？</p>
-</blockquote>
+<p>我承认我不是天才，毕竟大多数人都不是天才，都是普通人。</p>
 
-<p>概率模型，例如隐马尔可夫模型或者贝叶斯网络会被用于建模生物学数据。它们因为高效以及高容错的参数学习因此很流行被广泛应用。但是，给概率模型训练的数据往往不是完整的，缺失数据经常会发生。譬如，在医学诊断，通常病人的患病历史只会有有限的医学测试。换句话说，在基因的聚类表达中，数据不完整是因为在这个概率模型中有意忽略了基因到聚类的分配产生。然而最大期望算法支持在概率模型用不完整的数据进行参数估计。</p>
+<p>这个小哥也坦诚到，我也是花了一年时间才完全搞懂的。（我们要修5门课，除去课程压力，做研究的时间其实不多）</p>
 
-<h3 id="以投硬币实验为例">以投硬币实验为例</h3>
+<p>带我的博士说，“我们每个人一开始都是要经历过这个痛苦的阶段，当然博士承受的压力比你大多了”</p>
 
-<p>假设我们有一组硬币A和B，它们都是不均衡的硬币，假设θA 和 θB 分别是A和B正面朝上的概率。</p>
+<p>坐我旁边的印度老哥坦然说到，“你知道吗，去年我刚入学的第四个月，我真有了放弃的念头，想要转去course，修完学分得了。导师和mentor让我再坚持两个月，后来我扛下来了，现在在准备发第二篇paper了。”</p>
 
-<p>现在我们目标是估计θA 和 θB，通过<strong>随机</strong>挑选A或者B进行10次的投币实验，然后可以通过绘制下面表格很轻易的计算出它们的概率。</p>
+<p>听完这些，F君也很触动，有时这些东西完全不能和健身类比。</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5sxzy4ujj30g806yq4b.jpg" alt="image-20200122112520254" /></p>
+<p>学术研究和健身，对于F君来说都是没有天赋的，但是健身这个东西就是尽然你没有天赋，但是你付出了多少，你就会收获到多少。</p>
 
-<p>现在我们把难度加大一点，假设我们不知道每次实验是挑选哪组硬币，换句话说，就是我们只有以下实验的结果，怎么估算出A和B的概率呢？</p>
+<p>做研究呢？有的时候就像是大海茫茫捞一根针，因为你必须要做出前人没有做出的研究，尤其是在工业界写惯了CURD的朋友，会非常非常不适应。还是多多培养自己创造性的思维，不要执着于求助别人。</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5t12ar0yj304m03it92.jpg" alt="image-20200122112826852" /></p>
+<p>另外，国外的健身风气真的很好，遇到不爽的事情或者研究无法进展了，直接去健身房挥汗如雨，感觉会好很多。</p>
 
-<p>这里我们引入z作为隐变量(hidden variables)或者潜在变量(latent factors)，z定义了每一组实验选用A还是B硬币作为实验。在这个情况下，z就是缺失的数据。这里我们就必须引入最大期望算法来进行计算。怎么做呢？</p>
-
-<p>首先我先初始化θA 和 θB，在这里我们分别初始化为0.6和0.5，然后我们假设数据是正确的，利用最大似然估计(MLE)分别算出A和B硬币的概率。在这里由于抛硬币是离散分布，并且符合二项分布(Binomial distribution)。所以以第二组为例，我们可以分别算出θA 和 θB。</p>
-
-<p>根据二项分布的公式： $$ p_i(k)=\left({10\atop k}\right) \theta_i^k (1-\theta_i)^{10-k}\;. $$</p>
-
-<p>$$ \theta_A^9 (1-\theta_A)^{10-9}\simeq0.004 $$</p>
-
-<p>$$ \theta_B^9 (1-\theta_B)^{10-9}\simeq0.001\;, $$</p>
-
-<p>最后可以算出A的新概率为： $$ \frac{0.004}{0.004+0.001}=0.8 $$</p>
-
-<p>B的新概率为: $$ \frac{0.001}{0.004+0.001}=0.2 $$</p>
-
-<p>其实上述公式是根据贝叶斯公式得到，</p>
-
-<p>由于 $$ 𝑃(𝐴)=0.5=𝑃(𝐵) $$</p>
-
-<p>$$ P(A|H_9T_1) = \frac{P(A) \cdot P(H_9T_1|A)}{P(H_9T_1)} = \frac{P(A) \cdot P(H_9T_1|A)}{P(A) \cdot P(H_9T_1|A) + P(B) \cdot P(H_9T_1|B)} = \frac{0.5 \cdot 0.004}{0.5 \cdot 0.004 + 0.5 \cdot 0.001} = 0.8$$</p>
+<p>最后，F君重新定义了自己的博客，地址是 faithio.cn 欢迎来关注，分为中文和英文，中文板块汇总了公众号的干货文章，以及一些技术性的文章，英文板块主要是一些学术研究。</p>
 
 <blockquote>
-<p>上述步骤称作E-step，用于估计在出现H 9次 T 1次的情况下，分别是A或者B硬币的概率，至此我们可以计算出每组实验的A和B硬币的权重。</p>
-
-<p>其实从数学的角度来考虑就是，我们通过最大似然估计计算了 $$ g(\theta) = logP(x; \theta) $$ 这个函数的下界。然后后面会不断更新这个下界，直到这个函数收敛。EM算法的最大好处就是不会出现overfit。</p>
+<p>因为微信公众号挺LJ的，不支持Latex公式，也不适合写很多技术性的东西，毕竟手机阅读也不方便。</p>
 </blockquote>
 
-<p>接下来就是M-step，就是利用带权重的数据进行计算，重新更新θA 和 θB，一直迭代到参数收敛。</p>
+<p><strong>最后祝大家在2020年状态爆满！！！！</strong></p>
 
-<p>整个过程如下图：</p>
-
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5uxybu99j30iz0cpwfz.jpg" alt="image-20200122121719055" /></p>
-
-<blockquote>
-<p>在第十次迭代的过程，A的概率已经是首次实验的结果，而B也是趋向于0.45。但是在nonconcave functions, EM算法有可能会陷入局部最优解。同样的，梯度下降算法(gradient descent)或者牛顿法(Newton-Raphson)也可以用作数值优化拟合，但是EM算法因简单健壮并且易于实现而被广泛应用。</p>
-</blockquote>
-
-<h3 id="应用场景">应用场景</h3>
-
-<p>譬如在基因簇表达的情形下，我们需要通过观察的显性特征去分组相关的基因簇，就是分辨出哪些基因簇影响这个特征。这种情况下可以特征参数对应不同基因的多参数高斯分布，这个情况下x就是测量特征，z就是对应的基因簇，参数$ \theta$ 就包括多参数高斯分布的均值和协方差。然后EM算法的步骤就是E-step计算属于各个基因簇的概率，M-step去分别更新参数$ \theta$, 一直到收敛。</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gceacbsez9j30k00urqo9.jpg" alt="image-20200229225209901" /></p>
 
     </div>
 
@@ -774,7 +744,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/&amp;text=%e6%88%91%e7%9f%a5%e9%81%93%e5%bc%80%e5%a7%8b%e5%be%88%e9%9a%be%ef%bc%8c%e4%bd%86%e6%98%af%e4%b9%9f%e8%a6%81%e5%9d%9a%e6%8c%81%e4%b8%8b%e5%8e%bb" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -787,7 +757,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;t=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/&amp;t=%e6%88%91%e7%9f%a5%e9%81%93%e5%bc%80%e5%a7%8b%e5%be%88%e9%9a%be%ef%bc%8c%e4%bd%86%e6%98%af%e4%b9%9f%e8%a6%81%e5%9d%9a%e6%8c%81%e4%b8%8b%e5%8e%bb" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -800,7 +770,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="mailto:?subject=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29&amp;body=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=%e6%88%91%e7%9f%a5%e9%81%93%e5%bc%80%e5%a7%8b%e5%be%88%e9%9a%be%ef%bc%8c%e4%bd%86%e6%98%af%e4%b9%9f%e8%a6%81%e5%9d%9a%e6%8c%81%e4%b8%8b%e5%8e%bb&amp;body=https://faithio.cn/zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -813,7 +783,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/&amp;title=%e6%88%91%e7%9f%a5%e9%81%93%e5%bc%80%e5%a7%8b%e5%be%88%e9%9a%be%ef%bc%8c%e4%bd%86%e6%98%af%e4%b9%9f%e8%a6%81%e5%9d%9a%e6%8c%81%e4%b8%8b%e5%8e%bb" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -826,7 +796,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29%20https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=%e6%88%91%e7%9f%a5%e9%81%93%e5%bc%80%e5%a7%8b%e5%be%88%e9%9a%be%ef%bc%8c%e4%bd%86%e6%98%af%e4%b9%9f%e8%a6%81%e5%9d%9a%e6%8c%81%e4%b8%8b%e5%8e%bb%20https://faithio.cn/zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -839,7 +809,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/&amp;title=%e6%88%91%e7%9f%a5%e9%81%93%e5%bc%80%e5%a7%8b%e5%be%88%e9%9a%be%ef%bc%8c%e4%bd%86%e6%98%af%e4%b9%9f%e8%a6%81%e5%9d%9a%e6%8c%81%e4%b8%8b%e5%8e%bb" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1094,14 +1064,14 @@ code.has-jax {font: inherit;
   
 <div class="post-nav-item">
 <div class="meta-nav">下一页</div>
-  <a href="../../../zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/" rel="next">我知道开始很难，但是也要坚持下去</a>
+  <a href="../../../zh/post/%E5%AD%99%E6%9D%A8%E5%9C%A8%E6%80%BB%E7%BB%93%E9%99%88%E8%AF%8D%E6%97%B6%E7%94%B3%E8%AF%B7%E6%9B%B4%E6%8D%A2%E7%9A%84%E9%82%A3%E5%90%8D%E5%A5%B3%E7%BF%BB%E8%AF%91%E7%9C%9F%E7%9A%84%E8%A6%81%E4%B8%BA%E5%AD%99%E6%9D%A8%E8%B4%A5%E8%AF%89%E8%83%8C%E5%A4%A7%E9%94%85%E5%90%97/" rel="next">孙杨在总结陈词时申请更换的那名女翻译真的要为孙杨败诉背大锅吗？</a>
 </div>
 
   
   
 <div class="post-nav-item">
 <div class="meta-nav">上一页</div>
-  <a href="../../../zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" rel="prev">记一次树莓派Trojan的分析</a>
+  <a href="../../../zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" rel="prev">什么是最大期望算法(EM Algorithm)</a>
 </div>
 
 </div>

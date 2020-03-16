@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，">
+  <meta name="description" content="许多人看到的最后孙杨在总结陈词中申请更换翻译的那位“女翻译”，就是图下这位啦，其实在她当天到庭的时候估计也根本没想到居然还要还给孙杨方当翻译">
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://faithio.cn/zh/post/%E5%AD%99%E6%9D%A8%E5%9C%A8%E6%80%BB%E7%BB%93%E9%99%88%E8%AF%8D%E6%97%B6%E7%94%B3%E8%AF%B7%E6%9B%B4%E6%8D%A2%E7%9A%84%E9%82%A3%E5%90%8D%E5%A5%B3%E7%BF%BB%E8%AF%91%E7%9C%9F%E7%9A%84%E8%A6%81%E4%B8%BA%E5%AD%99%E6%9D%A8%E8%B4%A5%E8%AF%89%E8%83%8C%E5%A4%A7%E9%94%85%E5%90%97/">
 
   
 
@@ -254,7 +254,7 @@
   <link rel="icon" type="image/png" href="../../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
+  <link rel="canonical" href="https://faithio.cn/zh/post/%E5%AD%99%E6%9D%A8%E5%9C%A8%E6%80%BB%E7%BB%93%E9%99%88%E8%AF%8D%E6%97%B6%E7%94%B3%E8%AF%B7%E6%9B%B4%E6%8D%A2%E7%9A%84%E9%82%A3%E5%90%8D%E5%A5%B3%E7%BF%BB%E8%AF%91%E7%9C%9F%E7%9A%84%E8%A6%81%E4%B8%BA%E5%AD%99%E6%9D%A8%E8%B4%A5%E8%AF%89%E8%83%8C%E5%A4%A7%E9%94%85%E5%90%97/">
 
   
   
@@ -268,15 +268,15 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Faith写字的地方">
-  <meta property="og:url" content="https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/">
-  <meta property="og:title" content="什么是最大期望算法(EM Algorithm) | Faith写字的地方">
-  <meta property="og:description" content="本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="https://faithio.cn/zh/post/%E5%AD%99%E6%9D%A8%E5%9C%A8%E6%80%BB%E7%BB%93%E9%99%88%E8%AF%8D%E6%97%B6%E7%94%B3%E8%AF%B7%E6%9B%B4%E6%8D%A2%E7%9A%84%E9%82%A3%E5%90%8D%E5%A5%B3%E7%BF%BB%E8%AF%91%E7%9C%9F%E7%9A%84%E8%A6%81%E4%B8%BA%E5%AD%99%E6%9D%A8%E8%B4%A5%E8%AF%89%E8%83%8C%E5%A4%A7%E9%94%85%E5%90%97/">
+  <meta property="og:title" content="孙杨在总结陈词时申请更换的那名女翻译真的要为孙杨败诉背大锅吗？ | Faith写字的地方">
+  <meta property="og:description" content="许多人看到的最后孙杨在总结陈词中申请更换翻译的那位“女翻译”，就是图下这位啦，其实在她当天到庭的时候估计也根本没想到居然还要还给孙杨方当翻译"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     
-      <meta property="article:published_time" content="2020-02-28T18:30:36-05:00">
+      <meta property="article:published_time" content="2020-03-12T18:50:00-05:00">
     
-    <meta property="article:modified_time" content="2020-02-28T18:30:36-05:00">
+    <meta property="article:modified_time" content="2020-03-12T18:30:50-05:00">
   
 
   
@@ -300,12 +300,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/"
+    "@id": "https://faithio.cn/zh/post/%E5%AD%99%E6%9D%A8%E5%9C%A8%E6%80%BB%E7%BB%93%E9%99%88%E8%AF%8D%E6%97%B6%E7%94%B3%E8%AF%B7%E6%9B%B4%E6%8D%A2%E7%9A%84%E9%82%A3%E5%90%8D%E5%A5%B3%E7%BF%BB%E8%AF%91%E7%9C%9F%E7%9A%84%E8%A6%81%E4%B8%BA%E5%AD%99%E6%9D%A8%E8%B4%A5%E8%AF%89%E8%83%8C%E5%A4%A7%E9%94%85%E5%90%97/"
   },
-  "headline": "什么是最大期望算法(EM Algorithm)",
+  "headline": "孙杨在总结陈词时申请更换的那名女翻译真的要为孙杨败诉背大锅吗？",
   
-  "datePublished": "2020-02-28T18:30:36-05:00",
-  "dateModified": "2020-02-28T18:30:36-05:00",
+  "datePublished": "2020-03-12T18:50:00-05:00",
+  "dateModified": "2020-03-12T18:30:50-05:00",
   
   "author": {
     "@type": "Person",
@@ -320,7 +320,7 @@
       "url": "https://faithio.cn/images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，"
+  "description": "许多人看到的最后孙杨在总结陈词中申请更换翻译的那位“女翻译”，就是图下这位啦，其实在她当天到庭的时候估计也根本没想到居然还要还给孙杨方当翻译"
 }
 </script>
 
@@ -372,7 +372,7 @@ code.has-jax {font: inherit;
 
 
 
-  <title>什么是最大期望算法(EM Algorithm) | Faith写字的地方</title>
+  <title>孙杨在总结陈词时申请更换的那名女翻译真的要为孙杨败诉背大锅吗？ | Faith写字的地方</title>
 
 </head>
 
@@ -605,7 +605,7 @@ code.has-jax {font: inherit;
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">什么是最大期望算法(EM Algorithm)</h1>
+  <h1 itemprop="name">孙杨在总结陈词时申请更换的那名女翻译真的要为孙杨败诉背大锅吗？</h1>
 
   
 
@@ -623,8 +623,10 @@ code.has-jax {font: inherit;
     
     
       
+          最近更新于
+      
     
-    Feb 28, 2020
+    Mar 12, 2020
   </span>
   
 
@@ -691,67 +693,51 @@ code.has-jax {font: inherit;
   <div class="article-container">
 
     <div class="article-style">
-    
+    <p>许多人看到的最后孙杨在总结陈词中申请更换翻译的那位“女翻译”，就是图下这位啦，其实在她当天到庭的时候估计也根本没想到居然还要还给孙杨方当翻译！</p>
 
-<p>本文是机器学习系列的第一篇文章，以最简单的方式讲解机器学习的传统算法，最大期望算法。在很多传统领域，医院，药厂等等无法产生海量的数据的情形，深度学习并不适合，这时才是传统机器学习算法发挥作用的时候，废话不多说，下面直接进入学习。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-2bd4b1662dee8c104003ccd1dc58fffb_720w.jpg" alt="img" /></p>
 
-<blockquote>
-<p>最大期望算法出现在很多涉及概率模型的计算生物学的应用中，那么它有什好处，它的原理是什么？</p>
-</blockquote>
+<p>开庭的时候，这位“女翻译”其实是坐在这里的，那是WADA的列席位。</p>
 
-<p>概率模型，例如隐马尔可夫模型或者贝叶斯网络会被用于建模生物学数据。它们因为高效以及高容错的参数学习因此很流行被广泛应用。但是，给概率模型训练的数据往往不是完整的，缺失数据经常会发生。譬如，在医学诊断，通常病人的患病历史只会有有限的医学测试。换句话说，在基因的聚类表达中，数据不完整是因为在这个概率模型中有意忽略了基因到聚类的分配产生。然而最大期望算法支持在概率模型用不完整的数据进行参数估计。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-f6e133d12276c7c4a5c3357d02be64d4_720w.jpg" alt="img" /></p>
 
-<h3 id="以投硬币实验为例">以投硬币实验为例</h3>
+<p>所以，本质上来看，这位“女翻译”其实是控方WADA的人。那么就很奇怪了，怎么到后来就出现了用WADA的人来反驳WADA，“自己打自己”的情况呢？</p>
 
-<p>假设我们有一组硬币A和B，它们都是不均衡的硬币，假设θA 和 θB 分别是A和B正面朝上的概率。</p>
+<p>原来，在上午刚开始的庭审时，孙杨使用的翻译是同声传译，翻译官是坐在WADA列席位后面的小房子里（上图后面的小房子），一开始的同传是下图的女士。</p>
 
-<p>现在我们目标是估计θA 和 θB，通过<strong>随机</strong>挑选A或者B进行10次的投币实验，然后可以通过绘制下面表格很轻易的计算出它们的概率。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-e900079a3b2c76b658accc39e1220ef8_720w.jpg" alt="img" /></p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5sxzy4ujj30g806yq4b.jpg" alt="image-20200122112520254" /></p>
+<p>是不是中国国籍不清楚，但至少应该是一名华裔吧。不过这位翻译的水平确实不敢恭维，由于经常词不达意、并且少翻错翻关键内容，引起孙杨方的强烈不满，多次打断表示之前的翻译不准确，请重新说清楚一些，孙杨方律师Ian Meakin直接在庭审上形容该翻译的质量“so bad”。</p>
 
-<p>现在我们把难度加大一点，假设我们不知道每次实验是挑选哪组硬币，换句话说，就是我们只有以下实验的结果，怎么估算出A和B的概率呢？</p>
+<p>依旧是在孙杨回答问题的有段时间内，同声传译被换做了下图中的外国女士。</p>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5t12ar0yj304m03it92.jpg" alt="image-20200122112826852" /></p>
+<p><img src="https://pic3.zhimg.com/80/v2-25a8b54e6f7e67d63f38e626f9687a32_720w.jpg" alt="img" /></p>
 
-<p>这里我们引入z作为隐变量(hidden variables)或者潜在变量(latent factors)，z定义了每一组实验选用A还是B硬币作为实验。在这个情况下，z就是缺失的数据。这里我们就必须引入最大期望算法来进行计算。怎么做呢？</p>
+<p>嗯，没错，这次直接上了一个会说中文的外国人，由她来给孙杨做同声传译，但似乎效果依然也不好，没办法，又过了不久只能再换回来，换回了那位中国人华裔女士。</p>
 
-<p>首先我先初始化θA 和 θB，在这里我们分别初始化为0.6和0.5，然后我们假设数据是正确的，利用最大似然估计(MLE)分别算出A和B硬币的概率。在这里由于抛硬币是离散分布，并且符合二项分布(Binomial distribution)。所以以第二组为例，我们可以分别算出θA 和 θB。</p>
+<p>在下午的庭审开始前，先宣布了一个信息，控辩双方达成了一致，将由图1中WADA方的女士来为孙杨方做翻译，并且将同声传译更改为了交替翻译，于是该女士就成为了孙杨方5位证人作证以及孙杨最后时刻总结陈词时的临时翻译。</p>
 
-<p>根据二项分布的公式： $$ p_i(k)=\left({10\atop k}\right) \theta_i^k (1-\theta_i)^{10-k}\;. $$</p>
+<p><img src="https://pic4.zhimg.com/80/v2-c4c86fcd85e3c6568d9a289c5e88944f_720w.jpg" alt="img" /></p>
 
-<p>$$ \theta_A^9 (1-\theta_A)^{10-9}\simeq0.004 $$</p>
+<p><img src="https://pic4.zhimg.com/80/v2-920f3b4081824f9a96b0108fbf42ee7b_720w.jpg" alt="img" /></p>
 
-<p>$$ \theta_B^9 (1-\theta_B)^{10-9}\simeq0.001\;, $$</p>
+<p>就我个人的观感来说，在孙杨方5位证人出庭的翻译中，除了有一次将控方（WADA）律师提问时使用的关于两个证件是不是只需要提供一个（either XXX, or yyy）翻译成了是否需要提供两个证件之外，并没有什么太大的问题。并且这个翻译错误在10秒内就被审判官及时发现打断，审判官称接收到了相关信息，可能之前的翻译有点问题，会影响到事实的陈述，请重新确认一下。从此，我们基本可以得知，即使是在这名来自WADA方的女士临危受命上台客串孙杨方的翻译同时，一旦出现本质上的翻译错误，完全是能够当场被发现并被指正的。</p>
 
-<p>最后可以算出A的新概率为： $$ \frac{0.004}{0.004+0.001}=0.8 $$</p>
+<p>在最后的总结陈述中，孙杨举手让一名男士上台充当翻译。审判官一开始还没反应过来，还询问了这名男士是谁，来自哪里。男士自称XXX，和那个小房子里的人一样，也是一名独立的翻译。审判官非常纳闷，这是怎么回事？从来没人和我说过这个人啊，也没人和我提过这人会上场。</p>
 
-<p>B的新概率为: $$ \frac{0.001}{0.004+0.001}=0.2 $$</p>
+<p><img src="https://pic3.zhimg.com/80/v2-599dab5171c8fae0d5307ad3371ed21a_720w.jpg" alt="img" /></p>
 
-<p>其实上述公式是根据贝叶斯公式得到，</p>
+<p>在审判官似乎有些动怒的时候，孙杨却似乎觉得审判官的提问实际上是在幽默，居然露出了笑脸。这个插曲最终也成为了CAS的裁决报告中着重体现的孙杨方无视规则的佐证。</p>
 
-<p>由于 $$ 𝑃(𝐴)=0.5=𝑃(𝐵) $$</p>
+<p><img src="https://pic2.zhimg.com/80/v2-fc73c87bdd4c02a81164329d6c3ad241_720w.jpg" alt="img" /></p>
 
-<p>$$ P(A|H_9T_1) = \frac{P(A) \cdot P(H_9T_1|A)}{P(H_9T_1)} = \frac{P(A) \cdot P(H_9T_1|A)}{P(A) \cdot P(H_9T_1|A) + P(B) \cdot P(H_9T_1|B)} = \frac{0.5 \cdot 0.004}{0.5 \cdot 0.004 + 0.5 \cdot 0.001} = 0.8$$</p>
+<p>孙杨方的律师Ian Meakin看不下去了，示意请暂停20秒，我们可以处理好这件事情。审判官给了1分钟的暂停时间，从直播画面切离前的最后一个定格我们可以看到，Ian Meakin似乎显得极其愤怒，用手指指着那名上场的“翻译”。</p>
 
-<blockquote>
-<p>上述步骤称作E-step，用于估计在出现H 9次 T 1次的情况下，分别是A或者B硬币的概率，至此我们可以计算出每组实验的A和B硬币的权重。</p>
+<p><img src="https://pic3.zhimg.com/80/v2-00fcb26939262f4b9629482b86a87982_720w.jpg" alt="img" /></p>
 
-<p>其实从数学的角度来考虑就是，我们通过最大似然估计计算了 $$ g(\theta) = logP(x; \theta) $$ 这个函数的下界。然后后面会不断更新这个下界，直到这个函数收敛。EM算法的最大好处就是不会出现overfit。</p>
-</blockquote>
+<p>虽然视频被切了，但是声音依然在放送，我们隐约可以听见场内传来了“不要再这样做了”（never do that again）的警告。</p>
 
-<p>接下来就是M-step，就是利用带权重的数据进行计算，重新更新θA 和 θB，一直迭代到参数收敛。</p>
-
-<p>整个过程如下图：</p>
-
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gb5uxybu99j30iz0cpwfz.jpg" alt="image-20200122121719055" /></p>
-
-<blockquote>
-<p>在第十次迭代的过程，A的概率已经是首次实验的结果，而B也是趋向于0.45。但是在nonconcave functions, EM算法有可能会陷入局部最优解。同样的，梯度下降算法(gradient descent)或者牛顿法(Newton-Raphson)也可以用作数值优化拟合，但是EM算法因简单健壮并且易于实现而被广泛应用。</p>
-</blockquote>
-
-<h3 id="应用场景">应用场景</h3>
-
-<p>譬如在基因簇表达的情形下，我们需要通过观察的显性特征去分组相关的基因簇，就是分辨出哪些基因簇影响这个特征。这种情况下可以特征参数对应不同基因的多参数高斯分布，这个情况下x就是测量特征，z就是对应的基因簇，参数$ \theta$ 就包括多参数高斯分布的均值和协方差。然后EM算法的步骤就是E-step计算属于各个基因簇的概率，M-step去分别更新参数$ \theta$, 一直到收敛。</p>
+<p>所以综上所述，我个人认为，on behalf of myself，以“翻译不到位”、“一个翻译居然不知道自己人要说什么”、“居然还对着稿子翻译”这种言论去指责WADA临时上阵的这名女翻译，是一件因信息差带来的完全没有道理的事情。</p>
 
     </div>
 
@@ -774,7 +760,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/zh/post/%E5%AD%99%E6%9D%A8%E5%9C%A8%E6%80%BB%E7%BB%93%E9%99%88%E8%AF%8D%E6%97%B6%E7%94%B3%E8%AF%B7%E6%9B%B4%E6%8D%A2%E7%9A%84%E9%82%A3%E5%90%8D%E5%A5%B3%E7%BF%BB%E8%AF%91%E7%9C%9F%E7%9A%84%E8%A6%81%E4%B8%BA%E5%AD%99%E6%9D%A8%E8%B4%A5%E8%AF%89%E8%83%8C%E5%A4%A7%E9%94%85%E5%90%97/&amp;text=%e5%ad%99%e6%9d%a8%e5%9c%a8%e6%80%bb%e7%bb%93%e9%99%88%e8%af%8d%e6%97%b6%e7%94%b3%e8%af%b7%e6%9b%b4%e6%8d%a2%e7%9a%84%e9%82%a3%e5%90%8d%e5%a5%b3%e7%bf%bb%e8%af%91%e7%9c%9f%e7%9a%84%e8%a6%81%e4%b8%ba%e5%ad%99%e6%9d%a8%e8%b4%a5%e8%af%89%e8%83%8c%e5%a4%a7%e9%94%85%e5%90%97%ef%bc%9f" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -787,7 +773,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;t=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/zh/post/%E5%AD%99%E6%9D%A8%E5%9C%A8%E6%80%BB%E7%BB%93%E9%99%88%E8%AF%8D%E6%97%B6%E7%94%B3%E8%AF%B7%E6%9B%B4%E6%8D%A2%E7%9A%84%E9%82%A3%E5%90%8D%E5%A5%B3%E7%BF%BB%E8%AF%91%E7%9C%9F%E7%9A%84%E8%A6%81%E4%B8%BA%E5%AD%99%E6%9D%A8%E8%B4%A5%E8%AF%89%E8%83%8C%E5%A4%A7%E9%94%85%E5%90%97/&amp;t=%e5%ad%99%e6%9d%a8%e5%9c%a8%e6%80%bb%e7%bb%93%e9%99%88%e8%af%8d%e6%97%b6%e7%94%b3%e8%af%b7%e6%9b%b4%e6%8d%a2%e7%9a%84%e9%82%a3%e5%90%8d%e5%a5%b3%e7%bf%bb%e8%af%91%e7%9c%9f%e7%9a%84%e8%a6%81%e4%b8%ba%e5%ad%99%e6%9d%a8%e8%b4%a5%e8%af%89%e8%83%8c%e5%a4%a7%e9%94%85%e5%90%97%ef%bc%9f" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -800,7 +786,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="mailto:?subject=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29&amp;body=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=%e5%ad%99%e6%9d%a8%e5%9c%a8%e6%80%bb%e7%bb%93%e9%99%88%e8%af%8d%e6%97%b6%e7%94%b3%e8%af%b7%e6%9b%b4%e6%8d%a2%e7%9a%84%e9%82%a3%e5%90%8d%e5%a5%b3%e7%bf%bb%e8%af%91%e7%9c%9f%e7%9a%84%e8%a6%81%e4%b8%ba%e5%ad%99%e6%9d%a8%e8%b4%a5%e8%af%89%e8%83%8c%e5%a4%a7%e9%94%85%e5%90%97%ef%bc%9f&amp;body=https://faithio.cn/zh/post/%E5%AD%99%E6%9D%A8%E5%9C%A8%E6%80%BB%E7%BB%93%E9%99%88%E8%AF%8D%E6%97%B6%E7%94%B3%E8%AF%B7%E6%9B%B4%E6%8D%A2%E7%9A%84%E9%82%A3%E5%90%8D%E5%A5%B3%E7%BF%BB%E8%AF%91%E7%9C%9F%E7%9A%84%E8%A6%81%E4%B8%BA%E5%AD%99%E6%9D%A8%E8%B4%A5%E8%AF%89%E8%83%8C%E5%A4%A7%E9%94%85%E5%90%97/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -813,7 +799,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/zh/post/%E5%AD%99%E6%9D%A8%E5%9C%A8%E6%80%BB%E7%BB%93%E9%99%88%E8%AF%8D%E6%97%B6%E7%94%B3%E8%AF%B7%E6%9B%B4%E6%8D%A2%E7%9A%84%E9%82%A3%E5%90%8D%E5%A5%B3%E7%BF%BB%E8%AF%91%E7%9C%9F%E7%9A%84%E8%A6%81%E4%B8%BA%E5%AD%99%E6%9D%A8%E8%B4%A5%E8%AF%89%E8%83%8C%E5%A4%A7%E9%94%85%E5%90%97/&amp;title=%e5%ad%99%e6%9d%a8%e5%9c%a8%e6%80%bb%e7%bb%93%e9%99%88%e8%af%8d%e6%97%b6%e7%94%b3%e8%af%b7%e6%9b%b4%e6%8d%a2%e7%9a%84%e9%82%a3%e5%90%8d%e5%a5%b3%e7%bf%bb%e8%af%91%e7%9c%9f%e7%9a%84%e8%a6%81%e4%b8%ba%e5%ad%99%e6%9d%a8%e8%b4%a5%e8%af%89%e8%83%8c%e5%a4%a7%e9%94%85%e5%90%97%ef%bc%9f" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -826,7 +812,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29%20https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=%e5%ad%99%e6%9d%a8%e5%9c%a8%e6%80%bb%e7%bb%93%e9%99%88%e8%af%8d%e6%97%b6%e7%94%b3%e8%af%b7%e6%9b%b4%e6%8d%a2%e7%9a%84%e9%82%a3%e5%90%8d%e5%a5%b3%e7%bf%bb%e8%af%91%e7%9c%9f%e7%9a%84%e8%a6%81%e4%b8%ba%e5%ad%99%e6%9d%a8%e8%b4%a5%e8%af%89%e8%83%8c%e5%a4%a7%e9%94%85%e5%90%97%ef%bc%9f%20https://faithio.cn/zh/post/%E5%AD%99%E6%9D%A8%E5%9C%A8%E6%80%BB%E7%BB%93%E9%99%88%E8%AF%8D%E6%97%B6%E7%94%B3%E8%AF%B7%E6%9B%B4%E6%8D%A2%E7%9A%84%E9%82%A3%E5%90%8D%E5%A5%B3%E7%BF%BB%E8%AF%91%E7%9C%9F%E7%9A%84%E8%A6%81%E4%B8%BA%E5%AD%99%E6%9D%A8%E8%B4%A5%E8%AF%89%E8%83%8C%E5%A4%A7%E9%94%85%E5%90%97/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -839,7 +825,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/zh/post/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95em-algorithm/&amp;title=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%80%e5%a4%a7%e6%9c%9f%e6%9c%9b%e7%ae%97%e6%b3%95%28EM%20Algorithm%29" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/zh/post/%E5%AD%99%E6%9D%A8%E5%9C%A8%E6%80%BB%E7%BB%93%E9%99%88%E8%AF%8D%E6%97%B6%E7%94%B3%E8%AF%B7%E6%9B%B4%E6%8D%A2%E7%9A%84%E9%82%A3%E5%90%8D%E5%A5%B3%E7%BF%BB%E8%AF%91%E7%9C%9F%E7%9A%84%E8%A6%81%E4%B8%BA%E5%AD%99%E6%9D%A8%E8%B4%A5%E8%AF%89%E8%83%8C%E5%A4%A7%E9%94%85%E5%90%97/&amp;title=%e5%ad%99%e6%9d%a8%e5%9c%a8%e6%80%bb%e7%bb%93%e9%99%88%e8%af%8d%e6%97%b6%e7%94%b3%e8%af%b7%e6%9b%b4%e6%8d%a2%e7%9a%84%e9%82%a3%e5%90%8d%e5%a5%b3%e7%bf%bb%e8%af%91%e7%9c%9f%e7%9a%84%e8%a6%81%e4%b8%ba%e5%ad%99%e6%9d%a8%e8%b4%a5%e8%af%89%e8%83%8c%e5%a4%a7%e9%94%85%e5%90%97%ef%bc%9f" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1094,14 +1080,14 @@ code.has-jax {font: inherit;
   
 <div class="post-nav-item">
 <div class="meta-nav">下一页</div>
-  <a href="../../../zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/" rel="next">我知道开始很难，但是也要坚持下去</a>
+  <a href="../../../zh/post/%E8%BF%91%E4%BC%BC%E6%8E%A8%E8%AE%BA/" rel="next">Approximate Inference 近似推断</a>
 </div>
 
   
   
 <div class="post-nav-item">
 <div class="meta-nav">上一页</div>
-  <a href="../../../zh/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%A0%91%E8%8E%93%E6%B4%BEtrojan%E7%9A%84%E5%88%86%E6%9E%90/" rel="prev">记一次树莓派Trojan的分析</a>
+  <a href="../../../zh/post/%E6%88%91%E7%9F%A5%E9%81%93%E5%BC%80%E5%A7%8B%E5%BE%88%E9%9A%BE%E4%BD%86%E6%98%AF%E4%B9%9F%E8%A6%81%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB/" rel="prev">我知道开始很难，但是也要坚持下去</a>
 </div>
 
 </div>
