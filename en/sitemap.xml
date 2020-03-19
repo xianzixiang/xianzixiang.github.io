@@ -3,8 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://faithio.cn/post/approximate-inference/</loc>
+    <lastmod>2020-03-19T18:42:57-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://faithio.cn/post/</loc>
-    <lastmod>2020-03-14T00:03:07-04:00</lastmod>
+    <lastmod>2020-03-19T18:42:57-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -18,13 +23,8 @@
   </url>
   
   <url>
-    <loc>https://faithio.cn/post/run-issue-with-matplotlib-in-mac-os-x/</loc>
-    <lastmod>2020-03-09T21:05:29-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://faithio.cn/</loc>
-    <lastmod>2020-03-14T00:03:07-04:00</lastmod>
+    <lastmod>2020-03-19T18:42:57-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -38,8 +38,28 @@
   </url>
   
   <url>
+    <loc>https://faithio.cn/post/the-exponential-family/</loc>
+    <lastmod>2020-03-19T18:42:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/probabilistic-graphical-model/</loc>
+    <lastmod>2020-03-19T18:42:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/run-issue-with-matplotlib-in-mac-os-x/</loc>
+    <lastmod>2020-03-09T21:05:29-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://faithio.cn/post/stochastic-expectation-propagation/</loc>
-    <lastmod>2020-03-14T00:03:07-04:00</lastmod>
+    <lastmod>2020-03-19T18:42:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</loc>
+    <lastmod>2020-03-19T18:42:57-04:00</lastmod>
   </url>
   
   <url>

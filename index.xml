@@ -5,12 +5,42 @@
     <link>https://faithio.cn/</link>
       <atom:link href="https://faithio.cn/index.xml" rel="self" type="application/rss+xml" />
     <description>Zixiang&#39;s Personal Page</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 09 Mar 2020 13:37:09 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 19 Mar 2020 18:21:57 -0400</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Zixiang&#39;s Personal Page</title>
       <link>https://faithio.cn/</link>
     </image>
+    
+    <item>
+      <title>Approximate Inference</title>
+      <link>https://faithio.cn/post/approximate-inference/</link>
+      <pubDate>Thu, 19 Mar 2020 18:21:57 -0400</pubDate>
+      <guid>https://faithio.cn/post/approximate-inference/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;./Approximate.pdf&#34;&gt;Approximate Inference.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;../../fomula/Approximate.html&#34;&gt;Approximate Inference.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Exponential Family</title>
+      <link>https://faithio.cn/post/the-exponential-family/</link>
+      <pubDate>Thu, 19 Mar 2020 18:21:43 -0400</pubDate>
+      <guid>https://faithio.cn/post/the-exponential-family/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;./Exponential.pdf&#34;&gt;Exponential.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;../../fomula/Exponential.html&#34;&gt;Exponential.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Probabilistic Graphical Model</title>
+      <link>https://faithio.cn/post/probabilistic-graphical-model/</link>
+      <pubDate>Thu, 19 Mar 2020 17:56:38 -0400</pubDate>
+      <guid>https://faithio.cn/post/probabilistic-graphical-model/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Run Issue With Matplotlib in Mac OS X</title>
@@ -203,11 +233,12 @@ $$
 q(\boldsymbol{\theta})=\mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu}, \mathbf{\sigma_r^2}, \mathbf{\sigma_l^2}) =
 \mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu}, v_l \mathbf{I}, v_r \mathbf{I})&lt;/p&gt;
 
-&lt;p&gt;= \mathcal{A}(\mathbf{X} | \mathbf{0}, b \mathbf{I_l}, b \mathbf{I_r})
+&lt;p&gt;= \mathcal{A}(\boldsymbol{\theta} | \mathbf{0}, b \mathbf{I_l}, b \mathbf{I_r})
 $$&lt;/p&gt;
 
 &lt;p&gt;$$
 \widetilde{f}_{n}(\boldsymbol{\theta})=s_n \mathcal{A}\left(\boldsymbol{\theta} | \mathbf{\mu}&lt;em&gt;n, \mathbf{\sigma&lt;/em&gt;{r&lt;em&gt;n}^2}, \mathbf{\sigma&lt;/em&gt;{l_n}^2} \right)
+= s_n \mathcal{A}\left(\boldsymbol{\theta} | \mathbf{\mu}&lt;em&gt;n, \mathbf{v&lt;/em&gt;{r&lt;em&gt;n} I}, \mathbf{v&lt;/em&gt;{l_n} I} \right)
 $$&lt;/p&gt;
 
 &lt;p&gt;$$
@@ -344,6 +375,164 @@ $$&lt;/p&gt;
 
 &lt;p&gt;\end{array}\right.
 $$&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+&amp;amp; \widetilde{f}&lt;em&gt;{n}(\boldsymbol{\theta})=Z&lt;/em&gt;{n} \frac{q^{\mathrm{new}}(\boldsymbol{\theta})}{q^{\backslash n}(\boldsymbol{\theta})} \&lt;/p&gt;
+
+&lt;p&gt;\Rightarrow &amp;amp; Z_n q^{\mathrm{new}}(\boldsymbol{\theta}) = s_n \mathcal{A}\left(\boldsymbol{\theta} | \mathbf{\mu}&lt;em&gt;n, \mathbf{v&lt;/em&gt;{r&lt;em&gt;n} I}, \mathbf{v&lt;/em&gt;{l_n} I} \right) q^{\backslash n}(\boldsymbol{\theta}) =
+s_n \mathcal{A}\left(\boldsymbol{\theta} | \mathbf{\mu}&lt;em&gt;n, \mathbf{v&lt;/em&gt;{r&lt;em&gt;n} I}, \mathbf{v&lt;/em&gt;{l_n} I} \right)
+\mathcal{A}\left(\boldsymbol{\theta} | \mathbf{\mu}^{\backslash n}, \mathbf{v_r^{\backslash n} I}, \mathbf{v_l^{\backslash n} I} \right) \&lt;/p&gt;
+
+&lt;p&gt;\Rightarrow &amp;amp; \int Z_n q^{\mathrm{new}}(\boldsymbol{\theta}) d\theta =
+\int s_n \mathcal{A}\left(\boldsymbol{\theta} | \mathbf{\mu}&lt;em&gt;n, \mathbf{v&lt;/em&gt;{r&lt;em&gt;n} I}, \mathbf{v&lt;/em&gt;{l_n} I} \right)
+\mathcal{A}\left(\boldsymbol{\theta} | \mathbf{\mu}^{\backslash n}, \mathbf{v_r^{\backslash n} I}, \mathbf{v_l^{\backslash n} I} \right) d \theta \&lt;/p&gt;
+
+&lt;p&gt;\Rightarrow &amp;amp; Z_n = s_n \int q^{\mathrm{new}}(\boldsymbol{\theta}) d\theta =&lt;/p&gt;
+
+&lt;p&gt;\int s_n \mathcal{A}\left( \mathbf{\mu}&lt;em&gt;n - \boldsymbol{\theta} | 0, \mathbf{v&lt;/em&gt;{r&lt;em&gt;n} I}, \mathbf{v&lt;/em&gt;{l_n} I} \right) \mathcal{A}\left(\boldsymbol{\theta} | \mathbf{\mu}^{\backslash n}, \mathbf{v_r^{\backslash n} I}, \mathbf{v_l^{\backslash n} I} \right) d \theta \&lt;/p&gt;
+
+&lt;p&gt;\Rightarrow &amp;amp; Z_n  = s_n \mathcal{A}\left(\mathbf{\mu}_n | \mathbf{\mu}^{\backslash n}, \mathbf{(v&lt;em&gt;r^{\backslash n}+ v&lt;/em&gt;{r_n}) I}, \mathbf{(v&lt;em&gt;l^{\backslash n}+v&lt;/em&gt;{r_n}) I} \right)
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+s_n  = \frac{Z_n} {\mathcal{A}\left(\mathbf{\mu}_n | \mathbf{\mu}^{\backslash n}, \mathbf{(v&lt;em&gt;r^{\backslash n}+ v&lt;/em&gt;{r_n}) I}, \mathbf{(v&lt;em&gt;l^{\backslash n}+v&lt;/em&gt;{r_n}) I} \right)}
+$$&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Logistic Regression   Solvers&#39; Defintions in Sklearn</title>
+      <link>https://faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</link>
+      <pubDate>Sat, 29 Feb 2020 02:46:04 -0500</pubDate>
+      <guid>https://faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;A hypothesis &lt;code&gt;h(x)&lt;/code&gt;, takes an &lt;em&gt;input&lt;/em&gt; and gives us the &lt;em&gt;estimated output value&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;This hypothesis can be a as simple as a one variable linear equation, .. up to a very complicated and long multivariate equation with respect to the type of the algorithm we’re using (&lt;em&gt;i.e. linear regression, logistic regression..etc&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9e4pcalj308k05xgls.jpg&#34; alt=&#34;h(x)&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Our task is to find the &lt;strong&gt;best Parameters&lt;/strong&gt; (a.k.a Thetas or Weights) that give us the &lt;strong&gt;least error&lt;/strong&gt; in predicting the output. We call this error a &lt;strong&gt;Cost or Loss Function&lt;/strong&gt; and apparently our goal is to &lt;strong&gt;minimize&lt;/strong&gt; it in order to get the best predicted output!&lt;/p&gt;
+
+&lt;p&gt;One more thing to recall, that the relation between the parameter value and its effect on the cost function (i.e. the error) looks like a &lt;strong&gt;bell curve&lt;/strong&gt; (i.e. &lt;strong&gt;Quadratic&lt;/strong&gt;; recall this because it’s very important) .&lt;/p&gt;
+
+&lt;p&gt;So if we start at any point in that curve and if we keep taking the derivative (i.e. tangent line) of each point we stop at, we will end up at what so called the &lt;strong&gt;Global Optima&lt;/strong&gt; as shown in this image:
+&lt;img src=&#34;https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9empzi9j30bm07twem.jpg&#34; alt=&#34;J(w) bell curve&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If we take the partial derivative at minimum cost point (i.e. global optima) we find the &lt;strong&gt;slope&lt;/strong&gt; of the tangent line = &lt;strong&gt;0&lt;/strong&gt; (then we know that we reached our target).&lt;/p&gt;
+
+&lt;p&gt;That’s valid only if we have &lt;em&gt;Convex&lt;/em&gt; Cost Function, but if we don’t, we may end up stuck at what so called &lt;strong&gt;Local Optima&lt;/strong&gt;; consider this non-convex function:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9ffxzczj30ac07qwex.jpg&#34; alt=&#34;non-convex&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you should have the intuition about the hack relationship between what we are doing and the terms: &lt;em&gt;Deravative&lt;/em&gt;, &lt;em&gt;Tangent Line&lt;/em&gt;, &lt;em&gt;Cost Function&lt;/em&gt;, &lt;em&gt;Hypothesis&lt;/em&gt; ..etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Side Note: The above mentioned intuition also related to the Gradient Descent Algorithm (see later).&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Linear Approximation:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given a function, &lt;code&gt;f(x)&lt;/code&gt;, we can find its tangent at &lt;code&gt;x=a&lt;/code&gt;. The equation of the tangent line L(x) is: &lt;code&gt;L(x)=f(a)+f′(a)(x−a)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Take a look at the following graph of a function and its tangent line:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9dc2jkaj309r05tq2w.jpg&#34; alt=&#34;tangent line&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From this graph we can see that near &lt;code&gt;x=a&lt;/code&gt;, the tangent line and the function have nearly the same graph. On occasion we will use the tangent line, &lt;code&gt;L(x)&lt;/code&gt;, as an approximation to the function, &lt;code&gt;f(x)&lt;/code&gt;, near &lt;code&gt;x=a&lt;/code&gt;. In these cases we call the tangent line the linear approximation to the function at &lt;code&gt;x=a&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Quadratic Approximation:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Same like linear approximation but this time we are dealing with a curve but we &lt;strong&gt;cannot&lt;/strong&gt; find the point near to &lt;strong&gt;0&lt;/strong&gt; by using the tangent line.&lt;/p&gt;
+
+&lt;p&gt;Instead, we use a &lt;strong&gt;parabola&lt;/strong&gt; (&lt;em&gt;which is a curve where any point is at an equal distance from a fixed point or a fixed straight line&lt;/em&gt;), like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9dhnyppj30ay075mxe.jpg&#34; alt=&#34;quadratic function&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And in order to fit a good parabola, both parabola and quadratic function should have same value, same first derivative, AND second derivative, &amp;hellip; the formula will be (&lt;em&gt;just out of curiosity&lt;/em&gt;): &lt;code&gt;Qa(x) = f(a) + f&#39;(a)(x-a) + f&#39;&#39;(a)(x-a)2/2&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Now we should be ready to do the comparison in details.&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;comparison-between-the-methods&#34;&gt;Comparison between the methods&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-newton-s-method-newton-cg&#34;&gt;&lt;strong&gt;1. Newton’s Method(newton-cg):&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;Recall the motivation for gradient descent step at x: we minimize the quadratic function (i.e. Cost Function).&lt;/p&gt;
+
+&lt;p&gt;Newton’s method uses in a sense a &lt;strong&gt;better&lt;/strong&gt; quadratic function minimisation. A better because it uses the quadratic approximation (i.e. first AND &lt;em&gt;second&lt;/em&gt; partial derivatives).&lt;/p&gt;
+
+&lt;p&gt;You can imagine it as a twisted Gradient Descent with The Hessian (&lt;em&gt;The Hessian is a square matrix of second-order partial derivatives of order nxn&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Moreover, the geometric interpretation of Newton&amp;rsquo;s method is that at each iteration one approximates &lt;code&gt;f(x)&lt;/code&gt; by a quadratic function around &lt;code&gt;xn&lt;/code&gt;, and then takes a step towards the maximum/minimum of that quadratic function (in higher dimensions, this may also be a saddle point). Note that if &lt;code&gt;f(x)&lt;/code&gt; happens to be a quadratic function, then the exact extremum is found in one step.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Drawbacks:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;It’s computationally &lt;strong&gt;expensive&lt;/strong&gt; because of The Hessian Matrix (i.e. second partial derivatives calculations).&lt;/li&gt;
+&lt;li&gt;It attracts to &lt;strong&gt;Saddle Points&lt;/strong&gt; which are common in multivariable optimization (i.e. a point its partial derivatives disagree over whether this input should be a maximum or a minimum point!).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;2-limited-memory-broyden-fletcher-goldfarb-shanno-algorithm-lbfgs&#34;&gt;&lt;strong&gt;2. Limited-memory Broyden–Fletcher–Goldfarb–Shanno Algorithm(lbfgs):&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;In a nutshell, it is analogue of the Newton’s Method but here the Hessian matrix is &lt;strong&gt;approximated&lt;/strong&gt; using updates specified by gradient evaluations (or approximate gradient evaluations). In other words, using an estimation to the inverse Hessian matrix.&lt;/p&gt;
+
+&lt;p&gt;The term Limited-memory simply means it stores only a few vectors that represent the approximation implicitly.&lt;/p&gt;
+
+&lt;p&gt;If I dare say that when dataset is &lt;strong&gt;small&lt;/strong&gt;, L-BFGS relatively performs the best compared to other methods especially it saves a lot of memory, however there are some “*serious*” drawbacks such that if it is unsafeguarded, it may not converge to anything.&lt;/p&gt;
+
+&lt;h3 id=&#34;3-a-library-for-large-linear-classification-liblinear&#34;&gt;&lt;strong&gt;3. A Library for Large Linear Classification(liblinear):&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;It’s a linear classification that supports logistic regression and linear support vector machines (&lt;em&gt;A linear classifier achieves this by making a classification decision based on the value of a linear combination of the characteristics i.e feature value&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;The solver uses a coordinate descent (CD) algorithm that solves optimization problems by successively performing approximate minimization along coordinate directions or coordinate hyperplanes.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;LIBLINEAR&lt;/code&gt; is the winner of ICML 2008 large-scale learning challenge. It applies &lt;em&gt;Automatic parameter selection&lt;/em&gt; (a.k.a L1 Regularization) and it’s recommended when you have high dimension dataset (&lt;em&gt;recommended for solving large-scale classification problems&lt;/em&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Drawbacks:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;It may get stuck at a &lt;em&gt;non-stationary point&lt;/em&gt; (i.e. non-optima) if the level curves of a function are not smooth.&lt;/li&gt;
+&lt;li&gt;Also cannot run in parallel.&lt;/li&gt;
+&lt;li&gt;It cannot learn a true multinomial (multiclass) model; instead, the optimization problem is decomposed in a “one-vs-rest” fashion so separate binary classifiers are trained for all classes.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;Side note: According to Scikit Documentation: The “liblinear” solver is used by default for historical reasons.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;4-stochastic-average-gradient-sag&#34;&gt;&lt;strong&gt;4. Stochastic Average Gradient(sag):&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;SAG method optimizes the sum of a finite number of smooth convex functions. Like stochastic gradient (SG) methods, the SAG method&amp;rsquo;s iteration cost is independent of the number of terms in the sum. However, by &lt;strong&gt;incorporating a memory of previous gradient values the SAG method achieves a faster convergence rate&lt;/strong&gt; than black-box SG methods.&lt;/p&gt;
+
+&lt;p&gt;It is &lt;strong&gt;faster&lt;/strong&gt; than other solvers for &lt;em&gt;large&lt;/em&gt; datasets, when both the number of samples and the number of features are large.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Drawbacks:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;It only supports L2 penalization.&lt;/li&gt;
+&lt;li&gt;Its memory cost of &lt;code&gt;O(N)&lt;/code&gt;, which can make it impractical for large N (&lt;em&gt;because it remembers the most recently computed values for approx. all gradients&lt;/em&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;5-saga-saga&#34;&gt;&lt;strong&gt;5. SAGA(saga):&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;The SAGA solver is a &lt;em&gt;variant&lt;/em&gt; of SAG that also supports the non-smooth &lt;em&gt;penalty=l1&lt;/em&gt; option (i.e. L1 Regularization). This is therefore the solver of choice for &lt;strong&gt;sparse&lt;/strong&gt; multinomial logistic regression and it’s also suitable &lt;strong&gt;very Large&lt;/strong&gt; dataset.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Side note: According to Scikit Documentation: The SAGA solver is often the best choice.&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;The following table is taken from &lt;a href=&#34;http://scikit-learn.org/stable/modules/linear_model.html&#34; target=&#34;_blank&#34;&gt;Scikit Documentation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006y8mN6gy1g8a9g3deuhj30ik04ejs7.jpg&#34; alt=&#34;Solver Comparison&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
