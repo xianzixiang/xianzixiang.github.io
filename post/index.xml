@@ -5,12 +5,545 @@
     <link>https://faithio.cn/post/</link>
       <atom:link href="https://faithio.cn/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 19 Mar 2020 18:21:57 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 24 Mar 2020 21:26:35 -0400</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
       <link>https://faithio.cn/post/</link>
     </image>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>https://faithio.cn/post/deep-learning/</link>
+      <pubDate>Tue, 24 Mar 2020 21:26:35 -0400</pubDate>
+      <guid>https://faithio.cn/post/deep-learning/</guid>
+      <description>
+
+&lt;h3 id=&#34;logistic-regression-as-a-neural-network&#34;&gt;Logistic Regression as a Neural Network&lt;/h3&gt;
+
+&lt;p&gt;$$
+\hat{y}=\sigma\left(w^{T} x+b\right), \text { where } \sigma(z)=\frac{1}{1+e^{-z}} \&lt;/p&gt;
+
+&lt;p&gt;\text { Given }\left{\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(m)}, y^{(m)}\right)\right}, \text { want } \hat{y}^{(i)} \approx y^{(i)}
+$$&lt;/p&gt;
+
+&lt;p&gt;Loss(error) function:&lt;/p&gt;
+
+&lt;p&gt;Don&amp;rsquo;t use this, non-convex
+$$
+\ell(\hat{y}, y)=\frac{1}{2}(\hat{y}-y)^{2}
+$$
+The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set.
+$$
+J(w, b)=\frac{1}{m} \sum&lt;em&gt;{i=1}^{m} \mathcal{L}\left(\hat{y}^{(i)}, y^{(i)}\right)=-\frac{1}{m} \sum&lt;/em&gt;{i=1}^{m} y^{(i)} \log \widehat{y}^{(i)}+\left(1-y^{(i)}\right) \log \left(1-\hat{y}^{(i)}\right)
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\text { Want to find } w, b \text { that minimize } J(w, b)
+$$&lt;/p&gt;
+
+&lt;p&gt;a&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200324214403439.png&#34; alt=&#34;image-20200324214403439&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200324215144592.png&#34; alt=&#34;image-20200324215144592&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200324220303010.png&#34; alt=&#34;image-20200324220303010&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;gradient-desent&#34;&gt;Gradient Desent&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200324221310916.png&#34; alt=&#34;image-20200324221310916&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200324232529252.png&#34; alt=&#34;image-20200324232529252&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{array}{l}\text { Step } 1: \frac{d L}{d a} \ L=-(y \times \log (a)+(1-y) \times \log (1-a)) \ \frac{d L}{d a}=-y \times \frac{1}{a}-(1-y) \times \frac{1}{1-a} \times-1\end{array}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+\dfrac{d}{dx} \sigma(x) &amp;amp;= \dfrac{d}{dx} \left[ \dfrac{1}{1 + e^{-x}} \right] &lt;br /&gt;
+&amp;amp;= \dfrac{d}{dx} \left( 1 + \mathrm{e}^{-x} \right)^{-1} &lt;br /&gt;
+&amp;amp;= -(1 + e^{-x})^{-2}(-e^{-x}) &lt;br /&gt;
+&amp;amp;= \dfrac{e^{-x}}{\left(1 + e^{-x}\right)^2} &lt;br /&gt;
+&amp;amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{e^{-x}}{1 + e^{-x}}  &lt;br /&gt;
+&amp;amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{(1 + e^{-x}) - 1}{1 + e^{-x}}  &lt;br /&gt;
+&amp;amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( \dfrac{1 + e^{-x}}{1 + e^{-x}} - \dfrac{1}{1 + e^{-x}} \right) &lt;br /&gt;
+&amp;amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( 1 - \dfrac{1}{1 + e^{-x}} \right) &lt;br /&gt;
+&amp;amp;= \sigma(x) \cdot (1 - \sigma(x))
+\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{array}{l}\text { In the previous video, Andrew refers to } d z=a(1-a) \ \text { Note that Andrew is using &amp;ldquo;dz&amp;rdquo; as a shorthand to refer to } \frac{d a}{d z}=a(1-a) \text { . } \ \text { To clarify, earlier in this week&amp;rsquo;s videos, Andrew used the name &amp;ldquo;dz&amp;rdquo; to refer to a different derivative: } \frac{d L}{d z}=a-y . \ \text { Recall that the relationship between } \frac{d L}{d z} \text { and } \frac{d a}{d z} \text { is: } \ \frac{d L}{d z}=\frac{d L}{d a} \times \frac{d a}{d z} \ \frac{d L}{d z}=\frac{a-y}{a(1-a)} \times a(1-a)=a-y\end{array}
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;vectorization&#34;&gt;Vectorization&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200324232349586.png&#34; alt=&#34;image-20200324232349586&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200324233831522.png&#34; alt=&#34;image-20200324233831522&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200324234028558.png&#34; alt=&#34;image-20200324234028558&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200325000709367.png&#34; alt=&#34;image-20200325000709367&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200325000944011.png&#34; alt=&#34;image-20200325000944011&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
+
+&lt;p&gt;For convenience, you should now reshape images of shape (num_px, num_px, 3) in a numpy-array of shape (num_px $&lt;em&gt;$ num_px $&lt;/em&gt;$ 3, 1). After this, our training (and test) dataset is a numpy-array where each column represents a flattened image. There should be m_train (respectively m_test) columns.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise:&lt;/strong&gt; Reshape the training and test data sets so that images of size (num_px, num_px, 3) are flattened into single vectors of shape (num_px $&lt;em&gt;$ num_px $&lt;/em&gt;$ 3, 1).&lt;/p&gt;
+
+&lt;p&gt;A trick when you want to flatten a matrix X of shape (a,b,c,d) to a matrix X_flatten of shape (b$&lt;em&gt;$c$&lt;/em&gt;$d, a) is to use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X_flatten = X.reshape(X.shape[0], -1).T      # X.T is the transpose of X
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To represent color images, the red, green and blue channels (RGB) must be specified for each pixel, and so the pixel value is actually a vector of three numbers ranging from 0 to 255.&lt;/p&gt;
+
+&lt;p&gt;One common preprocessing step in machine learning is to center and standardize your dataset, meaning that you substract the mean of the whole numpy array from each example, and then divide each example by the standard deviation of the whole numpy array. But for picture datasets, it is simpler and more convenient and works almost as well to just divide every row of the dataset by 255 (the maximum value of a pixel channel).&lt;/p&gt;
+
+&lt;!-- During the training of your model, you&#39;re going to multiply weights and add biases to some initial inputs in order to observe neuron activations. Then you backpropogate with the gradients to train the model. But, it is extremely important for each feature to have a similar range such that our gradients don&#39;t explode. You will see that more in detail later in the lectures. !--&gt; 
+
+&lt;p&gt;Let&amp;rsquo;s standardize our dataset.&lt;/p&gt;
+
+&lt;h3 id=&#34;neural-network&#34;&gt;Neural Network&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200325130254559.png&#34; alt=&#34;image-20200325130254559&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HMM</title>
+      <link>https://faithio.cn/post/hmm/</link>
+      <pubDate>Tue, 24 Mar 2020 16:45:50 -0400</pubDate>
+      <guid>https://faithio.cn/post/hmm/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;1.jpg&#34; alt=&#34;image-20200324164641801&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NLP</title>
+      <link>https://faithio.cn/post/nlp/</link>
+      <pubDate>Tue, 24 Mar 2020 12:46:09 -0400</pubDate>
+      <guid>https://faithio.cn/post/nlp/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gd5hyy8e3dj30iz0dxtdq.jpg&#34; alt=&#34;image-20200324124629145&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gd5ijwtti0j30j50db42h.jpg&#34; alt=&#34;image-20200324130638081&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;语音识别&#34;&gt;语音识别&lt;/h2&gt;
+
+&lt;h3 id=&#34;hmm&#34;&gt;HMM&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gd5npq72s0j30gr0cq41w.jpg&#34; alt=&#34;image-20200324160513581&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gd5nt18l2uj30it0cwjv0.jpg&#34; alt=&#34;image-20200324160824714&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gd5nw4kccfj30jc0efgqe.jpg&#34; alt=&#34;image-20200324161121196&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gd5nz90vi1j30i60dbdji.jpg&#34; alt=&#34;image-20200324161422230&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gd5o4zk81bj30ik0dudkc.jpg&#34; alt=&#34;image-20200324161953002&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;method-1-tandem&#34;&gt;Method 1:Tandem&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gd5o5qhqshj30g109gta7.jpg&#34; alt=&#34;image-20200324162036664&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;method-2-dnn-hmm-hybrid&#34;&gt;Method 2: DNN-HMM Hybrid&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gd5ock6amnj30h70cjgoj.jpg&#34; alt=&#34;image-20200324162710364&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/00831rSTgy1gd5ohregnxj30jh0eiq75.jpg&#34; alt=&#34;image-20200324163209107&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Markov Chain Monte Carlo</title>
+      <link>https://faithio.cn/post/markov-chain-monte-carlo/</link>
+      <pubDate>Tue, 24 Mar 2020 01:38:20 -0400</pubDate>
+      <guid>https://faithio.cn/post/markov-chain-monte-carlo/</guid>
+      <description>
+
+&lt;h3 id=&#34;概率分布采样-standard-distributions&#34;&gt;概率分布采样 &lt;strong&gt;Standard distributions&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;1.jpg&#34; alt=&#34;image-20200324020445663&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;PDF如果很复杂，CDF求不出来。&lt;/p&gt;
+
+&lt;h3 id=&#34;rejection-sampling&#34;&gt;Rejection Sampling&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;2.jpg&#34; alt=&#34;image-20200324021231280&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;importance-sampling&#34;&gt;Importance Sampling&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;3.jpg&#34; alt=&#34;image-20200324022419484&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;因为大部分采样得到的样本重要性很低，反之仅有少量的样本重要性非常大。&lt;/p&gt;
+
+&lt;p&gt;Sampling Importance Resampling&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;4.jpg&#34; alt=&#34;image-20200324023300041&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;monte-carlo-method&#34;&gt;Monte Carlo Method&lt;/h3&gt;
+
+&lt;p&gt;基于随机采样的近似方法&lt;/p&gt;
+
+&lt;p&gt;Markov Chain: 时间状态都是离散的。特殊的随机过程&lt;/p&gt;
+
+&lt;p&gt;齐次（一阶）Markov Chain：未来只依赖于当前，和过去没有关系 ${x&lt;em&gt;t}$ P为转移矩阵$[P&lt;/em&gt;{ij}]$
+$$
+P(X_{t+1} = x| x_1, x_2, \cdots, x&lt;em&gt;t) = P(X&lt;/em&gt;{t+1}|x_t)
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+P&lt;em&gt;{i j} \quad P&lt;/em&gt;{i j}=P\left(X&lt;em&gt;{i+1}=j | X&lt;/em&gt;{t=i}\right)
+$$&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph LR;
+x1--&amp;gt;x2;
+x2--&amp;gt;x3;
+x3--&amp;gt;xt;
+xt--&amp;gt;xt+1;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;平稳分布&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;5.jpg&#34; alt=&#34;image-20200324115614383&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Gaussian Mixture Model</title>
+      <link>https://faithio.cn/post/gaussian-mixture-model/</link>
+      <pubDate>Mon, 23 Mar 2020 23:42:44 -0400</pubDate>
+      <guid>https://faithio.cn/post/gaussian-mixture-model/</guid>
+      <description>
+
+&lt;p&gt;混合模型都是生成模型，N个样本，先生成x1，x2&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;1.jpg&#34; alt=&#34;image-20200323235058567&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;2.jpg&#34; alt=&#34;image-20200323235323227&#34; /&gt;
+$$
+\begin{aligned}
+p(x) &amp;amp;= \sum&lt;em&gt;z P(x,z) &lt;br /&gt;
+&amp;amp;= \sum&lt;/em&gt;{k=1}^z P(x, z=C&lt;em&gt;k) &lt;br /&gt;
+&amp;amp;= \sum&lt;/em&gt;{k=1}^z p(z=C_k) \cdot p(x|z=C&lt;em&gt;k) &lt;br /&gt;
+&amp;amp;= \sum&lt;/em&gt;{k=1}^z p_k \mathcal{N}(x| \mu_k, \Sigma_k)
+\end{aligned}
+$$
+&lt;img src=&#34;3.jpg&#34; alt=&#34;image-20200324001130297&#34; /&gt;
+$$
+\log (\Delta + \Delta + \Delta ) \rightarrow \text{连加符号很难求导，令导数为0，连乘比较方便} &lt;br /&gt;
+\text{单变量的高斯分布可以直接用MLE求出来}
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;用em求解&#34;&gt;用EM求解&lt;/h3&gt;
+
+&lt;p&gt;$$
+\text{ E-Step: } P\left(z | x, \theta^{(t)}\right) \rightarrow E_{z|x, \theta^{(t)}}[\log P(x, z | \theta)] \&lt;/p&gt;
+
+&lt;p&gt;\text{ M-Step: } \theta^{(t+1)}=\arg \max &lt;em&gt;{\theta} \underbrace{ E&lt;/em&gt;{z|x, \theta^{(t)}}[\log P(x, z | \theta)]}_{Q(\theta, \theta^{(t)})} \&lt;/p&gt;
+
+&lt;p&gt;\text{E-step:} \&lt;/p&gt;
+
+&lt;p&gt;Q(\theta, \theta^{(t)}) = \int_z \log P(X, Z|\theta) P(Z|X, \theta^{(t)}) dz &lt;br /&gt;
+ \text{独立同分布} &lt;br /&gt;
+ = \sum&lt;em&gt;z \log \prod&lt;/em&gt;{i=1}^N P(x_i, z_i|\theta) \cdot \sum&lt;em&gt;z \log \prod&lt;/em&gt;{i=1}^N    P(z_i|x&lt;em&gt;i, \theta^{(t)})&lt;br /&gt;
+ =\sum&lt;/em&gt;{z_{1} z&lt;em&gt;2 \cdots z&lt;/em&gt;{N}} \sum&lt;em&gt;{i=1}^{N} \log P\left(x&lt;/em&gt;{i} z&lt;em&gt;{i} | \theta\right) \cdot \prod&lt;/em&gt;{i=1}^{N} p\left(z&lt;em&gt;{i} | x&lt;/em&gt;{i}, \theta^{(t)}\right) \&lt;/p&gt;
+
+&lt;p&gt;=\sum&lt;em&gt;{z&lt;/em&gt;{1} z&lt;em&gt;2 \cdots z&lt;/em&gt;{N}} \left[\log P\left(x&lt;em&gt;{1}, z&lt;/em&gt;{1} | \theta\right)+\log P\left(x&lt;em&gt;{2}, z&lt;/em&gt;{2} | \theta\right)+\cdots+\log P\left(x&lt;em&gt;{N}, z&lt;/em&gt;{N} | \theta\right)\right] \cdot \prod&lt;em&gt;{i=1}^{N} p\left(z&lt;/em&gt;{i} | x&lt;em&gt;{i}, \theta^{(t)}\right) &lt;br /&gt;
+ = \sum&lt;/em&gt;{z&lt;em&gt;{1}} \log p\left(x&lt;/em&gt;{1}, z&lt;em&gt;{1} | \theta\right) \cdot p\left(z&lt;/em&gt;{1} | x&lt;em&gt;{1}, \theta\right) + \cdots + \sum&lt;/em&gt;{z&lt;em&gt;{N}} \log p\left(x&lt;/em&gt;{N}, z&lt;em&gt;{N} | \theta\right) \cdot p\left(z&lt;/em&gt;{N} | x&lt;em&gt;{N}, \theta\right) &lt;br /&gt;
+ =\sum&lt;/em&gt;{i=1}^{N} \sum_{z&lt;em&gt;i} \log p\left(x&lt;/em&gt;{i}, z&lt;em&gt;{i} | \theta\right) \cdot p\left(z&lt;/em&gt;{i} | x_{i}, \theta^{(i)}\right) \&lt;/p&gt;
+
+&lt;p&gt;=\sum&lt;em&gt;{i=1}^{N} \sum&lt;/em&gt;{z&lt;em&gt;{i}} \log p&lt;/em&gt;{z&lt;em&gt;{i}} \mathcal{N}\left(x&lt;/em&gt;{i} | \mu&lt;em&gt;{z&lt;/em&gt;{i}} \Sigma&lt;em&gt;{z&lt;/em&gt;{i}}\right) \cdot \frac{p&lt;em&gt;{z&lt;/em&gt;{i}} \cdot \mathcal{N}\left(x&lt;em&gt;{i} | \mu&lt;/em&gt;{i}, \Sigma&lt;em&gt;{i}\right)}{\sum&lt;/em&gt;{k=1}^{K} p&lt;em&gt;{x} \mathcal{N}\left(x&lt;/em&gt;{i} | \mu_{k}, \Sigma&lt;em&gt;k\right)} &lt;br /&gt;
+ &amp;mdash; &lt;br /&gt;
+ \begin{aligned} P(x, z) &amp;amp;=P(z) \cdot p(x | z) \ &amp;amp;=p&lt;/em&gt;{z} \cdot N\left(x | \mu&lt;em&gt;{z}, z&lt;/em&gt;{z}\right) \ p(z | x)
+ &amp;amp;=\frac{p(x, z)}{p(x)}=\frac{p&lt;em&gt;{z} \cdot \mathcal{N}\left(x | \mu&lt;/em&gt;{z} \Sigma&lt;em&gt;{z}\right)}{\sum&lt;/em&gt;{k=1}^{K} p&lt;em&gt;{k} \cdot \mathcal{N}\left(x | \mu&lt;/em&gt;{k}, \Sigma_{k}\right)} \end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\text{取第一项}
+\sum&lt;em&gt;{z&lt;/em&gt;{1} z&lt;em&gt;2 \cdots z&lt;/em&gt;{N}} \log  p\left(x&lt;em&gt;{1}, z&lt;/em&gt;{1} |\theta\right)   \cdot   \underbrace{\prod&lt;em&gt;{i=1}^{N} p\left(z&lt;/em&gt;{i} | x&lt;em&gt;{i}, \theta^{(t)}\right)}&lt;/em&gt;{
+p\left(z_1,\left|x&lt;em&gt;1, \theta^{(t)}\right) \cdot \prod&lt;/em&gt;{i=2}^{N} p\left(z&lt;em&gt;{i} | x&lt;/em&gt;{i}, \theta^{(t)}\right)\right.
+}   \&lt;/p&gt;
+
+&lt;p&gt;=\sum&lt;em&gt;{z&lt;/em&gt;{1}} \log p\left(x&lt;em&gt;{1}, z&lt;/em&gt;{1} | \theta\right) \cdot p\left(z&lt;em&gt;{1} | x&lt;/em&gt;{1}, \theta\right) \sum_{z_2 \cdots z&lt;em&gt;N} \prod&lt;/em&gt;{i=2}^{N} p\left(z&lt;em&gt;{i} | x&lt;/em&gt;{i}, \theta^{(t)}\right) &lt;br /&gt;
+= \sum&lt;em&gt;{z&lt;/em&gt;{1}} \log p\left(x&lt;em&gt;{1}, z&lt;/em&gt;{1} | \theta\right) \cdot p\left(z&lt;em&gt;{1} | x&lt;/em&gt;{1}, \theta\right) &lt;br /&gt;
+&amp;mdash;-  &lt;br /&gt;
+ \prod&lt;em&gt;{i=2}^{N} p\left(z&lt;/em&gt;{i} | x&lt;em&gt;{i}, \theta^{(t)}\right) =  \prod&lt;/em&gt;{i=2}^{N} P(z_2|x_2)P(z_3|x_3)\cdots P(z_N|x&lt;em&gt;N) &lt;br /&gt;
+ = \sum&lt;/em&gt;{z_2}P(z_2|x&lt;em&gt;2)\cdot \sum&lt;/em&gt;{z_3}P(z_3|x&lt;em&gt;3)\cdot \cdots \sum&lt;/em&gt;{z_N}P(z_N|x_N) &lt;br /&gt;
+ = 1
+$$&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;E-Step:
+$$
+ \text{ M-Step: } \theta^{(t+1)}=\arg \max &lt;em&gt;{\theta} \underbrace{ E&lt;/em&gt;{z|x, \theta^{(t)}}[\log P(x, z | \theta)]}_{Q(\theta, \theta^{(t)})} &lt;br /&gt;
+\begin{aligned}
+Q(\theta, \theta^{(t)}) &amp;amp;= \int&lt;em&gt;z \log P(X, Z|\theta) P(Z|X, \theta^{(t)}) dz &lt;br /&gt;
+&amp;amp;=\sum&lt;/em&gt;{i=1}^{N} \sum&lt;em&gt;{z&lt;/em&gt;{i}} \log p&lt;em&gt;{z&lt;/em&gt;{i}} \mathcal{N}\left(x&lt;em&gt;{i} | \mu&lt;/em&gt;{z&lt;em&gt;{i}} \Sigma&lt;/em&gt;{z&lt;em&gt;{i}}\right) \cdot  \underbrace{  \frac{p&lt;/em&gt;{z&lt;em&gt;{i}} \cdot \mathcal{N}\left(x&lt;/em&gt;{i} | \mu&lt;em&gt;{i}, \Sigma&lt;/em&gt;{i}\right)}{\sum&lt;em&gt;{k=1}^{K} p&lt;/em&gt;{x} \mathcal{N}\left(x&lt;em&gt;{i} | \mu&lt;/em&gt;{k}, \Sigma&lt;em&gt;k\right)} }&lt;/em&gt;{P(z_i|x_i, \theta^{(t)}) \rightarrow \theta^{(t)} \text{ is a constant.}} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;= \int&lt;em&gt;z \log P(X, Z|\theta) P(Z|X, \theta^{(t)}) dz &lt;br /&gt;
+&amp;amp;=\sum&lt;/em&gt;{i=1}^{N} \sum&lt;em&gt;{z&lt;/em&gt;{i}} \log [p&lt;em&gt;{z&lt;/em&gt;{i}} \mathcal{N}\left(x&lt;em&gt;{i} | \mu&lt;/em&gt;{z&lt;em&gt;{i}} \Sigma&lt;/em&gt;{z_{i}}\right)] \cdot P(z_i|x&lt;em&gt;i, \theta^{(t)}) &lt;br /&gt;
+&amp;amp;= \sum&lt;/em&gt;{z&lt;em&gt;{i}} \sum&lt;/em&gt;{i=1}^{N} \log [p&lt;em&gt;{z&lt;/em&gt;{i}} \mathcal{N}\left(x&lt;em&gt;{i} | \mu&lt;/em&gt;{z&lt;em&gt;{i}} \Sigma&lt;/em&gt;{z_{i}}\right)] \cdot P(z_i|x&lt;em&gt;i, \theta^{(t)}) &lt;br /&gt;
+&amp;amp;= \sum&lt;/em&gt;{k=1}^{k} \sum&lt;em&gt;{i=1}^{N} \log [p&lt;/em&gt;{k} \cdot \mathcal{N}\left(x&lt;em&gt;{i} | \mu&lt;/em&gt;{k}, \Sigma&lt;em&gt;{k}\right)] \cdot p\left(z&lt;/em&gt;{i}=C&lt;em&gt;{k} | x&lt;/em&gt;{i}, \theta^{(t)}\right) \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;= \sum&lt;em&gt;{k=1}^{k} \sum&lt;/em&gt;{i=1}^{N} [\log p&lt;em&gt;{k} + \log \mathcal{N}\left(x&lt;/em&gt;{i} | \mu&lt;em&gt;{k}, \Sigma&lt;/em&gt;{k}\right)] \cdot p\left(z&lt;em&gt;{i}=C&lt;/em&gt;{k} | x_{i}, \theta^{(t)}\right) &lt;br /&gt;
+\end{aligned}
+$$
+求 $p_k^{t+1} = (p_1^{t+1}, p_2^{t+1}, \cdots, p&lt;em&gt;k^{t+1})$
+$$
+\left{
+\begin{array}{l}
+p&lt;/em&gt;{k}^{(k+1)}=\operatorname{argmax}&lt;em&gt;{p&lt;/em&gt;{k}} \sum&lt;em&gt;{k=1}^{k} \sum&lt;/em&gt;{i=1}^{N} \log p&lt;em&gt;{k} \cdot p\left(z&lt;/em&gt;{i} = C&lt;em&gt;k | x&lt;/em&gt;{i}, \theta^{(t)}\right) &lt;br /&gt;
+s.t. \sum&lt;em&gt;{k=1}^{k} p&lt;/em&gt;{k}=1
+\end{array}
+\right.
+$$
+用拉格朗日乘子法：
+$$
+\mathcal{L}(p, \lambda)=\sum&lt;em&gt;{k=1}^{K} \sum&lt;/em&gt;{i=1}^{N} \log p&lt;em&gt;{k} \cdot p\left(z&lt;/em&gt;{i}=C&lt;em&gt;{k} | x&lt;/em&gt;{i}, \theta^{(t)}\right)+\lambda(\sum_{k=1}^k - 1)
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{\partial \mathcal{L}}{\partial p&lt;em&gt;{k}}= \sum&lt;/em&gt;{i=1}^{N} \frac{1}{p&lt;em&gt;{k}} \cdot p\left(z&lt;/em&gt;{i}=C&lt;em&gt;k | x&lt;/em&gt;{i} \cdot \theta^{(k)}\right)+\lambda \triangleq 0 &lt;br /&gt;
+\rightarrow \sum&lt;em&gt;{i=1}^{N}  \cdot p\left(z&lt;/em&gt;{i}=C&lt;em&gt;k | x&lt;/em&gt;{i} \cdot \theta^{(k)}\right)+p_k \lambda = 0 \&lt;/p&gt;
+
+&lt;p&gt;\Rightarrow^{(k=1,\cdots , K)} \sum&lt;em&gt;{i=1}^{N} \underbrace{\sum&lt;/em&gt;{i=1}^K  \cdot p\left(z_{i}=C&lt;em&gt;k | x&lt;/em&gt;{i} \cdot  \theta^{(k)}\right)}&lt;em&gt;1 + \underbrace{\sum&lt;/em&gt;{i=1}^K p_k}_1 \lambda &lt;br /&gt;
+\Rightarrow N+ \lambda = 0 &lt;br /&gt;
+\Rightarrow  \lambda = -N &lt;br /&gt;
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+p&lt;em&gt;{k}^{(t+1)}=\frac{1}{N} \sum&lt;/em&gt;{i=1}^{N} p\left(z&lt;em&gt;{i}=C&lt;/em&gt;{k} | x_{i}, \theta^{(t)}\right) &lt;br /&gt;
+$$&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Expectation Maximization</title>
+      <link>https://faithio.cn/post/expectation-maximization/</link>
+      <pubDate>Thu, 19 Mar 2020 23:55:34 -0400</pubDate>
+      <guid>https://faithio.cn/post/expectation-maximization/</guid>
+      <description>
+
+&lt;p&gt;$MLE: P(X|\theta)$
+$$
+\theta_{MLE}=\arg \max _{\theta} \log P(X | \theta) \&lt;/p&gt;
+
+&lt;p&gt;\theta^{(t+1)}=\arg \max &lt;em&gt;{\theta} \int&lt;/em&gt;{z} \log p(x, z | \theta) \cdot p\left(z | x, \theta^{(t)}\right) d z
+&lt;br /&gt;
+= \arg \max &lt;em&gt;{\theta} E&lt;/em&gt;{\mathbf{Z} | x \theta^{t}}[\log P(x, z | \theta)]  \&lt;/p&gt;
+
+&lt;p&gt;\text{ E-Step: } P\left(z | x, \theta^{(t)}\right) \rightarrow E_{z|x, \theta^{(t)}}[\log P(x, z | \theta)] \&lt;/p&gt;
+
+&lt;p&gt;\text{ M-Step: } \theta^{(t+1)}=\arg \max &lt;em&gt;{\theta} E&lt;/em&gt;{z|x, \theta^{(t)}}[\log P(x, z | \theta)]
+$$&lt;/p&gt;
+
+&lt;p&gt;需要证明一定会收敛Convergence
+$$
+\theta^{(t)} \rightarrow \theta^{(t+1)} &lt;br /&gt;
+\log p\left(x | \theta^{(t)}\right) \leqslant \log p\left(x | \theta^{(t+1)}\right) &lt;br /&gt;
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{P(x, z | \theta)}{P(z | x)}  \&lt;/p&gt;
+
+&lt;p&gt;\log P(x | \theta)=\log P(x, z | \theta)-\log P(z | x, \theta) \&lt;/p&gt;
+
+&lt;p&gt;\begin{aligned}
+left &amp;amp;=\int&lt;em&gt;{z} p\left(z | x, \theta^{(t)}\right) \cdot \log p(x | \theta) d z
+\ &amp;amp;=\log P(x | \theta) \underbrace{ \int&lt;/em&gt;{z} P\left(z | x, \theta^{(t)}\right) d z }_1
+\ &amp;amp;= \log P(x | \theta)
+\end{aligned}  \&lt;/p&gt;
+
+&lt;p&gt;right
+=\underbrace{\int&lt;em&gt;{\mathbb{Z}} p\left(z | x, \theta^{(t)}\right) \cdot \log P(x, z | \theta) d z}&lt;/em&gt;{Q\left(\theta, \theta^{(t)}\right)}
+-\underbrace{\int&lt;em&gt;{\mathbb{Z}} p\left(z | x, \theta^{(t)}\right) \cdot \log p(z | x, \theta) d z}&lt;/em&gt;{H\left(\theta, \theta^{(t)}\right)}\&lt;/p&gt;
+
+&lt;p&gt;Q\left(\theta^{(t+1)}, \theta^{(t)}\right) \geqslant Q\left(\theta^{(t)}, \theta^{(t)}\right) \&lt;/p&gt;
+
+&lt;p&gt;\begin{aligned}
+&amp;amp; H\left(\theta^{(t+1)} \cdot \theta^{(t)}\right)-H\left(\theta^{(t)} \cdot \theta^{(t)}\right)
+\ &amp;amp;=\int&lt;em&gt;{z} p\left(z | x, \theta^{(t)}\right) \cdot \log p\left(z | x \theta^{(t+1)}\right) d z
+\ &amp;amp;-\int&lt;/em&gt;{z} p\left(z | x, \theta^{(t)}\right) \cdot \log p\left(z | x, \theta^{(t)}\right)  d z
+\&amp;amp; = \int_{z} P\left(z | x, \theta^{(t)}\right) \cdot \log \frac{p\left(z | x, \theta^{(t+1)}\right)}{p\left(z | x, \theta^{(t)}\right)} d z &lt;br /&gt;
+\ &amp;amp; = -\mathcal{KL}\left(P(z | x, \theta^{(t)}) | p\left(z | x, \theta^{(t+1)}\right) \right)
+\ &amp;amp;  \leqslant 0&lt;/p&gt;
+
+&lt;p&gt;\end{aligned} \&lt;/p&gt;
+
+&lt;p&gt;\begin{aligned}
+&amp;amp; E[\ln x] \leqslant \log E[x]
+\ \leqslant \log \underbrace{\int_{z} p\left(z|x, \theta^{(t+ 1)}\right) d z}_1=\log 1=0&lt;/p&gt;
+
+&lt;p&gt;\end{aligned}
+$$&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;$$
+p(x, z)=p(z | x) \cdot p(x) &lt;br /&gt;
+\log p(x) = \log \frac{p(x, z)}{p(z | x) }  =  \log p(x, z) - \log p(z | x)&lt;br /&gt;
+add \quad \theta &lt;br /&gt;
+&amp;mdash;&lt;br /&gt;
+\log P(x | \theta)=\log P(x, z | \theta)-\log P(z | x, \theta) &lt;br /&gt;
+  =\log \frac{P(x, z | \theta)}{q(z)}-\log \frac{P(z | x, \theta)}{q(z)}  \quad q(z) \neq 0 &lt;br /&gt;
+  \text{左右两边对于} q(z) \text{求期望} &lt;br /&gt;
+  left = \int&lt;em&gt;{z} q(z) \cdot \log p(x | \theta) d z=\log p(x | \theta) \cdot \underbrace{\int&lt;/em&gt;{z} q(z) d z}&lt;em&gt;{1}=\log p(x | \theta) &lt;br /&gt;
+  rigth = \underbrace{ \int&lt;/em&gt;{z} q(z) \log \frac{p(x, z | \theta)}{q(z)} d z}&lt;em&gt;{ELBO: evidence lower bound} \underbrace{ -
+  \int&lt;/em&gt;{z} q(z) \log \frac{p(z | x, \theta)}{q(z)} d z}_{\mathcal{KL}(q(z) | p(z | x, \theta)}  &lt;br /&gt;
+  \log p(x | \theta)=ELBO+ KL(q|p) &lt;br /&gt;
+  \log p(x | \theta) \geqslant ELBO &lt;br /&gt;
+  \text{maximize ELBO, then posterior maximize, 最大化ELBO(期望)， 然后更新后验概率的参数} \theta &lt;br /&gt;
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\hat{\theta}=\arg \max _{\theta} E L B O &lt;br /&gt;
+= \arg \max _{\theta} \int q(z) \log \frac{p (x, z|\theta)}{q(z)} d z&lt;br /&gt;
+当\log p(x | \theta) \geqslant ELBO 取等于号(KL=0)，q(z) = p(z|x, \theta^{(t)})  &lt;br /&gt;
+=\arg \max _{\theta} \int p\left(z | x, \theta^{(t)}\right) \log \frac{p(x, z | \theta)}{p\left(z | x,\theta^{(t)}\right)} d z &lt;br /&gt;
+=\arg \max &lt;em&gt;{\theta} \int p\left(z | x, \theta^{(t)}\right) \left[
+\log p(x, z | \theta) - \underbrace{ \log p\left(z | x,\theta^{(t)}\right)}&lt;/em&gt;{与\theta无关，已经变成常数}
+\right]dz &lt;br /&gt;
+= \arg \max &lt;em&gt;{\theta} \int&lt;/em&gt;{z} p\left(z | x, \theta^{(t)}\right) \cdot \log p(x, z | \theta)  d z&lt;br /&gt;
+$$&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;1.jpg&#34; alt=&#34;image-20200323222822401&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;新的角度推导em&#34;&gt;新的角度推导EM&lt;/h3&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+\log P(x|\theta) &amp;amp; = \log \int&lt;em&gt;z P(x, z| \theta) &lt;br /&gt;
+ &amp;amp; = \log \int&lt;/em&gt;{z} \frac{P(x, z | \theta)}{q(z)} \cdot q(z) d z &lt;br /&gt;
+ &amp;amp; = \log E&lt;em&gt;{q(z)}\left[\frac{p(x, z | \theta)}{q(z)}\right] &lt;br /&gt;
+ &amp;amp; \text{use jensen inequalty} &lt;br /&gt;
+ &amp;amp; \geqslant E&lt;/em&gt;{q(z)}\left[\log \frac{p(x, z | \theta)}{q(z)}\right] \rightarrow ELBO &lt;br /&gt;
+ &amp;amp; \Leftrightarrow \frac{P(x, z | \theta)}{q(z)}=C  &lt;br /&gt;
+ q(z) &amp;amp; =\frac{1}{c} p(x, z | \theta) &lt;br /&gt;
+ 1  =\int&lt;em&gt;z q(z) d z &amp;amp;=\int&lt;/em&gt;{z} \frac{1}{c} p(x, z | \theta) d z &lt;br /&gt;
+ &amp;amp; =\frac{1}{c} \int_{x} p(x, z | \theta) d z &lt;br /&gt;
+ 1 &amp;amp; =\frac{1}{c} P(x | \theta) &lt;br /&gt;
+ c &amp;amp; =P(x | \theta)
+ \end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+q(z)=\frac{1}{p(x | \theta)} \cdot p(x, z | \theta)=p(z | x, \theta)
+$$&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;2.jpg&#34; alt=&#34;image-20200323224250592&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;广义em&#34;&gt;广义EM&lt;/h3&gt;
+
+&lt;p&gt;概率生成模型问题，通过z生成x，然后再通过积分把z消掉。参数learning问题&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph LR;
+z--&amp;gt;x;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$
+\hat{\theta}
+= \arg \max _{\theta}  \log P(X|\theta)&lt;br /&gt;
+ = \arg \max &lt;em&gt;{\theta}  \log \prod&lt;/em&gt;{i=1}^N P(x_i|\theta)
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\log P(x | \theta)=E L B O+K L(q | p) &lt;br /&gt;
+\left{\begin{array}{l}E L B O=E_{q(z)}\left[\log \frac{p(x, z | \theta)}{q(z)}\right] \ KL(q | p)=\int q(z) \cdot \log \frac{q(z)}{p(z | x, \theta)} d z\end{array}\right. \&lt;/p&gt;
+
+&lt;p&gt;\text{E-step: 固定 }\theta \rightarrow \hat{q}=\arg \min _{q} K L(q | p)=\arg \max_q \mathcal{L}(q, \theta) &lt;br /&gt;
+\text{M-step: 固定 }\hat{q} \rightarrow \theta=\arg \max _{\theta} \mathcal{L}(\hat{q}, \theta)
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\left{\begin{array}{l}
+\text { E-stes: } q^{(t+1)}=\arg \max _{q} \mathcal{L}\left(q, \theta^{(t)}\right)
+\  \text { M-step: } \theta^{(t+1)}=\arg \max _{\theta} \mathcal{L}(q^{t+1}, \theta)
+\end{array}\right.
+$$&lt;/p&gt;
+
+&lt;p&gt;所以EM也叫MM算法，轮流迭代q and $\theta$&lt;/p&gt;
+
+&lt;p&gt;SMO：坐标上升法/梯度上升法&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;3.jpg&#34; alt=&#34;image-20200323233326072&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;M步和E步其实可以交换&lt;/p&gt;
+
+&lt;p&gt;E-Step 其实是求后验概率，假如intractable  然后用VI求出后验  就叫VBEM/VEM，如果用MC求后验那就是MCEM&lt;/p&gt;
+
+&lt;p&gt;VI &amp;lt;=&amp;gt; VB&lt;/p&gt;
+
+&lt;p&gt;既然是优化问题，能否用梯度的方法求解呢？&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Foundation of Machine Learning</title>
+      <link>https://faithio.cn/post/foundation-of-machine-learning/</link>
+      <pubDate>Thu, 19 Mar 2020 19:15:53 -0400</pubDate>
+      <guid>https://faithio.cn/post/foundation-of-machine-learning/</guid>
+      <description>
+
+&lt;h3 id=&#34;common&#34;&gt;Common&lt;/h3&gt;
+
+&lt;p&gt;X: data&lt;/p&gt;
+
+&lt;p&gt;$X=\left(x_1, x_2 \cdots x&lt;em&gt;N\right)&lt;/em&gt;{N \times p}^{T}$
+$$
+\theta = \left(\begin{array}{cccc}x&lt;em&gt;{0} &amp;amp; x&lt;/em&gt;{a} &amp;amp; \ldots &amp;amp; x&lt;em&gt;{1 x} \ x&lt;/em&gt;{1} &amp;amp; x&lt;em&gt;{12} &amp;amp; \ldots &amp;amp; x&lt;/em&gt;{21} \ \vdots &amp;amp; &amp;amp; &amp;amp; x&lt;em&gt;{n y} \ x&lt;/em&gt;{m} &amp;amp; x_{n x} &amp;amp; \ldots &amp;amp; \end{array}\right)
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;频率-统计机器学习&#34;&gt;频率（统计机器学习）&lt;/h3&gt;
+
+&lt;p&gt;优化问题
+$$
+x \sim p(x | \theta)
+$$
+$\theta$ 未知常量， X：r v
+$$
+MLE：\theta_{M L E}=\arg \max _\theta \log P(X | \theta)
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;贝叶斯-概率图模型&#34;&gt;贝叶斯(概率图模型)&lt;/h3&gt;
+
+&lt;p&gt;求积分（MCMC）&lt;/p&gt;
+
+&lt;p&gt;$\theta$ r v，
+$$
+\theta \sim p(\theta)
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+P(\theta | x)=\frac{P(x | \theta) \cdot P(\theta)}{P(x)} \propto  P(x | \theta) \cdot P(\theta)  &lt;br /&gt;
+P(x) = \int_{\theta} P(x | \theta) \cdot P(\theta) d \theta
+$$&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://pic4.zhimg.com/80/v2-1186de08c2ac2ef05b30cd88b5260707_720w.jpg&#34; alt=&#34;img&#34; /&gt;
+$$
+MAP: \theta_{MAP}=\arg \max _{\theta} P(\theta | x)=\arg \max _{\theta} P(x | \theta) \cdot P(\theta)
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;book&#34;&gt;book&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;李航 统计学习方法（频率派）感K朴决逻， 支提E隐条&lt;/li&gt;
+&lt;li&gt;周志华 “西瓜书”&lt;/li&gt;
+&lt;li&gt;PRML 回分神核稀 图混近采连  顺组 - 贝叶斯&lt;/li&gt;
+&lt;li&gt;MLAPP  贝叶斯&lt;/li&gt;
+&lt;li&gt;ESL  频率派&lt;/li&gt;
+&lt;li&gt;Deep Learning 圣经/张志华翻译&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Approximate Inference</title>
@@ -39,7 +572,218 @@
       <link>https://faithio.cn/post/probabilistic-graphical-model/</link>
       <pubDate>Thu, 19 Mar 2020 17:56:38 -0400</pubDate>
       <guid>https://faithio.cn/post/probabilistic-graphical-model/</guid>
-      <description></description>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;./probabilistic.pdf&#34;&gt;pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph TD;
+概率图--&amp;gt;Representation-表示;
+概率图--&amp;gt;Inference-推断;
+概率图--&amp;gt;Learning-学习;
+Representation-表示--&amp;gt;有向图BayesianNetwork;
+Representation-表示--&amp;gt;高斯图-连续;
+Representation-表示--&amp;gt;无向图MarkovNetwork;
+高斯图-连续--&amp;gt;GaussianBN;
+高斯图-连续--&amp;gt;GaussianMN;
+Inference-推断--&amp;gt;精确推断;
+Inference-推断--&amp;gt;ApproximateInference;
+ApproximateInference--&amp;gt;DeterministicApproximation(Variantional Inference);
+ApproximateInference--&amp;gt;StochasticcApproximation(MCMC);
+Learning-学习--&amp;gt;参数学习;
+Learning-学习--&amp;gt;结构学习;
+参数学习--&amp;gt;完备数据;
+参数学习--&amp;gt;隐变量;
+隐变量--&amp;gt;EM;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$
+\begin{array}{l}
+\text{Sum Rule: } P(x_1)=\int P\left(x_1, x&lt;em&gt;2\right) d x&lt;/em&gt;{2}
+\
+\text{Product Rule: } P\left(x&lt;em&gt;1, x&lt;/em&gt;{2}\right)=P\left(x_{1}\right) \cdot P\left(x_2 | x&lt;em&gt;1\right)=P\left(x&lt;/em&gt;{2}\right) \cdot P\left(x&lt;em&gt;{1} | x&lt;/em&gt;{2}\right)&lt;/p&gt;
+
+&lt;p&gt;\end{array}
+$$&lt;/p&gt;
+
+&lt;p&gt;Chain Rule:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://wikimedia.org/api/rest_v1/media/math/render/svg/1386ec6778f1816c3fa6e9de68f89cee2e938066&#34; alt=&#34;{\displaystyle {\begin{aligned}\mathrm {P} (X_{4},X_{3},X_{2},X_{1})&amp;amp;=\mathrm {P} (X_{4}\mid X_{3},X_{2},X_{1})\cdot \mathrm {P} (X_{3},X_{2},X_{1})\\&amp;amp;=\mathrm {P} (X_{4}\mid X_{3},X_{2},X_{1})\cdot \mathrm {P} (X_{3}\mid X_{2},X_{1})\cdot \mathrm {P} (X_{2},X_{1})\\&amp;amp;=\mathrm {P} (X_{4}\mid X_{3},X_{2},X_{1})\cdot \mathrm {P} (X_{3}\mid X_{2},X_{1})\cdot \mathrm {P} (X_{2}\mid X_{1})\cdot \mathrm {P} (X_{1})\end{aligned}}}&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./1.jpg&#34; alt=&#34;image-20200319195228032&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;bayesian-network&#34;&gt;Bayesian Network&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;拓扑排序构建图&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph TD;
+a--&amp;gt;b;
+a--&amp;gt;c;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;$$
+   Chain Rule: P\left(x&lt;em&gt;{1}, x&lt;/em&gt;{2}, \cdots, x&lt;em&gt;{p}\right)=P\left(x&lt;/em&gt;{1}\right) \cdot \prod&lt;em&gt;{i=2}^{p} p\left(x&lt;/em&gt;{i} | x_{1:i-1}\right)
+   &lt;br /&gt;
+   P(a, b, c) = P(a)P(b|a)(c|a) \rightarrow 因子分解&lt;br /&gt;
+   P(a, b, c) = P(a)P(b|a)(c|a,b) \rightarrow Chain rule&lt;br /&gt;
+   P(c | a)=P(c | a, b) \Rightarrow c \perp b | a &lt;br /&gt;
+   p(c | a) \cdot p(b | a)=p(c|a,b) \cdot p(b | a)=p( b, c | a) &lt;br /&gt;
+   p(c | a) \cdot p(b | a)=p(b, c | a)
+   $$&lt;/p&gt;
+
+&lt;p&gt;Tail to tail, 若a被观测，则路径被堵塞$tail \rightarrow head$&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;   graph LR;
+   a--&amp;gt;b;
+   b--&amp;gt;c;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;head to tail
+$$
+P(a,b, c) = P(a)P(b|a)P(c|b) &lt;br /&gt;
+P(a, b, c) = P(a) P(b|a)  P(c|a,b)  &lt;br /&gt;
+P(c|b) = P(c|a,b)
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+a \perp c | b
+$$
+若b被观测，则路径被阻塞（independent）&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;   graph TD;
+   a--&amp;gt;c;
+   b--&amp;gt;c;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;head to head&lt;/p&gt;
+
+&lt;p&gt;默认情况下，$a \perp b$，路径阻塞的&lt;/p&gt;
+
+&lt;p&gt;若c被观测，则路径是通的
+$$
+P(a, b, c)=P(a) \cdot P(b) \cdot P(c | a, b) &lt;br /&gt;
+P(a, b, c) = P(a)\cdot P(b|a) \cdot (c|a,b)  &lt;br /&gt;
+P(b) = P(b|a)  &lt;br /&gt;
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;inference&#34;&gt;Inference&lt;/h3&gt;
+
+&lt;p&gt;$$
+\begin{aligned} \text { sum rule } &amp;amp; p(X)=\sum_{Y} p(X, Y) \ \text { product rule } &amp;amp; p(X, Y)=p(Y | X) p(X) \end{aligned}
+$$
+求概率： $
+P(x)=P\left(x_0, x_1, \cdots, x_p\right)
+$&lt;/p&gt;
+
+&lt;p&gt;边缘概率&lt;em&gt;marginal&lt;/em&gt; probability：
+$$
+P\left(x&lt;em&gt;{i}\right)=\sum&lt;/em&gt;{x&lt;em&gt;1} \cdot \sum&lt;/em&gt;{x&lt;em&gt;{i-1}} \sum&lt;/em&gt;{x&lt;em&gt;{i+1}} \ldots \sum&lt;/em&gt;{x_{p}} p(x)
+$$
+条件概率conditional probability：
+$$
+P\left(x_A | x_B\right) \quad x=x_A \cup x_B
+$$
+MAP Inference:
+$$
+\hat{z}=\arg \max _{z} P(z | x) \propto \arg \max P(z, x)
+$$&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph LR;
+Inference--&amp;gt;精确推论;
+Inference--&amp;gt;近似推断;
+精确推论--&amp;gt;variableElimination/VE;
+精确推论--&amp;gt;BeliefPropagation/SumProductAlgorithm树结构;
+精确推论--&amp;gt;JunctionTreeAlgorithm普通图结构BasedBP;
+近似推断--&amp;gt;LoopBeliefPropagation有环图BasedBP;
+近似推断--&amp;gt;MenteCarloInference:ImportanceSampling,MCMC;
+近似推断--&amp;gt;VariationalInference
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;./2.jpg&#34; alt=&#34;image-20200319214741677&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;variable-elimination-乘法分配律&#34;&gt;Variable Elimination-乘法分配律&lt;/h4&gt;
+
+&lt;p&gt;$$
+M A P \quad \tilde{X}_{A}=\arg \max &lt;em&gt;{X} P\left(x&lt;/em&gt;{A} | x&lt;em&gt;{B}\right)=\arg \max P\left(x&lt;/em&gt;{A}, x_{B}\right)
+$$&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;   graph LR;
+   a--&amp;gt;b;
+   b--&amp;gt;c;
+   c--&amp;gt;d;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;假设a,b,c,d均是离散的二值r,v {0,1}&lt;/p&gt;
+
+&lt;p&gt;$$
+p(d) =  \sum_{a, b, c} p(a, b, c, d) \&lt;/p&gt;
+
+&lt;p&gt;=
+\sum_{a, b, c} p(a) \cdot p(b | a) \cdot p(c | b) \cdot p(d | c) \&lt;/p&gt;
+
+&lt;p&gt;=  p(a=0) \cdot p(b=0 | a=0) \cdot p(c=0 | b=0) \cdot p(d=0|c=0) &lt;br /&gt;
++ p(a=1) \cdot p(b=0 | a=1) \cdot p(c=0 | b=0) \cdot p(d=0|c=0) \&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;\cdots &lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;p(a=1) \cdot p(b=1 | a=1) \cdot p(c=1 | b=1) \cdot p(d=1|c=1) &lt;br /&gt;
+= \sum&lt;em&gt;{b, c} p(c | b) \cdot p(d | c) \cdot \underbrace{\sum&lt;/em&gt;{a} p(a) \cdot p(b | a)}_{\phi_a(b)} &lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;= \sum&lt;em&gt;c p(d | c) \cdot \underbrace{\sum&lt;/em&gt;{b}  p(c | b)\cdot \phi&lt;em&gt;a(b) }&lt;/em&gt;{\phi_b&amp;copy;} &lt;br /&gt;
+= \phi_c(d)
+$$
+乘法对加法的分配律$ab+cb = b(a+c)$&lt;/p&gt;
+
+&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Memoryless.重复计算&lt;/li&gt;
+&lt;li&gt;Ordering  NP-hard&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;belief-propagation&#34;&gt;Belief Propagation&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;   graph LR;
+   a--&amp;gt;b;
+   b--&amp;gt;c;
+   c--&amp;gt;d;
+   d--&amp;gt;e;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$
+\text{ Forward Algorithm} &lt;br /&gt;
+P(a, b, c, d, e)=P(a) P(b | a) \cdot P(c | b) \cdot P(d | c) \cdot P(e|d) &lt;br /&gt;
+P(e)=\sum&lt;em&gt;{a, b,c, d} P(a, b, c, d, e) &lt;br /&gt;
+=\sum&lt;/em&gt;{d} p(e | d) \sum&lt;em&gt;{c} p(d | c) \underbrace{ \sum&lt;/em&gt;{b} p(c | b) \underbrace{ \sum&lt;em&gt;{a} p(b | a) p(a) }&lt;/em&gt;{m&lt;em&gt;{a\rightarrow b }(b)}}&lt;/em&gt;{m_{b \rightarrow c}&amp;copy;}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+p&amp;copy;=\sum&lt;em&gt;{a, b, d, e} p(a, b, c, d, e)  &lt;br /&gt;
+ = \left(\sum&lt;/em&gt;{b} p(c | b) \cdot \sum&lt;em&gt;{a} p(b | a) \cdot p(a) \right) \left(\sum&lt;/em&gt;{d} p(d | c) \sum_{e} p(e | d)\right)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+ \text{ Forward-Backward Algorithm}
+$$&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph TD;
+a---b;
+b---d;
+b---c;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+&amp;amp; p(a, b, c, d)
+\=&amp;amp; \frac{1}{z} \psi&lt;em&gt;{a}(a) \psi&lt;/em&gt;{b}(b) \cdot \psi&lt;em&gt;{c}&amp;copy; \cdot \varphi(d)
+\ &amp;amp; \cdot \psi&lt;/em&gt;{a, b}(a, b) \cdot \psi&lt;em&gt;{b, c}(b, c) \cdot \psi&lt;/em&gt;{b, d}(b, d) \end{aligned}
+$$&lt;/p&gt;
+</description>
     </item>
     
     <item>

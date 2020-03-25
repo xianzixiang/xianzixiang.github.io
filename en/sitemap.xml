@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://faithio.cn/post/approximate-inference/</loc>
-    <lastmod>2020-03-19T18:42:57-04:00</lastmod>
+    <loc>https://faithio.cn/post/deep-learning/</loc>
+    <lastmod>2020-03-25T13:04:25-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://faithio.cn/post/</loc>
-    <lastmod>2020-03-19T18:42:57-04:00</lastmod>
+    <lastmod>2020-03-25T13:04:25-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -24,7 +24,7 @@
   
   <url>
     <loc>https://faithio.cn/</loc>
-    <lastmod>2020-03-19T18:42:57-04:00</lastmod>
+    <lastmod>2020-03-25T13:04:25-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -38,13 +38,48 @@
   </url>
   
   <url>
+    <loc>https://faithio.cn/post/hmm/</loc>
+    <lastmod>2020-03-25T13:04:25-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/nlp/</loc>
+    <lastmod>2020-03-25T13:04:25-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/markov-chain-monte-carlo/</loc>
+    <lastmod>2020-03-25T13:04:25-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/gaussian-mixture-model/</loc>
+    <lastmod>2020-03-24T01:36:58-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/expectation-maximization/</loc>
+    <lastmod>2020-03-23T23:51:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/foundation-of-machine-learning/</loc>
+    <lastmod>2020-03-20T00:22:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/approximate-inference/</loc>
+    <lastmod>2020-03-19T18:42:57-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://faithio.cn/post/the-exponential-family/</loc>
     <lastmod>2020-03-19T18:42:57-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://faithio.cn/post/probabilistic-graphical-model/</loc>
-    <lastmod>2020-03-19T18:42:57-04:00</lastmod>
+    <lastmod>2020-03-20T00:22:05-04:00</lastmod>
   </url>
   
   <url>

@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="">
+  <meta name="description" content="pdf graph TD; 概率图--&gt;Representation-表示; 概率图--&gt;Inference-推断; 概率图--&gt;Learning-">
 
   
   <link rel="alternate" hreflang="en-us" href="https://faithio.cn/post/probabilistic-graphical-model/">
@@ -270,13 +270,13 @@
   <meta property="og:site_name" content="Zixiang&#39;s Personal Page">
   <meta property="og:url" content="https://faithio.cn/post/probabilistic-graphical-model/">
   <meta property="og:title" content="Probabilistic Graphical Model | Zixiang&#39;s Personal Page">
-  <meta property="og:description" content=""><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="pdf graph TD; 概率图--&gt;Representation-表示; 概率图--&gt;Inference-推断; 概率图--&gt;Learning-"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2020-03-19T17:56:38-04:00">
     
-    <meta property="article:modified_time" content="2020-03-19T18:42:57-04:00">
+    <meta property="article:modified_time" content="2020-03-20T00:22:05-04:00">
   
 
   
@@ -305,7 +305,7 @@
   "headline": "Probabilistic Graphical Model",
   
   "datePublished": "2020-03-19T17:56:38-04:00",
-  "dateModified": "2020-03-19T18:42:57-04:00",
+  "dateModified": "2020-03-20T00:22:05-04:00",
   
   "author": {
     "@type": "Person",
@@ -320,7 +320,7 @@
       "url": "https://faithio.cn/images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": ""
+  "description": "pdf graph TD; 概率图--\u0026gt;Representation-表示; 概率图--\u0026gt;Inference-推断; 概率图--\u0026gt;Learning-"
 }
 </script>
 
@@ -626,7 +626,7 @@ code.has-jax {font: inherit;
           Last updated on
       
     
-    Mar 19, 2020
+    Mar 20, 2020
   </span>
   
 
@@ -635,7 +635,7 @@ code.has-jax {font: inherit;
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    0 min read
+    3 min read
   </span>
   
 
@@ -694,6 +694,217 @@ code.has-jax {font: inherit;
 
     <div class="article-style">
     
+
+<p><a href="./probabilistic.pdf">pdf</a></p>
+
+<pre><code class="language-mermaid">graph TD;
+概率图--&gt;Representation-表示;
+概率图--&gt;Inference-推断;
+概率图--&gt;Learning-学习;
+Representation-表示--&gt;有向图BayesianNetwork;
+Representation-表示--&gt;高斯图-连续;
+Representation-表示--&gt;无向图MarkovNetwork;
+高斯图-连续--&gt;GaussianBN;
+高斯图-连续--&gt;GaussianMN;
+Inference-推断--&gt;精确推断;
+Inference-推断--&gt;ApproximateInference;
+ApproximateInference--&gt;DeterministicApproximation(Variantional Inference);
+ApproximateInference--&gt;StochasticcApproximation(MCMC);
+Learning-学习--&gt;参数学习;
+Learning-学习--&gt;结构学习;
+参数学习--&gt;完备数据;
+参数学习--&gt;隐变量;
+隐变量--&gt;EM;
+</code></pre>
+
+<p>$$
+\begin{array}{l}
+\text{Sum Rule: } P(x_1)=\int P\left(x_1, x<em>2\right) d x</em>{2}
+\
+\text{Product Rule: } P\left(x<em>1, x</em>{2}\right)=P\left(x_{1}\right) \cdot P\left(x_2 | x<em>1\right)=P\left(x</em>{2}\right) \cdot P\left(x<em>{1} | x</em>{2}\right)</p>
+
+<p>\end{array}
+$$</p>
+
+<p>Chain Rule:</p>
+
+<p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1386ec6778f1816c3fa6e9de68f89cee2e938066" alt="{\displaystyle {\begin{aligned}\mathrm {P} (X_{4},X_{3},X_{2},X_{1})&amp;=\mathrm {P} (X_{4}\mid X_{3},X_{2},X_{1})\cdot \mathrm {P} (X_{3},X_{2},X_{1})\\&amp;=\mathrm {P} (X_{4}\mid X_{3},X_{2},X_{1})\cdot \mathrm {P} (X_{3}\mid X_{2},X_{1})\cdot \mathrm {P} (X_{2},X_{1})\\&amp;=\mathrm {P} (X_{4}\mid X_{3},X_{2},X_{1})\cdot \mathrm {P} (X_{3}\mid X_{2},X_{1})\cdot \mathrm {P} (X_{2}\mid X_{1})\cdot \mathrm {P} (X_{1})\end{aligned}}}" /></p>
+
+<p><img src="./1.jpg" alt="image-20200319195228032" /></p>
+
+<h3 id="bayesian-network">Bayesian Network</h3>
+
+<ol>
+<li><p>拓扑排序构建图</p></li>
+
+<li><pre><code class="language-mermaid">graph TD;
+a--&gt;b;
+a--&gt;c;
+</code></pre></li>
+</ol>
+
+<p>$$
+   Chain Rule: P\left(x<em>{1}, x</em>{2}, \cdots, x<em>{p}\right)=P\left(x</em>{1}\right) \cdot \prod<em>{i=2}^{p} p\left(x</em>{i} | x_{1:i-1}\right)
+   <br />
+   P(a, b, c) = P(a)P(b|a)(c|a) \rightarrow 因子分解<br />
+   P(a, b, c) = P(a)P(b|a)(c|a,b) \rightarrow Chain rule<br />
+   P(c | a)=P(c | a, b) \Rightarrow c \perp b | a <br />
+   p(c | a) \cdot p(b | a)=p(c|a,b) \cdot p(b | a)=p( b, c | a) <br />
+   p(c | a) \cdot p(b | a)=p(b, c | a)
+   $$</p>
+
+<p>Tail to tail, 若a被观测，则路径被堵塞$tail \rightarrow head$</p>
+
+<hr />
+
+<pre><code class="language-mermaid">   graph LR;
+   a--&gt;b;
+   b--&gt;c;
+</code></pre>
+
+<p>head to tail
+$$
+P(a,b, c) = P(a)P(b|a)P(c|b) <br />
+P(a, b, c) = P(a) P(b|a)  P(c|a,b)  <br />
+P(c|b) = P(c|a,b)
+$$</p>
+
+<p>$$
+a \perp c | b
+$$
+若b被观测，则路径被阻塞（independent）</p>
+
+<hr />
+
+<pre><code class="language-mermaid">   graph TD;
+   a--&gt;c;
+   b--&gt;c;
+</code></pre>
+
+<p>head to head</p>
+
+<p>默认情况下，$a \perp b$，路径阻塞的</p>
+
+<p>若c被观测，则路径是通的
+$$
+P(a, b, c)=P(a) \cdot P(b) \cdot P(c | a, b) <br />
+P(a, b, c) = P(a)\cdot P(b|a) \cdot (c|a,b)  <br />
+P(b) = P(b|a)  <br />
+$$</p>
+
+<h3 id="inference">Inference</h3>
+
+<p>$$
+\begin{aligned} \text { sum rule } &amp; p(X)=\sum_{Y} p(X, Y) \ \text { product rule } &amp; p(X, Y)=p(Y | X) p(X) \end{aligned}
+$$
+求概率： $
+P(x)=P\left(x_0, x_1, \cdots, x_p\right)
+$</p>
+
+<p>边缘概率<em>marginal</em> probability：
+$$
+P\left(x<em>{i}\right)=\sum</em>{x<em>1} \cdot \sum</em>{x<em>{i-1}} \sum</em>{x<em>{i+1}} \ldots \sum</em>{x_{p}} p(x)
+$$
+条件概率conditional probability：
+$$
+P\left(x_A | x_B\right) \quad x=x_A \cup x_B
+$$
+MAP Inference:
+$$
+\hat{z}=\arg \max _{z} P(z | x) \propto \arg \max P(z, x)
+$$</p>
+
+<pre><code class="language-mermaid">graph LR;
+Inference--&gt;精确推论;
+Inference--&gt;近似推断;
+精确推论--&gt;variableElimination/VE;
+精确推论--&gt;BeliefPropagation/SumProductAlgorithm树结构;
+精确推论--&gt;JunctionTreeAlgorithm普通图结构BasedBP;
+近似推断--&gt;LoopBeliefPropagation有环图BasedBP;
+近似推断--&gt;MenteCarloInference:ImportanceSampling,MCMC;
+近似推断--&gt;VariationalInference
+</code></pre>
+
+<p><img src="./2.jpg" alt="image-20200319214741677" /></p>
+
+<h4 id="variable-elimination-乘法分配律">Variable Elimination-乘法分配律</h4>
+
+<p>$$
+M A P \quad \tilde{X}_{A}=\arg \max <em>{X} P\left(x</em>{A} | x<em>{B}\right)=\arg \max P\left(x</em>{A}, x_{B}\right)
+$$</p>
+
+<pre><code class="language-mermaid">   graph LR;
+   a--&gt;b;
+   b--&gt;c;
+   c--&gt;d;
+</code></pre>
+
+<p>假设a,b,c,d均是离散的二值r,v {0,1}</p>
+
+<p>$$
+p(d) =  \sum_{a, b, c} p(a, b, c, d) \</p>
+
+<p>=
+\sum_{a, b, c} p(a) \cdot p(b | a) \cdot p(c | b) \cdot p(d | c) \</p>
+
+<p>=  p(a=0) \cdot p(b=0 | a=0) \cdot p(c=0 | b=0) \cdot p(d=0|c=0) <br />
++ p(a=1) \cdot p(b=0 | a=1) \cdot p(c=0 | b=0) \cdot p(d=0|c=0) \</p>
+
+<ul>
+<li>\cdots <br /></li>
+<li>p(a=1) \cdot p(b=1 | a=1) \cdot p(c=1 | b=1) \cdot p(d=1|c=1) <br />
+= \sum<em>{b, c} p(c | b) \cdot p(d | c) \cdot \underbrace{\sum</em>{a} p(a) \cdot p(b | a)}_{\phi_a(b)} <br /></li>
+</ul>
+
+<p>= \sum<em>c p(d | c) \cdot \underbrace{\sum</em>{b}  p(c | b)\cdot \phi<em>a(b) }</em>{\phi_b&copy;} <br />
+= \phi_c(d)
+$$
+乘法对加法的分配律$ab+cb = b(a+c)$</p>
+
+<p>Cons:</p>
+
+<ul>
+<li>Memoryless.重复计算</li>
+<li>Ordering  NP-hard</li>
+</ul>
+
+<h4 id="belief-propagation">Belief Propagation</h4>
+
+<pre><code class="language-mermaid">   graph LR;
+   a--&gt;b;
+   b--&gt;c;
+   c--&gt;d;
+   d--&gt;e;
+</code></pre>
+
+<p>$$
+\text{ Forward Algorithm} <br />
+P(a, b, c, d, e)=P(a) P(b | a) \cdot P(c | b) \cdot P(d | c) \cdot P(e|d) <br />
+P(e)=\sum<em>{a, b,c, d} P(a, b, c, d, e) <br />
+=\sum</em>{d} p(e | d) \sum<em>{c} p(d | c) \underbrace{ \sum</em>{b} p(c | b) \underbrace{ \sum<em>{a} p(b | a) p(a) }</em>{m<em>{a\rightarrow b }(b)}}</em>{m_{b \rightarrow c}&copy;}
+$$</p>
+
+<p>$$
+p&copy;=\sum<em>{a, b, d, e} p(a, b, c, d, e)  <br />
+ = \left(\sum</em>{b} p(c | b) \cdot \sum<em>{a} p(b | a) \cdot p(a) \right) \left(\sum</em>{d} p(d | c) \sum_{e} p(e | d)\right)</p>
+
+<p><br />
+ \text{ Forward-Backward Algorithm}
+$$</p>
+
+<pre><code class="language-mermaid">graph TD;
+a---b;
+b---d;
+b---c;
+</code></pre>
+
+<p>$$
+\begin{aligned}
+&amp; p(a, b, c, d)
+\=&amp; \frac{1}{z} \psi<em>{a}(a) \psi</em>{b}(b) \cdot \psi<em>{c}&copy; \cdot \varphi(d)
+\ &amp; \cdot \psi</em>{a, b}(a, b) \cdot \psi<em>{b, c}(b, c) \cdot \psi</em>{b, d}(b, d) \end{aligned}
+$$</p>
+
     </div>
 
   
@@ -1062,6 +1273,8 @@ code.has-jax {font: inherit;
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 
       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.4/mermaid.min.js" integrity="sha256-JEqEejGt4tR35L0a1zodzsV0/PJ6GIf7J4yDtywdrH8=" crossorigin="anonymous" title="mermaid"></script>
+      
 
       
         
@@ -1167,7 +1380,7 @@ code.has-jax {font: inherit;
     
 
    
-      <p>&copy; Faith 19/03/2020 &middot;
+      <p>&copy; Faith 25/03/2020 &middot;
                     Built with <a href="https://github.com/gohugoio/hugo">Hugo</a>
 
        <a href="https://github.com/iamfaith"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path></svg>
