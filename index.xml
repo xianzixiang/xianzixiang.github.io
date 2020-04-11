@@ -330,8 +330,6 @@ $$&lt;/p&gt;
 \text { Want to find } w, b \text { that minimize } J(w, b)
 $$&lt;/p&gt;
 
-&lt;p&gt;a&lt;/p&gt;
-
 &lt;p&gt;&lt;img src=&#34;./image-20200324214403439.png&#34; alt=&#34;image-20200324214403439&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;./image-20200324215144592.png&#34; alt=&#34;image-20200324215144592&#34; /&gt;&lt;/p&gt;
@@ -587,6 +585,8 @@ MixedNetwork/有向图无向图--&amp;gt;DeepBeliefNetwork
       <pubDate>Tue, 24 Mar 2020 16:45:50 -0400</pubDate>
       <guid>https://faithio.cn/post/hmm/</guid>
       <description>
+
+&lt;p&gt;[pdf]&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;./hmm.html&#34;&gt;click here for link&lt;/a&gt;&lt;/p&gt;
 
