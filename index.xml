@@ -5,7 +5,7 @@
     <link>https://faithio.cn/</link>
       <atom:link href="https://faithio.cn/index.xml" rel="self" type="application/rss+xml" />
     <description>Zixiang&#39;s Personal Page</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 24 Mar 2020 21:26:35 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 09 Apr 2020 22:19:05 -0400</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Zixiang&#39;s Personal Page</title>
@@ -13,11 +13,299 @@
     </image>
     
     <item>
+      <title>Auto Encoder</title>
+      <link>https://faithio.cn/post/auto-encoder/</link>
+      <pubDate>Thu, 09 Apr 2020 22:19:05 -0400</pubDate>
+      <guid>https://faithio.cn/post/auto-encoder/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409223241587.png&#34; alt=&#34;image-20200409223241587&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;pre-training&#34;&gt;Pre-training&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409221924650.png&#34; alt=&#34;image-20200409221924650&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;unlabled data有大量，可以先训练好，最后再用labled data train 一下就好&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409222120187.png&#34; alt=&#34;image-20200409222120187&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;cnn&#34;&gt;CNN&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409222335967.png&#34; alt=&#34;image-20200409222335967&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409222517794.png&#34; alt=&#34;image-20200409222517794&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409222810907.png&#34; alt=&#34;image-20200409222810907&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Structured Learning</title>
+      <link>https://faithio.cn/post/structured-learning/</link>
+      <pubDate>Thu, 09 Apr 2020 17:16:09 -0400</pubDate>
+      <guid>https://faithio.cn/post/structured-learning/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409171641927.png&#34; alt=&#34;image-20200409171641927&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;hmm&#34;&gt;HMM&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409171835224.png&#34; alt=&#34;image-20200409171835224&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;step1&#34;&gt;Step1&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409172113243.png&#34; alt=&#34;image-20200409172113243&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;step2&#34;&gt;Step2&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409172211239.png&#34; alt=&#34;image-20200409172211239&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409172318205.png&#34; alt=&#34;image-20200409172318205&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409172424343.png&#34; alt=&#34;image-20200409172424343&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409172500491.png&#34; alt=&#34;image-20200409172500491&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409172645029.png&#34; alt=&#34;image-20200409172645029&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409173134454.png&#34; alt=&#34;image-20200409173134454&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409173226554.png&#34; alt=&#34;image-20200409173226554&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409173423567.png&#34; alt=&#34;image-20200409173423567&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409173952413.png&#34; alt=&#34;image-20200409173952413&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>RNN</title>
+      <link>https://faithio.cn/post/rnn/</link>
+      <pubDate>Wed, 08 Apr 2020 23:32:41 -0400</pubDate>
+      <guid>https://faithio.cn/post/rnn/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/DNN backprop.ecm.mp4/&#34; target=&#34;_blank&#34;&gt;http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/DNN%20backprop.ecm.mp4/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409001545106.png&#34; alt=&#34;image-20200409001545106&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409001558634.png&#34; alt=&#34;image-20200409001558634&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409001619909.png&#34; alt=&#34;image-20200409001619909&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409001648125.png&#34; alt=&#34;image-20200409001648125&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408233652075.png&#34; alt=&#34;image-20200408233652075&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Gate function uses sigmoid, but not ReLu&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408233931947.png&#34; alt=&#34;image-20200408233931947&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408234357433.png&#34; alt=&#34;image-20200408234357433&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408234617041.png&#34; alt=&#34;image-20200408234617041&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408234854424.png&#34; alt=&#34;image-20200408234854424&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408235319626.png&#34; alt=&#34;image-20200408235319626&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408235531482.png&#34; alt=&#34;image-20200408235531482&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408235710883.png&#34; alt=&#34;image-20200408235710883&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408235855214.png&#34; alt=&#34;image-20200408235855214&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408235835005.png&#34; alt=&#34;image-20200408235835005&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409000422582.png&#34; alt=&#34;image-20200409000422582&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409000655276.png&#34; alt=&#34;image-20200409000655276&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;rnn-的big-problems&#34;&gt;RNN 的big problems&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409000918432.png&#34; alt=&#34;image-20200409000918432&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409001231798.png&#34; alt=&#34;image-20200409001231798&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409001835408.png&#34; alt=&#34;image-20200409001835408&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;RNN不好训练不是因为activation function，而是来自time sequence，同样的weight，在不同的时间点反复使用&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;lstm&#34;&gt;LSTM&lt;/h4&gt;
+
+&lt;p&gt;可以让RNN的error surface 不那么崎岖，可以把平坦的地方拿掉，gradient vanishing but not gradient explode。&lt;/p&gt;
+
+&lt;p&gt;learning rate 小的时候训练，没有平台训练。&lt;/p&gt;
+
+&lt;p&gt;为什么handling gradient vanishing？&lt;/p&gt;
+
+&lt;p&gt;RNN：memory的值每次都会被洗掉&lt;/p&gt;
+
+&lt;p&gt;LSTM：memory 乘以forget gate再加起input的值， memory和input相加的。只要forget gate open就不会清除memory，所以不会有gradient vanishing。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;建议不要给forget gate很大的bias，确保它多数情况开启。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409002919268.png&#34; alt=&#34;image-20200409002919268&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;参数比较少，LSTM如果overfiting，可以尝试GRU。&lt;/p&gt;
+
+&lt;p&gt;GRU： input gate/ forget gate联动，input 打开的时候，forget关闭，洗掉memory。要清掉memory才能放新值。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409003240369.png&#34; alt=&#34;image-20200409003240369&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;如果用identity matrix 初始化，就是ReLu 作为activation function，效果很好。吊打LSTM！&lt;/p&gt;
+
+&lt;p&gt;如果是random，就用sigmoid 作为activation function。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409003706220.png&#34; alt=&#34;image-20200409003706220&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409003903477.png&#34; alt=&#34;image-20200409003903477&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409004110329.png&#34; alt=&#34;image-20200409004110329&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409004228085.png&#34; alt=&#34;image-20200409004228085&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409004508687.png&#34; alt=&#34;image-20200409004508687&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409004618217.png&#34; alt=&#34;image-20200409004618217&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409092820297.png&#34; alt=&#34;image-20200409092820297&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409093035412.png&#34; alt=&#34;image-20200409093035412&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;attention-based-model-memory&#34;&gt;Attention-based model(Memory)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409102156594.png&#34; alt=&#34;image-20200409102156594&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409102305686.png&#34; alt=&#34;image-20200409102305686&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409115636418.png&#34; alt=&#34;image-20200409115636418&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409120107169.png&#34; alt=&#34;image-20200409120107169&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409163453089.png&#34; alt=&#34;image-20200409163453089&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409164153093.png&#34; alt=&#34;image-20200409164153093&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;RNN output &amp;ndash;&amp;gt; HMM/CRF(input)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409164833992.png&#34; alt=&#34;image-20200409164833992&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200409165025527.png&#34; alt=&#34;image-20200409165025527&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CNN</title>
+      <link>https://faithio.cn/post/cnn/</link>
+      <pubDate>Wed, 08 Apr 2020 22:30:14 -0400</pubDate>
+      <guid>https://faithio.cn/post/cnn/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;./image-20200408223055298.png&#34; alt=&#34;image-20200408223055298&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408223108550.png&#34; alt=&#34;image-20200408223108550&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408223121952.png&#34; alt=&#34;image-20200408223121952&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408223133146.png&#34; alt=&#34;image-20200408223133146&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408223143761.png&#34; alt=&#34;image-20200408223143761&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408223154238.png&#34; alt=&#34;image-20200408223154238&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408223205482.png&#34; alt=&#34;image-20200408223205482&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408223218039.png&#34; alt=&#34;image-20200408223218039&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408223228871.png&#34; alt=&#34;image-20200408223228871&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408223238009.png&#34; alt=&#34;image-20200408223238009&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408223247511.png&#34; alt=&#34;image-20200408223247511&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408223303544.png&#34; alt=&#34;image-20200408223303544&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408223314184.png&#34; alt=&#34;image-20200408223314184&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200408223324970.png&#34; alt=&#34;image-20200408223324970&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;dropout linear 好 &amp;ndash;&amp;gt;ReLU/maxout 好&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linear Classification</title>
+      <link>https://faithio.cn/post/linear-classification/</link>
+      <pubDate>Tue, 07 Apr 2020 11:23:28 -0400</pubDate>
+      <guid>https://faithio.cn/post/linear-classification/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;./image-20200407112526341.png&#34; alt=&#34;image-20200407112526341&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200407112551869.png&#34; alt=&#34;image-20200407112551869&#34; /&gt;
+$$
+\begin{array}{l}P(Y | X)=\frac{P(X | Y) P(Y)}{P(X)} \propto(P(X | Y) \cdot P(Y) \
+M A P \ P(Y=0 | X) \Rightarrow P(Y=1 | X)\end{array}
+$$&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SVM</title>
+      <link>https://faithio.cn/post/svm/</link>
+      <pubDate>Tue, 07 Apr 2020 11:21:59 -0400</pubDate>
+      <guid>https://faithio.cn/post/svm/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;./image-20200407112231032.png&#34; alt=&#34;image-20200407112231032&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Generative Adversarial Network</title>
+      <link>https://faithio.cn/post/generative-adversarial-network/</link>
+      <pubDate>Mon, 06 Apr 2020 10:40:49 -0400</pubDate>
+      <guid>https://faithio.cn/post/generative-adversarial-network/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;./gan.html&#34;&gt;click here for link&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;gan&#34;&gt;GAN&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200406104115087.png&#34; alt=&#34;image-20200406104115087&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200406104139692.png&#34; alt=&#34;image-20200406104139692&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200406104202074.png&#34; alt=&#34;image-20200406104202074&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$$
+\mathcal{KL}(p|q) = E_p[\log \frac{p}{q}] \
+&amp;mdash;-&lt;br /&gt;
+P_g \rightarrow \theta_g &lt;br /&gt;
+\text{  MLE: } &lt;br /&gt;
+\theta&lt;em&gt;g  = \arg \max&lt;/em&gt;{\theta&lt;em&gt;g} \sum&lt;/em&gt;{i=1}^N \log P_g(x&lt;em&gt;i) &lt;br /&gt;
+= \arg \min \mathcal{KL}(P&lt;/em&gt;{data}|P_g)
+$$&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Deep Learning</title>
       <link>https://faithio.cn/post/deep-learning/</link>
       <pubDate>Tue, 24 Mar 2020 21:26:35 -0400</pubDate>
       <guid>https://faithio.cn/post/deep-learning/</guid>
       <description>
+
+&lt;h2 id=&#34;neural-networks-basics&#34;&gt;Neural Networks Basics&lt;/h2&gt;
 
 &lt;h3 id=&#34;logistic-regression-as-a-neural-network&#34;&gt;Logistic Regression as a Neural Network&lt;/h3&gt;
 
@@ -113,11 +401,80 @@ $$&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;./image-20200325130254559.png&#34; alt=&#34;image-20200325130254559&#34; /&gt;&lt;/p&gt;
 
+&lt;h2 id=&#34;shallow-neural-networks&#34;&gt;Shallow neural networks&lt;/h2&gt;
+
+&lt;h3 id=&#34;representation&#34;&gt;Representation&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200329195140415.png&#34; alt=&#34;image-20200329195140415&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200329195430112.png&#34; alt=&#34;image-20200329195430112&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200329200220168.png&#34; alt=&#34;image-20200329200220168&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200329201139101.png&#34; alt=&#34;image-20200329201139101&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;X：竖方向 features&lt;/p&gt;
+
+&lt;p&gt;横方向：training example&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200329203208413.png&#34; alt=&#34;image-20200329203208413&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200329203423150.png&#34; alt=&#34;image-20200329203423150&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200329205526293.png&#34; alt=&#34;image-20200329205526293&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Activation function：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Sigmoid: 如果output是binary classification，可以考虑sigmoid function，一般nerver used&lt;/li&gt;
+&lt;li&gt;tanh function：&lt;/li&gt;
+&lt;li&gt;ReLU Rectified Linear Unit $a = \max(0, z)$ : by default, 很多人用，faster，slope 1，or 0&lt;/li&gt;
+&lt;li&gt;Leaky ReLU&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;why-need-non-linear-activation-functions&#34;&gt;Why need non-linear activation functions&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200329211018395.png&#34; alt=&#34;image-20200329211018395&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;derivatives-of-activation-functions&#34;&gt;Derivatives of activation functions&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200329213350341.png&#34; alt=&#34;image-20200329213350341&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200329213514765.png&#34; alt=&#34;image-20200329213514765&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200329213812889.png&#34; alt=&#34;image-20200329213812889&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;gradient-descent-for-neural-networks&#34;&gt;Gradient descent for Neural Networks&lt;/h3&gt;
+
+&lt;p&gt;np.sum(keepdims=True): prevent rank one arrays&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200406144044096.png&#34; alt=&#34;image-20200406144044096&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200406144013392.png&#34; alt=&#34;image-20200406144013392&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;backpropagation-intuition&#34;&gt;Backpropagation intuition&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200406144511159.png&#34; alt=&#34;image-20200406144511159&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200406145730947.png&#34; alt=&#34;image-20200406145730947&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://medium.com/@pdquant/all-the-backpropagation-derivatives-d5275f727f60&#34; target=&#34;_blank&#34;&gt;https://medium.com/@pdquant/all-the-backpropagation-derivatives-d5275f727f60&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200406152406973.png&#34; alt=&#34;image-20200406152406973&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.coursera.org/learn/neural-networks-deep-learning/discussions/weeks/3/threads/a38VuhyMEei5zw6yFhWyOg&#34; target=&#34;_blank&#34;&gt;https://www.coursera.org/learn/neural-networks-deep-learning/discussions/weeks/3/threads/a38VuhyMEei5zw6yFhWyOg&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;random-initialization&#34;&gt;Random Initialization&lt;/h3&gt;
+
+&lt;p&gt;LR can be initialized as 0, but not neural network&lt;/p&gt;
+
+&lt;h2 id=&#34;supplement&#34;&gt;Supplement&lt;/h2&gt;
+
 &lt;h3 id=&#34;基础&#34;&gt;基础&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph LR;
 MachineLearning--&amp;gt;频率/统计机器学习;
-频率/统计机器学习--&amp;gt;正则化
+频率/统计机器学习--&amp;gt;正则化/L1/L2
 频率/统计机器学习--&amp;gt;核化
 频率/统计机器学习--&amp;gt;集成化
 频率/统计机器学习--&amp;gt;层次化
@@ -140,7 +497,7 @@ MixedNetwork/有向图无向图--&amp;gt;DeepBeliefNetwork
 &lt;h4 id=&#34;统计机器学习&#34;&gt;统计机器学习&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;正则化：Loss Function + regularizer&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;正则化：Loss Function + regularizer(L1/L2)&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;核化: Kernel SVM&lt;/p&gt;&lt;/li&gt;
 
@@ -149,7 +506,7 @@ MixedNetwork/有向图无向图--&amp;gt;DeepBeliefNetwork
 &lt;li&gt;&lt;p&gt;层次化: Neural Network/Deep Neural Network&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;MLP&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MLP(Mutilayer Perceptron)&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Autoencoder&lt;/p&gt;&lt;/li&gt;
 
@@ -174,7 +531,7 @@ MixedNetwork/有向图无向图--&amp;gt;DeepBeliefNetwork
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Deep Generative Model&lt;/p&gt;
+&lt;p&gt;上述都是：Deep Generative Model&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;狭义的DeepLearning：Deep Neural Network&lt;/p&gt;
@@ -229,7 +586,87 @@ MixedNetwork/有向图无向图--&amp;gt;DeepBeliefNetwork
       <link>https://faithio.cn/post/hmm/</link>
       <pubDate>Tue, 24 Mar 2020 16:45:50 -0400</pubDate>
       <guid>https://faithio.cn/post/hmm/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;1.jpg&#34; alt=&#34;image-20200324164641801&#34; /&gt;&lt;/p&gt;
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;./hmm.html&#34;&gt;click here for link&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;概率图模型&#34;&gt;概率图模型&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;inference-&amp;gt; $P(Z|X)$-&amp;gt;积分问题（MCMC）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;GMM：样本之间是独立同分布&lt;/p&gt;
+
+&lt;h3 id=&#34;hmm-dynamic-model&#34;&gt;HMM: Dynamic Model&lt;/h3&gt;
+
+&lt;p&gt;y: System state 隐变量&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;state  离散：HMM&lt;/li&gt;
+&lt;li&gt;state 线性: Kalman Filter&lt;/li&gt;
+&lt;li&gt;state 非线性: Particle Filter&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;$$
+\lambda = (\underbrace{\pi}{初始prob dist}, \underbrace{A}{状态转移矩阵}, \underbrace{B}_{发射矩阵emission}) &lt;br /&gt;
+状态变量i: i_1, i_2, \cdots i_t \cdots \rightarrow Q={q_1, q_2, \cdots, q_m} &lt;br /&gt;
+观测变量o: o_1, o_2, \cdots o_t \cdots \rightarrow V={v_1, v_2, \cdots, v&lt;em&gt;m} &lt;br /&gt;
+A=\left[a&lt;/em&gt;{i j}\right], a&lt;em&gt;{i j}=P\left(i&lt;/em&gt;{t+1}=q_{i} | i&lt;em&gt;t=q&lt;/em&gt;{i}\right)  &lt;br /&gt;
+B=\left[b&lt;em&gt;{j k} \right], b&lt;/em&gt;{j k}=P\left(Q&lt;em&gt;{t}=v&lt;/em&gt;{k} | i&lt;em&gt;t=q&lt;/em&gt;{j}\right)
+$$&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;transition 和 emission probability 是independent&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;两个假设：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;齐次Markov 假设&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;$$
+P(i_{t+1}|i&lt;em&gt;t, t&lt;/em&gt;{t-1}, \cdots, t_1, o&lt;em&gt;t, o&lt;/em&gt;{t-1}, \dots, o&lt;em&gt;1) = p(i&lt;/em&gt;{t+1}|i_t)  &lt;br /&gt;
+$$&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;观察独立假设
+$$
+P(o_{t}|i&lt;em&gt;t, t&lt;/em&gt;{t-1}, \cdots, t_1, o&lt;em&gt;t, o&lt;/em&gt;{t-1}, \dots, o&lt;em&gt;1) = p(o&lt;/em&gt;{t}|i_t)  &lt;br /&gt;
+$$&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;三个问题：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Evaluation: $P(O| \lambda) \Rightarrow$ 前向后向 Forward-backward&lt;/li&gt;
+&lt;li&gt;learning $\lambda=\arg \max P(O|\lambda)$ EM algorithm\baum welch&lt;/li&gt;
+&lt;li&gt;Decoding $\lambda=\arg \max_{i} P(I|O)$
+
+&lt;ol&gt;
+&lt;li&gt;预测：$P(i_{t+1}|o_1, o_2, \cdots, o_t)$&lt;/li&gt;
+&lt;li&gt;滤波：$P(i_{t}|o_1, o_2, \cdots, o_t)$&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;hmm-evaluation&#34;&gt;HMM-Evaluation&lt;/h3&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+ Give &amp;amp;\lambda, 求 P(O|\lambda) &lt;br /&gt;
+P(O | \lambda) &amp;amp;=\sum&lt;em&gt;{1} P(I, O | \lambda)=\sum&lt;/em&gt;{1} P(O | I, \lambda) \cdot P(I | \lambda) \&lt;/p&gt;
+
+&lt;p&gt;P(I | \lambda)&amp;amp;=P\left(i&lt;em&gt;{1}, i&lt;/em&gt;{2}, \cdots,  i&lt;em&gt;{T} | \lambda\right)=\underbrace{P\left(i&lt;/em&gt;{T} | i, i&lt;em&gt;{2},\cdots,i&lt;/em&gt;{T-1}, \lambda\right)}_{P(i&lt;em&gt;T|i&lt;/em&gt;{T-1})=a&lt;em&gt;{i&lt;/em&gt;{T-1}, i_T}} P(i_1, i&lt;em&gt;2, \cdots, i&lt;/em&gt;{T-1}|\lambda) = a&lt;em&gt;{i&lt;/em&gt;{T-1}, i&lt;em&gt;T} \cdot a&lt;/em&gt;{i&lt;em&gt;{T-2}, i&lt;/em&gt;{T-1}} \cdots a&lt;em&gt;{i&lt;/em&gt;{1}, i_{2}} \cdot \pi(i_1) \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;\pi\text{ 是初始分布} &lt;br /&gt;
+&amp;amp;= \pi\left(a&lt;em&gt;{i}\right) \cdot \prod&lt;/em&gt;{t=2}^{T} a&lt;em&gt;{i&lt;/em&gt;{t-1}, i&lt;em&gt;t} &lt;br /&gt;
+&amp;mdash;-&lt;br /&gt;
+p(O | I, \lambda) &amp;amp; =\prod&lt;/em&gt;{t=1}^{T} b_{i&lt;em&gt;t}\left(O&lt;/em&gt;{t}\right)
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;ppt&#34;&gt;PPT&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;1.jpg&#34; alt=&#34;image-20200324164641801&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -442,8 +879,11 @@ $$&lt;/p&gt;
       <guid>https://faithio.cn/post/expectation-maximization/</guid>
       <description>
 
-&lt;p&gt;$MLE: P(X|\theta)$
-$$
+&lt;p&gt;&lt;a href=&#34;./em.html&#34;&gt;click here for link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;$MLE: P(X|\theta)$&lt;/p&gt;
+
+&lt;p&gt;$$
 \theta_{MLE}=\arg \max _{\theta} \log P(X | \theta) \&lt;/p&gt;
 
 &lt;p&gt;\theta^{(t+1)}=\arg \max &lt;em&gt;{\theta} \int&lt;/em&gt;{z} \log p(x, z | \theta) \cdot p\left(z | x, \theta^{(t)}\right) d z
@@ -550,6 +990,19 @@ $$&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;2.jpg&#34; alt=&#34;image-20200323224250592&#34; /&gt;&lt;/p&gt;
 
+&lt;p&gt;$$
+t \in[0.1] &lt;br /&gt;
+c= ta+ (1-t)b &lt;br /&gt;
+f&amp;copy; =f(ta+ (1-t)b) \geqslant tf(a) + (1-t)f(b)
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{array}{l}x(t)=x&lt;em&gt;{1}+t\left(x&lt;/em&gt;{2}-x&lt;em&gt;{1}\right) \ y(t)=f\left(x&lt;/em&gt;{1}\right)+t\left(f\left(x&lt;em&gt;{2}\right)-f\left(x&lt;/em&gt;{1}\right)\right) \ t \in \mathbb{R}\end{array}
+&lt;br /&gt;
+\begin{array}{l}\text { Combining like terms and replacing } t \text { with }(1-t) \text { (which is fine since } t \text { is an arbitrary parameter; } \ \text { furthermore } 0 \leq 1-t \leq 1 \Longleftrightarrow 0 \leq t \leq 1 \text { ), we can write the secant line as the set of } \ \text { points } \ \qquad \begin{array}{l}x(t)=t x&lt;em&gt;{1}+(1-t) x&lt;/em&gt;{2} \ y(t)=t f\left(x&lt;em&gt;{1}\right)+(1-t) f\left(x&lt;/em&gt;{2}\right) \ t \in \mathbb{R}\end{array}\end{array}&lt;br /&gt;
+$$
+&lt;a href=&#34;http://www.gtmath.com/2016/03/convexity-and-jensens-inequality.html&#34; target=&#34;_blank&#34;&gt;http://www.gtmath.com/2016/03/convexity-and-jensens-inequality.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;广义em&#34;&gt;广义EM&lt;/h3&gt;
 
 &lt;p&gt;概率生成模型问题，通过z生成x，然后再通过积分把z消掉。参数learning问题&lt;/p&gt;
@@ -602,6 +1055,8 @@ $$&lt;/p&gt;
       <guid>https://faithio.cn/post/foundation-of-machine-learning/</guid>
       <description>
 
+&lt;p&gt;&lt;a href=&#34;./ml.html&#34;&gt;click here for link&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;common&#34;&gt;Common&lt;/h3&gt;
 
 &lt;p&gt;X: data&lt;/p&gt;
@@ -641,6 +1096,20 @@ $$
 MAP: \theta_{MAP}=\arg \max _{\theta} P(\theta | x)=\arg \max _{\theta} P(x | \theta) \cdot P(\theta)
 $$&lt;/p&gt;
 
+&lt;h3 id=&#34;bias-and-variance&#34;&gt;Bias and Variance&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./1.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;avoid-overfiting&#34;&gt;Avoid overfiting&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./IMG_1742.PNG&#34; alt=&#34;IMG_1742&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./IMG_1741.PNG&#34; alt=&#34;IMG_1741&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./IMG_1740.PNG&#34; alt=&#34;IMG_1740&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./IMG_1739.PNG&#34; alt=&#34;IMG_1739&#34; /&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;book&#34;&gt;book&lt;/h3&gt;
 
 &lt;ul&gt;
@@ -651,6 +1120,12 @@ $$&lt;/p&gt;
 &lt;li&gt;ESL  频率派&lt;/li&gt;
 &lt;li&gt;Deep Learning 圣经/张志华翻译&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&#34;高斯分布&#34;&gt;高斯分布&lt;/h3&gt;
+
+&lt;p&gt;马氏距离/欧氏距离&lt;/p&gt;
+
+&lt;p&gt;$X^TAX$ : 欧氏距离，中间是单位矩阵，马氏距离，中间是协方差矩阵（其实是二次型）&lt;/p&gt;
 </description>
     </item>
     
@@ -661,7 +1136,7 @@ $$&lt;/p&gt;
       <guid>https://faithio.cn/post/approximate-inference/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;./Approximate.pdf&#34;&gt;Approximate Inference.pdf&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;../../fomula/Approximate.html&#34;&gt;Approximate Inference.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./Approximate.html&#34;&gt;Approximate Inference.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1017,11 +1492,9 @@ Because it extends belief propagation. Belief propagation passes the entire dist
 
 &lt;h3 id=&#34;agm&#34;&gt;AGM&lt;/h3&gt;
 
-&lt;p&gt;&lt;code&gt;$
-$$
-p(\mathbf{X} | \Theta)=\sum_{j=1}^{M} p_{j} p\left(\mathbf{X} | \xi_{j}\right)
-$$
-$&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$$
+p(\mathbf{X} | \Theta)=\sum&lt;em&gt;{j=1}^{M} p&lt;/em&gt;{j} p\left(\mathbf{X} | \xi_{j}\right)
+$$&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;$\xi_j$ is the set of the parameters of component j.&lt;/li&gt;
@@ -1030,27 +1503,34 @@ $&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;$ M \geq 1$ is number of components in the mixture.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;code&gt;$
+&lt;p&gt;$$
+p\left(X | \theta\right)=\prod&lt;em&gt;{d=1}^{D} \sqrt{\frac{2}{\pi}} \frac{1}{\left(\sigma&lt;/em&gt;{l&lt;em&gt;{d}}+\sigma&lt;/em&gt;{r&lt;em&gt;{d}}\right)} \times\left{\begin{array}{ll}\exp \left[-\frac{\left(X&lt;/em&gt;{d}-\mu&lt;em&gt;{d}\right)^{2}}{2 \sigma&lt;/em&gt;{l&lt;em&gt;{d} }^{2}}\right] &amp;amp; \text { if } X&lt;/em&gt;{d}&amp;lt;\mu&lt;em&gt;{d} \ \exp \left[-\frac{\left(X&lt;/em&gt;{d}-\mu&lt;em&gt;{d}\right)^{2}}{2 \sigma&lt;/em&gt;{r&lt;em&gt;{d}}^{2}}\right] &amp;amp; \text { if } X&lt;/em&gt;{d} \geq \mu&lt;em&gt;{d}\end{array}\right. &lt;br /&gt;
 $$
-p\left(\vec{X} | \theta_{j}\right)=\prod_{d=1}^{D} \sqrt{\frac{2}{\pi}} \frac{1}{\left(\sigma_{l_{j d}}+\sigma_{r_{j d}}\right)} \times\left\{\begin{array}{ll}\exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{l_{j d} }^{2}}\right] &amp;amp; \text { if } X_{d}&amp;lt;\mu_{j d} \\ \exp \left[-\frac{\left(X_{d}-\mu_{j d}\right)^{2}}{2 \sigma_{r_{j d}}^{2}}\right] &amp;amp; \text { if } X_{d} \geq \mu_{j d}\end{array}\right.
-$$
-$&lt;/code&gt;&lt;/p&gt;
+- $\vec{\mu}=\left(\mu&lt;/em&gt;{1}, \ldots, \mu&lt;em&gt;{D}\right)$ is the mean
+- $\vec{\sigma}&lt;/em&gt;{l}=\left(\vec{\sigma}&lt;em&gt;{l&lt;/em&gt;{1}}, \ldots, \vec{\sigma}&lt;em&gt;{l&lt;/em&gt;{D}}\right)$ is the left standard deviation
+- $\vec{\sigma}&lt;em&gt;{r}=\left(\vec{\sigma}&lt;/em&gt;{r&lt;em&gt;{1}}, \ldots, \vec{\sigma}&lt;/em&gt;{r_{D}}\right)$ is the right standard deviation&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;$\xi_{j}=\left(\vec{\mu}_{j}, \vec{\sigma}_{l_{j}}, \vec{\sigma}_{r_{j}}\right)$&lt;/code&gt; is the set of the parameters of components $j$&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$\vec{\mu}_{j}=\left(\mu_{j 1}, \ldots, \mu_{j D}\right)$&lt;/code&gt; is the mean&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$\vec{\sigma}_{l_{j}}=\left(\vec{\sigma}_{l_{j 1}}, \ldots, \vec{\sigma}_{l_{j D}}\right)$&lt;/code&gt; is the left standard deviation&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$\vec{\sigma}_{r_{j}}=\left(\vec{\sigma}_{r_{j 1}}, \ldots, \vec{\sigma}_{r_{j D}}\right)$&lt;/code&gt; is the right standard deviation&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;$$
+\log P = \sum&lt;em&gt;{d=1}^{D} \log \sqrt{\frac{2}{\pi}} - \frac{1}{2}\log (\sqrt{v&lt;/em&gt;{l&lt;em&gt;{d}}} + \sqrt{v&lt;/em&gt;{r&lt;em&gt;{d}}}) -
+\left{\begin{array}{ll}
+\frac{\left(X&lt;/em&gt;{d}-\mu&lt;em&gt;{d}\right)^{2}}{2 v&lt;/em&gt;{l&lt;em&gt;{d} }}  &amp;amp; \text { if } X&lt;/em&gt;{d}&amp;lt;\mu&lt;em&gt;{d} &lt;br /&gt;
+\frac{\left(X&lt;/em&gt;{d}-\mu&lt;em&gt;{d}\right)^{2}}{2 v&lt;/em&gt;{r&lt;em&gt;{d} }} &amp;amp; \text { if } X&lt;/em&gt;{d} \geq \mu&lt;em&gt;{d} &lt;br /&gt;
+\end{array}\right. &lt;br /&gt;
+\frac{\partial \log P}{\partial v&lt;/em&gt;{l&lt;em&gt;{d}}} = -\frac{1}{4}\frac{1}{v&lt;/em&gt;{l&lt;em&gt;{d}} + \sqrt{v&lt;/em&gt;{l&lt;em&gt;{d}} v&lt;/em&gt;{r&lt;em&gt;{d}} }} + \left{\begin{array}{ll}
+\frac{\left(X&lt;/em&gt;{d}-\mu&lt;em&gt;{d}\right)^{2}}{2 v&lt;/em&gt;{l&lt;em&gt;{d}}^2}  &amp;amp; \text { if } X&lt;/em&gt;{d}&amp;lt;\mu&lt;em&gt;{d} &lt;br /&gt;
+0 &amp;amp; \text { if } X&lt;/em&gt;{d} \geq \mu_{d} &lt;br /&gt;
+\end{array}\right.
+$$&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;p&gt;$$
-p\left(\theta_j | \vec{X} \right)= \frac{p(\theta_j)\times p\left(\vec{X} | \theta&lt;em&gt;j\right)}{p(\vec{X})} = \frac{1}{p(\vec{X})} \prod&lt;/em&gt;{i} f_{i}(\boldsymbol{\theta})
+p(X, \boldsymbol{\theta})=\prod&lt;em&gt;{i} f&lt;/em&gt;{i}(\boldsymbol{\theta}) = \prod_{i} p(x&lt;em&gt;i|\boldsymbol{\theta})&lt;br /&gt;
+%p\left(\theta | X \right) = \frac{1}{p(X)} \prod&lt;/em&gt;{i} f_{i}(\boldsymbol{\theta}) &lt;br /&gt;
 $$&lt;/p&gt;
 
 &lt;p&gt;$$
-p(\vec{X})= \int \prod&lt;em&gt;{i} f&lt;/em&gt;{i}(\boldsymbol{\theta}) \mathrm{d} \boldsymbol{\theta}
+%p(X)= \int \prod&lt;em&gt;{i} f&lt;/em&gt;{i}(\boldsymbol{\theta}) \mathrm{d} \boldsymbol{\theta}
 $$&lt;/p&gt;
 
 &lt;p&gt;Here, $p(\vec{X})$ is very intractable to calculate and we don&amp;rsquo;t know $ f_{i}(\boldsymbol{\theta}) $.&lt;/p&gt;
@@ -1060,8 +1540,86 @@ $$
 q(\theta_j)=\frac{1}{Z} \prod_i \widetilde{f}_i(\theta_j)
 $$&lt;/p&gt;
 
-&lt;p&gt;in which each factor $\widetilde{f}_i(\theta_j)$ in the approximation corresponds to one of the factors
- $f_i(\theta_j)$ in the true posterior. $\widetilde{f}_i(\theta_j) $ is a asymetric Gaussian.&lt;/p&gt;
+&lt;p&gt;We hope that:
+$$
+\mathrm{KL}(p | q)=\mathrm{KL}\left(\frac{1}{p(X)} \prod&lt;em&gt;{i} f&lt;/em&gt;{i}(\boldsymbol{\theta}) | \frac{1}{Z} \prod&lt;em&gt;{i} \widetilde{f}&lt;/em&gt;{i}(\boldsymbol{\theta})\right)
+$$&lt;/p&gt;
+
+&lt;p&gt;In general, this minimization will be intractable because the KL divergence involves averaging with respect to the true distribution.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;But We can use EP:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;first choose a factor $\widetilde{f}_{j}$ to approximate.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Begin Loop, until the following steps are convergence.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;second compute the cavity distribution $q^{\backslash j}(\boldsymbol{\theta})$:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;$$
+q^{\backslash j}(\boldsymbol{\theta})=\frac{q(\boldsymbol{\theta})}{\widetilde{f}_{j}(\boldsymbol{\theta})} \&lt;/p&gt;
+
+&lt;p&gt;\hat{p} =
+\frac{1}{Z&lt;em&gt;{j}} f&lt;/em&gt;{j}(\boldsymbol{\theta}) q^{\backslash j}(\boldsymbol{\theta})
+$$&lt;/p&gt;
+
+&lt;p&gt;Here $q^{\backslash j}(\boldsymbol{\theta})$ is called the cavity distribution. $\hat{p}$ is defined as a product of the &lt;em&gt;exact&lt;/em&gt; factor $f_i$ with the rest of the factors &lt;em&gt;approximated&lt;/em&gt;,
+normalised to 1, and the cavity distribution needs to be computed in order to express $\hat{p}$.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;$$
+q^{\text {new }}(\boldsymbol{\theta}) \propto \widetilde{f}&lt;em&gt;{j}(\boldsymbol{\theta}) \prod&lt;/em&gt;{i \neq j} \tilde{f}&lt;em&gt;{i}(\boldsymbol{\theta}) &lt;br /&gt;
+p \propto \hat{p} = f&lt;/em&gt;{j}(\boldsymbol{\theta}) \prod&lt;em&gt;{i \neq j} \tilde{f}&lt;/em&gt;{i}(\boldsymbol{\theta})
+$$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Then compute the approximative distribution $q^{new}$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;$$
+ \arg \min \mathrm{KL}(\hat{p} | q^{new}(\theta)) = \arg \min \mathrm{KL}\left(\frac{f&lt;em&gt;{j}(\boldsymbol{\theta}) q^{\backslash j}(\boldsymbol{\theta})}{Z&lt;/em&gt;{j}} | q^{\mathrm{new}}(\boldsymbol{\theta})\right)
+$$&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;More generally, it is straightforward to obtain the required expectations for any member of the exponential family, provided it can be normalized, because the expected statistics can be related to the derivatives of the normalization coefficient.
+$$
+\text{bishop:} &lt;br /&gt;
+p(\mathbf{x} | \boldsymbol{\eta})=h(\mathbf{x}) g(\boldsymbol{\eta}) \exp \left{\boldsymbol{\eta}^{\mathrm{T}} \mathbf{u}(\mathbf{x})\right} &lt;br /&gt;
+-\nabla \ln g(\boldsymbol{\eta})=\mathbb{E}[\mathbf{u}(\mathbf{x})] &lt;br /&gt;
+$$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Update the factor&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;$$
+q^{\text {new }}(\boldsymbol{\theta})  \propto \hat{p} = \frac{1}{Z&lt;em&gt;{j}} f&lt;/em&gt;{j}(\boldsymbol{\theta}) q^{\backslash j}(\boldsymbol{\theta})
+$$&lt;/p&gt;
+
+&lt;p&gt;Then we easily obtain the formula for the approximation of $f&lt;em&gt;i$:
+$$
+f&lt;/em&gt;{i} \approx \tilde{f}&lt;em&gt;{i}=Z&lt;/em&gt;{i} \frac{q^{\text {new }}(\boldsymbol{\theta})}{q^{\backslash j}(\boldsymbol{\theta})}
+$$
+This division of distributions is from exponetial family, so does the result $\tilde{f}_{i}$. Now repeat it until parameter covergence.&lt;/p&gt;
+
+&lt;p&gt;End Loop.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Evaluate the approximation to the model evidence&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;After the algorithm has converged to a set of factors $\left{\tilde{f}&lt;em&gt;{i}\right}$, the approximate posterior as well as the model evidence can be computed as following:
+$$
+p(X, \boldsymbol{\theta}) \simeq \prod&lt;/em&gt;{i} \tilde{f}&lt;em&gt;{i}(\boldsymbol{\theta}) &lt;br /&gt;
+p(X) \simeq \int \prod&lt;/em&gt;{i} \tilde{f}_{i}(\boldsymbol{\theta}) \mathrm{d} \boldsymbol{\theta}
+$$&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1076,15 +1634,14 @@ $$
 p(\boldsymbol{\theta})= \mathcal{A}(\mathbf{X} | \mathbf{0}, b \mathbf{I_l}, b \mathbf{I&lt;em&gt;r})
 $$
 $$
-p(\mathcal{X}, \boldsymbol{\theta})=p(\boldsymbol{\theta}) \prod&lt;/em&gt;{n=1}^{N} p\left(\mathbf{x}_{n} | \boldsymbol{\theta}\right)
+p(X, \boldsymbol{\theta})=p(\boldsymbol{\theta}) \prod&lt;/em&gt;{n=1}^{N} p\left(\mathbf{x}_{n} | \boldsymbol{\theta}\right)
 $$&lt;/p&gt;
 
 &lt;h3 id=&#34;1-initialize-the-approximating-factors&#34;&gt;1. initialize the approximating factors&lt;/h3&gt;
 
 &lt;p&gt;we select an approximating distribution from the exponential family to approximate the stochastic variables $\theta$
 $$
-q(\boldsymbol{\theta})=\mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu}, \mathbf{\sigma_r^2}, \mathbf{\sigma_l^2}) =
-\mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu}, v_l \mathbf{I}, v_r \mathbf{I})&lt;/p&gt;
+q_0(\boldsymbol{\theta})&lt;/p&gt;
 
 &lt;p&gt;= \mathcal{A}(\boldsymbol{\theta} | \mathbf{0}, b \mathbf{I_l}, b \mathbf{I_r})
 $$&lt;/p&gt;
@@ -1139,11 +1696,19 @@ $$&lt;/p&gt;
 
 &lt;p&gt;{v_r}^{\backslash n} {v&lt;em&gt;r}&lt;/em&gt;{n}^{-1}\left(\mathbf{\mu}-\mathbf{\mu}_{n}\right) &amp;amp; \text { if } X&amp;gt;\mu \&lt;/p&gt;
 
-&lt;p&gt;\end{array}\right.
+&lt;p&gt;\end{array}\right. &lt;br /&gt;
+&amp;mdash;-&lt;br /&gt;
+\begin{aligned}
+{v^{\backslash{n}}}^{-1} &amp;amp;= v^{-1} - v_n^{-1} &lt;br /&gt;
+{\mu}^{\backslash n} &amp;amp;= v^{\backslash{n}}(\mu v^{-1} - \mu_n v_n^{-1}) &lt;br /&gt;
+&amp;amp;= v^{\backslash{n}}[\mu ({v^{\backslash{n}}}^{-1} + v_n^{-1}) - \mu_n v_n^{-1}] &lt;br /&gt;
+&amp;amp;= \mu + v^{\backslash{n}} v_n^{-1} \mu - v^{\backslash{n}} v_n^{-1}  \mu_n &lt;br /&gt;
+&amp;amp;= \mu + v^{\backslash{n}} v_n^{-1} (\mu -\mu&lt;em&gt;n)
+\end{aligned}
 $$
 &amp;gt; Cavity Distribution:
 &amp;gt; $$
-&amp;gt; q^{\backslash j}(\boldsymbol{\theta})=\frac{q(\boldsymbol{\theta})}{\widetilde{f}_{j}(\boldsymbol{\theta})}
+&amp;gt; q^{\backslash n}(\boldsymbol{\theta})=\frac{q(\boldsymbol{\theta})}{\widetilde{f}&lt;/em&gt;{n}(\boldsymbol{\theta})}
 &amp;gt; $$&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1153,8 +1718,8 @@ Z&lt;/em&gt;{n}=(1-w) \mathcal{A}\left(\mathbf{x}_{n} | \mathbf{\mu}^{\backslash
 $$
 &amp;gt;$$
 &amp;gt;\begin{aligned}
-&amp;gt;Z&lt;/em&gt;{n} &amp;amp;=\int q^{\backslash n}(\boldsymbol{\theta}) f&lt;em&gt;{n}(\boldsymbol{\theta}) \mathrm{d} \boldsymbol{\theta} \
-&amp;gt;&amp;amp;=\int q^{\backslash n}(\boldsymbol{\theta}) \widetilde{f}&lt;/em&gt;{n}(\boldsymbol{\theta}) \mathrm{d} \boldsymbol{\theta} &lt;br /&gt;
+&amp;gt;Z&lt;/em&gt;{n} &amp;amp;=\int q^{\backslash n}(\boldsymbol{\theta}) f_{n}(\boldsymbol{\theta}) \mathrm{d} \boldsymbol{\theta} \
+&amp;gt;&amp;amp;=\int q^{\backslash n}(\boldsymbol{\theta}) P(X|\mu) \mathrm{d} \boldsymbol{\theta} &lt;br /&gt;
 &amp;gt;
 &amp;gt;&amp;amp;=\int \mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu^{\backslash n}}, v_l^{\backslash n} \mathbf{I}, v_r^{\backslash n} \mathbf{I}) \cdot { (1-w) \mathcal{A}(\mathbf{x_n} | \boldsymbol{\mu}, \mathbf{I_l}, \mathbf{I_r})+w \mathcal{A}(\mathbf{x_n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r})} \mathrm{d} \boldsymbol{\theta} &lt;br /&gt;
 &amp;gt;
@@ -1176,9 +1741,16 @@ $$
 &amp;amp;= 1 - \frac{w}{Z&lt;em&gt;n} \cdot \mathcal{A}\left(\mathbf{x}&lt;/em&gt;{n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I&lt;em&gt;r}\right)
 \end{aligned}
 $$
-Basic rule for Asymmetric Gaussian:
+&amp;gt;Then our goal is to minimize:
+&amp;gt;$$
+&amp;gt;\mathrm{KL}\left(\frac{f&lt;/em&gt;{n}(\boldsymbol{\theta}) q^{\backslash n}(\boldsymbol{\theta})}{Z_{n}} | q^{\mathrm{new}}(\boldsymbol{\theta})\right)
+&amp;gt;$$&lt;/p&gt;
+
+&lt;p&gt;Basic rule for Asymmetric Gaussian:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://stats.stackexchange.com/questions/27436/how-to-take-derivative-of-multivariate-normal-density&#34; target=&#34;_blank&#34;&gt;https://stats.stackexchange.com/questions/27436/how-to-take-derivative-of-multivariate-normal-density&lt;/a&gt;
 $$
-\nabla&lt;/em&gt;{\boldsymbol{\mu}} \mathcal{A}(\mathbf{x} | \boldsymbol{\mu}, \mathbf{v_l}, \mathbf{v_r})=&lt;/p&gt;
+\nabla_{\boldsymbol{\mu}} \mathcal{A}(\mathbf{x} | \boldsymbol{\mu}, \mathbf{v_l}, \mathbf{v_r})=&lt;/p&gt;
 
 &lt;p&gt;\left{\begin{array}{ll}&lt;/p&gt;
 
@@ -1186,10 +1758,181 @@ $$
 
 &lt;p&gt;\mathcal{A}(\mathbf{x} | \boldsymbol{\mu}, \mathbf{v_l}, \mathbf{v_r}) \cdot(\mathbf{x}-\boldsymbol{\mu}) \mathbf{v_r}^{-1}  &amp;amp; \text { if } X&amp;gt;\mu \&lt;/p&gt;
 
-&lt;p&gt;\end{array}\right.
+&lt;p&gt;\end{array}\right. &lt;br /&gt;
 $$
 So we compute the mean and variance:
 $$
+\begin{aligned}
+\nabla&lt;em&gt;{\mathbf{\mu}^{\backslash n}} \ln Z&lt;/em&gt;{n} &amp;amp;=\frac{1}{Z&lt;em&gt;{n}} \cdot \nabla&lt;/em&gt;{\mathbf{\mu}^{\backslash n}} Z_{n} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\frac{1}{Z&lt;em&gt;{n}} \cdot \nabla&lt;/em&gt;{\mathbf{\mu}^{\backslash n}} \int q^{\backslash n}(\boldsymbol{\theta})f_{n}(\boldsymbol{\theta}) d \boldsymbol{\theta} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\frac{1}{Z&lt;em&gt;{n}} \cdot \nabla&lt;/em&gt;{\mathbf{\mu}^{\backslash n}} \int q^{\backslash n}(\boldsymbol{\theta}) p\left(\mathbf{x}_{n} | \boldsymbol{\theta}\right) d \boldsymbol{\theta} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\frac{1}{Z&lt;em&gt;{n}} \cdot \int\left{\nabla&lt;/em&gt;{\mathbf{\mu}^{\backslash n}} q^{\backslash n}(\boldsymbol{\theta})\right} \cdot p\left(\mathbf{x}_{n} | \boldsymbol{\theta}\right) d \boldsymbol{\theta} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\frac{1}{Z&lt;em&gt;{n}} \cdot \int \frac{1}{v^{\backslash n}}\left(\boldsymbol{\theta}-\mathbf{\mu}^{\backslash n}\right) \cdot q^{\backslash n}(\boldsymbol{\theta})
+\cdot p\left(\mathbf{x}&lt;/em&gt;{n} | \boldsymbol{\theta}\right) d \theta\&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\frac{1}{Z&lt;em&gt;{n}} \cdot \frac{1}{v^{\backslash n}} \cdot\left{\int \boldsymbol{\theta} \cdot q^{\backslash n}(\boldsymbol{\theta}) \cdot p\left(\mathbf{x}&lt;/em&gt;{n} | \boldsymbol{\theta}\right) d \boldsymbol{\theta}-\int \mathbf{\mu}^{\backslash n} \cdot q^{\backslash n}(\boldsymbol{\theta}) \cdot p\left(\mathbf{x}_{n} | \boldsymbol{\theta}\right) d \boldsymbol{\theta}\right} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\frac{1}{v^{\backslash n}} \cdot\left{\mathbb{E}[\boldsymbol{\theta}]-\mathbf{\mu}^{\backslash n}\right} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;= \left{\mathbb{E}[\boldsymbol{\theta}]-\mathbf{\mu}^{\backslash n}\right} \cdot
+\left{\begin{array}{ll}
+\frac{1}{v&lt;em&gt;l^{\backslash n}} &amp;amp; \text { if } X&lt;/em&gt;{d}&amp;lt;\mu_{d} &lt;br /&gt;
+\frac{1}{v&lt;em&gt;r^{\backslash n}}  &amp;amp; \text { if } X&lt;/em&gt;{d} \geqslant \mu_{d} &lt;br /&gt;
+\end{array}\right.
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\text{According to the following}: &lt;br /&gt;
+q^{\backslash n}(\boldsymbol{\theta})=\mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu^{\backslash n}}, v_l^{\backslash n} \mathbf{I}, v&lt;em&gt;r^{\backslash n} \mathbf{I}) &lt;br /&gt;
+q^{\backslash n}(\boldsymbol{\theta}) \cdot p\left(\mathbf{x}&lt;/em&gt;{n} | \boldsymbol{\theta}\right)=Z_{n} \cdot q^{new}(\theta) &lt;br /&gt;
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned} \mathbb{E}[\boldsymbol{\theta}]
+&amp;amp;=\mathbf{\mu}^{\backslash n}+v^{\backslash n} \cdot \nabla&lt;em&gt;{\mathbf{\mu}^{\backslash n}} \ln Z&lt;/em&gt;{n} \
+&amp;amp;=\mathbf{\mu}^{\backslash n}+v^{\backslash n} \cdot \frac{1}{Z&lt;em&gt;{n}} \nabla&lt;/em&gt;{\mathbf{\mu}^{\backslash n}} Z_n \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\mathbf{\mu}^{\backslash n}+v^{\backslash n} \cdot \frac{1}{Z&lt;em&gt;{n}} \nabla&lt;/em&gt;{\mathbf{\mu}^{\backslash n}} (1-w) \mathcal{A}\left(\mathbf{x}_{n} | \mathbf{\mu}^{\backslash n},\left(v_l^{\backslash n}+1\right) \mathbf{I}, \left(v&lt;em&gt;r^{\backslash n}+1\right) \mathbf{I}\right)+w \mathcal{A}\left(\mathbf{x}&lt;/em&gt;{n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r}\right)
+\&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\mathbf{\mu}^{\backslash n}+v^{\backslash n} \cdot \frac{1}{Z&lt;em&gt;{n}}(1-w)
+\nabla&lt;/em&gt;{\mathbf{\mu}^{\backslash n}}
+\mathcal{A}\left(\mathbf{x}_{n} | \mathbf{\mu}^{\backslash n},\left(v_l^{\backslash n}+1\right) \mathbf{I}, \left(v_r^{\backslash n}+1\right) \mathbf{I}\right)&lt;/p&gt;
+
+&lt;p&gt;%\cdot \frac{1}{v^{\backslash n}+1}\left(\mathbf{x}_{n}-\mathbf{\mu}^{\backslash n}\right)&lt;/p&gt;
+
+&lt;p&gt;\&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\mathbf{\mu}^{\backslash n}+v^{\backslash n} \cdot \rho&lt;em&gt;{n} \cdot \frac{1}{v^{\backslash n}+1}\left(\mathbf{x}&lt;/em&gt;{n}-\mathbf{\mu}^{\backslash n}\right)  \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\mathbf{\mu}^{\backslash n}+ \rho_{n} \cdot&lt;/p&gt;
+
+&lt;p&gt;\left{\begin{array}{ll}
+\frac{1}{v&lt;em&gt;l^{\backslash n}+1}\left(\mathbf{x}&lt;/em&gt;{n}-\mathbf{\mu}^{\backslash n}\right) \cdot v_l^{\backslash n}&lt;/p&gt;
+
+&lt;p&gt;&amp;amp; \text { if } X&lt;em&gt;{d}&amp;lt;\mu&lt;/em&gt;{d} &lt;br /&gt;
+\frac{1}{v&lt;em&gt;r^{\backslash n}+1}\left(\mathbf{x}&lt;/em&gt;{n}-\mathbf{\mu}^{\backslash n}\right)  \cdot v&lt;em&gt;l^{\backslash n}
+&amp;amp; \text { if } X&lt;/em&gt;{d} \geqslant \mu_{d} &lt;br /&gt;
+\end{array}\right.&lt;/p&gt;
+
+&lt;p&gt;\&lt;/p&gt;
+
+&lt;p&gt;\text{According to: }&amp;amp; \rho{n} = 1 - \frac{w}{Z&lt;em&gt;n} \cdot \mathcal{A}\left(\mathbf{x}&lt;/em&gt;{n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r}\right)    \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;\text{Here we match first moment}:
+\mathbb{E}[\boldsymbol{\theta}] = \mathbf{\mu^{new}}
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;Now we consider when:
+$$
+\text { if } X&lt;em&gt;{d}&amp;lt;\mu&lt;/em&gt;{d}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned} \nabla_{v&lt;em&gt;l^{\backslash n}} \ln Z&lt;/em&gt;{n}
+&amp;amp;=\frac{1}{Z&lt;em&gt;{n}} \cdot \nabla&lt;/em&gt;{v&lt;em&gt;l^{\backslash n}} Z&lt;/em&gt;{n} \ &amp;amp;=\frac{1}{Z&lt;em&gt;{n}} \cdot \nabla&lt;/em&gt;{v&lt;em&gt;l^{\backslash n}} \int q^{\backslash n}(\boldsymbol{\theta}) p\left(\mathbf{x}&lt;/em&gt;{n} | \boldsymbol{\theta}\right) d \boldsymbol{\theta} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\frac{1}{Z&lt;em&gt;{n}} \cdot \int\left{\nabla&lt;/em&gt;{v&lt;em&gt;l^{\backslash n}} q^{\backslash n}(\boldsymbol{\theta})\right} p\left(\mathbf{x}&lt;/em&gt;{n} | \boldsymbol{\theta}\right) d \boldsymbol{\theta} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\frac{1}{Z_{n}} \cdot \int\left{&lt;/p&gt;
+
+&lt;p&gt;\frac{1}{2\left(v_l^{\backslash n}\right)^{2}}\left| \boldsymbol{\theta} - \mathbf{\mu}^{\backslash n}\right|^{2}-\frac{D}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v_r^{\backslash n} }   }&lt;/p&gt;
+
+&lt;p&gt;\right}&lt;/p&gt;
+
+&lt;p&gt;q^{\backslash n}(\boldsymbol{\theta}) \cdot p\left(\mathbf{x}_{n} | \boldsymbol{\theta}\right) d \boldsymbol{\theta} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\int q^{\mathrm{new}}(\boldsymbol{\theta}) \cdot\left{\frac{1}{2\left(v_l^{\backslash n}\right)^{2}}\left(\mathbf{\mu}^{\backslash n}-\boldsymbol{\theta}\right)^{T}\left(\mathbf{\mu}^{\backslash n}-\boldsymbol{\theta}\right)-\frac{D}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v_r^{\backslash n} } }\right} d \boldsymbol{\theta} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\frac{1}{2\left(v_l^{\backslash n}\right)^{2}}\left{\mathbb{E}\left[\boldsymbol{\theta} \boldsymbol{\theta}^{T}\right]-2 \mathbb{E}[\boldsymbol{\theta}] \mathbf{\mu}^{\backslash n}+\left|\mathbf{\mu}^{\backslash n}\right|^{2}\right}-\frac{D}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v_r^{\backslash n} } } \end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;So we rearrange the above equation:
+$$
+\mathbb{E}\left[\boldsymbol{\theta} \boldsymbol{\theta}^{T}\right]=2\left(v&lt;em&gt;l^{\backslash n}\right)^{2} \cdot \nabla&lt;/em&gt;{v&lt;em&gt;l^{\backslash n}} \ln Z&lt;/em&gt;{n}+2 \mathbb{E}[\boldsymbol{\theta}] \mathbf{m}^{\backslash n}-\left|\mathbf{m}^{\backslash n}\right|^{2}+ \frac{D \cdot \left(v_l^{\backslash n}\right)^{2}}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v&lt;em&gt;r^{\backslash n} } }
+$$
+Also according to:
+$$
+Z&lt;/em&gt;{n}=(1-w) \mathcal{A}\left(\mathbf{x}_{n} | \mathbf{\mu}^{\backslash n},\left(v_l^{\backslash n}+1\right) \mathbf{I}, \left(v&lt;em&gt;r^{\backslash n}+1\right) \mathbf{I}\right)+w \mathcal{A}\left(\mathbf{x}&lt;/em&gt;{n} | \mathbf{0}, a \mathbf{I_l}, a \mathbf{I_r}\right)
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\nabla_{v&lt;em&gt;l^{\backslash n}} \ln Z&lt;/em&gt;{n}  = (1-w) \mathcal{A}\left(\mathbf{x}_{n} | \mathbf{\mu}^{\backslash n},\left(v_l^{\backslash n}+1\right) \mathbf{I}, \left(v_r^{\backslash n}+1\right) \mathbf{I}\right) \cdot \&lt;/p&gt;
+
+&lt;p&gt;\left(
+\frac{1}{2\left(v_l^{\backslash n} + 1\right)^{2}}\left| \mathbf{x_n} - \mathbf{\mu}^{\backslash n}\right|^{2}-\frac{D}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v_r^{\backslash n} } }&lt;/p&gt;
+
+&lt;p&gt;\right)  \&lt;/p&gt;
+
+&lt;p&gt;= \rho_n \cdot \left(
+\frac{1}{2\left(v_l^{\backslash n} + 1\right)^{2}}\left| \mathbf{x_n} - \mathbf{\mu}^{\backslash n}\right|^{2}-\frac{D}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v_r^{\backslash n} } }&lt;/p&gt;
+
+&lt;p&gt;\right) &lt;br /&gt;
+$$&lt;/p&gt;
+
+&lt;p&gt;According to the bellow formula:
+$$
+v \mathbf{I}=\mathbb{E}\left[\boldsymbol{\theta} \boldsymbol{\theta}^{T}\right]-\mathbb{E}[\boldsymbol{\theta}] \mathbb{E}\left[\boldsymbol{\theta}^{T}\right]
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+v_l^{new} &amp;amp;=\frac{1}{D} \cdot\left{\mathbb{E}\left[\boldsymbol{\theta}^{T} \boldsymbol{\theta}\right]-\mathbb{E}\left[\boldsymbol{\theta}^{T}\right] \mathbb{E}[\boldsymbol{\theta}]\right}=\frac{1}{D} \cdot\left{\mathbb{E}\left[\boldsymbol{\theta}^{T} \boldsymbol{\theta}\right]-|\mathbb{E}[\boldsymbol{\theta}]|^{2}\right} &lt;br /&gt;
+&amp;amp;=\frac{1}{D} \cdot\left{ 2\left(v&lt;em&gt;l^{\backslash n}\right)^{2} \cdot \nabla&lt;/em&gt;{v&lt;em&gt;l^{\backslash n}} \ln Z&lt;/em&gt;{n}+2 \mathbb{E}[\boldsymbol{\theta}] \mathbf{\mu}^{\backslash n}-\left|\mathbf{\mu}^{\backslash n}\right|^{2}&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;\frac{D \cdot \left(v_l^{\backslash n}\right)^{2}}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v_r^{\backslash n} } } - |\mathbb{E}[\boldsymbol{\theta}]|^{2} \right}&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;amp;=\frac{1}{D} \cdot\left{ 2\left(v&lt;em&gt;l^{\backslash n}\right)^{2} \cdot \nabla&lt;/em&gt;{v&lt;em&gt;l^{\backslash n}} \ln Z&lt;/em&gt;{n}
+- \left|\mathbb{E}[\boldsymbol{\theta}]-\mathbf{\mu}^{\backslash n}\right|^{2} + \frac{D \cdot \left(v_l^{\backslash n}\right)^{2}}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v_r^{\backslash n} } }
+\right} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;= \frac{1}{D} \cdot\left{ 2\left(v&lt;em&gt;l^{\backslash n}\right)^{2} \cdot \nabla&lt;/em&gt;{v&lt;em&gt;l^{\backslash n}} \ln Z&lt;/em&gt;{n}
+- \left|
+\rho_n \cdot \frac{1}{v&lt;em&gt;l^{\backslash n}+1}\left(\mathbf{x}&lt;/em&gt;{n}-\mathbf{\mu}^{\backslash n}\right) \cdot v_l^{\backslash n}
+\right|^{2} + \frac{D \cdot \left(v_l^{\backslash n}\right)^{2}}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v_r^{\backslash n} } }
+\right}&lt;/p&gt;
+
+&lt;p&gt;\end{aligned}
+$$
+substitute $\nabla_{v&lt;em&gt;l^{\backslash n}} \ln Z&lt;/em&gt;{n}$:
+$$
+\begin{aligned}
+v_l^{new} &amp;amp;=
+\frac{1}{D} \cdot\left{ 2\left(v&lt;em&gt;l^{\backslash n}\right)^{2} \cdot \nabla&lt;/em&gt;{v&lt;em&gt;l^{\backslash n}} \ln Z&lt;/em&gt;{n}
+- \left|
+\rho_n \cdot \frac{1}{v&lt;em&gt;l^{\backslash n}+1}\left(\mathbf{x}&lt;/em&gt;{n}-\mathbf{\mu}^{\backslash n}\right) \cdot v_l^{\backslash n}
+\right|^{2} + \frac{D \cdot \left(v_l^{\backslash n}\right)^{2}}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v_r^{\backslash n} } }
+\right} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;= \frac{1}{D} \cdot\left{ 2\left(v_l^{\backslash n}\right)^{2} \cdot&lt;/p&gt;
+
+&lt;p&gt;\rho_n \cdot \left(
+\frac{1}{2\left(v_l^{\backslash n} + 1\right)^{2}}\left| \mathbf{x_n} - \mathbf{\mu}^{\backslash n}\right|^{2}-\frac{D}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v_r^{\backslash n} } }&lt;/p&gt;
+
+&lt;p&gt;\right)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;\left|
+\rho_n \cdot \frac{1}{v&lt;em&gt;l^{\backslash n}+1}\left(\mathbf{x}&lt;/em&gt;{n}-\mathbf{\mu}^{\backslash n}\right) \cdot v_l^{\backslash n}
+\right|^{2} + \frac{D \cdot \left(v_l^{\backslash n}\right)^{2}}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v_r^{\backslash n} } }
+\right} &lt;br /&gt;
+&amp;amp;=\frac{\left(v_l^{\backslash n}\right)^{2} - 2 \left(v_l^{\backslash n}\right)^{2} \rho_n}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v&lt;em&gt;r^{\backslash n} } } + \rho&lt;/em&gt;{n}\left(1-\rho_{n}\right)
+\frac{\left(v&lt;em&gt;l^{\backslash n}\right)^{2}\left|\mathbf{x}&lt;/em&gt;{n}-\mathbf{\mu}^{\backslash n}\right|^{2}}{D\left(v_l^{\backslash n}+1\right)^{2}}&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;\end{aligned}
+$$
+So in conclusions: we have:&lt;/p&gt;
+
+&lt;p&gt;$$
 \mathbf{\mu^{new}}=\mathbf{\mu}^{\backslash n}+&lt;/p&gt;
 
 &lt;p&gt;\left{\begin{array}{ll}&lt;/p&gt;
@@ -1203,28 +1946,38 @@ $$&lt;/p&gt;
 
 &lt;p&gt;$$
 \left{\begin{array}{ll}
-v_l^{new}=v&lt;em&gt;l^{\backslash n}-\rho&lt;/em&gt;{n} \frac{\left(v_l^{\backslash n}\right)^{2}}{v&lt;em&gt;l^{\backslash n}+1}+\rho&lt;/em&gt;{n}\left(1-\rho_{n}\right) \frac{\left(v&lt;em&gt;l^{\backslash n}\right)^{2}\left|\mathbf{x}&lt;/em&gt;{n}-\mathbf{m}^{\backslash n}\right|^{2}}{D\left(v_l^{\backslash n}+1\right)^{2}} &amp;amp; \text { if } X&amp;lt;\mu \&lt;/p&gt;
+v_l^{new}= \frac{\left(v_l^{\backslash n}\right)^{2} - 2 \left(v_l^{\backslash n}\right)^{2} \rho_n}{4 v_l^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v&lt;em&gt;r^{\backslash n} } } + \rho&lt;/em&gt;{n}\left(1-\rho_{n}\right)
+\frac{\left(v&lt;em&gt;l^{\backslash n}\right)^{2}\left|\mathbf{x}&lt;/em&gt;{n}-\mathbf{\mu}^{\backslash n}\right|^{2}}{D\left(v_l^{\backslash n}+1\right)^{2}}&lt;/p&gt;
 
-&lt;p&gt;v_r^{new}=v&lt;em&gt;r^{\backslash n}-\rho&lt;/em&gt;{n} \frac{\left(v_r^{\backslash n}\right)^{2}}{v&lt;em&gt;r^{\backslash n}+1}+\rho&lt;/em&gt;{n}\left(1-\rho_{n}\right) \frac{\left(v&lt;em&gt;r^{\backslash n}\right)^{2}\left|\mathbf{x}&lt;/em&gt;{n}-\mathbf{m}^{\backslash n}\right|^{2}}{D\left(v_r^{\backslash n}+1\right)^{2}}
+&lt;p&gt;&amp;amp; \text { if } X&amp;lt;\mu \&lt;/p&gt;
+
+&lt;p&gt;v_r^{new}=
+\frac{\left(v_r^{\backslash n}\right)^{2} - 2 \left(v_r^{\backslash n}\right)^{2} \rho_n}{4 v_r^{\backslash n} + \sqrt{ v_l^{\backslash n} \cdot v_r^{\backslash n} } }&lt;/p&gt;
+
+&lt;p&gt;+\rho&lt;em&gt;{n}\left(1-\rho&lt;/em&gt;{n}\right) \frac{\left(v&lt;em&gt;r^{\backslash n}\right)^{2}\left|\mathbf{x}&lt;/em&gt;{n}-\mathbf{\mu}^{\backslash n}\right|^{2}}{D\left(v_r^{\backslash n}+1\right)^{2}}
 &amp;amp; \text { if } X&amp;gt;\mu \&lt;/p&gt;
 
 &lt;p&gt;\end{array}\right.
 $$
-- Evaluate and store the new factor
+- Evaluate and store the new factor&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Update formula for $\hat{f}&lt;em&gt;i$
 $$
 \left{\begin{array}{ll}
-\left({v_{l_n}}\right)^{-1}={(v_l^{new})}^{-1}-({v&lt;em&gt;l}^{\backslash n})^{-1} &amp;amp; \text { if } X&amp;lt;\mu &lt;br /&gt;
+\left({v&lt;/em&gt;{l_n}}\right)^{-1}={(v_l^{new})}^{-1}-({v&lt;em&gt;l}^{\backslash n})^{-1} &amp;amp; \text { if } X&amp;lt;\mu &lt;br /&gt;
 \left({v&lt;/em&gt;{r_n}}\right)^{-1}={(v_r^{new})}^{-1}-({v_r}^{ \backslash n})^{-1} &amp;amp; \text { if } X&amp;gt;\mu &lt;br /&gt;
 \end{array}\right.
 $$&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;$$
-\mathbf{m}_{n}=\mathbf{m}^{\backslash n}+
+\mathbf{\mu}_{n}=\mathbf{\mu}^{\backslash n}+
 \left{\begin{array}{ll}&lt;/p&gt;
 
-&lt;p&gt;\left(v_{n}+v^{\backslash n}\right)\left(v^{\backslash n}\right)^{-1}\left(\mathbf{m}^{\mathrm{new}}-\mathbf{m}^{\backslash n}\right)  &amp;amp; \text { if } X&amp;lt;\mu \&lt;/p&gt;
+&lt;p&gt;\left(v_{n}+v^{\backslash n}\right)\left(v^{\backslash n}\right)^{-1}\left(\mathbf{\mu}^{\mathrm{new}}-\mathbf{\mu}^{\backslash n}\right)  &amp;amp; \text { if } X&amp;lt;\mu \&lt;/p&gt;
 
-&lt;p&gt;\left(v_{n}+v^{\backslash n}\right)\left(v^{\backslash n}\right)^{-1}\left(\mathbf{m}^{\mathrm{new}}-\mathbf{m}^{\backslash n}\right)  &amp;amp; \text { if } X&amp;gt;\mu \&lt;/p&gt;
+&lt;p&gt;\left(v_{n}+v^{\backslash n}\right)\left(v^{\backslash n}\right)^{-1}\left(\mathbf{\mu}^{\mathrm{new}}-\mathbf{\mu}^{\backslash n}\right)  &amp;amp; \text { if } X&amp;gt;\mu \&lt;/p&gt;
 
 &lt;p&gt;\end{array}\right.
 $$&lt;/p&gt;
@@ -1251,6 +2004,17 @@ $$&lt;/p&gt;
 
 &lt;p&gt;$$
 s_n  = \frac{Z_n} {\mathcal{A}\left(\mathbf{\mu}_n | \mathbf{\mu}^{\backslash n}, \mathbf{(v&lt;em&gt;r^{\backslash n}+ v&lt;/em&gt;{r_n}) I}, \mathbf{(v&lt;em&gt;l^{\backslash n}+v&lt;/em&gt;{r_n}) I} \right)}
+$$&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Evaluate the approximation to the model evidence - Posterior probability. (When $(\mathbf{\mu}_n, {v&lt;em&gt;l}&lt;/em&gt; n, {v_r}_n, S_n)$ unchanged )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;$$
+p(X) \simeq q(\boldsymbol{\theta})= \mathcal{A}(\boldsymbol{\theta} | \mathbf{\mu},  \mathbf{v_l},  \mathbf{v&lt;em&gt;r}) =
+\prod&lt;/em&gt;{n=0}^{N} \widetilde{f}&lt;em&gt;{n}(\boldsymbol{\theta})=f&lt;/em&gt;{0}(\boldsymbol{\theta}) \prod&lt;em&gt;{n=1}^{N} \widetilde{f}&lt;/em&gt;{n}(\boldsymbol{\theta})&lt;/p&gt;
+
+&lt;p&gt;=  \mathcal{A}(\boldsymbol{\theta} | \mathbf{0}, b \mathbf{I_l}, b \mathbf{I&lt;em&gt;r})\cdot \prod&lt;/em&gt;{i=1}^{N} \mathcal{A}\left(\boldsymbol{\mu}_{i}, \mathbf{v&lt;em&gt;l}&lt;/em&gt;{i}, \mathbf{v&lt;em&gt;r}&lt;/em&gt;{i}\right)
 $$&lt;/p&gt;
 </description>
     </item>

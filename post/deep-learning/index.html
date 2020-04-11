@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="Logistic Regression as a Neural Network $$ \hat{y}=\sigma\left(w^{T} x&#43;b\right), \text { where } \sigma(z)=\frac{1}{1&#43;e^{-z}} \ \text { Given }\left{\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(m)}, y^{(m)}\right)\right}, \text { want } \hat{y}^{(i)} \approx y^{(i)} $$ Loss(error) function: Don&rsquo;t use this, non-convex $$ \ell(\hat{y}, y)=\frac{1}{2}(\hat{y}-y)^{2} $$ The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set. $$ J(w, b)=\frac{1}{m} \sum{i=1}^{m}">
+  <meta name="description" content="Neural Networks Basics Logistic Regression as a Neural Network $$ \hat{y}=\sigma\left(w^{T} x&#43;b\right), \text { where } \sigma(z)=\frac{1}{1&#43;e^{-z}} \ \text { Given }\left{\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(m)}, y^{(m)}\right)\right}, \text { want } \hat{y}^{(i)} \approx y^{(i)} $$ Loss(error) function: Don&rsquo;t use this, non-convex $$ \ell(\hat{y}, y)=\frac{1}{2}(\hat{y}-y)^{2} $$ The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set. $$">
 
   
   <link rel="alternate" hreflang="en-us" href="https://faithio.cn/post/deep-learning/">
@@ -270,13 +270,13 @@
   <meta property="og:site_name" content="Zixiang&#39;s Personal Page">
   <meta property="og:url" content="https://faithio.cn/post/deep-learning/">
   <meta property="og:title" content="Deep Learning | Zixiang&#39;s Personal Page">
-  <meta property="og:description" content="Logistic Regression as a Neural Network $$ \hat{y}=\sigma\left(w^{T} x&#43;b\right), \text { where } \sigma(z)=\frac{1}{1&#43;e^{-z}} \ \text { Given }\left{\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(m)}, y^{(m)}\right)\right}, \text { want } \hat{y}^{(i)} \approx y^{(i)} $$ Loss(error) function: Don&rsquo;t use this, non-convex $$ \ell(\hat{y}, y)=\frac{1}{2}(\hat{y}-y)^{2} $$ The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set. $$ J(w, b)=\frac{1}{m} \sum{i=1}^{m}"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="Neural Networks Basics Logistic Regression as a Neural Network $$ \hat{y}=\sigma\left(w^{T} x&#43;b\right), \text { where } \sigma(z)=\frac{1}{1&#43;e^{-z}} \ \text { Given }\left{\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(m)}, y^{(m)}\right)\right}, \text { want } \hat{y}^{(i)} \approx y^{(i)} $$ Loss(error) function: Don&rsquo;t use this, non-convex $$ \ell(\hat{y}, y)=\frac{1}{2}(\hat{y}-y)^{2} $$ The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set. $$"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2020-03-24T21:26:35-04:00">
     
-    <meta property="article:modified_time" content="2020-03-25T15:03:17-04:00">
+    <meta property="article:modified_time" content="2020-04-06T21:29:38-04:00">
   
 
   
@@ -305,7 +305,7 @@
   "headline": "Deep Learning",
   
   "datePublished": "2020-03-24T21:26:35-04:00",
-  "dateModified": "2020-03-25T15:03:17-04:00",
+  "dateModified": "2020-04-06T21:29:38-04:00",
   
   "author": {
     "@type": "Person",
@@ -320,7 +320,7 @@
       "url": "https://faithio.cn/images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Logistic Regression as a Neural Network $$ \\hat{y}=\\sigma\\left(w^{T} x+b\\right), \\text { where } \\sigma(z)=\\frac{1}{1+e^{-z}} \\ \\text { Given }\\left{\\left(x^{(1)}, y^{(1)}\\right), \\ldots,\\left(x^{(m)}, y^{(m)}\\right)\\right}, \\text { want } \\hat{y}^{(i)} \\approx y^{(i)} $$ Loss(error) function: Don\u0026rsquo;t use this, non-convex $$ \\ell(\\hat{y}, y)=\\frac{1}{2}(\\hat{y}-y)^{2} $$ The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set. $$ J(w, b)=\\frac{1}{m} \\sum{i=1}^{m}"
+  "description": "Neural Networks Basics Logistic Regression as a Neural Network $$ \\hat{y}=\\sigma\\left(w^{T} x+b\\right), \\text { where } \\sigma(z)=\\frac{1}{1+e^{-z}} \\ \\text { Given }\\left{\\left(x^{(1)}, y^{(1)}\\right), \\ldots,\\left(x^{(m)}, y^{(m)}\\right)\\right}, \\text { want } \\hat{y}^{(i)} \\approx y^{(i)} $$ Loss(error) function: Don\u0026rsquo;t use this, non-convex $$ \\ell(\\hat{y}, y)=\\frac{1}{2}(\\hat{y}-y)^{2} $$ The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set. $$"
 }
 </script>
 
@@ -626,7 +626,7 @@ code.has-jax {font: inherit;
           Last updated on
       
     
-    Mar 25, 2020
+    Apr 6, 2020
   </span>
   
 
@@ -657,10 +657,49 @@ code.has-jax {font: inherit;
 
 
 
+  
 
 
 
 
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1" href="../../post/deep-learning/Deep%20Learning.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 
 
   
@@ -694,6 +733,8 @@ code.has-jax {font: inherit;
 
     <div class="article-style">
     
+
+<h2 id="neural-networks-basics">Neural Networks Basics</h2>
 
 <h3 id="logistic-regression-as-a-neural-network">Logistic Regression as a Neural Network</h3>
 
@@ -789,11 +830,80 @@ $$</p>
 
 <p><img src="./image-20200325130254559.png" alt="image-20200325130254559" /></p>
 
+<h2 id="shallow-neural-networks">Shallow neural networks</h2>
+
+<h3 id="representation">Representation</h3>
+
+<p><img src="./image-20200329195140415.png" alt="image-20200329195140415" /></p>
+
+<p><img src="./image-20200329195430112.png" alt="image-20200329195430112" /></p>
+
+<p><img src="./image-20200329200220168.png" alt="image-20200329200220168" /></p>
+
+<p><img src="./image-20200329201139101.png" alt="image-20200329201139101" /></p>
+
+<p>X：竖方向 features</p>
+
+<p>横方向：training example</p>
+
+<p><img src="./image-20200329203208413.png" alt="image-20200329203208413" /></p>
+
+<p><img src="./image-20200329203423150.png" alt="image-20200329203423150" /></p>
+
+<p><img src="./image-20200329205526293.png" alt="image-20200329205526293" /></p>
+
+<p>Activation function：</p>
+
+<ol>
+<li>Sigmoid: 如果output是binary classification，可以考虑sigmoid function，一般nerver used</li>
+<li>tanh function：</li>
+<li>ReLU Rectified Linear Unit $a = \max(0, z)$ : by default, 很多人用，faster，slope 1，or 0</li>
+<li>Leaky ReLU</li>
+</ol>
+
+<h3 id="why-need-non-linear-activation-functions">Why need non-linear activation functions</h3>
+
+<p><img src="./image-20200329211018395.png" alt="image-20200329211018395" /></p>
+
+<h3 id="derivatives-of-activation-functions">Derivatives of activation functions</h3>
+
+<p><img src="./image-20200329213350341.png" alt="image-20200329213350341" /></p>
+
+<p><img src="./image-20200329213514765.png" alt="image-20200329213514765" /></p>
+
+<p><img src="./image-20200329213812889.png" alt="image-20200329213812889" /></p>
+
+<h3 id="gradient-descent-for-neural-networks">Gradient descent for Neural Networks</h3>
+
+<p>np.sum(keepdims=True): prevent rank one arrays</p>
+
+<p><img src="./image-20200406144044096.png" alt="image-20200406144044096" /></p>
+
+<p><img src="./image-20200406144013392.png" alt="image-20200406144013392" /></p>
+
+<h3 id="backpropagation-intuition">Backpropagation intuition</h3>
+
+<p><img src="./image-20200406144511159.png" alt="image-20200406144511159" /></p>
+
+<p><img src="./image-20200406145730947.png" alt="image-20200406145730947" /></p>
+
+<p><a href="https://medium.com/@pdquant/all-the-backpropagation-derivatives-d5275f727f60" target="_blank">https://medium.com/@pdquant/all-the-backpropagation-derivatives-d5275f727f60</a></p>
+
+<p><img src="./image-20200406152406973.png" alt="image-20200406152406973" /></p>
+
+<p><a href="https://www.coursera.org/learn/neural-networks-deep-learning/discussions/weeks/3/threads/a38VuhyMEei5zw6yFhWyOg" target="_blank">https://www.coursera.org/learn/neural-networks-deep-learning/discussions/weeks/3/threads/a38VuhyMEei5zw6yFhWyOg</a></p>
+
+<h3 id="random-initialization">Random Initialization</h3>
+
+<p>LR can be initialized as 0, but not neural network</p>
+
+<h2 id="supplement">Supplement</h2>
+
 <h3 id="基础">基础</h3>
 
 <pre><code class="language-mermaid">graph LR;
 MachineLearning--&gt;频率/统计机器学习;
-频率/统计机器学习--&gt;正则化
+频率/统计机器学习--&gt;正则化/L1/L2
 频率/统计机器学习--&gt;核化
 频率/统计机器学习--&gt;集成化
 频率/统计机器学习--&gt;层次化
@@ -816,7 +926,7 @@ MixedNetwork/有向图无向图--&gt;DeepBeliefNetwork
 <h4 id="统计机器学习">统计机器学习</h4>
 
 <ul>
-<li><p>正则化：Loss Function + regularizer</p></li>
+<li><p>正则化：Loss Function + regularizer(L1/L2)</p></li>
 
 <li><p>核化: Kernel SVM</p></li>
 
@@ -825,7 +935,7 @@ MixedNetwork/有向图无向图--&gt;DeepBeliefNetwork
 <li><p>层次化: Neural Network/Deep Neural Network</p>
 
 <ul>
-<li><p>MLP</p></li>
+<li><p>MLP(Mutilayer Perceptron)</p></li>
 
 <li><p>Autoencoder</p></li>
 
@@ -850,7 +960,7 @@ MixedNetwork/有向图无向图--&gt;DeepBeliefNetwork
 </ul>
 
 <blockquote>
-<p>Deep Generative Model</p>
+<p>上述都是：Deep Generative Model</p>
 </blockquote>
 
 <p>狭义的DeepLearning：Deep Neural Network</p>
@@ -1227,6 +1337,13 @@ MixedNetwork/有向图无向图--&gt;DeepBeliefNetwork
   
   
 <div class="post-nav-item">
+<div class="meta-nav">Next</div>
+  <a href="../../post/generative-adversarial-network/" rel="next">Generative Adversarial Network</a>
+</div>
+
+  
+  
+<div class="post-nav-item">
 <div class="meta-nav">Previous</div>
   <a href="../../post/hmm/" rel="prev">HMM</a>
 </div>
@@ -1366,7 +1483,7 @@ MixedNetwork/有向图无向图--&gt;DeepBeliefNetwork
     
 
    
-      <p>&copy; Faith 25/03/2020 &middot;
+      <p>&copy; Faith 11/04/2020 &middot;
                     Built with <a href="https://github.com/gohugoio/hugo">Hugo</a>
 
        <a href="https://github.com/iamfaith"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path></svg>

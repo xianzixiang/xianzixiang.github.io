@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="">
+  <meta name="description" content="click here for link 概率图模型 inference-&gt; $P(Z|X)$-&gt;积分问题（MCMC） GMM：样本之间是独立同分布 HMM: Dynamic Model y: System state 隐变量 state 离散：HMM state 线性: Kalman Filter state">
 
   
   <link rel="alternate" hreflang="en-us" href="https://faithio.cn/post/hmm/">
@@ -270,13 +270,13 @@
   <meta property="og:site_name" content="Zixiang&#39;s Personal Page">
   <meta property="og:url" content="https://faithio.cn/post/hmm/">
   <meta property="og:title" content="HMM | Zixiang&#39;s Personal Page">
-  <meta property="og:description" content=""><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="click here for link 概率图模型 inference-&gt; $P(Z|X)$-&gt;积分问题（MCMC） GMM：样本之间是独立同分布 HMM: Dynamic Model y: System state 隐变量 state 离散：HMM state 线性: Kalman Filter state"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2020-03-24T16:45:50-04:00">
     
-    <meta property="article:modified_time" content="2020-03-25T13:04:25-04:00">
+    <meta property="article:modified_time" content="2020-04-11T19:39:35-04:00">
   
 
   
@@ -305,7 +305,7 @@
   "headline": "HMM",
   
   "datePublished": "2020-03-24T16:45:50-04:00",
-  "dateModified": "2020-03-25T13:04:25-04:00",
+  "dateModified": "2020-04-11T19:39:35-04:00",
   
   "author": {
     "@type": "Person",
@@ -320,7 +320,7 @@
       "url": "https://faithio.cn/images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": ""
+  "description": "click here for link 概率图模型 inference-\u0026gt; $P(Z|X)$-\u0026gt;积分问题（MCMC） GMM：样本之间是独立同分布 HMM: Dynamic Model y: System state 隐变量 state 离散：HMM state 线性: Kalman Filter state"
 }
 </script>
 
@@ -626,7 +626,7 @@ code.has-jax {font: inherit;
           Last updated on
       
     
-    Mar 25, 2020
+    Apr 11, 2020
   </span>
   
 
@@ -635,7 +635,7 @@ code.has-jax {font: inherit;
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    0 min read
+    1 min read
   </span>
   
 
@@ -693,7 +693,87 @@ code.has-jax {font: inherit;
   <div class="article-container">
 
     <div class="article-style">
-    <p><img src="1.jpg" alt="image-20200324164641801" /></p>
+    
+
+<p><a href="./hmm.html">click here for link</a></p>
+
+<h3 id="概率图模型">概率图模型</h3>
+
+<blockquote>
+<p>inference-&gt; $P(Z|X)$-&gt;积分问题（MCMC）</p>
+</blockquote>
+
+<p>GMM：样本之间是独立同分布</p>
+
+<h3 id="hmm-dynamic-model">HMM: Dynamic Model</h3>
+
+<p>y: System state 隐变量</p>
+
+<ul>
+<li>state  离散：HMM</li>
+<li>state 线性: Kalman Filter</li>
+<li>state 非线性: Particle Filter</li>
+</ul>
+
+<p>$$
+\lambda = (\underbrace{\pi}{初始prob dist}, \underbrace{A}{状态转移矩阵}, \underbrace{B}_{发射矩阵emission}) <br />
+状态变量i: i_1, i_2, \cdots i_t \cdots \rightarrow Q={q_1, q_2, \cdots, q_m} <br />
+观测变量o: o_1, o_2, \cdots o_t \cdots \rightarrow V={v_1, v_2, \cdots, v<em>m} <br />
+A=\left[a</em>{i j}\right], a<em>{i j}=P\left(i</em>{t+1}=q_{i} | i<em>t=q</em>{i}\right)  <br />
+B=\left[b<em>{j k} \right], b</em>{j k}=P\left(Q<em>{t}=v</em>{k} | i<em>t=q</em>{j}\right)
+$$</p>
+
+<blockquote>
+<p>transition 和 emission probability 是independent</p>
+</blockquote>
+
+<p>两个假设：</p>
+
+<ul>
+<li><p>齐次Markov 假设</p></li>
+
+<li><p>$$
+P(i_{t+1}|i<em>t, t</em>{t-1}, \cdots, t_1, o<em>t, o</em>{t-1}, \dots, o<em>1) = p(i</em>{t+1}|i_t)  <br />
+$$</p></li>
+
+<li><p>观察独立假设
+$$
+P(o_{t}|i<em>t, t</em>{t-1}, \cdots, t_1, o<em>t, o</em>{t-1}, \dots, o<em>1) = p(o</em>{t}|i_t)  <br />
+$$</p></li>
+</ul>
+
+<p>三个问题：</p>
+
+<ol>
+<li>Evaluation: $P(O| \lambda) \Rightarrow$ 前向后向 Forward-backward</li>
+<li>learning $\lambda=\arg \max P(O|\lambda)$ EM algorithm\baum welch</li>
+<li>Decoding $\lambda=\arg \max_{i} P(I|O)$
+
+<ol>
+<li>预测：$P(i_{t+1}|o_1, o_2, \cdots, o_t)$</li>
+<li>滤波：$P(i_{t}|o_1, o_2, \cdots, o_t)$</li>
+</ol></li>
+</ol>
+
+<h3 id="hmm-evaluation">HMM-Evaluation</h3>
+
+<p>$$
+\begin{aligned}
+ Give &amp;\lambda, 求 P(O|\lambda) <br />
+P(O | \lambda) &amp;=\sum<em>{1} P(I, O | \lambda)=\sum</em>{1} P(O | I, \lambda) \cdot P(I | \lambda) \</p>
+
+<p>P(I | \lambda)&amp;=P\left(i<em>{1}, i</em>{2}, \cdots,  i<em>{T} | \lambda\right)=\underbrace{P\left(i</em>{T} | i, i<em>{2},\cdots,i</em>{T-1}, \lambda\right)}_{P(i<em>T|i</em>{T-1})=a<em>{i</em>{T-1}, i_T}} P(i_1, i<em>2, \cdots, i</em>{T-1}|\lambda) = a<em>{i</em>{T-1}, i<em>T} \cdot a</em>{i<em>{T-2}, i</em>{T-1}} \cdots a<em>{i</em>{1}, i_{2}} \cdot \pi(i_1) \</p>
+
+<p>&amp;\pi\text{ 是初始分布} <br />
+&amp;= \pi\left(a<em>{i}\right) \cdot \prod</em>{t=2}^{T} a<em>{i</em>{t-1}, i<em>t} <br />
+&mdash;-<br />
+p(O | I, \lambda) &amp; =\prod</em>{t=1}^{T} b_{i<em>t}\left(O</em>{t}\right)
+\end{aligned}
+$$</p>
+
+<h3 id="ppt">PPT</h3>
+
+<p><img src="1.jpg" alt="image-20200324164641801" /></p>
 
     </div>
 
@@ -1170,7 +1250,7 @@ code.has-jax {font: inherit;
     
 
    
-      <p>&copy; Faith 25/03/2020 &middot;
+      <p>&copy; Faith 11/04/2020 &middot;
                     Built with <a href="https://github.com/gohugoio/hugo">Hugo</a>
 
        <a href="https://github.com/iamfaith"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path></svg>
