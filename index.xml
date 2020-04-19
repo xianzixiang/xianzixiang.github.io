@@ -5,12 +5,220 @@
     <link>https://faithio.cn/</link>
       <atom:link href="https://faithio.cn/index.xml" rel="self" type="application/rss+xml" />
     <description>Zixiang&#39;s Personal Page</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 09 Apr 2020 22:19:05 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 17 Apr 2020 10:56:33 -0400</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Zixiang&#39;s Personal Page</title>
       <link>https://faithio.cn/</link>
     </image>
+    
+    <item>
+      <title>Gradient Descent</title>
+      <link>https://faithio.cn/post/gradient-descent/</link>
+      <pubDate>Fri, 17 Apr 2020 10:56:33 -0400</pubDate>
+      <guid>https://faithio.cn/post/gradient-descent/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417105657139.png&#34; alt=&#34;image-20200417105657139&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;adaptive-learning-rates&#34;&gt;Adaptive Learning Rates&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417105946810.png&#34; alt=&#34;image-20200417105946810&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418150703110.png&#34; alt=&#34;image-20200418150703110&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418150959371.png&#34; alt=&#34;image-20200418150959371&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418151157717.png&#34; alt=&#34;image-20200418151157717&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418152046091.png&#34; alt=&#34;image-20200418152046091&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418152507803.png&#34; alt=&#34;image-20200418152507803&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;不增加运算量的情况下，算二次微分，其实是采样&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;stochastic-gradient-descent&#34;&gt;Stochastic Gradient Descent&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418153333563.png&#34; alt=&#34;image-20200418153333563&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418153757128.png&#34; alt=&#34;image-20200418153757128&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;feature-scaling&#34;&gt;Feature scaling&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418153931567.png&#34; alt=&#34;image-20200418153931567&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418154059652.png&#34; alt=&#34;image-20200418154059652&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;x1对梯度影响很小，update慢， error surface 不一样，正圆速度更快&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418154819560.png&#34; alt=&#34;image-20200418154819560&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;gradient-descent-theory&#34;&gt;Gradient Descent Theory&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418155057008.png&#34; alt=&#34;image-20200418155057008&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418160236495.png&#34; alt=&#34;image-20200418160236495&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418160725921.png&#34; alt=&#34;image-20200418160725921&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418162014678.png&#34; alt=&#34;image-20200418162014678&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418162027542.png&#34; alt=&#34;image-20200418162027542&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418162040817.png&#34; alt=&#34;image-20200418162040817&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418163732667.png&#34; alt=&#34;image-20200418163732667&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;limitation-of-gradient-descent&#34;&gt;Limitation of Gradient Descent&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418163958360.png&#34; alt=&#34;image-20200418163958360&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;new-optimizers-for-deep-learning&#34;&gt;New Optimizers for deep learning&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Transformer</title>
+      <link>https://faithio.cn/post/transformer/</link>
+      <pubDate>Wed, 15 Apr 2020 23:45:52 -0400</pubDate>
+      <guid>https://faithio.cn/post/transformer/</guid>
+      <description>
+
+&lt;p&gt;bert - semi-supervisored learning&lt;/p&gt;
+
+&lt;p&gt;RNN - Hard to parallel&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415235158012.png&#34; alt=&#34;image-20200415235158012&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;CNN can parallel, 但是需要叠很长时间的咨询&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415235355040.png&#34; alt=&#34;image-20200415235355040&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以完全替代RNN，也是sequence2sequence的模型&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415235607503.png&#34; alt=&#34;image-20200415235607503&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;除以dimensions是为了减少variance，相乘会产生更多error&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415235927070.png&#34; alt=&#34;image-20200415235927070&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416000112495.png&#34; alt=&#34;image-20200416000112495&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416000314547.png&#34; alt=&#34;image-20200416000314547&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416000357860.png&#34; alt=&#34;image-20200416000357860&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416000525138.png&#34; alt=&#34;image-20200416000525138&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416000630467.png&#34; alt=&#34;image-20200416000630467&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416000722766.png&#34; alt=&#34;image-20200416000722766&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416000820901.png&#34; alt=&#34;image-20200416000820901&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416000935054.png&#34; alt=&#34;image-20200416000935054&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;变形&#34;&gt;变形&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416001102390.png&#34; alt=&#34;image-20200416001102390&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416001147596.png&#34; alt=&#34;image-20200416001147596&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;位置并不重要（天涯若比邻）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416001522212.png&#34; alt=&#34;image-20200416001522212&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;seq2seq&#34;&gt;seq2seq&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416001730057.png&#34; alt=&#34;image-20200416001730057&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416002059224.png&#34; alt=&#34;image-20200416002059224&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416002532251.png&#34; alt=&#34;image-20200416002532251&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;mask: 只会attend 产生出来的sequence。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416002650474.png&#34; alt=&#34;image-20200416002650474&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416003133580.png&#34; alt=&#34;image-20200416003133580&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200416003205757.png&#34; alt=&#34;image-20200416003205757&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Embedding</title>
+      <link>https://faithio.cn/post/embedding/</link>
+      <pubDate>Wed, 15 Apr 2020 18:48:25 -0400</pubDate>
+      <guid>https://faithio.cn/post/embedding/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415184935540.png&#34; alt=&#34;image-20200415184935540&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Generating Word Vector is unsupervised.&lt;/p&gt;
+
+&lt;p&gt;How about auto-encoder?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415185358996.png&#34; alt=&#34;image-20200415185358996&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415185725800.png&#34; alt=&#34;image-20200415185725800&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415190433735.png&#34; alt=&#34;image-20200415190433735&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415200628276.png&#34; alt=&#34;image-20200415200628276&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415203213211.png&#34; alt=&#34;image-20200415203213211&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415204214466.png&#34; alt=&#34;image-20200415204214466&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415204329240.png&#34; alt=&#34;image-20200415204329240&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415204642846.png&#34; alt=&#34;image-20200415204642846&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;unsupervised-learning-neighbor-embedding&#34;&gt;Unsupervised Learning: Neighbor Embedding&lt;/h2&gt;
+
+&lt;p&gt;TSNE&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415205127380.png&#34; alt=&#34;image-20200415205127380&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415205325147.png&#34; alt=&#34;image-20200415205325147&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415205414215.png&#34; alt=&#34;image-20200415205414215&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415205531081.png&#34; alt=&#34;image-20200415205531081&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;x&amp;ndash;&amp;gt;z没有很好的依据&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ML 2020</title>
+      <link>https://faithio.cn/post/ml-2020/</link>
+      <pubDate>Wed, 15 Apr 2020 16:42:22 -0400</pubDate>
+      <guid>https://faithio.cn/post/ml-2020/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;./image-20200415164228259.png&#34; alt=&#34;image-20200415164228259&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415164428366.png&#34; alt=&#34;image-20200415164428366&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415164600406.png&#34; alt=&#34;image-20200415164600406&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415164621730.png&#34; alt=&#34;image-20200415164621730&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415164725366.png&#34; alt=&#34;image-20200415164725366&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415164955799.png&#34; alt=&#34;image-20200415164955799&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415165052826.png&#34; alt=&#34;image-20200415165052826&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200415165508904.png&#34; alt=&#34;image-20200415165508904&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Auto Encoder</title>
@@ -247,17 +455,147 @@
     </item>
     
     <item>
-      <title>Linear Classification</title>
-      <link>https://faithio.cn/post/linear-classification/</link>
+      <title>Classification</title>
+      <link>https://faithio.cn/post/classification/</link>
       <pubDate>Tue, 07 Apr 2020 11:23:28 -0400</pubDate>
-      <guid>https://faithio.cn/post/linear-classification/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;./image-20200407112526341.png&#34; alt=&#34;image-20200407112526341&#34; /&gt;&lt;/p&gt;
+      <guid>https://faithio.cn/post/classification/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;./image-20200407112526341.png&#34; alt=&#34;image-20200407112526341&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;./image-20200407112551869.png&#34; alt=&#34;image-20200407112551869&#34; /&gt;
 $$
 \begin{array}{l}P(Y | X)=\frac{P(X | Y) P(Y)}{P(X)} \propto(P(X | Y) \cdot P(Y) \
 M A P \ P(Y=0 | X) \Rightarrow P(Y=1 | X)\end{array}
 $$&lt;/p&gt;
+
+&lt;h2 id=&#34;classification&#34;&gt;Classification&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418205909645.png&#34; alt=&#34;image-20200418205909645&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418210055887.png&#34; alt=&#34;image-20200418210055887&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418210413842.png&#34; alt=&#34;image-20200418210413842&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418211630205.png&#34; alt=&#34;image-20200418211630205&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418211819580.png&#34; alt=&#34;image-20200418211819580&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418212423769.png&#34; alt=&#34;image-20200418212423769&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;改进&#34;&gt;改进&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418212408745.png&#34; alt=&#34;image-20200418212408745&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;不同的class可以share参数，&lt;strong&gt;如果参数越多，variance会越大，就会导致overfiting&lt;/strong&gt;。Feature和covariance的平方成正比&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418212749041.png&#34; alt=&#34;image-20200418212749041&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418213117186.png&#34; alt=&#34;image-20200418213117186&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;当Gaussian 共用covariance的时候，boundary就是linear的，所以也可以成为linear model。但是如果不共用covariance就不是linear的&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;简单的模型，参数少，bias大，variance小&lt;/p&gt;
+
+&lt;p&gt;复杂的模型，参数多，bias小，variance大&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418214124978.png&#34; alt=&#34;image-20200418214124978&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;covariance除了对角线都是零，属性与属性之间是independent&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418214356057.png&#34; alt=&#34;image-20200418214356057&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418214503762.png&#34; alt=&#34;image-20200418214503762&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418214552654.png&#34; alt=&#34;image-20200418214552654&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418214802448.png&#34; alt=&#34;image-20200418214802448&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418215129639.png&#34; alt=&#34;image-20200418215129639&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;logistic-regression&#34;&gt;Logistic Regression&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418215555308.png&#34; alt=&#34;image-20200418215555308&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418215808021.png&#34; alt=&#34;image-20200418215808021&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418220022300.png&#34; alt=&#34;image-20200418220022300&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Cross entropy&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418220335222.png&#34; alt=&#34;image-20200418220335222&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;为什么逻辑回归不用square error来定义loss function呢？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418220637419.png&#34; alt=&#34;image-20200418220637419&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418220754427.png&#34; alt=&#34;image-20200418220754427&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418220943512.png&#34; alt=&#34;image-20200418220943512&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418221021157.png&#34; alt=&#34;image-20200418221021157&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;可以通过解least square error的方式，找最佳解，然后初始化&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;why-logistic-regression-cannot-use-square-error&#34;&gt;Why Logistic Regression cannot use square error&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418221807965.png&#34; alt=&#34;image-20200418221807965&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418221825935.png&#34; alt=&#34;image-20200418221825935&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418221947036.png&#34; alt=&#34;image-20200418221947036&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;discriminative-vs-generative&#34;&gt;Discriminative vs Generative&lt;/h3&gt;
+
+&lt;p&gt;Gaussian 属于Generative，但是covarianceshare的话，model是一样的&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418222434264.png&#34; alt=&#34;image-20200418222434264&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;找出的parameter w b是不一样的&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418223045516.png&#34; alt=&#34;image-20200418223045516&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418223100856.png&#34; alt=&#34;image-20200418223100856&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418223119457.png&#34; alt=&#34;image-20200418223119457&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418223427729.png&#34; alt=&#34;image-20200418223427729&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果当前label有问题，data是有noise的，generative model做了一些强的假设就可以排除干扰。&lt;/p&gt;
+
+&lt;p&gt;prior 和 class-dependent probability来自不同的分布，语音辨识，prior是从网络上收集的文本（某一句话说出的几率），class-dependent才是声音和文本的结合。&lt;/p&gt;
+
+&lt;p&gt;所以整个系统是generative的系统&lt;/p&gt;
+
+&lt;h3 id=&#34;multilass&#34;&gt;Multilass&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418224131427.png&#34; alt=&#34;image-20200418224131427&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;因为有exponential 大的值和小的值会被拉的更开，一定是正的。total sum 是，因为做了normalization。（softmax是强化）&lt;/p&gt;
+
+&lt;p&gt;Softmax output用来统计posterior probability。有三个class， gaussian，共用covariance matrix，就会得到softmax。（Maximum entropy和Logistic regression一样的）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418224827186.png&#34; alt=&#34;image-20200418224827186&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;xor问题&#34;&gt;XOR问题&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418224940733.png&#34; alt=&#34;image-20200418224940733&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418225134560.png&#34; alt=&#34;image-20200418225134560&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200418225644674.png&#34; alt=&#34;image-20200418225644674&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -2020,11 +2358,35 @@ $$&lt;/p&gt;
     </item>
     
     <item>
-      <title>Logistic Regression   Solvers&#39; Defintions in Sklearn</title>
+      <title>Logistic Regression</title>
       <link>https://faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</link>
       <pubDate>Sat, 29 Feb 2020 02:46:04 -0500</pubDate>
       <guid>https://faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</guid>
       <description>
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417094156740.png&#34; alt=&#34;image-20200417094156740&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417094302078.png&#34; alt=&#34;image-20200417094302078&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417094413409.png&#34; alt=&#34;image-20200417094413409&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417094619802.png&#34; alt=&#34;image-20200417094619802&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417094717318.png&#34; alt=&#34;image-20200417094717318&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417094753505.png&#34; alt=&#34;image-20200417094753505&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417094841163.png&#34; alt=&#34;image-20200417094841163&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417094900567.png&#34; alt=&#34;image-20200417094900567&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417094920044.png&#34; alt=&#34;image-20200417094920044&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417094943372.png&#34; alt=&#34;image-20200417094943372&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417095008190.png&#34; alt=&#34;image-20200417095008190&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200417095025101.png&#34; alt=&#34;image-20200417095025101&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 

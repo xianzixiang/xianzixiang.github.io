@@ -36,6 +36,8 @@ Concordia University, Montreal, Quebec    \hfill      September 2019-Present
 
 MASc in System Information Security(thesis-based, focus on Machine Learning)
 
+Research Interests: Approximation Inference, Variantional Inference, Expectation Propagation, Deep Neural Network
+
 # Work Experience
 \hrule
 

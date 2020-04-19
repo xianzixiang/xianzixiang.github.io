@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://faithio.cn/post/auto-encoder/</loc>
-    <lastmod>2020-04-11T19:39:35-04:00</lastmod>
+    <loc>https://faithio.cn/post/gradient-descent/</loc>
+    <lastmod>2020-04-18T23:03:42-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://faithio.cn/post/</loc>
-    <lastmod>2020-04-11T19:56:41-04:00</lastmod>
+    <lastmod>2020-04-18T23:03:42-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -24,7 +24,7 @@
   
   <url>
     <loc>https://faithio.cn/</loc>
-    <lastmod>2020-04-11T19:56:41-04:00</lastmod>
+    <lastmod>2020-04-18T23:03:42-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -35,6 +35,26 @@
                 hreflang="en"
                 href="https://faithio.cn/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/transformer/</loc>
+    <lastmod>2020-04-18T23:03:42-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/embedding/</loc>
+    <lastmod>2020-04-18T23:03:42-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/ml-2020/</loc>
+    <lastmod>2020-04-18T23:03:42-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/auto-encoder/</loc>
+    <lastmod>2020-04-11T19:39:35-04:00</lastmod>
   </url>
   
   <url>
@@ -53,8 +73,8 @@
   </url>
   
   <url>
-    <loc>https://faithio.cn/post/linear-classification/</loc>
-    <lastmod>2020-04-07T11:37:28-04:00</lastmod>
+    <loc>https://faithio.cn/post/classification/</loc>
+    <lastmod>2020-04-18T23:03:42-04:00</lastmod>
   </url>
   
   <url>
@@ -129,7 +149,7 @@
   
   <url>
     <loc>https://faithio.cn/post/logistic-regression-solvers-defintions-in-sklearn/</loc>
-    <lastmod>2020-03-19T18:42:57-04:00</lastmod>
+    <lastmod>2020-04-18T23:03:42-04:00</lastmod>
   </url>
   
   <url>
