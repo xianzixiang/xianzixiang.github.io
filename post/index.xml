@@ -5,12 +5,419 @@
     <link>https://faithio.cn/post/</link>
       <atom:link href="https://faithio.cn/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 17 Apr 2020 10:56:33 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 25 Apr 2020 17:27:27 -0400</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
       <link>https://faithio.cn/post/</link>
     </image>
+    
+    <item>
+      <title>Semi Supervised Learning</title>
+      <link>https://faithio.cn/post/semi-supervised-learning/</link>
+      <pubDate>Sat, 25 Apr 2020 17:27:27 -0400</pubDate>
+      <guid>https://faithio.cn/post/semi-supervised-learning/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425172854388.png&#34; alt=&#34;image-20200425172854388&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;需要基于假设，考虑你的假设合不合理&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425173010036.png&#34; alt=&#34;image-20200425173010036&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;generative-model&#34;&gt;Generative Model&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425173140737.png&#34; alt=&#34;image-20200425173140737&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425173309028.png&#34; alt=&#34;image-20200425173309028&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;初始化一系列参数，可以random也可以从已经训练的数据得来。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425173406351.png&#34; alt=&#34;image-20200425173406351&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;每次增加loglikelihood 结束在local minimum&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425173938442.png&#34; alt=&#34;image-20200425173938442&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;low-density-separation-assumption&#34;&gt;Low-density Separation Assumption&lt;/h3&gt;
+
+&lt;p&gt;通过一定策略将pseudo-label data 增加到train set，也可以给一定weight，confident有高weight&lt;/p&gt;
+
+&lt;p&gt;output一个数字其实不会影响结果&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../Users/faith/academic-zixiang/content/en/post/semi-supervised learning/image-20200425174515783.png&#34; alt=&#34;image-20200425174515783&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;对于神经网络哪个有用&#34;&gt;对于神经网络哪个有用&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425174909139.png&#34; alt=&#34;image-20200425174909139&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;entropy-based-regularization&#34;&gt;Entropy-based Regularization&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425175155110.png&#34; alt=&#34;image-20200425175155110&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;entropy越小越好， labelled data cross entropy越小越好，也可以加上weight&lt;/p&gt;
+
+&lt;p&gt;看倾向于哪边&lt;/p&gt;
+
+&lt;h3 id=&#34;outlook-semi-supervised-svm&#34;&gt;Outlook: Semi-supervised SVM&lt;/h3&gt;
+
+&lt;p&gt;穷举所有unlabeled data。改一些label 如果objective function大，那就改&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425175551180.png&#34; alt=&#34;image-20200425175551180&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;smoothness-assumption&#34;&gt;Smoothness Assumption&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;近朱者赤，近墨者黑
+“You are known by the company you keep”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425175912387.png&#34; alt=&#34;image-20200425175912387&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;x1 和 x2 之间有high density&lt;/p&gt;
+
+&lt;p&gt;文本分类&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425180246636.png&#34; alt=&#34;image-20200425180246636&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;cluster-and-then-label&#34;&gt;Cluster and then Label&lt;/h4&gt;
+
+&lt;p&gt;在image 上可能不会work，因为pixel可能差不多，但是并不像&lt;/p&gt;
+
+&lt;p&gt;人的左右侧面/手写&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425180337365.png&#34; alt=&#34;image-20200425180337365&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Deep Autoencoder call feature, call clustering.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;graph-based-approach&#34;&gt;Graph-based Approach&lt;/h4&gt;
+
+&lt;p&gt;网页的hyperlink/论文的引用可以做分类&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425180707408.png&#34; alt=&#34;image-20200425180707408&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425180950009.png&#34; alt=&#34;image-20200425180950009&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;因为有取exp，所以下降很快，singularity才会大。需要有这样的机制才不会连到跨海沟的link&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425181148486.png&#34; alt=&#34;image-20200425181148486&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;data 需要够多，不然会断掉&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425181421207.png&#34; alt=&#34;image-20200425181421207&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;两两拿出来，乘以weights&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425181729818.png&#34; alt=&#34;image-20200425181729818&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425181922038.png&#34; alt=&#34;image-20200425181922038&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;让神经网络的labeled data 和真正的label 越接近越好，还要符合smoothness assumption的假设。做gradient descent&lt;/p&gt;
+
+&lt;h3 id=&#34;better-representation&#34;&gt;Better Representation&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ensemble Methods</title>
+      <link>https://faithio.cn/post/ensemble-methods/</link>
+      <pubDate>Sat, 25 Apr 2020 15:27:05 -0400</pubDate>
+      <guid>https://faithio.cn/post/ensemble-methods/</guid>
+      <description>
+
+&lt;p&gt;讲讲Ensemble Methods的Boosting/Bagging/Stacking&lt;/p&gt;
+
+&lt;p&gt;在Kaggle比赛最后都会用到Ensemble Methods来提高performance。&lt;/p&gt;
+
+&lt;p&gt;简单来说就是：Ensemble of various models into one more effective model&lt;/p&gt;
+
+&lt;p&gt;一般来说model &amp;rsquo;s learning error 来自于 variance, noise, and bias.&lt;/p&gt;
+
+&lt;p&gt;ensemble的出现就是为了解决这三个问题，让model 更加robust。&lt;/p&gt;
+
+&lt;h3 id=&#34;bagging-to-decrease-the-model-s-variance&#34;&gt;&lt;strong&gt;Bagging&lt;/strong&gt; to decrease the model’s variance;&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;主要解决overfiting问题，让error surface更加平缓。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可以并行进行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;采取voting 或者average方法选取model，所以weight是相同的&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;一般采用subsample方法，分为bootstraping and aggregating。但是在sample的过程中样本是有放回的&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/960/1*DFHUbdz6EyOuMYP4pDnFlw.jpeg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Get some classifiers to evaluate
+from sklearn.model_selection import cross_val_score
+from sklearn.ensemble import BaggingClassifier, ExtraTreesClassifier, RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.linear_model import RidgeClassifier
+from sklearn.svm import SVC
+seed = 1075
+np.random.seed(seed)
+# Create classifiers
+rf = RandomForestClassifier()
+et = ExtraTreesClassifier()
+knn = KNeighborsClassifier()
+svc = SVC()
+rg = RidgeClassifier()
+clf_array = [rf, et, knn, svc, rg]
+for clf in clf_array:
+    vanilla_scores = cross_val_score(clf, X, y, cv=10, n_jobs=-1)
+    bagging_clf = BaggingClassifier(clf, 
+       max_samples=0.4, max_features=10, random_state=seed)
+    bagging_scores = cross_val_score(bagging_clf, X, y, cv=10, 
+       n_jobs=-1)
+    
+    print &amp;quot;Mean of: {1:.3f}, std: (+/-) {2:.3f [{0}]&amp;quot;  
+                       .format(clf.__class__.__name__, 
+                       vanilla_scores.mean(), vanilla_scores.std())
+    print &amp;quot;Mean of: {1:.3f}, std: (+/-) {2:.3f} [Bagging {0}]\n&amp;quot;
+                       .format(clf.__class__.__name__, 
+                        bagging_scores.mean(), bagging_scores.std())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Mean of: 0.632, std: (+/-) 0.081 [RandomForestClassifier]
+Mean of: 0.639, std: (+/-) 0.069 [Bagging RandomForestClassifier]
+
+Mean of: 0.636, std: (+/-) 0.080 [ExtraTreesClassifier]
+Mean of: 0.654, std: (+/-) 0.073 [Bagging ExtraTreesClassifier]
+
+Mean of: 0.500, std: (+/-) 0.086 [KNeighborsClassifier]
+Mean of: 0.535, std: (+/-) 0.111 [Bagging KNeighborsClassifier]
+
+Mean of: 0.465, std: (+/-) 0.085 [SVC]
+Mean of: 0.535, std: (+/-) 0.083 [Bagging SVC]
+
+Mean of: 0.639, std: (+/-) 0.050 [RidgeClassifier]
+Mean of: 0.597, std: (+/-) 0.045 [Bagging RidgeClassifier]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在做cross validation 验证的时候，只有ridge classifier的准确率下降了，其他的方法都能提高accuracy。&lt;/p&gt;
+
+&lt;p&gt;那现在bagged classifier都比原来好了，我们选择哪个呢？&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Voting&lt;/strong&gt;，可以做hard voting或者soft voting（vote by weight）、&lt;/p&gt;
+
+&lt;p&gt;以下是hard voting&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/1820/1*tE0yuFerQPDCMzhobqv1Dw.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;实际情况，weight是比较难调整的。&lt;/p&gt;
+
+&lt;h3 id=&#34;boosting-to-decreasing-the-model-s-bias&#34;&gt;&lt;strong&gt;Boosting&lt;/strong&gt; to decreasing the model’s bias&lt;/h3&gt;
+
+&lt;p&gt;集合weak classifier，降低error rate。相当于sequential，只能一个个进行。&lt;/p&gt;
+
+&lt;p&gt;代表model：Adaboost&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;find a weak classifer with less then 50% accuracy.&lt;/li&gt;
+&lt;li&gt;惩罚分类结果，错误的增加weight，正确的降低weight&lt;/li&gt;
+&lt;li&gt;继续train&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1ge6n8rh5ysj30rh0judt5.jpg&#34; alt=&#34;image-20200425155448039&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;又可以演化为Gradient Boosting&lt;/p&gt;
+
+&lt;h3 id=&#34;stacking-to-increasing-the-predictive-force-of-the-classifier&#34;&gt;Stacking to increasing the predictive force of the classifier.&lt;/h3&gt;
+
+&lt;p&gt;stacking 主要就是将多个训练好的比较负责模型的output 作为Logistics Regression1的input。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;其实仔细思考下有点像神经网络的fine tuned。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1ge6msmnen7j30ql0ilti5.jpg&#34; alt=&#34;image-20200425153917987&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/946/0*GHYCJIjkkrP5ZgPh.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在Kaggle中最广泛被使用就是stacking&lt;/p&gt;
+
+&lt;p&gt;因为可以并行训练，多个不同model之间weight设置好可以消除variance&lt;/p&gt;
+
+&lt;p&gt;下面是一个比赛第三名采用方法&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;My final submission is ensemble of resnet34 x 5, inception-v3 and se-resnext50&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Model&lt;/th&gt;
+&lt;th&gt;GPUs&lt;/th&gt;
+&lt;th&gt;Image size&lt;/th&gt;
+&lt;th&gt;Training Epochs&lt;/th&gt;
+&lt;th&gt;Training Time&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;resnet34&lt;/td&gt;
+&lt;td&gt;1x TitanX&lt;/td&gt;
+&lt;td&gt;512&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;td&gt;16 hours&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;inception-v3&lt;/td&gt;
+&lt;td&gt;3x TitanX&lt;/td&gt;
+&lt;td&gt;1024&lt;/td&gt;
+&lt;td&gt;27&lt;/td&gt;
+&lt;td&gt;1day 15 hours&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;se-resnext50&lt;/td&gt;
+&lt;td&gt;2x TitanX&lt;/td&gt;
+&lt;td&gt;1024&lt;/td&gt;
+&lt;td&gt;22&lt;/td&gt;
+&lt;td&gt;2days 15 hours&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;什么是tta&#34;&gt;什么是TTA&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Test Time Augmentation&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;cited：&lt;a href=&#34;https://towardsdatascience.com/augmentation-for-image-classification-24ffcbc38833&#34; target=&#34;_blank&#34;&gt;https://towardsdatascience.com/augmentation-for-image-classification-24ffcbc38833&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;因为对比度，截取等原因可能misclassified，可以使用TTA&lt;/p&gt;
+
+&lt;p&gt;To mitigate errors such as these we use TTA wherein we predict class for the original test image along with 4 random tranforms of the same image. We then take an average of the predictions to determine which class the image belongs to.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;The intuition behind this is that even if the test image is not too easy to make a prediction, the transformations change it such that the model has higher chances of capturing the dog/cat shape and predicting accordingly.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;简单来说就是同一种image，采用不同transform，然后取average prediction。当同一个图片有不同的变换，model更容易learn到feature。&lt;/p&gt;
+
+&lt;p&gt;当然现在GAN 能生成更多更复杂的图片了参考：&lt;a href=&#34;https://arxiv.org/pdf/1712.04621.pdf&#34; target=&#34;_blank&#34;&gt;https://arxiv.org/pdf/1712.04621.pdf&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CrossEntropy vs KL Divergence</title>
+      <link>https://faithio.cn/post/crossentropy-vs-kl-divergence/</link>
+      <pubDate>Sat, 25 Apr 2020 13:41:37 -0400</pubDate>
+      <guid>https://faithio.cn/post/crossentropy-vs-kl-divergence/</guid>
+      <description>&lt;p&gt;Both of Cross-entropy and KL divergence are tools to measure the distance between two probability distribution. What is the difference?&lt;/p&gt;
+
+&lt;p&gt;𝐻(𝑃,𝑄)=−∑𝑥𝑃(𝑥)log𝑄(𝑥)H(P,Q)=−∑xP(x)log⁡Q(x)&lt;/p&gt;
+
+&lt;p&gt;𝐾𝐿(𝑃|𝑄)=∑𝑥𝑃(𝑥)log𝑃(𝑥)𝑄(𝑥)KL(P|Q)=∑xP(x)log⁡P(x)Q(x)&lt;/p&gt;
+
+&lt;p&gt;Moreover, minimization of KL is equivalent to minimization of Cross-Entropy.&lt;/p&gt;
+
+&lt;p&gt;I want to know them instinctively.&lt;/p&gt;
+
+&lt;p&gt;You will need some conditions to claim the equivalence between minimizing cross entropy and minimizing KL divergence. I will put your question under the context of classification problems using cross entropy as loss functions.&lt;/p&gt;
+
+&lt;p&gt;Let us first recall that entropy is used to measure the uncertainty of a system, which is defined as&lt;/p&gt;
+
+&lt;p&gt;𝑆(𝑣)=−∑𝑖𝑝(𝑣𝑖)log𝑝(𝑣𝑖),S(v)=−∑ip(vi)log⁡p(vi),&lt;/p&gt;
+
+&lt;p&gt;for&lt;/p&gt;
+
+&lt;p&gt;For instance, the event A &lt;code&gt;I will die eventually&lt;/code&gt; is almost certain (maybe we can solve the aging problem for word &lt;code&gt;almost&lt;/code&gt;), therefore it has low entropy which requires only the information of &lt;code&gt;the aging problem cannot be solved&lt;/code&gt; to make it certain. However, the event B &lt;code&gt;The president will die in 50 years&lt;/code&gt; is much more uncertain than A, thus it needs more information to remove the uncertainties.&lt;/p&gt;
+
+&lt;p&gt;Now look at the definition of KL divergence between events A and B&lt;/p&gt;
+
+&lt;p&gt;𝐷𝐾𝐿(𝐴∥𝐵)=∑𝑖𝑝𝐴(𝑣𝑖)log𝑝𝐴(𝑣𝑖)−𝑝𝐴(𝑣𝑖)log𝑝𝐵(𝑣𝑖),DKL(A∥B)=∑ipA(vi)log⁡pA(vi)−pA(vi)log⁡pB(vi),&lt;/p&gt;
+
+&lt;p&gt;where the first term of the right hand side is the entropy of event A, the second term can be interpreted as the expectation of event B in terms of event A. And the&lt;/p&gt;
+
+&lt;p&gt;To relate cross entropy to entropy and KL divergence, we formalize the cross entropy in terms of events A and B as&lt;/p&gt;
+
+&lt;p&gt;𝐻(𝐴,𝐵)=−∑𝑖𝑝𝐴(𝑣𝑖)log𝑝𝐵(𝑣𝑖).H(A,B)=−∑ipA(vi)log⁡pB(vi).&lt;/p&gt;
+
+&lt;p&gt;From the definitions, we can easily see𝐻(𝐴,𝐵)=𝐷𝐾𝐿(𝐴∥𝐵)+𝑆𝐴.H(A,B)=DKL(A∥B)+SA.     .&lt;/p&gt;
+
+&lt;p&gt;A further question follows naturally as how the entropy can be a constant. In a machine learning task, we start with a dataset (denoted as 𝑃()P(D)) which represent the problem to be solved, and the learning purpose is to make the model estimated distribution (denoted as 𝑃(𝑚𝑜𝑑𝑒𝑙)P(model)) as close as possible to true distribution of the problem (denoted as 𝑃(𝑡𝑟𝑢𝑡ℎ)P(truth)). 𝑃(𝑡𝑟𝑢𝑡ℎ)P(truth) is unknown and represented by 𝑃()P(D). Therefore in an ideal world, we expect&lt;/p&gt;
+
+&lt;p&gt;𝑃(𝑚𝑜𝑑𝑒𝑙)≈𝑃()≈𝑃(𝑡𝑟𝑢𝑡ℎ)P(model)≈P(D)≈P(truth)&lt;/p&gt;
+
+&lt;p&gt;and minimize . And luckily, in practiceDis given, which means its entropy𝑆(𝐷)S(D)is fixed as a constant.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GNN</title>
+      <link>https://faithio.cn/post/gnn/</link>
+      <pubDate>Sun, 19 Apr 2020 11:01:12 -0400</pubDate>
+      <guid>https://faithio.cn/post/gnn/</guid>
+      <description>
+
+&lt;p&gt;Why use GNN?&lt;/p&gt;
+
+&lt;p&gt;Classification问题，丢一个没有见过的图片进去&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419110815992.png&#34; alt=&#34;image-20200419110815992&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;怎么知道node 和 edge的 feature&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419111309255.png&#34; alt=&#34;image-20200419111309255&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419111421761.png&#34; alt=&#34;image-20200419111421761&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419111957452.png&#34; alt=&#34;image-20200419111957452&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;nn4g&#34;&gt;NN4G&lt;/h2&gt;
+
+&lt;h3 id=&#34;aggregation&#34;&gt;Aggregation&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419112239215.png&#34; alt=&#34;image-20200419112239215&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;readout&#34;&gt;Readout&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419112338429.png&#34; alt=&#34;image-20200419112338429&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;dcnn&#34;&gt;DCNN&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419123056579.png&#34; alt=&#34;image-20200419123056579&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419123202986.png&#34; alt=&#34;image-20200419123202986&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;dgc&#34;&gt;DGC&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419123248714.png&#34; alt=&#34;image-20200419123248714&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;monet&#34;&gt;MoNet&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419123434831.png&#34; alt=&#34;image-20200419123434831&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;gat&#34;&gt;GAT&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419123656391.png&#34; alt=&#34;image-20200419123656391&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;gin&#34;&gt;GIN&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419123931772.png&#34; alt=&#34;image-20200419123931772&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;dgl.ai&lt;/p&gt;
+
+&lt;h3 id=&#34;graph-signal-processing-and-spectral-based-gnn&#34;&gt;Graph Signal Processing and Spectral-based GNN&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419124355835.png&#34; alt=&#34;image-20200419124355835&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419124601870.png&#34; alt=&#34;image-20200419124601870&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Gradient Descent</title>
@@ -78,6 +485,100 @@
 &lt;p&gt;&lt;img src=&#34;./image-20200418163958360.png&#34; alt=&#34;image-20200418163958360&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;new-optimizers-for-deep-learning&#34;&gt;New Optimizers for deep learning&lt;/h3&gt;
+
+&lt;p&gt;Exponential moving average (EMA)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419143941320.png&#34; alt=&#34;image-20200419143941320&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419144246649.png&#34; alt=&#34;image-20200419144246649&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419144940742.png&#34; alt=&#34;image-20200419144940742&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;找到一组参数使得Loss function的和最小&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419145221197.png&#34; alt=&#34;image-20200419145221197&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419145305433.png&#34; alt=&#34;image-20200419145305433&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419150407821.png&#34; alt=&#34;image-20200419150407821&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419150605065.png&#34; alt=&#34;image-20200419150605065&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419150809955.png&#34; alt=&#34;image-20200419150809955&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419150903147.png&#34; alt=&#34;image-20200419150903147&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;optimizer-real-application&#34;&gt;Optimizer: Real Application&lt;/h3&gt;
+
+&lt;p&gt;Bert: QA/文章生成/阅读理解&lt;/p&gt;
+
+&lt;p&gt;transformer： 翻译&lt;/p&gt;
+
+&lt;p&gt;Tacotron：语音生成&lt;/p&gt;
+
+&lt;p&gt;Big-Gan&lt;/p&gt;
+
+&lt;p&gt;MEMO：在不同分类学习共同的分类&lt;/p&gt;
+
+&lt;p&gt;都是Adam&lt;/p&gt;
+
+&lt;p&gt;YOLO：影像侦测&lt;/p&gt;
+
+&lt;p&gt;Mask R-CNN&lt;/p&gt;
+
+&lt;p&gt;ResNet&lt;/p&gt;
+
+&lt;p&gt;都是（SGDM）&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://shaoanlu.wordpress.com/2017/05/29/sgd-all-which-one-is-the-best-optimizer-dogs-vs-cats-toy-experiment/&#34; target=&#34;_blank&#34;&gt;https://shaoanlu.wordpress.com/2017/05/29/sgd-all-which-one-is-the-best-optimizer-dogs-vs-cats-toy-experiment/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419151753171.png&#34; alt=&#34;image-20200419151753171&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;SGDM 比较稳定，不会有很大落差，coverge很好。&lt;/p&gt;
+
+&lt;p&gt;Ttraining和testing的function有差异。&lt;/p&gt;
+
+&lt;h3 id=&#34;swats&#34;&gt;SWATS&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419152122414.png&#34; alt=&#34;image-20200419152122414&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;什么切换点不太合适，没有证明。Adam是adaptive，会被分母影响&lt;/p&gt;
+
+&lt;p&gt;切换的方法不科学&lt;/p&gt;
+
+&lt;p&gt;Adam的问题&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419152729164.png&#34; alt=&#34;image-20200419152729164&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419152825824.png&#34; alt=&#34;image-20200419152825824&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;amsgrad&#34;&gt;AMSGrad&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419153100167.png&#34; alt=&#34;image-20200419153100167&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419153538368.png&#34; alt=&#34;image-20200419153538368&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;adaptive learning rate 可以动态调整，需要大步走大步，平缓的地方可以大步走过去。&lt;/p&gt;
+
+&lt;h3 id=&#34;lr-range-test&#34;&gt;LR range test&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419153736973.png&#34; alt=&#34;image-20200419153736973&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;cyclical-lr&#34;&gt;Cyclical LR&lt;/h3&gt;
+
+&lt;p&gt;learning rate 大的时候就是exploring，小的时候fine-tuning, step size如何设计？&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419153834405.png&#34; alt=&#34;image-20200419153834405&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;does-adam-need-warm-up&#34;&gt;Does Adam need warm-up?&lt;/h3&gt;
+
+&lt;h3 id=&#34;总结&#34;&gt;总结&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419155036254.png&#34; alt=&#34;image-20200419155036254&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419155053058.png&#34; alt=&#34;image-20200419155053058&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -154,9 +655,9 @@
     
     <item>
       <title>Embedding</title>
-      <link>https://faithio.cn/post/embedding/</link>
+      <link>https://faithio.cn/post/wordembeddingelmobert/</link>
       <pubDate>Wed, 15 Apr 2020 18:48:25 -0400</pubDate>
-      <guid>https://faithio.cn/post/embedding/</guid>
+      <guid>https://faithio.cn/post/wordembeddingelmobert/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;./image-20200415184935540.png&#34; alt=&#34;image-20200415184935540&#34; /&gt;&lt;/p&gt;
@@ -165,7 +666,11 @@
 
 &lt;p&gt;How about auto-encoder?&lt;/p&gt;
 
+&lt;h3 id=&#34;count-based&#34;&gt;Count based&lt;/h3&gt;
+
 &lt;p&gt;&lt;img src=&#34;./image-20200415185358996.png&#34; alt=&#34;image-20200415185358996&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;prediction-based&#34;&gt;Prediction-based&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;./image-20200415185725800.png&#34; alt=&#34;image-20200415185725800&#34; /&gt;&lt;/p&gt;
 
@@ -173,7 +678,21 @@
 
 &lt;p&gt;&lt;img src=&#34;./image-20200415200628276.png&#34; alt=&#34;image-20200415200628276&#34; /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&#34;./image-20200425210733980.png&#34; alt=&#34;image-20200425210733980&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;就也是one of encoding，output 接近&lt;/p&gt;
+
+&lt;h3 id=&#34;变形&#34;&gt;变形&lt;/h3&gt;
+
 &lt;p&gt;&lt;img src=&#34;./image-20200415203213211.png&#34; alt=&#34;image-20200415203213211&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;不是deep ，只是一个linear hidden layer。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有很多tip，很多人其实也做过，并且用deep。不用deep可以做很多运算量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&#34;./image-20200415204214466.png&#34; alt=&#34;image-20200415204214466&#34; /&gt;&lt;/p&gt;
 
@@ -194,6 +713,118 @@
 &lt;p&gt;&lt;img src=&#34;./image-20200415205531081.png&#34; alt=&#34;image-20200415205531081&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;x&amp;ndash;&amp;gt;z没有很好的依据&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;ELMO/BERT/GPT&lt;/p&gt;
+
+&lt;p&gt;如果同一个词汇有多种senses&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425212956279.png&#34; alt=&#34;image-20200425212956279&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;不同意思的token同样的type也有不同的embedding&lt;/p&gt;
+
+&lt;p&gt;过去是查字典，用不同的embedding&lt;/p&gt;
+
+&lt;p&gt;然后每个word token has its own embedding&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425213447780.png&#34; alt=&#34;image-20200425213447780&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;elmo&#34;&gt;ELMO&lt;/h3&gt;
+
+&lt;p&gt;Embeddings from Language Model&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425213741845.png&#34; alt=&#34;image-20200425213741845&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;不同语义下的hidden layer的input 作为Contextualized embedding&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425213936075.png&#34; alt=&#34;image-20200425213936075&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;不同的人物取的hidderlayer不一样&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425214953693.png&#34; alt=&#34;image-20200425214953693&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;SRL:&lt;/p&gt;
+
+&lt;p&gt;Coref: 代名词找到人物找出&lt;/p&gt;
+
+&lt;p&gt;SNLI:&lt;/p&gt;
+
+&lt;p&gt;SQuAD: QA问题&lt;/p&gt;
+
+&lt;p&gt;SST-5: Semantic classification&lt;/p&gt;
+
+&lt;h3 id=&#34;bidirectional-encoder-representations-from-transformers-bert&#34;&gt;Bidirectional Encoder Representations from Transformers (BERT)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425215119903.png&#34; alt=&#34;image-20200425215119903&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;训练bert的时候，中文最好用字更好，input word，会产出一堆embedding&lt;/p&gt;
+
+&lt;p&gt;中文的字，常用的只有4k   one of encoding 小很多，但是词都是无穷&lt;/p&gt;
+
+&lt;h4 id=&#34;training&#34;&gt;training&lt;/h4&gt;
+
+&lt;p&gt;第一种&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425215628350.png&#34; alt=&#34;image-20200425215628350&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;随机挖空15%mask 然后预测。两个词填在这里没有违和感就表示有类似的embedding&lt;/p&gt;
+
+&lt;p&gt;第二种方法：&lt;/p&gt;
+
+&lt;p&gt;SEP: 分界。&lt;/p&gt;
+
+&lt;p&gt;CLS：classification。在这开头表示要做分类。为什么放开头？&lt;/p&gt;
+
+&lt;p&gt;如果是RNN结构，放在尾部比较合理，因为尾部才会输出。但是bert内部是transformer，两个相邻或者很远的没有差别。对于放在哪里区别不大&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../Users/faith/academic-zixiang/content/en/post/WordEmbedding:ELMO:BERT/image-20200425215937528.png&#34; alt=&#34;image-20200425215937528&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这两个方法需要同时使用，效果最好&lt;/p&gt;
+
+&lt;p&gt;在CLS前面放一个类型，24层或者48层，文本分类，情感分类&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425220550264.png&#34; alt=&#34;image-20200425220550264&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Slot filling，挖词填空&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425221015668.png&#34; alt=&#34;image-20200425221015668&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Natural Language Inference，回答对错&lt;/p&gt;
+
+&lt;p&gt;其实是分类，只有三类&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425221136235.png&#34; alt=&#34;image-20200425221136235&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Extraction-based Question Answering 阅读理解&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425221419766.png&#34; alt=&#34;image-20200425221419766&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;怎么train呢？&lt;/p&gt;
+
+&lt;p&gt;橙色的s，蓝色的是e，每次都做类似attention的动作。这些词汇来自于文章。取最高的概率&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425221745810.png&#34; alt=&#34;image-20200425221745810&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;S=3，e=2 就是此题无解&lt;/p&gt;
+
+&lt;h3 id=&#34;enhanced-representation-through-knowledge-integration-ernie&#34;&gt;Enhanced Representation through Knowledge Integration (ERNIE)&lt;/h3&gt;
+
+&lt;p&gt;为中文设计的&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425222151270.png&#34; alt=&#34;image-20200425222151270&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;bert trained by其他语言文本分类，但是可以快速学会中文的分类&lt;/p&gt;
+
+&lt;h3 id=&#34;generative-pre-training-gpt&#34;&gt;Generative Pre-Training (GPT)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425224702668.png&#34; alt=&#34;image-20200425224702668&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425224918497.png&#34; alt=&#34;image-20200425224918497&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200425225049069.png&#34; alt=&#34;image-20200425225049069&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -451,6 +1082,12 @@
 &lt;blockquote&gt;
 &lt;p&gt;dropout linear 好 &amp;ndash;&amp;gt;ReLU/maxout 好&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;##ResNet&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200423183015473.png&#34; alt=&#34;image-20200423183015473&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200423182923388.png&#34; alt=&#34;image-20200423182923388&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -914,6 +1551,28 @@ MixedNetwork/有向图无向图--&amp;gt;DeepBeliefNetwork
 &lt;h3 id=&#34;人工智能-两大阵营-三大主义&#34;&gt;人工智能 两大阵营 三大主义&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;./image-20200325143542849.png&#34; alt=&#34;image-20200325143542849&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;deep-learning&#34;&gt;Deep learning&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419103358781.png&#34; alt=&#34;image-20200419103358781&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;HMM-GMM 每个model就是一个state，但是DNN就是一个大的model。所有的state共用一个DNN。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419103911142.png&#34; alt=&#34;image-20200419103911142&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;更加多层的DNN，其实会更少neurons，最终是更少的参数，不容易overfiting&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419104310591.png&#34; alt=&#34;image-20200419104310591&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;多层其实就是将空间对折了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419104517053.png&#34; alt=&#34;image-20200419104517053&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419105241175.png&#34; alt=&#34;image-20200419105241175&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419105811266.png&#34; alt=&#34;image-20200419105811266&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200419105822655.png&#34; alt=&#34;image-20200419105822655&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

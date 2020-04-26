@@ -3,13 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://faithio.cn/post/gradient-descent/</loc>
-    <lastmod>2020-04-18T23:03:42-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://faithio.cn/post/</loc>
-    <lastmod>2020-04-18T23:03:42-04:00</lastmod>
+    <lastmod>2020-04-26T17:32:56-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -23,8 +18,13 @@
   </url>
   
   <url>
+    <loc>https://faithio.cn/post/semi-supervised-learning/</loc>
+    <lastmod>2020-04-26T17:32:56-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://faithio.cn/</loc>
-    <lastmod>2020-04-18T23:03:42-04:00</lastmod>
+    <lastmod>2020-04-26T17:32:56-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -38,13 +38,33 @@
   </url>
   
   <url>
+    <loc>https://faithio.cn/post/ensemble-methods/</loc>
+    <lastmod>2020-04-26T17:32:56-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/crossentropy-vs-kl-divergence/</loc>
+    <lastmod>2020-04-26T17:32:56-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/gnn/</loc>
+    <lastmod>2020-04-26T17:32:56-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/gradient-descent/</loc>
+    <lastmod>2020-04-26T17:32:56-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://faithio.cn/post/transformer/</loc>
     <lastmod>2020-04-18T23:03:42-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://faithio.cn/post/embedding/</loc>
-    <lastmod>2020-04-18T23:03:42-04:00</lastmod>
+    <loc>https://faithio.cn/post/wordembeddingelmobert/</loc>
+    <lastmod>2020-04-26T17:32:56-04:00</lastmod>
   </url>
   
   <url>
@@ -69,7 +89,7 @@
   
   <url>
     <loc>https://faithio.cn/post/cnn/</loc>
-    <lastmod>2020-04-09T17:13:23-04:00</lastmod>
+    <lastmod>2020-04-26T17:32:56-04:00</lastmod>
   </url>
   
   <url>
@@ -89,7 +109,7 @@
   
   <url>
     <loc>https://faithio.cn/post/deep-learning/</loc>
-    <lastmod>2020-04-11T19:51:09-04:00</lastmod>
+    <lastmod>2020-04-26T17:32:56-04:00</lastmod>
   </url>
   
   <url>
