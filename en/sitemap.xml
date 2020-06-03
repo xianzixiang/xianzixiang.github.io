@@ -3,8 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://faithio.cn/post/auc-vs-roc/</loc>
+    <lastmod>2020-05-17T20:06:39-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://faithio.cn/post/</loc>
-    <lastmod>2020-04-26T17:32:56-04:00</lastmod>
+    <lastmod>2020-05-18T18:33:35-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -18,13 +23,8 @@
   </url>
   
   <url>
-    <loc>https://faithio.cn/post/semi-supervised-learning/</loc>
-    <lastmod>2020-04-26T17:32:56-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://faithio.cn/</loc>
-    <lastmod>2020-04-26T17:32:56-04:00</lastmod>
+    <lastmod>2020-05-18T18:33:35-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -38,8 +38,13 @@
   </url>
   
   <url>
-    <loc>https://faithio.cn/post/ensemble-methods/</loc>
+    <loc>https://faithio.cn/post/semi-supervised-learning/</loc>
     <lastmod>2020-04-26T17:32:56-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://faithio.cn/post/ensemble-methods/</loc>
+    <lastmod>2020-05-17T20:06:39-04:00</lastmod>
   </url>
   
   <url>
@@ -99,7 +104,7 @@
   
   <url>
     <loc>https://faithio.cn/post/svm/</loc>
-    <lastmod>2020-04-07T11:37:28-04:00</lastmod>
+    <lastmod>2020-05-17T20:06:39-04:00</lastmod>
   </url>
   
   <url>
@@ -114,7 +119,7 @@
   
   <url>
     <loc>https://faithio.cn/post/hmm/</loc>
-    <lastmod>2020-04-11T19:51:09-04:00</lastmod>
+    <lastmod>2020-05-18T15:10:36-04:00</lastmod>
   </url>
   
   <url>
@@ -124,7 +129,7 @@
   
   <url>
     <loc>https://faithio.cn/post/markov-chain-monte-carlo/</loc>
-    <lastmod>2020-03-25T13:04:25-04:00</lastmod>
+    <lastmod>2020-05-18T18:33:35-04:00</lastmod>
   </url>
   
   <url>
@@ -134,12 +139,12 @@
   
   <url>
     <loc>https://faithio.cn/post/expectation-maximization/</loc>
-    <lastmod>2020-04-11T19:39:35-04:00</lastmod>
+    <lastmod>2020-05-18T13:31:41-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://faithio.cn/post/foundation-of-machine-learning/</loc>
-    <lastmod>2020-04-11T19:39:35-04:00</lastmod>
+    <lastmod>2020-05-17T20:06:39-04:00</lastmod>
   </url>
   
   <url>
@@ -164,7 +169,7 @@
   
   <url>
     <loc>https://faithio.cn/post/stochastic-expectation-propagation/</loc>
-    <lastmod>2020-04-11T19:56:41-04:00</lastmod>
+    <lastmod>2020-05-18T18:33:35-04:00</lastmod>
   </url>
   
   <url>

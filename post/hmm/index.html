@@ -276,7 +276,7 @@
     
       <meta property="article:published_time" content="2020-03-24T16:45:50-04:00">
     
-    <meta property="article:modified_time" content="2020-04-11T19:51:09-04:00">
+    <meta property="article:modified_time" content="2020-05-18T15:10:36-04:00">
   
 
   
@@ -305,7 +305,7 @@
   "headline": "HMM",
   
   "datePublished": "2020-03-24T16:45:50-04:00",
-  "dateModified": "2020-04-11T19:51:09-04:00",
+  "dateModified": "2020-05-18T15:10:36-04:00",
   
   "author": {
     "@type": "Person",
@@ -626,7 +626,7 @@ code.has-jax {font: inherit;
           Last updated on
       
     
-    Apr 11, 2020
+    May 18, 2020
   </span>
   
 
@@ -635,7 +635,7 @@ code.has-jax {font: inherit;
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 min read
+    3 min read
   </span>
   
 
@@ -756,12 +756,19 @@ code.has-jax {font: inherit;
 <li>state 非线性: Particle Filter</li>
 </ul>
 
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gewevtbgy0j30dw07kwig.jpg" alt="image-20200517225012395" /></p>
+
 <p>$$
-\lambda = (\underbrace{\pi}{初始prob dist}, \underbrace{A}{状态转移矩阵}, \underbrace{B}_{发射矩阵emission}) <br />
-状态变量i: i_1, i_2, \cdots i_t \cdots \rightarrow Q={q_1, q_2, \cdots, q_m} <br />
-观测变量o: o_1, o_2, \cdots o_t \cdots \rightarrow V={v_1, v_2, \cdots, v<em>m} <br />
-A=\left[a</em>{i j}\right], a<em>{i j}=P\left(i</em>{t+1}=q_{i} | i<em>t=q</em>{i}\right)  <br />
-B=\left[b<em>{j k} \right], b</em>{j k}=P\left(Q<em>{t}=v</em>{k} | i<em>t=q</em>{j}\right)
+\begin{aligned}
+\lambda &amp;= (\underbrace{\pi}<em>{初始prob dist}, \underbrace{A}</em>{状态转移矩阵}, \underbrace{B}<em>{发射矩阵emission}) <br />
+\pi&amp;=\left(\pi, \pi</em>{2}, \cdots, \pi<em>{N}\right), \sum</em>{i=1}^{K} \pi_{i}= 1 <br />
+\pi_i&amp;= P\left(i_1=q_i\right) <br />
+状态变量i:&amp; i_1, i_2, \cdots i_t \cdots \rightarrow Q={q_1, q_2, \cdots, q_m} <br />
+观测变量o:&amp; o_1, o_2, \cdots o_t \cdots \rightarrow V={v_1, v_2, \cdots, v<em>m} <br />
+A&amp;=\left[a</em>{i j}\right], a<em>{i j}=P\left(i</em>{t+1}=q_{i} | i<em>t=q</em>{i}\right)  <br />
+B&amp;=\left[b<em>{j k} \right], b</em>{j k}=P\left(Q<em>{t}=v</em>{k} | i<em>t=q</em>{j}\right) \</p>
+
+<p>\end{aligned}
 $$</p>
 
 <blockquote>
@@ -774,12 +781,16 @@ $$</p>
 <li><p>齐次Markov 假设</p></li>
 
 <li><p>$$
-P(i_{t+1}|i<em>t, t</em>{t-1}, \cdots, t_1, o<em>t, o</em>{t-1}, \dots, o<em>1) = p(i</em>{t+1}|i_t)  <br />
+\begin{aligned}
+&amp;P(i_{t+1}|i<em>t, t</em>{t-1}, \cdots, t_1, o<em>t, o</em>{t-1}, \dots, o<em>1) = p(i</em>{t+1}|i_t)  <br />
+\end{aligned}
 $$</p></li>
 
 <li><p>观察独立假设
 $$
-P(o_{t}|i<em>t, t</em>{t-1}, \cdots, t_1, o<em>t, o</em>{t-1}, \dots, o<em>1) = p(o</em>{t}|i_t)  <br />
+\begin{aligned}
+&amp;P(o_{t}|i<em>t, t</em>{t-1}, \cdots, t_1, o<em>t, o</em>{t-1}, \dots, o<em>1) = p(o</em>{t}|i_t)  <br />
+\end{aligned}
 $$</p></li>
 </ul>
 
@@ -815,6 +826,228 @@ $$</p>
 <h3 id="ppt">PPT</h3>
 
 <p><img src="1.jpg" alt="image-20200324164641801" /></p>
+
+<p>$$
+\begin{array}{l}P(O | \lambda)=\sum<em>{I} P(I, O | \lambda)=\sum</em>{I} P(O | I, \lambda) \cdot P(I | \lambda) \
+\because P(I | \lambda)=P\left(i<em>{1}, i</em>{2} \cdots i<em>{T} | \lambda\right)=P\left(i</em>{i} | i<em>{i}, i</em>{i}, \ldots<em>{i-1}, \lambda\right) \cdot P\left(i</em>{i}, i<em>{2}, \cdots i</em>{t-1}, \lambda\right)=\pi\left(a<em>{i1}\right) \cdot \prod</em>{t=2}^{T} a_{i-1, i}</p>
+
+<p>\ P(0 | I, \lambda)=\prod<em>{t=1}^{T} b</em>{t}\left(O_{t}\right)</p>
+
+<p>\ \therefore P(O | \lambda)=\sum<em>{1} \pi\left(a</em>{i<em>{1}}\right) \cdot \prod</em>{t=2}^{T} a<em>{i</em>{i-1}, i<em>t} \prod</em>{t=1}^{T} b<em>{i</em>{i}}\left(0<em>{t}\right)= \underbrace{  \sum</em>{i<em>{1}} \sum</em>{i<em>{2}} \cdots \sum</em>{i<em>{T}} }</em>{O(N^T)} \pi\left(a<em>{i}\right) \cdot \prod</em>{t=2}^{T} a<em>{i</em>{i-1}, i<em>t} \prod</em>{t=1}^{T} b<em>{i}\left(O</em>{t}\right)\end{array}
+$$</p>
+
+<h4 id="前向算法">前向算法</h4>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gewi91aonuj30aj0btwjc.jpg" alt="image-20200518004645647" />
+$$
+\begin{array}{l} \</p>
+
+<p>\alpha<em>{t+1}(j) =P\left(o</em>{0}, \cdots, o<em>{t}, o</em>{t+1}, i<em>{t+1}=q</em>{j} | \lambda\right)
+\ =\sum<em>{i=1}^{N} P\left(o</em>{1}, \cdots, o<em>{t}, o</em>{t+1}, i<em>{t+1}=q</em>{j}, i<em>{t}=q</em>{i} | \lambda\right)
+\ =\sum<em>{i=1}^{N} P\left(o</em>{t+1} | o<em>{1}, \cdots, o</em>{t}, i<em>{t}=q</em>{i}, i<em>{t+1}=q</em>{j}, \lambda\right) \cdot P\left(o<em>1, \cdots, o</em>{t},  i<em>{t}=q</em>{i}, i<em>{t+1}=q</em>{j} | \lambda\right)</p>
+
+<p>\ =\sum<em>{i=1}^{N} P\left(o</em>{t+1} | i<em>{t+1}=q</em>{j}  \right) \cdot P\left(o<em>{1}, \cdots, o</em>{t}, i<em>{t}=q</em>{i}, i<em>{t+1}=q</em>{i} | x\right)</p>
+
+<p>\ =\sum<em>{i=1}^{N} P\left(o</em>{t+1} | i<em>{t+1}=q</em>{j}\right) \cdot P\left(i<em>{t+1}=q</em>{j} | o<em>{1}, \cdots, o</em>{t}, i<em>{i}=q</em>{i}, \lambda\right) \cdot P\left( o<em>{1}, \cdots, o</em>{t}, i<em>{i}=q</em>{i} | \lambda\right)</p>
+
+<p>\ =\sum<em>{i=1}^{N}  \underbrace{ P\left(o</em>{t+1} | i<em>{t+1}=q</em>{j}\right)}_{b<em>j(o</em>{t+1})} \cdot \underbrace{P\left(i<em>{t+1}=q</em>{j} | i<em>{i}=q</em>{i}, \lambda\right)}<em>{a</em>{ij}} \alpha_t(i)</p>
+
+<p>\end{array}
+$$</p>
+
+<h4 id="后向算法">后向算法</h4>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gewikk5ys8j30bk08btcl.jpg" alt="image-20200518005745536" /></p>
+
+<p>$$
+\begin{array}{l}  \</p>
+
+<p>\text{状态：}
+\ \pi=\left(\pi, \pi<em>{2}, \cdots, \pi</em>{N}\right), \sum<em>{i=1}^{K} \pi</em>{i}= 1  \</p>
+
+<p>\begin{aligned}</p>
+
+<p>&amp; P(o | x)=P(o, \cdots , o_r| \lambda)</p>
+
+<p>\=&amp; \sum_{i=1}^{N} p\left(o<em>1, \cdots, o</em>{r}, i<em>{1}=q</em>{i} | \lambda\right)</p>
+
+<p>\=&amp; \sum<em>{i=1}^{N} p\left(o</em>{1}, \cdots, o<em>{r} | i</em>{1}=q_{i}, \lambda \right) \cdot \underbrace{P(i_1=q<em>i | \lambda)}</em>{\pi_i}</p>
+
+<p>\=&amp; \sum_{i=1}^{N}  P\left(o_1| o_2, \cdots, o_r,  i<em>1=q</em>{i}\right) \cdot P\left(
+o_2, \cdots, o_r | i<em>1=q</em>{i} \right)\cdot \pi_i</p>
+
+<p>\=&amp; \sum_{i=1}^{N} P\left(o_1| i<em>1=q</em>{i}\right) \beta<em>{1}(i) \cdot \pi</em>{i}</p>
+
+<p>\=&amp; \sum<em>{i=1}^{N} b</em>{i}(o<em>1) \pi</em>{i} \beta_{1}(i) <br />
+&mdash; \</p>
+
+<p>&amp; \beta<em>{t}(i)=P\left(o</em>{t+1}, \cdots, o<em>{T} | i</em>{t}=q_{i}\right)</p>
+
+<p>\=&amp; \sum<em>{j=1}^{N} P\left(o</em>{t+1}, \cdots, o<em>{T}, i</em>{t+1}=q_{j} | i<em>t=q</em>{i}\right)</p>
+
+<p>\=&amp; \sum<em>{j=1}^{N} P\left(o</em>{t+1}, \cdots, o<em>{T} | i</em>{t+1}=q<em>{j}, t</em>{t}=q<em>{i}\right) \cdot \underbrace{ P\left(i</em>{t-1}=q<em>{j} | i</em>{t}=q<em>{i}\right) }</em>{a_{ij}}</p>
+
+<p>\=&amp; \sum<em>{j=1}^{N} P\left(o</em>{t+1}, \ldots, o<em>{T} | i</em>{t+1}=q<em>{j}\right) \cdot a</em>{ij}</p>
+
+<p>\=&amp; \sum<em>{j=1}^{N} P\left(o</em>{t+1} | o<em>{t+2}, \cdots, o</em>{T}, i<em>{t+1}=q</em>{j}\right) \cdot P\left(o<em>{t+1}, \ldots, o</em>{T} | i<em>{t+1}=q</em>{j}\right) \cdot a_{i j}</p>
+
+<p>\=&amp; \sum<em>{j=1}^{N} P\left(o</em>{t+1} | t<em>{t+1}=q</em>{j}\right) \quad \cdot \quad \beta<em>{t+1}(j) \quad \cdot \quad a</em>{ij}</p>
+
+<p>\ =&amp; \sum<em>{j=1}^{N} b</em>{j}\left(o<em>{t+1}\right) \cdot a</em>{i j} \cdot \beta_{t+1}(j)
+ \end{aligned}</p>
+
+<p>\end{array}
+$$</p>
+
+<h4 id="evaluation总结">Evaluation总结</h4>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gex016fhwaj30bg04rmz9.jpg" alt="image-20200518110159549" /></p>
+
+<p>$$
+\begin{array}{l}</p>
+
+<p>\text{条件概率复杂度很高：}  P(O | \lambda)=\sum<em>{I} P(I, O | \lambda) =\underbrace{  \sum</em>{i<em>{1}} \sum</em>{i<em>{2}} \cdots \sum</em>{i<em>{T}} }</em>{O(N^T)} \pi\left(a<em>{i}\right) \cdot \prod</em>{t=2}^{T} a<em>{i</em>{i-1}, i<em>t} \prod</em>{t=1}^{T} b<em>{i}\left(O</em>{t}\right) \</p>
+
+<p>\alpha_{t}(i)=P(o_1, \cdots, o_t, i_t=q_i | \lambda) \</p>
+
+<p>\alpha<em>{T}(i)=P\left(O, i</em>{T}=q_{i} | \lambda\right) \</p>
+
+<p>P(O | \lambda)=\sum<em>{i=1}^{N} \alpha</em>{T}(i) <br />
+&mdash;<br />
+\beta<em>{t}(i)=P(o</em>{t+1}, \cdots, o_T |i_t=q<em>i, \lambda) <br />
+\beta</em>{1}(i)=P(o_{2}, \cdots, o_T |i_1=q<em>i, \lambda) <br />
+P(O | \lambda)=\sum</em>{i=1}^{N} \pi<em>{i} b</em>{i}(o<em>1) \beta</em>{1}(i)</p>
+
+<p>\end{array}
+$$</p>
+
+<h3 id="引入em的思想">引入EM的思想</h3>
+
+<p>$$
+\begin{aligned}</p>
+
+<p>\theta^{(t+1)} &amp;=\arg \max <em>{\theta} \int</em>{z} \log p(x, z | \theta) \cdot p\left(z | x, \theta^{(t)}\right) d z
+\</p>
+
+<p>&amp; \text{x: 观测值O   z：隐变量I(discrete)   } \theta \text{:参数  }\lambda
+\</p>
+
+<p>\ \lambda^{(t)}&amp;=\left(\pi^{t}, A^{t}, B^{t}\right)
+<br />
+\lambda^{(t+1)}&amp; =\arg \max <em>{\lambda} \sum</em>{1} \log P(O,I |\lambda) \cdot</p>
+
+<p>\underbrace{P\left(I|O, \lambda^{(t)}\right)}_{  P\left(I|O, \lambda^{(t)}\right) = \frac{P\left(I,O| \lambda^{(t)}\right)}{P\left(O, \lambda ^{(t)}\right)}
+}</p>
+
+<p>= \arg \max <em>{\lambda} \sum</em>{1} \log P(O,I |\lambda) \cdot P\left(O,I| \lambda^{(t)}\right) \</p>
+
+<p>Q\left(\lambda, \lambda^{(t))}\right) &amp;=\sum_{T} \log P(O,I | \lambda) \cdot P\left(O, I | \lambda^{(t)}\right) <br />
+ &amp;= \sum<em>I \left[ \left(\log \pi</em>{i<em>1} + \sum</em>{t=2}^{T} \log a<em>{i</em>{t-1}, i<em>t} +  \sum</em>{t=2}^{T} \log b_{i_t} \left(o_t \right)   \right) P\left(O,I|\lambda^{(t) }\right)     \right]  <br />
+ &amp; \text{Now we only consider }\pi \</p>
+
+<p>\pi^{(t+1)} &amp;=\arg \max _{\pi} Q\left(\lambda, \lambda^{(t)}\right)</p>
+
+<p>\ &amp;=\arg \max <em>{\pi} \sum</em>{I}\left[\log \pi_{i_1}, P\left(O,I | \lambda^{(t)}\right)\right]</p>
+
+<p>\ &amp;=\arg \max <em>{\pi} \sum</em>{i<em>1} \cdots \sum</em>{i<em>{T}}\left[\log \pi</em>{i<em>1} \cdot P\left(O, i</em>{1}  \cdots i_T | \lambda^{(t)}\right)\right]</p>
+
+<p>\ &amp;=\arg \max <em>{\pi} \sum</em>{i<em>{1}}\left[\log \pi</em>{i<em>{1}} P\left(O, i</em>{1} | \lambda^{(t)}\right)\right] \</p>
+
+<p>&amp;=\arg \max <em>{\pi} \sum</em>{i=1}^{N}\left[\log \pi_{i} \cdot  P\left(O, i_1=q_i |\lambda^{(t)}\right) \right]
+\&amp; \pi \text{带约束，和为1}
+ \end{aligned}
+$$</p>
+
+<h4 id="用lagrange-multiplier">用lagrange multiplier</h4>
+
+<p>$$
+\begin{array}{l}</p>
+
+<p>\mathcal{L}(\pi, \eta)=\sum<em>{i=1}^{N} \log \pi</em>{i} P\left(O, i<em>{1}=q</em>{i} | \lambda^{(t)}\right)+\eta\left(\sum<em>{i=1}^{i} \pi</em>{i}-1\right)</p>
+
+<p>\ \frac{\partial f}{\partial \pi<em>i}=\frac{1}{\pi</em>{i}} P\left(O, i<em>{1}=q</em>{i} | \lambda^{(t)}\right)+\eta=0 \</p>
+
+<p>\sum_{i=1}^{N} \left[P\left(O, i<em>1=q</em>{i} | \lambda^{(t)}\right)+\pi_{i} \eta \right] =0 \</p>
+
+<p>P\left(O | \lambda^{(t)}\right)+\eta=0 \</p>
+
+<p>\therefore \eta = - P\left(O, \lambda^{(t)}\right) \</p>
+
+<p>\pi<em>i = - \frac{P\left(O, i</em>{1}=q_{i} | \lambda^{(t)}\right)}{\eta} <br />
+\pi<em>i^{(t+1)} = \frac{P\left(O, i</em>{1}=q_{i} | \lambda^{(t)}\right)}{P\left(O, \lambda^{(t)}\right)} \</p>
+
+<p>\pi_i^{(t+1)} = \left(\pi_1^{(t+1)}, \pi_2^{(t+1)}, \cdots, \pi_N^{(t+1)} \right)
+\end{array}
+$$</p>
+
+<h3 id="decoding">Decoding</h3>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gex3ikyx05j304o06ijse.jpg" alt="image-20200518130231688" /></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gex37fufbfj30c005otbk.jpg" alt="image-20200518125150278" /></p>
+
+<p>$$
+\begin{aligned}
+\delta_{t}(i) &amp;=\max _{i_1, i<em>2, \cdots, i</em>{t+1} } P\left(o_1,O_2, \cdots, O_t, i_1, i<em>2, \cdots, i</em>{t-1}, i<em>t=q</em>{i}\right) \
+\delta<em>{t+1}(j) &amp;=\max</em>{i_1, i<em>2, \cdots, i</em>{t+1} } P\left(o_1,O_2, \cdots, O_t, i_1, i<em>2, \cdots, i</em>{t}, i<em>{t+1}=q</em>{i}\right)  <br />
+&amp;=\max <em>{1 \leqslant i \leq N} \delta</em>{t}(i) a<em>{i j} b</em>{j}\left(O_{t+1}\right) \</p>
+
+<p>&amp;\text{上述式子只求出最大概率值，需要记录状态路径：} \</p>
+
+<p>\psi<em>{t+1}(j) &amp;=\underset{1 \leqslant i \leqslant N}{\arg \max }  \delta</em>{t}(i) \cdot a_{ij}</p>
+
+<p>\end{aligned}
+$$</p>
+
+<h3 id="filtering-forward-algorithm">filtering(Forward Algorithm)</h3>
+
+<p>$$
+P\left(i<em>{t} | o</em>{1: t}\right)=\frac{P\left(i<em>{t}, o</em>{1:t}\right)}{P\left(o<em>{1:t}\right)}=\frac{P\left(o</em>{1:t}, i<em>t\right)}{\sum</em>{i<em>t} P\left(o</em>{1:t}, i<em>t\right)} \propto P\left(o</em>{1:t}, i_t\right) = \alpha_i(t)
+$$</p>
+
+<h3 id="smoothing-forward-backward-algorithm">smoothing(Forward-backward Algorithm)</h3>
+
+<p>$$
+\begin{aligned}
+P\left(i<em>{t} | o</em>{1: T}\right)
+&amp;=\frac{P\left(i<em>{t}, o</em>{1:T}\right)}{P\left(o<em>{1:T}\right)}=\frac{P\left(o</em>{1:T}, i<em>t\right)}{\sum</em>{i<em>t} P\left(o</em>{1:T}, i_t\right)}  \</p>
+
+<p>P\left(o_{1:T}, i<em>t\right) &amp; = P\left(o</em>{1:t}, o_{t+1:T}, i_t\right) \</p>
+
+<p>&amp; =  \underbrace{ P\left(o<em>{t+1:T}| o</em>{1:t}, i<em>t\right) }</em>{ P\left( o_{t+1:T}| i_t \right)}</p>
+
+<p>\underbrace{ P\left( o_{1:t}, i<em>t\right)}</em>{\alpha_t} \</p>
+
+<p>&amp;= \beta_t \cdot \alpha_t \</p>
+
+<p>&amp; \therefore P\left(o_{1:T}, i<em>t\right) \propto P\left( o</em>{t+1:T}| i_t \right) =  \alpha_t \cdot  \beta_t
+\end{aligned}
+$$</p>
+
+<h3 id="prediction">prediction</h3>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gex6ukji1rj307e03674c.jpg" alt="image-20200518145751237" />
+$$
+\begin{aligned}
+P\left( i<em>{t+1}|o</em>{1:t} \right) &amp;= \sum<em>{i</em>{t}} P\left( i_{t+1}, i<em>t|o</em>{1:t} \right)</p>
+
+<p>\&amp;= \sum<em>{i</em>{t}} \underbrace{ P\left( i_{t+1}| i<em>t,o</em>{1:t} \right)}<em>{
+P\left( i</em>{t+1}| i_t\right)
+}  \underbrace{ P\left( i<em>t|o</em>{1:t} \right)  }_{filtering}</p>
+
+<p>\end{aligned}
+$$</p>
+
+<p>$$
+\begin{aligned}
+P\left( o<em>{t+1}|o</em>{1:t} \right) &amp;= \sum<em>{i</em>{t+1}} P\left( o<em>{t+1}, i</em>{t+ 1}|o_{1:t} \right)</p>
+
+<p>\&amp;= \sum<em>{i</em>{t+1}} \underbrace{ P\left( o<em>{t+1}| i</em>{t+1},o<em>{1:t} \right)}</em>{
+P\left( o<em>{t+1}| i</em>{t+1}\right)
+}  \underbrace{ P\left( i<em>{t+1}|o</em>{1:t} \right)  }_{上一个prediction}</p>
+
+<p>\end{aligned}
+$$</p>
 
     </div>
 
@@ -1282,7 +1515,7 @@ $$</p>
     
 
    
-      <p>&copy; Faith 26/04/2020 &middot;
+      <p>&copy; Faith 03/06/2020 &middot;
                     Built with <a href="https://github.com/gohugoio/hugo">Hugo</a>
 
        <a href="https://github.com/iamfaith"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path></svg>

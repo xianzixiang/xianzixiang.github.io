@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="">
+  <meta name="description" content="kernel method 证明 linear SVM vs Logistics Regression 区别在于loss function. 如果是hinge loss 就是linear SVM Cross Entropy 就是logistics regression SVM也有deep 版本，function">
 
   
   <link rel="alternate" hreflang="en-us" href="https://faithio.cn/post/svm/">
@@ -270,13 +270,13 @@
   <meta property="og:site_name" content="Zixiang&#39;s Personal Page">
   <meta property="og:url" content="https://faithio.cn/post/svm/">
   <meta property="og:title" content="SVM | Zixiang&#39;s Personal Page">
-  <meta property="og:description" content=""><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="kernel method 证明 linear SVM vs Logistics Regression 区别在于loss function. 如果是hinge loss 就是linear SVM Cross Entropy 就是logistics regression SVM也有deep 版本，function"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2020-04-07T11:21:59-04:00">
     
-    <meta property="article:modified_time" content="2020-04-07T11:37:28-04:00">
+    <meta property="article:modified_time" content="2020-05-17T20:06:39-04:00">
   
 
   
@@ -305,7 +305,7 @@
   "headline": "SVM",
   
   "datePublished": "2020-04-07T11:21:59-04:00",
-  "dateModified": "2020-04-07T11:37:28-04:00",
+  "dateModified": "2020-05-17T20:06:39-04:00",
   
   "author": {
     "@type": "Person",
@@ -320,7 +320,7 @@
       "url": "https://faithio.cn/images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": ""
+  "description": "kernel method 证明 linear SVM vs Logistics Regression 区别在于loss function. 如果是hinge loss 就是linear SVM Cross Entropy 就是logistics regression SVM也有deep 版本，function"
 }
 </script>
 
@@ -626,7 +626,7 @@ code.has-jax {font: inherit;
           Last updated on
       
     
-    Apr 7, 2020
+    May 17, 2020
   </span>
   
 
@@ -635,7 +635,7 @@ code.has-jax {font: inherit;
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    0 min read
+    1 min read
   </span>
   
 
@@ -693,7 +693,87 @@ code.has-jax {font: inherit;
   <div class="article-container">
 
     <div class="article-style">
-    <p><img src="./image-20200407112231032.png" alt="image-20200407112231032" /></p>
+    
+
+<p><img src="./image-20200407112231032.png" alt="image-20200407112231032" /></p>
+
+<h3 id="kernel-method">kernel method</h3>
+
+<p><img src="./image-20200507184557331.png" alt="image-20200507184557331" /></p>
+
+<p><img src="./image-20200507184333514.png" alt="image-20200507184333514" /></p>
+
+<p><img src="./image-20200507184440006.png" alt="image-20200507184440006" /></p>
+
+<h3 id="证明">证明</h3>
+
+<p><img src="./image-20200507185227020.png" alt="image-20200507185227020" /></p>
+
+<p><img src="./image-20200507190104963.png" alt="image-20200507190104963" /></p>
+
+<hr />
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geej91bvh3j30oh0g3wkb.jpg" alt="image-20200502114100956" /></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geetpt05ezj30qq0ig47x.jpg" alt="image-20200502174317442" /></p>
+
+<p>linear SVM vs Logistics Regression 区别在于loss function.</p>
+
+<p>如果是hinge loss 就是linear SVM</p>
+
+<p>Cross Entropy 就是logistics regression</p>
+
+<p>SVM也有deep 版本，function也不一定是linear。Deeplearning用HingeLoss 作为loss function就是Deep SVM</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geg089xf1bj30s00jxws8.jpg" alt="image-20200503181404766" /></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geg0vczfl1j30qy0j2gtq.jpg" alt="image-20200503183623522" /></p>
+
+<h3 id="kernel-method-1">Kernel method</h3>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geg1j8izduj30s00ji48x.jpg" alt="image-20200503185921096" /></p>
+
+<h4 id="kernel-trick">Kernel trick</h4>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geg1phas0uj30so0iwdo0.jpg" alt="image-20200503190520899" /></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geg1rqnpc5j30r90jddnt.jpg" alt="image-20200503190730884" /></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geg1thq45fj30qd0izwmp.jpg" alt="image-20200503190912681" /></p>
+
+<h4 id="radial-basic-function-kernel-rbf">Radial basic function kernel - RBF</h4>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geg1y85ou0j30su0l0n7d.jpg" alt="image-20200503191345614" /></p>
+
+<p>很容易出现overfiting</p>
+
+<h4 id="sigmoid-kernel">Sigmoid kernel</h4>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geg22dzok6j30rw0jcti0.jpg" alt="image-20200503191745720" /></p>
+
+<p>可以直接设计kernel function</p>
+
+<p>x是structured data like sequence，每个sequence的长度不一样。</p>
+
+<p>kernel 类似于定义similarity。</p>
+
+<p>Mercer‘s theory 可以检查。</p>
+
+<h4 id="总结">总结</h4>
+
+<ul>
+<li>Support vector regression（SVR）</li>
+</ul>
+
+<p>进入到某一个距离的时候loss就是0</p>
+
+<ul>
+<li><p>Ranking SVM 考虑output是需要有order list的。像recommend系统</p></li>
+
+<li><p>One-class SVM：positive的自成一类，其他的散开</p></li>
+</ul>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geg2d5psqcj30s80k7tkb.jpg" alt="image-20200503192806117" /></p>
 
     </div>
 
@@ -1161,7 +1241,7 @@ code.has-jax {font: inherit;
     
 
    
-      <p>&copy; Faith 26/04/2020 &middot;
+      <p>&copy; Faith 03/06/2020 &middot;
                     Built with <a href="https://github.com/gohugoio/hugo">Hugo</a>
 
        <a href="https://github.com/iamfaith"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path></svg>

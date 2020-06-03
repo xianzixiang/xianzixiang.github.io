@@ -5,12 +5,71 @@
     <link>https://faithio.cn/post/</link>
       <atom:link href="https://faithio.cn/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 25 Apr 2020 17:27:27 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 07 May 2020 17:05:34 -0400</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
       <link>https://faithio.cn/post/</link>
     </image>
+    
+    <item>
+      <title>AUC vs ROC</title>
+      <link>https://faithio.cn/post/auc-vs-roc/</link>
+      <pubDate>Thu, 07 May 2020 17:05:34 -0400</pubDate>
+      <guid>https://faithio.cn/post/auc-vs-roc/</guid>
+      <description>
+
+&lt;h2 id=&#34;confusion-matrix&#34;&gt;Confusion Matrix&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gekkzqnl4ij30wn0h2gt3.jpg&#34; alt=&#34;image-20200507171450986&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;sensitivity-vs-specificity&#34;&gt;Sensitivity vs Specificity&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geklirqojzj30uq0ib45u.jpg&#34; alt=&#34;image-20200507173308092&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gekljd8pk0j30u20i4103.jpg&#34; alt=&#34;image-20200507173343534&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gekllru3w8j30v80h60z8.jpg&#34; alt=&#34;image-20200507173601398&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geklm7snuqj30xy0i0tf7.jpg&#34; alt=&#34;image-20200507173629604&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gekltchy0uj30xr0ijdn7.jpg&#34; alt=&#34;image-20200507174318556&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geklv5z4auj30xy0ip7ac.jpg&#34; alt=&#34;image-20200507174502847&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geklvj0rjfj30xy0igtfl.jpg&#34; alt=&#34;image-20200507174526136&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geklvvkjw7j30xm0h1tf2.jpg&#34; alt=&#34;image-20200507174546428&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geklwmdyyjj30xi0if7c0.jpg&#34; alt=&#34;image-20200507174627339&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geklxe8zakj30yd0ifgug.jpg&#34; alt=&#34;image-20200507174711943&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geklxlwy7jj30y10hgdmn.jpg&#34; alt=&#34;image-20200507174726219&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geklzfm6l2j30v00he7a1.jpg&#34; alt=&#34;image-20200507174911865&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geklzaz0s4j30ve0gr43u.jpg&#34; alt=&#34;image-20200507174901568&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;auc-vs-roc&#34;&gt;AUC vs ROC&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gekkvg5z6ij30yr0f5qac.jpg&#34; alt=&#34;image-20200507171043302&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gekkvnexk4j30wt0ex7br.jpg&#34; alt=&#34;image-20200507171057070&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gekkr4c5bpj30qw0hhwj9.jpg&#34; alt=&#34;image-20200507170631295&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gekkri5wawj30vt0gen1h.jpg&#34; alt=&#34;image-20200507170658661&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gekkrtkxpuj30rb0hj0zj.jpg&#34; alt=&#34;image-20200507170716580&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gekksenipnj30xw0hntgf.jpg&#34; alt=&#34;image-20200507170747958&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gekksxtelwj30v50gb79w.jpg&#34; alt=&#34;image-20200507170818702&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gekkuklr64j30y40hsdms.jpg&#34; alt=&#34;image-20200507170952533&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Semi Supervised Learning</title>
@@ -151,7 +210,7 @@
 &lt;li&gt;&lt;p&gt;一般采用subsample方法，分为bootstraping and aggregating。但是在sample的过程中样本是有放回的&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/960/1*DFHUbdz6EyOuMYP4pDnFlw.jpeg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1ge7vpq3diyj30qo0k075k.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Get some classifiers to evaluate
 from sklearn.model_selection import cross_val_score
@@ -207,7 +266,7 @@ Mean of: 0.597, std: (+/-) 0.045 [Bagging RidgeClassifier]
 
 &lt;p&gt;以下是hard voting&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/1820/1*tE0yuFerQPDCMzhobqv1Dw.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1ge7vpph2rej30qo0k075k.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;实际情况，weight是比较难调整的。&lt;/p&gt;
 
@@ -223,7 +282,7 @@ Mean of: 0.597, std: (+/-) 0.045 [Bagging RidgeClassifier]
 &lt;li&gt;继续train&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1ge6n8rh5ysj30rh0judt5.jpg&#34; alt=&#34;image-20200425155448039&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1ge7vpqrakxj30rh0juacr.jpg&#34; alt=&#34;image-20200425155448039&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;又可以演化为Gradient Boosting&lt;/p&gt;
 
@@ -237,7 +296,7 @@ Mean of: 0.597, std: (+/-) 0.045 [Bagging RidgeClassifier]
 
 &lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1ge6msmnen7j30ql0ilti5.jpg&#34; alt=&#34;image-20200425153917987&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/946/0*GHYCJIjkkrP5ZgPh.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1ge7vq2fc2kj30qa0b4jrw.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在Kaggle中最广泛被使用就是stacking&lt;/p&gt;
 
@@ -1241,7 +1300,87 @@ $$&lt;/p&gt;
       <link>https://faithio.cn/post/svm/</link>
       <pubDate>Tue, 07 Apr 2020 11:21:59 -0400</pubDate>
       <guid>https://faithio.cn/post/svm/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;./image-20200407112231032.png&#34; alt=&#34;image-20200407112231032&#34; /&gt;&lt;/p&gt;
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;./image-20200407112231032.png&#34; alt=&#34;image-20200407112231032&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;kernel-method&#34;&gt;kernel method&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200507184557331.png&#34; alt=&#34;image-20200507184557331&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200507184333514.png&#34; alt=&#34;image-20200507184333514&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200507184440006.png&#34; alt=&#34;image-20200507184440006&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;证明&#34;&gt;证明&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200507185227020.png&#34; alt=&#34;image-20200507185227020&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./image-20200507190104963.png&#34; alt=&#34;image-20200507190104963&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geej91bvh3j30oh0g3wkb.jpg&#34; alt=&#34;image-20200502114100956&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geetpt05ezj30qq0ig47x.jpg&#34; alt=&#34;image-20200502174317442&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;linear SVM vs Logistics Regression 区别在于loss function.&lt;/p&gt;
+
+&lt;p&gt;如果是hinge loss 就是linear SVM&lt;/p&gt;
+
+&lt;p&gt;Cross Entropy 就是logistics regression&lt;/p&gt;
+
+&lt;p&gt;SVM也有deep 版本，function也不一定是linear。Deeplearning用HingeLoss 作为loss function就是Deep SVM&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geg089xf1bj30s00jxws8.jpg&#34; alt=&#34;image-20200503181404766&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geg0vczfl1j30qy0j2gtq.jpg&#34; alt=&#34;image-20200503183623522&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;kernel-method-1&#34;&gt;Kernel method&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geg1j8izduj30s00ji48x.jpg&#34; alt=&#34;image-20200503185921096&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;kernel-trick&#34;&gt;Kernel trick&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geg1phas0uj30so0iwdo0.jpg&#34; alt=&#34;image-20200503190520899&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geg1rqnpc5j30r90jddnt.jpg&#34; alt=&#34;image-20200503190730884&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geg1thq45fj30qd0izwmp.jpg&#34; alt=&#34;image-20200503190912681&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;radial-basic-function-kernel-rbf&#34;&gt;Radial basic function kernel - RBF&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geg1y85ou0j30su0l0n7d.jpg&#34; alt=&#34;image-20200503191345614&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;很容易出现overfiting&lt;/p&gt;
+
+&lt;h4 id=&#34;sigmoid-kernel&#34;&gt;Sigmoid kernel&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geg22dzok6j30rw0jcti0.jpg&#34; alt=&#34;image-20200503191745720&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以直接设计kernel function&lt;/p&gt;
+
+&lt;p&gt;x是structured data like sequence，每个sequence的长度不一样。&lt;/p&gt;
+
+&lt;p&gt;kernel 类似于定义similarity。&lt;/p&gt;
+
+&lt;p&gt;Mercer‘s theory 可以检查。&lt;/p&gt;
+
+&lt;h4 id=&#34;总结&#34;&gt;总结&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support vector regression（SVR）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;进入到某一个距离的时候loss就是0&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Ranking SVM 考虑output是需要有order list的。像recommend系统&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;One-class SVM：positive的自成一类，其他的散开&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1geg2d5psqcj30s80k7tkb.jpg&#34; alt=&#34;image-20200503192806117&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1605,12 +1744,19 @@ MixedNetwork/有向图无向图--&amp;gt;DeepBeliefNetwork
 &lt;li&gt;state 非线性: Particle Filter&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gewevtbgy0j30dw07kwig.jpg&#34; alt=&#34;image-20200517225012395&#34; /&gt;&lt;/p&gt;
+
 &lt;p&gt;$$
-\lambda = (\underbrace{\pi}{初始prob dist}, \underbrace{A}{状态转移矩阵}, \underbrace{B}_{发射矩阵emission}) &lt;br /&gt;
-状态变量i: i_1, i_2, \cdots i_t \cdots \rightarrow Q={q_1, q_2, \cdots, q_m} &lt;br /&gt;
-观测变量o: o_1, o_2, \cdots o_t \cdots \rightarrow V={v_1, v_2, \cdots, v&lt;em&gt;m} &lt;br /&gt;
-A=\left[a&lt;/em&gt;{i j}\right], a&lt;em&gt;{i j}=P\left(i&lt;/em&gt;{t+1}=q_{i} | i&lt;em&gt;t=q&lt;/em&gt;{i}\right)  &lt;br /&gt;
-B=\left[b&lt;em&gt;{j k} \right], b&lt;/em&gt;{j k}=P\left(Q&lt;em&gt;{t}=v&lt;/em&gt;{k} | i&lt;em&gt;t=q&lt;/em&gt;{j}\right)
+\begin{aligned}
+\lambda &amp;amp;= (\underbrace{\pi}&lt;em&gt;{初始prob dist}, \underbrace{A}&lt;/em&gt;{状态转移矩阵}, \underbrace{B}&lt;em&gt;{发射矩阵emission}) &lt;br /&gt;
+\pi&amp;amp;=\left(\pi, \pi&lt;/em&gt;{2}, \cdots, \pi&lt;em&gt;{N}\right), \sum&lt;/em&gt;{i=1}^{K} \pi_{i}= 1 &lt;br /&gt;
+\pi_i&amp;amp;= P\left(i_1=q_i\right) &lt;br /&gt;
+状态变量i:&amp;amp; i_1, i_2, \cdots i_t \cdots \rightarrow Q={q_1, q_2, \cdots, q_m} &lt;br /&gt;
+观测变量o:&amp;amp; o_1, o_2, \cdots o_t \cdots \rightarrow V={v_1, v_2, \cdots, v&lt;em&gt;m} &lt;br /&gt;
+A&amp;amp;=\left[a&lt;/em&gt;{i j}\right], a&lt;em&gt;{i j}=P\left(i&lt;/em&gt;{t+1}=q_{i} | i&lt;em&gt;t=q&lt;/em&gt;{i}\right)  &lt;br /&gt;
+B&amp;amp;=\left[b&lt;em&gt;{j k} \right], b&lt;/em&gt;{j k}=P\left(Q&lt;em&gt;{t}=v&lt;/em&gt;{k} | i&lt;em&gt;t=q&lt;/em&gt;{j}\right) \&lt;/p&gt;
+
+&lt;p&gt;\end{aligned}
 $$&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -1623,12 +1769,16 @@ $$&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;齐次Markov 假设&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;$$
-P(i_{t+1}|i&lt;em&gt;t, t&lt;/em&gt;{t-1}, \cdots, t_1, o&lt;em&gt;t, o&lt;/em&gt;{t-1}, \dots, o&lt;em&gt;1) = p(i&lt;/em&gt;{t+1}|i_t)  &lt;br /&gt;
+\begin{aligned}
+&amp;amp;P(i_{t+1}|i&lt;em&gt;t, t&lt;/em&gt;{t-1}, \cdots, t_1, o&lt;em&gt;t, o&lt;/em&gt;{t-1}, \dots, o&lt;em&gt;1) = p(i&lt;/em&gt;{t+1}|i_t)  &lt;br /&gt;
+\end{aligned}
 $$&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;观察独立假设
 $$
-P(o_{t}|i&lt;em&gt;t, t&lt;/em&gt;{t-1}, \cdots, t_1, o&lt;em&gt;t, o&lt;/em&gt;{t-1}, \dots, o&lt;em&gt;1) = p(o&lt;/em&gt;{t}|i_t)  &lt;br /&gt;
+\begin{aligned}
+&amp;amp;P(o_{t}|i&lt;em&gt;t, t&lt;/em&gt;{t-1}, \cdots, t_1, o&lt;em&gt;t, o&lt;/em&gt;{t-1}, \dots, o&lt;em&gt;1) = p(o&lt;/em&gt;{t}|i_t)  &lt;br /&gt;
+\end{aligned}
 $$&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1664,6 +1814,228 @@ $$&lt;/p&gt;
 &lt;h3 id=&#34;ppt&#34;&gt;PPT&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;1.jpg&#34; alt=&#34;image-20200324164641801&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{array}{l}P(O | \lambda)=\sum&lt;em&gt;{I} P(I, O | \lambda)=\sum&lt;/em&gt;{I} P(O | I, \lambda) \cdot P(I | \lambda) \
+\because P(I | \lambda)=P\left(i&lt;em&gt;{1}, i&lt;/em&gt;{2} \cdots i&lt;em&gt;{T} | \lambda\right)=P\left(i&lt;/em&gt;{i} | i&lt;em&gt;{i}, i&lt;/em&gt;{i}, \ldots&lt;em&gt;{i-1}, \lambda\right) \cdot P\left(i&lt;/em&gt;{i}, i&lt;em&gt;{2}, \cdots i&lt;/em&gt;{t-1}, \lambda\right)=\pi\left(a&lt;em&gt;{i1}\right) \cdot \prod&lt;/em&gt;{t=2}^{T} a_{i-1, i}&lt;/p&gt;
+
+&lt;p&gt;\ P(0 | I, \lambda)=\prod&lt;em&gt;{t=1}^{T} b&lt;/em&gt;{t}\left(O_{t}\right)&lt;/p&gt;
+
+&lt;p&gt;\ \therefore P(O | \lambda)=\sum&lt;em&gt;{1} \pi\left(a&lt;/em&gt;{i&lt;em&gt;{1}}\right) \cdot \prod&lt;/em&gt;{t=2}^{T} a&lt;em&gt;{i&lt;/em&gt;{i-1}, i&lt;em&gt;t} \prod&lt;/em&gt;{t=1}^{T} b&lt;em&gt;{i&lt;/em&gt;{i}}\left(0&lt;em&gt;{t}\right)= \underbrace{  \sum&lt;/em&gt;{i&lt;em&gt;{1}} \sum&lt;/em&gt;{i&lt;em&gt;{2}} \cdots \sum&lt;/em&gt;{i&lt;em&gt;{T}} }&lt;/em&gt;{O(N^T)} \pi\left(a&lt;em&gt;{i}\right) \cdot \prod&lt;/em&gt;{t=2}^{T} a&lt;em&gt;{i&lt;/em&gt;{i-1}, i&lt;em&gt;t} \prod&lt;/em&gt;{t=1}^{T} b&lt;em&gt;{i}\left(O&lt;/em&gt;{t}\right)\end{array}
+$$&lt;/p&gt;
+
+&lt;h4 id=&#34;前向算法&#34;&gt;前向算法&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gewi91aonuj30aj0btwjc.jpg&#34; alt=&#34;image-20200518004645647&#34; /&gt;
+$$
+\begin{array}{l} \&lt;/p&gt;
+
+&lt;p&gt;\alpha&lt;em&gt;{t+1}(j) =P\left(o&lt;/em&gt;{0}, \cdots, o&lt;em&gt;{t}, o&lt;/em&gt;{t+1}, i&lt;em&gt;{t+1}=q&lt;/em&gt;{j} | \lambda\right)
+\ =\sum&lt;em&gt;{i=1}^{N} P\left(o&lt;/em&gt;{1}, \cdots, o&lt;em&gt;{t}, o&lt;/em&gt;{t+1}, i&lt;em&gt;{t+1}=q&lt;/em&gt;{j}, i&lt;em&gt;{t}=q&lt;/em&gt;{i} | \lambda\right)
+\ =\sum&lt;em&gt;{i=1}^{N} P\left(o&lt;/em&gt;{t+1} | o&lt;em&gt;{1}, \cdots, o&lt;/em&gt;{t}, i&lt;em&gt;{t}=q&lt;/em&gt;{i}, i&lt;em&gt;{t+1}=q&lt;/em&gt;{j}, \lambda\right) \cdot P\left(o&lt;em&gt;1, \cdots, o&lt;/em&gt;{t},  i&lt;em&gt;{t}=q&lt;/em&gt;{i}, i&lt;em&gt;{t+1}=q&lt;/em&gt;{j} | \lambda\right)&lt;/p&gt;
+
+&lt;p&gt;\ =\sum&lt;em&gt;{i=1}^{N} P\left(o&lt;/em&gt;{t+1} | i&lt;em&gt;{t+1}=q&lt;/em&gt;{j}  \right) \cdot P\left(o&lt;em&gt;{1}, \cdots, o&lt;/em&gt;{t}, i&lt;em&gt;{t}=q&lt;/em&gt;{i}, i&lt;em&gt;{t+1}=q&lt;/em&gt;{i} | x\right)&lt;/p&gt;
+
+&lt;p&gt;\ =\sum&lt;em&gt;{i=1}^{N} P\left(o&lt;/em&gt;{t+1} | i&lt;em&gt;{t+1}=q&lt;/em&gt;{j}\right) \cdot P\left(i&lt;em&gt;{t+1}=q&lt;/em&gt;{j} | o&lt;em&gt;{1}, \cdots, o&lt;/em&gt;{t}, i&lt;em&gt;{i}=q&lt;/em&gt;{i}, \lambda\right) \cdot P\left( o&lt;em&gt;{1}, \cdots, o&lt;/em&gt;{t}, i&lt;em&gt;{i}=q&lt;/em&gt;{i} | \lambda\right)&lt;/p&gt;
+
+&lt;p&gt;\ =\sum&lt;em&gt;{i=1}^{N}  \underbrace{ P\left(o&lt;/em&gt;{t+1} | i&lt;em&gt;{t+1}=q&lt;/em&gt;{j}\right)}_{b&lt;em&gt;j(o&lt;/em&gt;{t+1})} \cdot \underbrace{P\left(i&lt;em&gt;{t+1}=q&lt;/em&gt;{j} | i&lt;em&gt;{i}=q&lt;/em&gt;{i}, \lambda\right)}&lt;em&gt;{a&lt;/em&gt;{ij}} \alpha_t(i)&lt;/p&gt;
+
+&lt;p&gt;\end{array}
+$$&lt;/p&gt;
+
+&lt;h4 id=&#34;后向算法&#34;&gt;后向算法&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gewikk5ys8j30bk08btcl.jpg&#34; alt=&#34;image-20200518005745536&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{array}{l}  \&lt;/p&gt;
+
+&lt;p&gt;\text{状态：}
+\ \pi=\left(\pi, \pi&lt;em&gt;{2}, \cdots, \pi&lt;/em&gt;{N}\right), \sum&lt;em&gt;{i=1}^{K} \pi&lt;/em&gt;{i}= 1  \&lt;/p&gt;
+
+&lt;p&gt;\begin{aligned}&lt;/p&gt;
+
+&lt;p&gt;&amp;amp; P(o | x)=P(o, \cdots , o_r| \lambda)&lt;/p&gt;
+
+&lt;p&gt;\=&amp;amp; \sum_{i=1}^{N} p\left(o&lt;em&gt;1, \cdots, o&lt;/em&gt;{r}, i&lt;em&gt;{1}=q&lt;/em&gt;{i} | \lambda\right)&lt;/p&gt;
+
+&lt;p&gt;\=&amp;amp; \sum&lt;em&gt;{i=1}^{N} p\left(o&lt;/em&gt;{1}, \cdots, o&lt;em&gt;{r} | i&lt;/em&gt;{1}=q_{i}, \lambda \right) \cdot \underbrace{P(i_1=q&lt;em&gt;i | \lambda)}&lt;/em&gt;{\pi_i}&lt;/p&gt;
+
+&lt;p&gt;\=&amp;amp; \sum_{i=1}^{N}  P\left(o_1| o_2, \cdots, o_r,  i&lt;em&gt;1=q&lt;/em&gt;{i}\right) \cdot P\left(
+o_2, \cdots, o_r | i&lt;em&gt;1=q&lt;/em&gt;{i} \right)\cdot \pi_i&lt;/p&gt;
+
+&lt;p&gt;\=&amp;amp; \sum_{i=1}^{N} P\left(o_1| i&lt;em&gt;1=q&lt;/em&gt;{i}\right) \beta&lt;em&gt;{1}(i) \cdot \pi&lt;/em&gt;{i}&lt;/p&gt;
+
+&lt;p&gt;\=&amp;amp; \sum&lt;em&gt;{i=1}^{N} b&lt;/em&gt;{i}(o&lt;em&gt;1) \pi&lt;/em&gt;{i} \beta_{1}(i) &lt;br /&gt;
+&amp;mdash; \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp; \beta&lt;em&gt;{t}(i)=P\left(o&lt;/em&gt;{t+1}, \cdots, o&lt;em&gt;{T} | i&lt;/em&gt;{t}=q_{i}\right)&lt;/p&gt;
+
+&lt;p&gt;\=&amp;amp; \sum&lt;em&gt;{j=1}^{N} P\left(o&lt;/em&gt;{t+1}, \cdots, o&lt;em&gt;{T}, i&lt;/em&gt;{t+1}=q_{j} | i&lt;em&gt;t=q&lt;/em&gt;{i}\right)&lt;/p&gt;
+
+&lt;p&gt;\=&amp;amp; \sum&lt;em&gt;{j=1}^{N} P\left(o&lt;/em&gt;{t+1}, \cdots, o&lt;em&gt;{T} | i&lt;/em&gt;{t+1}=q&lt;em&gt;{j}, t&lt;/em&gt;{t}=q&lt;em&gt;{i}\right) \cdot \underbrace{ P\left(i&lt;/em&gt;{t-1}=q&lt;em&gt;{j} | i&lt;/em&gt;{t}=q&lt;em&gt;{i}\right) }&lt;/em&gt;{a_{ij}}&lt;/p&gt;
+
+&lt;p&gt;\=&amp;amp; \sum&lt;em&gt;{j=1}^{N} P\left(o&lt;/em&gt;{t+1}, \ldots, o&lt;em&gt;{T} | i&lt;/em&gt;{t+1}=q&lt;em&gt;{j}\right) \cdot a&lt;/em&gt;{ij}&lt;/p&gt;
+
+&lt;p&gt;\=&amp;amp; \sum&lt;em&gt;{j=1}^{N} P\left(o&lt;/em&gt;{t+1} | o&lt;em&gt;{t+2}, \cdots, o&lt;/em&gt;{T}, i&lt;em&gt;{t+1}=q&lt;/em&gt;{j}\right) \cdot P\left(o&lt;em&gt;{t+1}, \ldots, o&lt;/em&gt;{T} | i&lt;em&gt;{t+1}=q&lt;/em&gt;{j}\right) \cdot a_{i j}&lt;/p&gt;
+
+&lt;p&gt;\=&amp;amp; \sum&lt;em&gt;{j=1}^{N} P\left(o&lt;/em&gt;{t+1} | t&lt;em&gt;{t+1}=q&lt;/em&gt;{j}\right) \quad \cdot \quad \beta&lt;em&gt;{t+1}(j) \quad \cdot \quad a&lt;/em&gt;{ij}&lt;/p&gt;
+
+&lt;p&gt;\ =&amp;amp; \sum&lt;em&gt;{j=1}^{N} b&lt;/em&gt;{j}\left(o&lt;em&gt;{t+1}\right) \cdot a&lt;/em&gt;{i j} \cdot \beta_{t+1}(j)
+ \end{aligned}&lt;/p&gt;
+
+&lt;p&gt;\end{array}
+$$&lt;/p&gt;
+
+&lt;h4 id=&#34;evaluation总结&#34;&gt;Evaluation总结&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gex016fhwaj30bg04rmz9.jpg&#34; alt=&#34;image-20200518110159549&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{array}{l}&lt;/p&gt;
+
+&lt;p&gt;\text{条件概率复杂度很高：}  P(O | \lambda)=\sum&lt;em&gt;{I} P(I, O | \lambda) =\underbrace{  \sum&lt;/em&gt;{i&lt;em&gt;{1}} \sum&lt;/em&gt;{i&lt;em&gt;{2}} \cdots \sum&lt;/em&gt;{i&lt;em&gt;{T}} }&lt;/em&gt;{O(N^T)} \pi\left(a&lt;em&gt;{i}\right) \cdot \prod&lt;/em&gt;{t=2}^{T} a&lt;em&gt;{i&lt;/em&gt;{i-1}, i&lt;em&gt;t} \prod&lt;/em&gt;{t=1}^{T} b&lt;em&gt;{i}\left(O&lt;/em&gt;{t}\right) \&lt;/p&gt;
+
+&lt;p&gt;\alpha_{t}(i)=P(o_1, \cdots, o_t, i_t=q_i | \lambda) \&lt;/p&gt;
+
+&lt;p&gt;\alpha&lt;em&gt;{T}(i)=P\left(O, i&lt;/em&gt;{T}=q_{i} | \lambda\right) \&lt;/p&gt;
+
+&lt;p&gt;P(O | \lambda)=\sum&lt;em&gt;{i=1}^{N} \alpha&lt;/em&gt;{T}(i) &lt;br /&gt;
+&amp;mdash;&lt;br /&gt;
+\beta&lt;em&gt;{t}(i)=P(o&lt;/em&gt;{t+1}, \cdots, o_T |i_t=q&lt;em&gt;i, \lambda) &lt;br /&gt;
+\beta&lt;/em&gt;{1}(i)=P(o_{2}, \cdots, o_T |i_1=q&lt;em&gt;i, \lambda) &lt;br /&gt;
+P(O | \lambda)=\sum&lt;/em&gt;{i=1}^{N} \pi&lt;em&gt;{i} b&lt;/em&gt;{i}(o&lt;em&gt;1) \beta&lt;/em&gt;{1}(i)&lt;/p&gt;
+
+&lt;p&gt;\end{array}
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;引入em的思想&#34;&gt;引入EM的思想&lt;/h3&gt;
+
+&lt;p&gt;$$
+\begin{aligned}&lt;/p&gt;
+
+&lt;p&gt;\theta^{(t+1)} &amp;amp;=\arg \max &lt;em&gt;{\theta} \int&lt;/em&gt;{z} \log p(x, z | \theta) \cdot p\left(z | x, \theta^{(t)}\right) d z
+\&lt;/p&gt;
+
+&lt;p&gt;&amp;amp; \text{x: 观测值O   z：隐变量I(discrete)   } \theta \text{:参数  }\lambda
+\&lt;/p&gt;
+
+&lt;p&gt;\ \lambda^{(t)}&amp;amp;=\left(\pi^{t}, A^{t}, B^{t}\right)
+&lt;br /&gt;
+\lambda^{(t+1)}&amp;amp; =\arg \max &lt;em&gt;{\lambda} \sum&lt;/em&gt;{1} \log P(O,I |\lambda) \cdot&lt;/p&gt;
+
+&lt;p&gt;\underbrace{P\left(I|O, \lambda^{(t)}\right)}_{  P\left(I|O, \lambda^{(t)}\right) = \frac{P\left(I,O| \lambda^{(t)}\right)}{P\left(O, \lambda ^{(t)}\right)}
+}&lt;/p&gt;
+
+&lt;p&gt;= \arg \max &lt;em&gt;{\lambda} \sum&lt;/em&gt;{1} \log P(O,I |\lambda) \cdot P\left(O,I| \lambda^{(t)}\right) \&lt;/p&gt;
+
+&lt;p&gt;Q\left(\lambda, \lambda^{(t))}\right) &amp;amp;=\sum_{T} \log P(O,I | \lambda) \cdot P\left(O, I | \lambda^{(t)}\right) &lt;br /&gt;
+ &amp;amp;= \sum&lt;em&gt;I \left[ \left(\log \pi&lt;/em&gt;{i&lt;em&gt;1} + \sum&lt;/em&gt;{t=2}^{T} \log a&lt;em&gt;{i&lt;/em&gt;{t-1}, i&lt;em&gt;t} +  \sum&lt;/em&gt;{t=2}^{T} \log b_{i_t} \left(o_t \right)   \right) P\left(O,I|\lambda^{(t) }\right)     \right]  &lt;br /&gt;
+ &amp;amp; \text{Now we only consider }\pi \&lt;/p&gt;
+
+&lt;p&gt;\pi^{(t+1)} &amp;amp;=\arg \max _{\pi} Q\left(\lambda, \lambda^{(t)}\right)&lt;/p&gt;
+
+&lt;p&gt;\ &amp;amp;=\arg \max &lt;em&gt;{\pi} \sum&lt;/em&gt;{I}\left[\log \pi_{i_1}, P\left(O,I | \lambda^{(t)}\right)\right]&lt;/p&gt;
+
+&lt;p&gt;\ &amp;amp;=\arg \max &lt;em&gt;{\pi} \sum&lt;/em&gt;{i&lt;em&gt;1} \cdots \sum&lt;/em&gt;{i&lt;em&gt;{T}}\left[\log \pi&lt;/em&gt;{i&lt;em&gt;1} \cdot P\left(O, i&lt;/em&gt;{1}  \cdots i_T | \lambda^{(t)}\right)\right]&lt;/p&gt;
+
+&lt;p&gt;\ &amp;amp;=\arg \max &lt;em&gt;{\pi} \sum&lt;/em&gt;{i&lt;em&gt;{1}}\left[\log \pi&lt;/em&gt;{i&lt;em&gt;{1}} P\left(O, i&lt;/em&gt;{1} | \lambda^{(t)}\right)\right] \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=\arg \max &lt;em&gt;{\pi} \sum&lt;/em&gt;{i=1}^{N}\left[\log \pi_{i} \cdot  P\left(O, i_1=q_i |\lambda^{(t)}\right) \right]
+\&amp;amp; \pi \text{带约束，和为1}
+ \end{aligned}
+$$&lt;/p&gt;
+
+&lt;h4 id=&#34;用lagrange-multiplier&#34;&gt;用lagrange multiplier&lt;/h4&gt;
+
+&lt;p&gt;$$
+\begin{array}{l}&lt;/p&gt;
+
+&lt;p&gt;\mathcal{L}(\pi, \eta)=\sum&lt;em&gt;{i=1}^{N} \log \pi&lt;/em&gt;{i} P\left(O, i&lt;em&gt;{1}=q&lt;/em&gt;{i} | \lambda^{(t)}\right)+\eta\left(\sum&lt;em&gt;{i=1}^{i} \pi&lt;/em&gt;{i}-1\right)&lt;/p&gt;
+
+&lt;p&gt;\ \frac{\partial f}{\partial \pi&lt;em&gt;i}=\frac{1}{\pi&lt;/em&gt;{i}} P\left(O, i&lt;em&gt;{1}=q&lt;/em&gt;{i} | \lambda^{(t)}\right)+\eta=0 \&lt;/p&gt;
+
+&lt;p&gt;\sum_{i=1}^{N} \left[P\left(O, i&lt;em&gt;1=q&lt;/em&gt;{i} | \lambda^{(t)}\right)+\pi_{i} \eta \right] =0 \&lt;/p&gt;
+
+&lt;p&gt;P\left(O | \lambda^{(t)}\right)+\eta=0 \&lt;/p&gt;
+
+&lt;p&gt;\therefore \eta = - P\left(O, \lambda^{(t)}\right) \&lt;/p&gt;
+
+&lt;p&gt;\pi&lt;em&gt;i = - \frac{P\left(O, i&lt;/em&gt;{1}=q_{i} | \lambda^{(t)}\right)}{\eta} &lt;br /&gt;
+\pi&lt;em&gt;i^{(t+1)} = \frac{P\left(O, i&lt;/em&gt;{1}=q_{i} | \lambda^{(t)}\right)}{P\left(O, \lambda^{(t)}\right)} \&lt;/p&gt;
+
+&lt;p&gt;\pi_i^{(t+1)} = \left(\pi_1^{(t+1)}, \pi_2^{(t+1)}, \cdots, \pi_N^{(t+1)} \right)
+\end{array}
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;decoding&#34;&gt;Decoding&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gex3ikyx05j304o06ijse.jpg&#34; alt=&#34;image-20200518130231688&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gex37fufbfj30c005otbk.jpg&#34; alt=&#34;image-20200518125150278&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+\delta_{t}(i) &amp;amp;=\max _{i_1, i&lt;em&gt;2, \cdots, i&lt;/em&gt;{t+1} } P\left(o_1,O_2, \cdots, O_t, i_1, i&lt;em&gt;2, \cdots, i&lt;/em&gt;{t-1}, i&lt;em&gt;t=q&lt;/em&gt;{i}\right) \
+\delta&lt;em&gt;{t+1}(j) &amp;amp;=\max&lt;/em&gt;{i_1, i&lt;em&gt;2, \cdots, i&lt;/em&gt;{t+1} } P\left(o_1,O_2, \cdots, O_t, i_1, i&lt;em&gt;2, \cdots, i&lt;/em&gt;{t}, i&lt;em&gt;{t+1}=q&lt;/em&gt;{i}\right)  &lt;br /&gt;
+&amp;amp;=\max &lt;em&gt;{1 \leqslant i \leq N} \delta&lt;/em&gt;{t}(i) a&lt;em&gt;{i j} b&lt;/em&gt;{j}\left(O_{t+1}\right) \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;\text{上述式子只求出最大概率值，需要记录状态路径：} \&lt;/p&gt;
+
+&lt;p&gt;\psi&lt;em&gt;{t+1}(j) &amp;amp;=\underset{1 \leqslant i \leqslant N}{\arg \max }  \delta&lt;/em&gt;{t}(i) \cdot a_{ij}&lt;/p&gt;
+
+&lt;p&gt;\end{aligned}
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;filtering-forward-algorithm&#34;&gt;filtering(Forward Algorithm)&lt;/h3&gt;
+
+&lt;p&gt;$$
+P\left(i&lt;em&gt;{t} | o&lt;/em&gt;{1: t}\right)=\frac{P\left(i&lt;em&gt;{t}, o&lt;/em&gt;{1:t}\right)}{P\left(o&lt;em&gt;{1:t}\right)}=\frac{P\left(o&lt;/em&gt;{1:t}, i&lt;em&gt;t\right)}{\sum&lt;/em&gt;{i&lt;em&gt;t} P\left(o&lt;/em&gt;{1:t}, i&lt;em&gt;t\right)} \propto P\left(o&lt;/em&gt;{1:t}, i_t\right) = \alpha_i(t)
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;smoothing-forward-backward-algorithm&#34;&gt;smoothing(Forward-backward Algorithm)&lt;/h3&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+P\left(i&lt;em&gt;{t} | o&lt;/em&gt;{1: T}\right)
+&amp;amp;=\frac{P\left(i&lt;em&gt;{t}, o&lt;/em&gt;{1:T}\right)}{P\left(o&lt;em&gt;{1:T}\right)}=\frac{P\left(o&lt;/em&gt;{1:T}, i&lt;em&gt;t\right)}{\sum&lt;/em&gt;{i&lt;em&gt;t} P\left(o&lt;/em&gt;{1:T}, i_t\right)}  \&lt;/p&gt;
+
+&lt;p&gt;P\left(o_{1:T}, i&lt;em&gt;t\right) &amp;amp; = P\left(o&lt;/em&gt;{1:t}, o_{t+1:T}, i_t\right) \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp; =  \underbrace{ P\left(o&lt;em&gt;{t+1:T}| o&lt;/em&gt;{1:t}, i&lt;em&gt;t\right) }&lt;/em&gt;{ P\left( o_{t+1:T}| i_t \right)}&lt;/p&gt;
+
+&lt;p&gt;\underbrace{ P\left( o_{1:t}, i&lt;em&gt;t\right)}&lt;/em&gt;{\alpha_t} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;= \beta_t \cdot \alpha_t \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp; \therefore P\left(o_{1:T}, i&lt;em&gt;t\right) \propto P\left( o&lt;/em&gt;{t+1:T}| i_t \right) =  \alpha_t \cdot  \beta_t
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;prediction&#34;&gt;prediction&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gex6ukji1rj307e03674c.jpg&#34; alt=&#34;image-20200518145751237&#34; /&gt;
+$$
+\begin{aligned}
+P\left( i&lt;em&gt;{t+1}|o&lt;/em&gt;{1:t} \right) &amp;amp;= \sum&lt;em&gt;{i&lt;/em&gt;{t}} P\left( i_{t+1}, i&lt;em&gt;t|o&lt;/em&gt;{1:t} \right)&lt;/p&gt;
+
+&lt;p&gt;\&amp;amp;= \sum&lt;em&gt;{i&lt;/em&gt;{t}} \underbrace{ P\left( i_{t+1}| i&lt;em&gt;t,o&lt;/em&gt;{1:t} \right)}&lt;em&gt;{
+P\left( i&lt;/em&gt;{t+1}| i_t\right)
+}  \underbrace{ P\left( i&lt;em&gt;t|o&lt;/em&gt;{1:t} \right)  }_{filtering}&lt;/p&gt;
+
+&lt;p&gt;\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+P\left( o&lt;em&gt;{t+1}|o&lt;/em&gt;{1:t} \right) &amp;amp;= \sum&lt;em&gt;{i&lt;/em&gt;{t+1}} P\left( o&lt;em&gt;{t+1}, i&lt;/em&gt;{t+ 1}|o_{1:t} \right)&lt;/p&gt;
+
+&lt;p&gt;\&amp;amp;= \sum&lt;em&gt;{i&lt;/em&gt;{t+1}} \underbrace{ P\left( o&lt;em&gt;{t+1}| i&lt;/em&gt;{t+1},o&lt;em&gt;{1:t} \right)}&lt;/em&gt;{
+P\left( o&lt;em&gt;{t+1}| i&lt;/em&gt;{t+1}\right)
+}  \underbrace{ P\left( i&lt;em&gt;{t+1}|o&lt;/em&gt;{1:t} \right)  }_{上一个prediction}&lt;/p&gt;
+
+&lt;p&gt;\end{aligned}
+$$&lt;/p&gt;
 </description>
     </item>
     
@@ -1711,6 +2083,18 @@ $$&lt;/p&gt;
       <guid>https://faithio.cn/post/markov-chain-monte-carlo/</guid>
       <description>
 
+&lt;p&gt;$$
+\begin{aligned}
+E&lt;em&gt;{z|x}\left[f(z)\right] &amp;amp;= \int P(z|x) f(z) dz
+\ &amp;amp; \approx \frac{1}{N} \sum&lt;/em&gt;{i=1}^N f(z_i)
+\&amp;amp; z^{(1)}, z^{(2)}, \cdots, z^{(N)} \sim P(z|x)
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{1}{N} \sum_{i=1}^{N} f\left(x^{(i)}\right) \stackrel{a . s}{\rightarrow} \int f(x) p(x) d x
+$$&lt;/p&gt;
+
 &lt;h3 id=&#34;概率分布采样-standard-distributions&#34;&gt;概率分布采样 &lt;strong&gt;Standard distributions&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;1.jpg&#34; alt=&#34;image-20200324020445663&#34; /&gt;&lt;/p&gt;
@@ -1719,7 +2103,17 @@ $$&lt;/p&gt;
 
 &lt;h3 id=&#34;rejection-sampling&#34;&gt;Rejection Sampling&lt;/h3&gt;
 
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gexbouhv5wj30je0c4gmi.jpg&#34; alt=&#34;image-20200518174520299&#34; /&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;img src=&#34;2.jpg&#34; alt=&#34;image-20200324021231280&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gex8uk8dzoj30dc08s0t1.jpg&#34; alt=&#34;image-20200518160703112&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;adaptive-rejection-sampling&#34;&gt;adaptive rejection sampling&lt;/h4&gt;
+
+&lt;p&gt;log P(x)是concave 才能使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/007S8ZIlgy1gexbp5207pj30fg0bmdge.jpg&#34; alt=&#34;image-20200518174538071&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;importance-sampling&#34;&gt;Importance Sampling&lt;/h3&gt;
 
@@ -1731,7 +2125,27 @@ $$&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;4.jpg&#34; alt=&#34;image-20200324023300041&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;monte-carlo-method&#34;&gt;Monte Carlo Method&lt;/h3&gt;
+&lt;p&gt;$$
+\begin{array}{l}\text { Our goal is to compute: } I(f)=\int f(x) p(x) d x \&lt;/p&gt;
+
+&lt;p&gt;\text { If we have a density } q(x) \text { which is easy to sample from, we can sample } x^{(i)} \stackrel{\text { id }}{\sim} q(x) &lt;br /&gt;
+\text {  Define the importance weight as: } &lt;br /&gt;
+ w\left(x^{(i)}\right)=\frac{p\left(x^{(i)}\right)}{q\left(x^{(i)}\right)} \&lt;/p&gt;
+
+&lt;p&gt;\text { Consider the weighted Monte Carlo sum: } \&lt;/p&gt;
+
+&lt;p&gt;\begin{array}{ll}&lt;/p&gt;
+
+&lt;p&gt;\frac{1}{N} \sum&lt;em&gt;{i=1}^{N} f\left(x^{(i)}\right) w\left(x^{(i)}\right) &amp;amp;=  \frac{1}{N} \sum&lt;/em&gt;{i=1}^{N} f\left(x^{(i)}\right) \frac{p\left(x^{(i)}\right)}{q\left(x^{(i)}\right)} \&lt;/p&gt;
+
+&lt;p&gt;&amp;amp; \stackrel{a . s .}{\rightarrow}  \int\left(f(x) \frac{p(x)}{q(x)}\right) q(x) d x
+\quad \text{(Law of Large Numbers)}
+\&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;=  \int f(x) p(x) d x\end{array}\end{array}
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;mcmc&#34;&gt;MCMC&lt;/h3&gt;
 
 &lt;p&gt;基于随机采样的近似方法&lt;/p&gt;
 
@@ -1881,15 +2295,18 @@ $$&lt;/p&gt;
 &lt;p&gt;$MLE: P(X|\theta)$&lt;/p&gt;
 
 &lt;p&gt;$$
-\theta_{MLE}=\arg \max _{\theta} \log P(X | \theta) \&lt;/p&gt;
+\begin{aligned}
+\theta_{MLE} &amp;amp;=\arg \max _{\theta} \log P(X | \theta) \&lt;/p&gt;
 
-&lt;p&gt;\theta^{(t+1)}=\arg \max &lt;em&gt;{\theta} \int&lt;/em&gt;{z} \log p(x, z | \theta) \cdot p\left(z | x, \theta^{(t)}\right) d z
+&lt;p&gt;\theta^{(t+1)} &amp;amp;=\arg \max &lt;em&gt;{\theta} \int&lt;/em&gt;{z} \log p(x, z | \theta) \cdot p\left(z | x, \theta^{(t)}\right) d z
 &lt;br /&gt;
-= \arg \max &lt;em&gt;{\theta} E&lt;/em&gt;{\mathbf{Z} | x \theta^{t}}[\log P(x, z | \theta)]  \&lt;/p&gt;
+&amp;amp;= \arg \max &lt;em&gt;{\theta} E&lt;/em&gt;{\mathbf{Z} | x \theta^{t}}[\log P(x, z | \theta)]  \&lt;/p&gt;
 
-&lt;p&gt;\text{ E-Step: } P\left(z | x, \theta^{(t)}\right) \rightarrow E_{z|x, \theta^{(t)}}[\log P(x, z | \theta)] \&lt;/p&gt;
+&lt;p&gt;\text{ E-Step: } &amp;amp; P\left(z | x, \theta^{(t)}\right) \rightarrow E_{z|x, \theta^{(t)}}[\log P(x, z | \theta)] \&lt;/p&gt;
 
-&lt;p&gt;\text{ M-Step: } \theta^{(t+1)}=\arg \max &lt;em&gt;{\theta} E&lt;/em&gt;{z|x, \theta^{(t)}}[\log P(x, z | \theta)]
+&lt;p&gt;\text{ M-Step: } &amp;amp;\theta^{(t+1)}=\arg \max &lt;em&gt;{\theta} E&lt;/em&gt;{z|x, \theta^{(t)}}[\log P(x, z | \theta)]&lt;/p&gt;
+
+&lt;p&gt;\end{aligned}
 $$&lt;/p&gt;
 
 &lt;p&gt;需要证明一定会收敛Convergence
@@ -2580,7 +2997,7 @@ $$&lt;/p&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;$$
- \arg \min \mathrm{KL}(\hat{p} | q^{new}(\theta)) = \arg \min \mathrm{KL}\left(\frac{f&lt;em&gt;{j}(\boldsymbol{\theta}) q^{\backslash j}(\boldsymbol{\theta})}{Z&lt;/em&gt;{j}} | q^{\mathrm{new}}(\boldsymbol{\theta})\right)
+\arg \min \mathrm{KL}(\hat{p} | q^{new}(\theta)) = \arg \min \mathrm{KL}\left(\frac{f&lt;em&gt;{j}(\boldsymbol{\theta}) q^{\backslash j}(\boldsymbol{\theta})}{Z&lt;/em&gt;{j}} | q^{\mathrm{new}}(\boldsymbol{\theta})\right)
 $$&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -3012,6 +3429,23 @@ p(X) \simeq q(\boldsymbol{\theta})= \mathcal{A}(\boldsymbol{\theta} | \mathbf{\m
 \prod&lt;/em&gt;{n=0}^{N} \widetilde{f}&lt;em&gt;{n}(\boldsymbol{\theta})=f&lt;/em&gt;{0}(\boldsymbol{\theta}) \prod&lt;em&gt;{n=1}^{N} \widetilde{f}&lt;/em&gt;{n}(\boldsymbol{\theta})&lt;/p&gt;
 
 &lt;p&gt;=  \mathcal{A}(\boldsymbol{\theta} | \mathbf{0}, b \mathbf{I_l}, b \mathbf{I&lt;em&gt;r})\cdot \prod&lt;/em&gt;{i=1}^{N} \mathcal{A}\left(\boldsymbol{\mu}_{i}, \mathbf{v&lt;em&gt;l}&lt;/em&gt;{i}, \mathbf{v&lt;em&gt;r}&lt;/em&gt;{i}\right)
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+ p(X, \boldsymbol{\Theta}) &amp;amp; =\prod&lt;em&gt;{i} f&lt;/em&gt;{i}(\boldsymbol{\Theta}) = \prod_{i} p(x&lt;em&gt;i|\boldsymbol{\Theta})&lt;br /&gt;
+ \text{choose a factor:}
+ q^{*}(\Theta)&amp;amp;=\frac{\prod&lt;/em&gt;{i} \widetilde{f}&lt;em&gt;{i}(\Theta)}{\int \prod&lt;/em&gt;{i} \tilde{f}&lt;em&gt;{i}(\Theta) d \Theta} \propto \prod&lt;/em&gt;{i} \widetilde{f}_{i}(\Theta)  \&lt;/p&gt;
+
+&lt;p&gt;q^{\backslash j}(\Theta)&amp;amp; =\frac{q^{*}(\Theta)}{\widetilde{f}_{j}(\Theta)} \&lt;/p&gt;
+
+&lt;p&gt;\arg \min \mathrm{KL}(\hat{p} | q^{new}(\Theta)) &amp;amp; = \arg \min \mathrm{KL}\left(\frac{f&lt;em&gt;{j}(\boldsymbol{\Theta}) q^{\backslash j}(\boldsymbol{\Theta})}      {    \underbrace{ Z&lt;/em&gt;{j} }&lt;em&gt;{ Z&lt;/em&gt;{j}=\int q^{\backslash j}(\boldsymbol{\Theta}) f_{j}(\boldsymbol{\Theta}) \mathrm{d} \boldsymbol{\Theta}}   }&lt;/p&gt;
+
+&lt;p&gt;| q^{\mathrm{new}}(\boldsymbol{\Theta})\right) \&lt;/p&gt;
+
+&lt;p&gt;\tilde{f}&lt;em&gt;{j}(\boldsymbol{\Theta}) &amp;amp;=Z&lt;/em&gt;{j} \frac{q^{\text {new }}(\boldsymbol{\Theta})}{q^{\backslash j}(\boldsymbol{\Theta})}&lt;/p&gt;
+
+&lt;p&gt;\end{aligned}
 $$&lt;/p&gt;
 </description>
     </item>
