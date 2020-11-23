@@ -5,12 +5,139 @@
     <link>https://faithio.cn/zh/</link>
       <atom:link href="https://faithio.cn/zh/index.xml" rel="self" type="application/rss+xml" />
     <description>Faith写字的地方</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Mon, 16 Mar 2020 18:30:36 -0500</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Mon, 23 Nov 2020 15:42:42 +0800</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Faith写字的地方</title>
       <link>https://faithio.cn/zh/</link>
     </image>
+    
+    <item>
+      <title>深度学习模型部署总结</title>
+      <link>https://faithio.cn/zh/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 23 Nov 2020 15:42:42 +0800</pubDate>
+      <guid>https://faithio.cn/zh/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2%E6%80%BB%E7%BB%93/</guid>
+      <description>
+
+&lt;p&gt;深度学习模型部署总结&lt;/p&gt;
+
+&lt;p&gt;本次主要测试了 Nvidia的 triton，Google的tensorflow-serving，Microsoft的onnx runtime以及Ray Serving在 nl2sql 项目 Albert 模型下的性能情况。同时，也测试了 rasa 项目中 Roberta 模型在 Bert as service 下性能的情况。&lt;/p&gt;
+
+&lt;h2 id=&#34;bert-as-service&#34;&gt;Bert as service&lt;/h2&gt;
+
+&lt;p&gt;Bert as service是通过模型的checkpoint加载 graph, 然后通过 ZeroMQ 作为serving。其中 numbers of connect 和 workers 数目主要影响 QPS，尽管这两个分别调到 1000 和 16，在压测平台上也只能达到240左右的QPS。&lt;/p&gt;
+
+&lt;p&gt;链接如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://snake.testplus.us/project/case/f2d42736/task/78fbe993/report/snake&#34; target=&#34;_blank&#34;&gt;500 用户 10 节点&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;相对于其他三个 serving，性能最弱。&lt;/p&gt;
+
+&lt;h2 id=&#34;triton&#34;&gt;triton&lt;/h2&gt;
+
+&lt;p&gt;由于 triton 客户端的SDK调用方式无法在压测平台统计，因此在本机安装 Locust 作为压测客户端进行统计。&lt;/p&gt;
+
+&lt;p&gt;详细的测试报告如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkz437omvjj30sf09bdgw.jpg&#34; alt=&#34;image-20201123145529172&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;本地locust&#34;&gt;本地Locust&lt;/h4&gt;
+
+&lt;p&gt;在本机 Macbook Pro 2015 作为压测客户端的情况下，500用户每次递增100用户最大的QPS为 160左右。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://faithio.cn/report/report_triton_500_100.html&#34; target=&#34;_blank&#34;&gt;triton on Locust&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;压测平台&#34;&gt;压测平台&lt;/h4&gt;
+
+&lt;p&gt;压测平台没有测试，因为SDK的调用无法统计。&lt;/p&gt;
+
+&lt;h2 id=&#34;tensorflow-serving&#34;&gt;tensorflow-serving&lt;/h2&gt;
+
+&lt;p&gt;tensorflow-serving主要有 CPU 和 GPU 两个版本。本次采用 nl2sql 分别对两者进行测试。&lt;/p&gt;
+
+&lt;h4 id=&#34;cpu-version&#34;&gt;CPU version&lt;/h4&gt;
+
+&lt;p&gt;服务器的CPU: 至强 48 cores Intel&amp;reg; Xeon&amp;reg; Gold 5118 CPU @ 2.30GHz  QPS: 4200&lt;/p&gt;
+
+&lt;p&gt;在 CPU 版本的情况下压测，48个 CPU 都可以跑满。&lt;/p&gt;
+
+&lt;p&gt;压测平台500用户50递增10个节点的情况下，跑出 4400 左右的 QPS。&lt;/p&gt;
+
+&lt;h4 id=&#34;gpu-version&#34;&gt;GPU version&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;max_batch_size { value: 128 }
+batch_timeout_micros { value: 0 }
+max_enqueued_batches { value: 1000000 }
+num_batch_threads { value: 1 }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上述配置为 batch config 的配置，特别注意  num_batch_threads 需要我们 tune 这个配置。具体参数的源码参考如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkz4f44ca8j30hi0majuu.jpg&#34; alt=&#34;image-20201123150657618&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/tensorflow/serving/blob/d77c9768e33e1207ac8757cff56b9ed9a53f8765/tensorflow_serving/servables/tensorflow/session_bundle_config.proto&#34; target=&#34;_blank&#34;&gt;tensorflow serving config&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;需要注意的是：根据业务场景，尤其是 Online inference 的时候，大部分情况 batch size其实就是等于，建议将 num_batch_threads 设置为1，因为我们并不需要很多线程去处理这个batch，本身batch很小，一个线程就足够了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkvmxf852kj30zk072wf0.jpg&#34; alt=&#34;WeChatWorkScreenshot_c505d85e-a4ce-4856-bfe7-975837e6dcec&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最终简单调了一下这个参数，QPS 接近惊人的6200。&lt;/p&gt;
+
+&lt;h4 id=&#34;本机locust结果&#34;&gt;本机Locust结果&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://faithio.cn/report/report_tf_serving_500_100.html&#34; target=&#34;_blank&#34;&gt;Locust for tensorflow serving&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkz55qs6ilj30s50bv0ud.jpg&#34; alt=&#34;image-20201123153232877&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;onnx-runtime&#34;&gt;onnx runtime&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ONNX: &lt;strong&gt;ONNX is an open format built to represent machine learning models.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;nl2sql 通过 keras2onnx 和 tensorflow2onnx 都报错，无法转换成功，目前 github 也有issue&lt;/p&gt;
+
+&lt;p&gt;keras2onnx:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gksavhprr9j30qv0cdjug.jpg&#34; alt=&#34;WeChatWorkScreenshot_6727db1b-93b4-4f5c-b27d-c58d0126fd98&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Traceback (most recent call last):
+  File &amp;quot;h5_to_onnx.py&amp;quot;, line 21, in &amp;lt;module&amp;gt;
+    onnx_model = keras2onnx.convert_keras(model, model.name)
+  File &amp;quot;/root/miniconda3/envs/tf/lib/python3.6/site-packages/keras2onnx/main.py&amp;quot;, line 102, in convert_keras
+    parse_graph(topology, tf_graph, target_opset, output_names, output_dict)
+  File &amp;quot;/root/miniconda3/envs/tf/lib/python3.6/site-packages/keras2onnx/parser.py&amp;quot;, line 911, in parse_graph
+    graph, keras_node_dict, topo, top_level, output_names)
+  File &amp;quot;/root/miniconda3/envs/tf/lib/python3.6/site-packages/keras2onnx/parser.py&amp;quot;, line 626, in _parse_graph_core
+    _on_parsing_tf_nodes(graph, nodes, varset, topology.debug_mode)
+  File &amp;quot;/root/miniconda3/envs/tf/lib/python3.6/site-packages/keras2onnx/parser.py&amp;quot;, line 331, in _on_parsing_tf_nodes
+    var_type = infer_variable_type(i_, varset.target_opset)
+  File &amp;quot;/root/miniconda3/envs/tf/lib/python3.6/site-packages/keras2onnx/_parser_tf.py&amp;quot;, line 47, in infer_variable_type
+    &amp;quot;Unable to find out a correct type for tensor type = {} of {}&amp;quot;.format(tensor_type, tensor.name))
+ValueError: Unable to find out a correct type for tensor type = 0 of crf_1/while_1/TensorArrayWrite/TensorArrayWriteV3/Enter:0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;issue: &lt;a href=&#34;https://github.com/onnx/onnxmltools/issues/411&#34; target=&#34;_blank&#34;&gt;https://github.com/onnx/onnxmltools/issues/411&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gksaxda1amj30xt0pggpc.jpg&#34; alt=&#34;WeChatWorkScreenshot_de560473-330d-4f99-877e-acf8a8412ceb&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gksaxgp7b3j30fj03vjrm.jpg&#34; alt=&#34;WeChatWorkScreenshot_32bd4e08-8770-4f93-9ed6-ef5632c1c58f&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;issue: &lt;a href=&#34;https://github.com/bojone/bert4keras/issues/199s&#34; target=&#34;_blank&#34;&gt;https://github.com/bojone/bert4keras/issues/199s&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ray-serving&#34;&gt;Ray serving&lt;/h2&gt;
+
+&lt;p&gt;Ray serving支持分布式扩展。目前采用GPU 作为 inference server 在同样的压测环境下，QPS 只有50多。&lt;/p&gt;
+
+&lt;p&gt;但是 CPU 情况下需要指定 CPU nums，使用48个核心，QPS 大概能到 200 多。&lt;/p&gt;
+
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;tensorflow serving的性能最强，尤其是 GPU 版本。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>如何正确申请学习签证</title>
