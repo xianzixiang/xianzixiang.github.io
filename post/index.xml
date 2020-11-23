@@ -3608,5 +3608,167 @@ $$&lt;/p&gt;
 </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://faithio.cn/post/k-means-vs-fuzzy-c-means/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://faithio.cn/post/k-means-vs-fuzzy-c-means/</guid>
+      <description>
+
+&lt;p&gt;K-Means 及其衍生算法&lt;/p&gt;
+
+&lt;h2 id=&#34;生成模型与判别模型&#34;&gt;生成模型与判别模型&lt;/h2&gt;
+
+&lt;p&gt;在机器学习中，通常有两种模型，生成模型 (generative model) 和判别模型 (discriminative model)。对于无监督学习，聚类问题中，同样是也是以 K-Means 和 高斯混合模型 (Gaussian Mixture Model) 为经典的代表。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;还记得今年年初刚开始系统性学习机器学习的时候，这两个概念不是很清楚，现在弄懂了，以后有时间可以专门讲下。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;对于判别模型，通常就是计算边界 (boudary)，如果以数学公式来表达通常就是直接从 training data 计算$P(\mathcal{predict} | \mathcal{data})$。相反的，生成模型则会假设我们的先验概率 (prior) 和 近似概率 (likelihood) 的模型，从 training data求出他们的参数，最后通过经典的贝叶斯公式求出：
+$$
+P(\mathcal{predict} | \mathcal{data}) = \frac{P(\mathcal{data} | \mathcal{predict}) \times P(predict)}{P(data)}
+$$&lt;/p&gt;
+
+&lt;h2 id=&#34;k-means-及衍生算法&#34;&gt;K-Means 及衍生算法&lt;/h2&gt;
+
+&lt;h3 id=&#34;k-means&#34;&gt;K-Means&lt;/h3&gt;
+
+&lt;p&gt;K-Means 是 EM 算法的特殊例子，因为它用的是欧几里德 (Euclidean Distance) 距离，它的目标functon如下：
+$$
+J=\sum&lt;em&gt;{i=1}^{m} \sum&lt;/em&gt;{k=1}^{K} w&lt;em&gt;{i k}\left|x^{i}-\mu&lt;/em&gt;{k}\right|^{2}
+$$
+m 代表data instances，K代表目前cluster的数量。当$w&lt;em&gt;{ik}=1$表示这个数据点属于cluster k，若$w&lt;/em&gt;{ik}= 0$则表示这个点不属于这个cluster。&lt;/p&gt;
+
+&lt;p&gt;那么算法本身可以分为 E-Step 和 M-Step。E-Step 主要计算欧几里德距离，M-Step则是算objective function J对于$\mu$的梯度。
+$$
+\begin{aligned}
+&amp;amp; \text{E-Step：} &lt;br /&gt;
+\frac{\partial J}{\partial w&lt;em&gt;{i k}}=\sum&lt;/em&gt;{i=1}^{m} \sum&lt;em&gt;{k=1}^{K} &amp;amp;\left|x^{i}-\mu&lt;/em&gt;{k}\right|^{2} \&lt;br /&gt;
+\Rightarrow w&lt;em&gt;{i k} &amp;amp;=\left{\begin{array}{ll}1 &amp;amp; \text { if } k=\operatorname{argmin}&lt;/em&gt;{j}\left|x^{i}-\mu_{j}\right|^{2} \ 0 &amp;amp; \text { otherwise. }\end{array}\right.
+&lt;br /&gt;
+&amp;amp; \text{M-Step：} \&lt;/p&gt;
+
+&lt;p&gt;\frac{\partial J}{\partial \mu&lt;em&gt;{k}}=2 \sum&lt;/em&gt;{i=1}^{m} w&lt;em&gt;{i k}\left(x^{i}-\mu&lt;/em&gt;{k}\right)=&amp;amp; 0 \&lt;/p&gt;
+
+&lt;p&gt;\Rightarrow \mu&lt;em&gt;{k} &amp;amp;=\frac{\sum&lt;/em&gt;{i=1}^{m} w&lt;em&gt;{i k} x^{i}}{\sum&lt;/em&gt;{t-1}^{m} w_{i k}}&lt;/p&gt;
+
+&lt;p&gt;\end{aligned} \&lt;/p&gt;
+
+&lt;p&gt;$$&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;需要注意以下几点：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;如果数据集的variance过大，最好对数据做归一化 (Standardize)，使得他们的mean等于0，标准差等于1，以避免某些feature对于其他feature的影响。&lt;/li&gt;
+&lt;li&gt;K-Means 依赖于初始化状态，很有可能陷入局部最优，所以建议多初始化几次，然后取最小的J&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;fuzzy-c-means-fcm&#34;&gt;Fuzzy C-Means (FCM)&lt;/h3&gt;
+
+&lt;p&gt;由于K-Means是硬分类，Fuzzy C-Means就是相当于Soft K-Means。这里的Soft是指给数据点对于每个cluster不再是硬分配，而且给每个cluster分配响应的概率。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;同理类似于SVM也有硬间隔和软间隔。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这里我们同样可以写出它的objective function J：
+$$
+\begin{array}{l}
+\underset{C}{\arg \min } \sum&lt;em&gt;{i=1}^{m} \sum&lt;/em&gt;{k=1}^{K} w&lt;em&gt;{i k}^{m}\left|\mathbf{x}&lt;/em&gt;{i}-\mathbf{\mu}_{k}\right|^{2}&lt;/p&gt;
+
+&lt;p&gt;\ \text { where: } \  w&lt;em&gt;{i j}=\frac{1}{\sum&lt;/em&gt;{k=1}^{K}\left(\frac{\left|\mathbf{x}&lt;em&gt;{i}-\mathbf{\mu}&lt;/em&gt;{j}\right|}{\left|\mathbf{x}&lt;em&gt;{i}-\mathbf{\mu}&lt;/em&gt;{k}\right|}\right)^{\frac{2}{m-1}}}\end{array}
+$$&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;FCM也是稍微将K-Means 变形，将w改为一个相对值，相对于其他所有点对应clusters的距离。分母其实就是Normalization constant，为了保证w处于0和1之间。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;hierarchical-clustering&#34;&gt;Hierarchical clustering&lt;/h2&gt;
+
+&lt;p&gt;如果你留意上述的算法，他们都是要实现知道或者推断clusters的数量，我们可以通过下述方法推断：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;model selection criteria (MML/LEC/AIC/BIC等等)&lt;/li&gt;
+&lt;li&gt;Elbow method (which uses the within cluster sums of squares)&lt;/li&gt;
+&lt;li&gt;Average silhouette method&lt;/li&gt;
+&lt;li&gt;Gap statistic method&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;但是与K-Means Clustering不同的是，Hierarchical Clustering 可以帮我们找到最优的clusters数量。&lt;/p&gt;
+
+&lt;p&gt;其算法很简单过程如下：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;首先假设每一个点都是一个cluster，因此N个数据点就有N个clusters&lt;/li&gt;
+&lt;li&gt;通过计算cluster与cluster的距离并存在distance matrix里，将数据集中距离最近的两个点合并成一个cluster，此时有N-1个clusters&lt;/li&gt;
+&lt;li&gt;重新计算距离distanc matrix&lt;/li&gt;
+&lt;li&gt;不断重复知道只剩下一个cluster&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;注意有五种方式计算距离：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Single linkage: computes the &lt;strong&gt;minimum&lt;/strong&gt; distance between clusters before merging them.&lt;/li&gt;
+&lt;li&gt;Complete linkage: computes the &lt;strong&gt;maximum&lt;/strong&gt; distance between clusters before merging them.&lt;/li&gt;
+&lt;li&gt;Average linkage: computes the &lt;strong&gt;average distance&lt;/strong&gt; between clusters before merging them.&lt;/li&gt;
+&lt;li&gt;Centroid linkage: calculates centroids for both clusters, then computes the distance between the two before merging them.&lt;/li&gt;
+&lt;li&gt;Ward’s (minimum variance) criterion: minimizes the total within-cluster variance and find the pair of clusters that leads to minimum increase in total within-cluster variance after merging.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;举例：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkubodbuofj311c0qowfi.jpg&#34; alt=&#34;二维图&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkubolbsmsj304103zgli.jpg&#34; alt=&#34;点的笛卡尔坐标&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;根据第一种距离公式：
+$$
+\sqrt{\left(x&lt;em&gt;{a}-x&lt;/em&gt;{b}\right)^{2}+\left(y&lt;em&gt;{a}-y&lt;/em&gt;{b}\right)^{2}}
+$$
+我们可以算出distance matrix：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkubqb57a2j306q03fjrd.jpg&#34; alt=&#34;distance matrix&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看出0.328是最小的，所以我们将2和4合并，此时合并高度为0.328：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkubrhlyamj307a07sdft.jpg&#34; alt=&#34;distance matrix&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后再将2&amp;amp;4和3合并，合并高度为0.483：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkubsdvv6lj306y06laa0.jpg&#34; alt=&#34;image-20201119113405570&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;合并1和5，合并高度为0.942：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkubthca9yj307105ajra.jpg&#34; alt=&#34;distance matrix&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后根据我们每次合并的数据绘制成树状图，最后的高度为1.530：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkubumgc99j311c0qomyh.jpg&#34; alt=&#34;树状图&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkubwysr9mj30p00hlq3o.jpg&#34; alt=&#34;树状图&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;此时最优的cluster 数目应该就是最大的合并高度下的竖线条数也就是2.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkubynjz0vj31jy0nymyj.jpg&#34; alt=&#34;树状图解释&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;注意：其实这里蕴涵了两种策略，Top-Down （从一个cluster开始，不断分解到N个clusters）或者 Bottom-Up （从N个clusers开始合并为一个cluser）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;hierarchical-k-means-hkmeans&#34;&gt;Hierarchical K-Means (HKMeans)&lt;/h3&gt;
+
+&lt;p&gt;其实是Top-Down approach，就是递归调用K-Means不断将其划为clusters中。这种方式相对较快，时间复杂度为$O(K \log_kn)$。但是这种划分方法是greedy的也是hard的，相邻的两个点如果划为两个不同的cluster，他们再也不会划为同一个clusters.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/0081Kckwgy1gkuc5fop0aj30qm082n20.jpg&#34; alt=&#34;HKmeans&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;本次我们细讲了无监督学习聚类的判别模型，对于判别模型最大的问题是无法解决数据集overlapping的问题，更无法做一些推断和预测。这时生成模型的好处就体现出来，他可以预测出数据集中没有的数据的。后面我会讲一下&lt;strong&gt;生成模型和判别模型在深度学习&lt;/strong&gt;中的应用，欢迎继续关注。&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

@@ -28,10 +28,20 @@
   
     
   
-  <meta name="description" content="因朋友的缘故，希望我仔细讲讲这个历程，所以现在把整个过程说下。 ####起源 F君并不是擅长考试的人，并且经过应试教育十几年的洗礼，加上职场经历">
+  <meta name="description" content="交叉熵和KL散度有什么区别？
+交叉熵和KL散度都是用来测量两个概率分布。但是具体有什么区别呢？
+熵 entropy 首先我们考虑 classification 问题。我们可以用熵（entropy）来描述系统的不确定性，熵越大，信息量越大，不确定越大。熵的公式如下：
+$$ S(v)=-\sum{i} p\left(v{i}\right) \log p\left(v_{i}\right) $$
+$P(v_i)$ 表示在这个系统中的不同状态 $v_i$ 的概率。从信息论的角度来说，$S(v)$ 就是系统蕴含的信息量。当熵最小，就会让系统的确定性更大。
+ QA: 已知区间下，均匀分布是最大熵分布，已知均值情况下，指数分布是最大熵分布。均值和标准差已知的情况下，正态分布是最大熵分布。为什么？请读者思考下。
+hint： 可以通过最大熵原理（MLE）推导。
+ KL 散度 KL divergence KL 散度通常用来度量两个分布之间的差异。KL 散度全称叫kullback leibler 散度，也叫做相对熵（relative entropy）。在机器学习中常用到，譬如近似推断中，有变分推断和期望传播，都是通过 Minimize KL散度来实现推断实现逼近目标分布。
+ 除了KL散度还有 $\alpha$ 散度，aplha-beta散度
+ 对于 A 和 B 分布之间的KL散度可以用以下公式表示： $$ D{K L}(A | B)=\sum{i} p{A}\left(v{i}\right) \log p{A}\left(v{i}\right)-p{A}\left(v{i}\right) \log p{B}\left(v{i}\right) $$ 在上述公式中第一部分表示 A 的entropy，第二个部分可以理解为事件B相对于A的期望值。所以整个KL散度可以理解为从A角度来看，B事件和A事件的差异性。
+ 延伸：请问读者 $D{K L}(A | B)=? D{K L}(B | A)$ 成立吗？">
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://faithio.cn/zh/post/%E4%BA%A4%E5%8F%89%E7%86%B5%E5%92%8Ckl%E6%95%A3%E5%BA%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">
 
   
 
@@ -254,7 +264,7 @@
   <link rel="icon" type="image/png" href="../../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/">
+  <link rel="canonical" href="https://faithio.cn/zh/post/%E4%BA%A4%E5%8F%89%E7%86%B5%E5%92%8Ckl%E6%95%A3%E5%BA%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">
 
   
   
@@ -268,15 +278,23 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Faith写字的地方">
-  <meta property="og:url" content="https://faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/">
-  <meta property="og:title" content="如何从零开始DIY申请研究生-申请奖学金 | Faith写字的地方">
-  <meta property="og:description" content="因朋友的缘故，希望我仔细讲讲这个历程，所以现在把整个过程说下。 ####起源 F君并不是擅长考试的人，并且经过应试教育十几年的洗礼，加上职场经历"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="https://faithio.cn/zh/post/%E4%BA%A4%E5%8F%89%E7%86%B5%E5%92%8Ckl%E6%95%A3%E5%BA%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">
+  <meta property="og:title" content=" | Faith写字的地方">
+  <meta property="og:description" content="交叉熵和KL散度有什么区别？
+交叉熵和KL散度都是用来测量两个概率分布。但是具体有什么区别呢？
+熵 entropy 首先我们考虑 classification 问题。我们可以用熵（entropy）来描述系统的不确定性，熵越大，信息量越大，不确定越大。熵的公式如下：
+$$ S(v)=-\sum{i} p\left(v{i}\right) \log p\left(v_{i}\right) $$
+$P(v_i)$ 表示在这个系统中的不同状态 $v_i$ 的概率。从信息论的角度来说，$S(v)$ 就是系统蕴含的信息量。当熵最小，就会让系统的确定性更大。
+ QA: 已知区间下，均匀分布是最大熵分布，已知均值情况下，指数分布是最大熵分布。均值和标准差已知的情况下，正态分布是最大熵分布。为什么？请读者思考下。
+hint： 可以通过最大熵原理（MLE）推导。
+ KL 散度 KL divergence KL 散度通常用来度量两个分布之间的差异。KL 散度全称叫kullback leibler 散度，也叫做相对熵（relative entropy）。在机器学习中常用到，譬如近似推断中，有变分推断和期望传播，都是通过 Minimize KL散度来实现推断实现逼近目标分布。
+ 除了KL散度还有 $\alpha$ 散度，aplha-beta散度
+ 对于 A 和 B 分布之间的KL散度可以用以下公式表示： $$ D{K L}(A | B)=\sum{i} p{A}\left(v{i}\right) \log p{A}\left(v{i}\right)-p{A}\left(v{i}\right) \log p{B}\left(v{i}\right) $$ 在上述公式中第一部分表示 A 的entropy，第二个部分可以理解为事件B相对于A的期望值。所以整个KL散度可以理解为从A角度来看，B事件和A事件的差异性。
+ 延伸：请问读者 $D{K L}(A | B)=? D{K L}(B | A)$ 成立吗？"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     
-      <meta property="article:published_time" content="2020-02-10T18:30:36-05:00">
     
-    <meta property="article:modified_time" content="2020-02-10T18:30:36-05:00">
   
 
   
@@ -300,12 +318,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/"
+    "@id": "https://faithio.cn/zh/post/%E4%BA%A4%E5%8F%89%E7%86%B5%E5%92%8Ckl%E6%95%A3%E5%BA%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/"
   },
-  "headline": "如何从零开始DIY申请研究生-申请奖学金",
+  "headline": "",
   
-  "datePublished": "2020-02-10T18:30:36-05:00",
-  "dateModified": "2020-02-10T18:30:36-05:00",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -320,7 +338,7 @@
       "url": "https://faithio.cn/images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "因朋友的缘故，希望我仔细讲讲这个历程，所以现在把整个过程说下。 ####起源 F君并不是擅长考试的人，并且经过应试教育十几年的洗礼，加上职场经历"
+  "description": "交叉熵和KL散度有什么区别？\n交叉熵和KL散度都是用来测量两个概率分布。但是具体有什么区别呢？\n熵 entropy 首先我们考虑 classification 问题。我们可以用熵（entropy）来描述系统的不确定性，熵越大，信息量越大，不确定越大。熵的公式如下：\n$$ S(v)=-\\sum{i} p\\left(v{i}\\right) \\log p\\left(v_{i}\\right) $$\n$P(v_i)$ 表示在这个系统中的不同状态 $v_i$ 的概率。从信息论的角度来说，$S(v)$ 就是系统蕴含的信息量。当熵最小，就会让系统的确定性更大。\n QA: 已知区间下，均匀分布是最大熵分布，已知均值情况下，指数分布是最大熵分布。均值和标准差已知的情况下，正态分布是最大熵分布。为什么？请读者思考下。\nhint： 可以通过最大熵原理（MLE）推导。\n KL 散度 KL divergence KL 散度通常用来度量两个分布之间的差异。KL 散度全称叫kullback leibler 散度，也叫做相对熵（relative entropy）。在机器学习中常用到，譬如近似推断中，有变分推断和期望传播，都是通过 Minimize KL散度来实现推断实现逼近目标分布。\n 除了KL散度还有 $\\alpha$ 散度，aplha-beta散度\n 对于 A 和 B 分布之间的KL散度可以用以下公式表示： $$ D{K L}(A | B)=\\sum{i} p{A}\\left(v{i}\\right) \\log p{A}\\left(v{i}\\right)-p{A}\\left(v{i}\\right) \\log p{B}\\left(v{i}\\right) $$ 在上述公式中第一部分表示 A 的entropy，第二个部分可以理解为事件B相对于A的期望值。所以整个KL散度可以理解为从A角度来看，B事件和A事件的差异性。\n 延伸：请问读者 $D{K L}(A | B)=? D{K L}(B | A)$ 成立吗？"
 }
 </script>
 
@@ -372,7 +390,7 @@ code.has-jax {font: inherit;
 
 
 
-  <title>如何从零开始DIY申请研究生-申请奖学金 | Faith写字的地方</title>
+  <title> | Faith写字的地方</title>
 
 </head>
 
@@ -605,7 +623,7 @@ code.has-jax {font: inherit;
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">如何从零开始DIY申请研究生-申请奖学金</h1>
+  <h1 itemprop="name"></h1>
 
   
 
@@ -624,7 +642,7 @@ code.has-jax {font: inherit;
     
       
     
-    Feb 10, 2020
+    Jan 1, 0001
   </span>
   
 
@@ -633,7 +651,7 @@ code.has-jax {font: inherit;
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    4 分钟阅读时长
+    1 分钟阅读时长
   </span>
   
 
@@ -693,75 +711,69 @@ code.has-jax {font: inherit;
     <div class="article-style">
     
 
-<p>因朋友的缘故，希望我仔细讲讲这个历程，所以现在把整个过程说下。</p>
+<p>交叉熵和KL散度有什么区别？</p>
 
-<p>####起源</p>
+<p>交叉熵和KL散度都是用来测量两个概率分布。但是具体有什么区别呢？</p>
 
-<p>F君并不是擅长考试的人，并且经过应试教育十几年的洗礼，加上职场经历，已经没有动力再去考研读国内的研究生。（<del>尤其是还要考政治这一科，不知道为啥读个研还要考zz？</del>）</p>
+<h3 id="熵-entropy">熵 entropy</h3>
 
-<p>所以对于工作党，出境出国留学是相对容易的选择。</p>
+<p>首先我们考虑 classification 问题。我们可以用熵（entropy）来描述系统的不确定性，熵越大，信息量越大，不确定越大。熵的公式如下：</p>
 
-<p>当你下了这个决心，你需要先决定去哪个地方，澳门，香港（当前状况不建议去），新加坡？加拿大美国澳洲？</p>
+<p>$$
+S(v)=-\sum<em>{i} p\left(v</em>{i}\right) \log p\left(v_{i}\right)
+$$</p>
 
-<p>这一切都需要根据你的实际情况来考虑。当选定学校后，就需要考虑申请什么项目。一般来说，都存在两种研究生项目，授课型（course-base）和研究型（thesis-based）。前者有点像国内的专硕，基本就是以上课修学分为主，一般来说是不允许继续读博的（当然也有少数例外），所以这种授课型基本是不带奖学金的。后者就像国内的学硕，是有固定的导师的，一般情况下是带奖学金的，也就是所谓的funding。毕竟这就像给导师打工，然后一般是有几门必修的课，毕业的话主要是看导师是否签字，是否认可了你的学术研究。</p>
-
-<h4 id="套辞选导师">套辞选导师</h4>
-
-<p>这里主要讲一下套辞选导师的情况，如果申请授课型的同学可以略过这一步。</p>
-
-<p>首先，你需要明确你要做什么方向，譬如你想读计算机的硕士，有图形学，软件工程，深度学习等等，就像现在大火的AI方向，也有很多细分方向，所以你需要去学校的官网上去搜一下是否有跟你研究兴趣比较一致的导师。具体搜索方法很简单，以康大为例，直接搜你的keyword，后面加上该学校的导师页面的地址，就有很多相关信息了。</p>
-
-<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc5yyq6p1rj30mt0p0aet.jpg" alt="image-20200222181403357" /></p>
-
-<p>接下来就是挨个去查导师的页面，看看他们是否招人。一般都会有prospective students这一项。</p>
-
-<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc5z4lme6aj310w03hwf7.jpg" alt="image-20200222181946497" /></p>
+<p>$P(v_i)$ 表示在这个系统中的不同状态 $v_i$ 的概率。从信息论的角度来说，$S(v)$ 就是系统蕴含的信息量。当熵最小，就会让系统的确定性更大。</p>
 
 <blockquote>
-<p>一般来说，assistant professor（助理教授）的资金是最充足的，因为境外的学校一般都会给新来的导师一大笔资金招人，然后他们会有5年的考核，来决定他们是否能拿到终身教职。反正据我了解的，助理教授基本都是给全奖，基本就是不用教学费，还有覆盖一部分的生活费，如果能争取做一下TA的话，基本还有盈余。</p>
+<p>QA: 已知区间下，<strong>均匀分布是最大熵分布，已知均值情况下，指数分布是最大熵分布。均值和标准差已知的情况下，正态分布是最大熵分布。</strong>为什么？请读者思考下。</p>
 
-<p>当然有可能压力也会相对大，因为助理教授急需出成果，但是他们都会比较耐心的手把手教你。</p>
+<p>hint： 可以通过最大熵原理（MLE）推导。</p>
 </blockquote>
 
-<p>确定老师后，就可以先发邮件给这个导师了解一下情况。一般来说就是在邮件里面开门见山，写一下你现在的情况，以及为什么对他的研究感兴趣，并且附上你的CV。切忌写一大段话，附一大堆东西，一般来说，教授都很忙，也不会去仔细看。节约别人的时间也是一种美德。</p>
+<h3 id="kl-散度-kl-divergence">KL 散度 KL divergence</h3>
 
-<p><strong>当然这也和找工作一样，如果有认识那个老师的学生找他们内推一下，成功率会高非常多。</strong></p>
+<p>KL 散度通常用来度量两个分布之间的差异。KL 散度全称叫kullback leibler 散度，也叫做相对熵（relative entropy）。在机器学习中常用到，譬如近似推断中，有变分推断和期望传播，都是通过 Minimize KL散度来实现推断实现逼近目标分布。</p>
 
-<h4 id="准备材料">准备材料</h4>
+<blockquote>
+<p>除了KL散度还有 $\alpha$ 散度，aplha-beta散度</p>
+</blockquote>
 
-<p>当联系好导师后，我们就可以着手申请。这时候你需要有你的语言成绩，中英文的大学本科成绩单（带有学校盖章），并且找好两到三个推荐人，最好有两个都是大学时的老师。</p>
+<p>对于 A 和 B 分布之间的KL散度可以用以下公式表示：
+$$
+D<em>{K L}(A | B)=\sum</em>{i} p<em>{A}\left(v</em>{i}\right) \log p<em>{A}\left(v</em>{i}\right)-p<em>{A}\left(v</em>{i}\right) \log p<em>{B}\left(v</em>{i}\right)
+$$
+在上述公式中第一部分表示 A 的entropy，第二个部分可以理解为事件B相对于A的期望值。所以整个KL散度可以理解为从A角度来看，B事件和A事件的差异性。</p>
 
-<ol>
-<li>语言成绩</li>
-</ol>
+<blockquote>
+<p>延伸：请问读者 $D<em>{K L}(A | B)=? D</em>{K L}(B | A)$ 成立吗？</p>
 
-<p>雅思或者托福，这个要根据学校的要求。像澳门或者香港的学校可能还接受六级成绩，这个要具体学校具体分析。</p>
+<p>考虑如果是连续的分布的话，上述的KL散度应该是积分，然后积分其实有方向的。对于变分推断和期望传播，分别是从左逼近和从右逼近，其实两者完全不一样。</p>
+</blockquote>
 
-<ol>
-<li>本科成绩单</li>
-</ol>
+<h3 id="交叉熵-cross-entropy">交叉熵 cross entropy</h3>
 
-<p>如果是工作党的话，可以找学校的学弟学妹帮忙打印一下，并且准备一下带有骑缝章的学校信封，以防到时要寄出去。</p>
+<p>我们知道在神经网络中loss function通常会 Minimize 交叉熵（Cross Entropy），在监督学习中，通常是train一个分布在标签的监督下，极大地近似target distribution，这个时候我们可以 Minimize 交叉熵。
+$$
+H(A, B)=-\sum<em>{i} p</em>{A}\left(v<em>{i}\right) \log p</em>{B}\left(v<em>{i}\right)
+$$
+从上述公式我们可以看到：
+$$
+H(A, B)=D</em>{K L}(A | B)+S_{A}
+$$
+所以对于$S_A$是一个常数而言，最小化KL散度等同于最小化交叉熵。</p>
 
-<ol>
-<li>推荐信</li>
-</ol>
+<p>在监督学习中，其实我们基于一个数据集$P(D)$训练，其实就是相当于A已知，所以我们只需要最小化交叉熵即可让我们的$P(model)$ 尽量接近于$P(D)$。最终我们希望收敛的结果是：
+$$
+P(\text {model}) \approx P(\mathcal{D}) \approx P(\text {truth})
+$$
+所以我们得出结论是：</p>
 
-<p>主要是找一个同事和两个大学时的教授帮忙推荐就好了。一般来说都是自己写好推荐信，然后拜托他们帮你上传的。一般学校都是在你申请的时候，会发一个推荐信的链接到推荐人的邮箱，然后通过推荐人上传这个推荐信。有的老师会直接转发邮件给你，让你自己处理，甚至会给你邮箱账号密码，这个你懂的。</p>
+<p>最小化$D_{K L}(P(\mathcal{D}) | P(\text {model}))$ 其实相当于$D$ 已经知道，求$H(P(\mathcal{D}) | P(model))$</p>
 
-<ol>
-<li>CV 和 个人陈述</li>
-</ol>
+<h3 id="结语">结语</h3>
 
-<p>接下来就是写自己英文简历，和写一下个人陈述，具体每个学校的个人陈述要求都有不同的要求，但是会有一个大致的整体结构。这里就不展开细说了。</p>
-
-<p>CV的话建议用latex写，当然用word也是可以的。</p>
-
-<h4 id="结语">结语</h4>
-
-<p>大家有什么想要了解，可以在下面👇留言给我，下期我会讲讲在蒙特利尔每个月的生活花费。</p>
-
-<p>祝大家在2020年offer多多！！</p>
+<p>看完这个，相信大家对KL散度和交叉熵都很熟悉了。请继续保持关注，工作繁忙之余我们会以最简单的方式讲解机器学习中冗烦的公式。</p>
 
     </div>
 
@@ -784,7 +796,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/&amp;text=%e5%a6%82%e4%bd%95%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8bDIY%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f-%e7%94%b3%e8%af%b7%e5%a5%96%e5%ad%a6%e9%87%91" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/zh/post/%E4%BA%A4%E5%8F%89%E7%86%B5%E5%92%8Ckl%E6%95%A3%E5%BA%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/&amp;text=" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -797,7 +809,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/&amp;t=%e5%a6%82%e4%bd%95%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8bDIY%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f-%e7%94%b3%e8%af%b7%e5%a5%96%e5%ad%a6%e9%87%91" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/zh/post/%E4%BA%A4%E5%8F%89%E7%86%B5%E5%92%8Ckl%E6%95%A3%E5%BA%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/&amp;t=" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -810,7 +822,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="mailto:?subject=%e5%a6%82%e4%bd%95%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8bDIY%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f-%e7%94%b3%e8%af%b7%e5%a5%96%e5%ad%a6%e9%87%91&amp;body=https://faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=&amp;body=https://faithio.cn/zh/post/%E4%BA%A4%E5%8F%89%E7%86%B5%E5%92%8Ckl%E6%95%A3%E5%BA%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -823,7 +835,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/&amp;title=%e5%a6%82%e4%bd%95%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8bDIY%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f-%e7%94%b3%e8%af%b7%e5%a5%96%e5%ad%a6%e9%87%91" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/zh/post/%E4%BA%A4%E5%8F%89%E7%86%B5%E5%92%8Ckl%E6%95%A3%E5%BA%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/&amp;title=" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -836,7 +848,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=%e5%a6%82%e4%bd%95%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8bDIY%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f-%e7%94%b3%e8%af%b7%e5%a5%96%e5%ad%a6%e9%87%91%20https://faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=%20https://faithio.cn/zh/post/%E4%BA%A4%E5%8F%89%E7%86%B5%E5%92%8Ckl%E6%95%A3%E5%BA%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -849,7 +861,7 @@ code.has-jax {font: inherit;
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/zh/post/%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bdiy%E7%94%B3%E8%AF%B7%E7%A0%94%E7%A9%B6%E7%94%9F/&amp;title=%e5%a6%82%e4%bd%95%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8bDIY%e7%94%b3%e8%af%b7%e7%a0%94%e7%a9%b6%e7%94%9f-%e7%94%b3%e8%af%b7%e5%a5%96%e5%ad%a6%e9%87%91" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/zh/post/%E4%BA%A4%E5%8F%89%E7%86%B5%E5%92%8Ckl%E6%95%A3%E5%BA%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/&amp;title=" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1095,16 +1107,10 @@ code.has-jax {font: inherit;
   
 <div class="post-nav-item">
 <div class="meta-nav">下一页</div>
-  <a href="../../../zh/post/diy-%E7%94%B3%E8%AF%B7thesis%E7%A0%94%E7%A9%B6%E7%94%9F/" rel="next">DIY 申请研究生</a>
+  <a href="../../../zh/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BC%9A%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BA%94%E5%B9%B4%E5%90%8E%E9%80%89%E6%8B%A9%E5%8E%BB%E8%AF%BB%E7%A0%94/" rel="next">为什么我会在工作五年后选择去读研</a>
 </div>
 
   
-  
-<div class="post-nav-item">
-<div class="meta-nav">上一页</div>
-  <a href="../../../zh/post/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%E5%8C%97%E7%BE%8Evs%E5%9B%BD%E5%86%85%E7%AC%AC%E4%B8%80%E5%8D%B0%E8%B1%A1/" rel="prev">初来乍到，北美VS国内，第一印象</a>
-</div>
-
 </div>
 
 

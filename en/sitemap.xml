@@ -208,6 +208,11 @@
   </url>
   
   <url>
+    <loc>https://faithio.cn/post/k-means-vs-fuzzy-c-means/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://faithio.cn/authors/</loc>
     <xhtml:link
                 rel="alternate"

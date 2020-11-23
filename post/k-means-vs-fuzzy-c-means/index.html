@@ -28,10 +28,15 @@
   
     
   
-  <meta name="description" content="$$ \begin{array}{l}P(Y | X)=\frac{P(X | Y) P(Y)}{P(X)} \propto(P(X | Y) \cdot P(Y) \ M A P \ P(Y=0 | X) \Rightarrow P(Y=1 | X)\end{array} $$ Classification 改进 不同的class可以share参数，如果参数越多，variance会越大，就会导致o">
+  <meta name="description" content="K-Means 及其衍生算法
+生成模型与判别模型 在机器学习中，通常有两种模型，生成模型 (generative model) 和判别模型 (discriminative model)。对于无监督学习，聚类问题中，同样是也是以 K-Means 和 高斯混合模型 (Gaussian Mixture Model) 为经典的代表。
+ 还记得今年年初刚开始系统性学习机器学习的时候，这两个概念不是很清楚，现在弄懂了，以后有时间可以专门讲下。
+ 对于判别模型，通常就是计算边界 (boudary)，如果以数学公式来表达通常就是直接从 training data 计算$P(\mathcal{predict} | \mathcal{data})$。相反的，生成模型则会假设我们的先验概率 (prior) 和 近似概率 (likelihood) 的模型，从 training data求出他们的参数，最后通过经典的贝叶斯公式求出： $$ P(\mathcal{predict} | \mathcal{data}) = \frac{P(\mathcal{data} | \mathcal{predict}) \times P(predict)}{P(data)} $$
+K-Means 及衍生算法 K-Means K-Means 是 EM 算法的特殊例子，因为它用的是欧几里德 (Euclidean Distance) 距离，它的目标functon如下： $$ J=\sum{i=1}^{m} \sum{k=1}^{K} w{i k}\left|x^{i}-\mu{k}\right|^{2} $$ m 代表data instances，K代表目前cluster的数量。当$w{ik}=1$表示这个数据点属于cluster k，若$w{ik}= 0$则表示这个点不属于这个cluster。
+那么算法本身可以分为 E-Step 和 M-Step。E-Step 主要计算欧几里德距离，M-Step则是算objective function J对于$\mu$的梯度。 $$ \begin{aligned} &amp; \text{E-Step：} \frac{\partial J}{\partial w{i k}}=\sum{i=1}^{m} \sum{k=1}^{K} &amp;\left|x^{i}-\mu{k}\right|^{2} \">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://faithio.cn/post/classification/">
+  <link rel="alternate" hreflang="en-us" href="https://faithio.cn/post/k-means-vs-fuzzy-c-means/">
 
   
 
@@ -254,7 +259,7 @@
   <link rel="icon" type="image/png" href="../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="../../images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://faithio.cn/post/classification/">
+  <link rel="canonical" href="https://faithio.cn/post/k-means-vs-fuzzy-c-means/">
 
   
   
@@ -268,15 +273,18 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Zixiang&#39;s Personal Page">
-  <meta property="og:url" content="https://faithio.cn/post/classification/">
-  <meta property="og:title" content="Classification | Zixiang&#39;s Personal Page">
-  <meta property="og:description" content="$$ \begin{array}{l}P(Y | X)=\frac{P(X | Y) P(Y)}{P(X)} \propto(P(X | Y) \cdot P(Y) \ M A P \ P(Y=0 | X) \Rightarrow P(Y=1 | X)\end{array} $$ Classification 改进 不同的class可以share参数，如果参数越多，variance会越大，就会导致o"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="https://faithio.cn/post/k-means-vs-fuzzy-c-means/">
+  <meta property="og:title" content=" | Zixiang&#39;s Personal Page">
+  <meta property="og:description" content="K-Means 及其衍生算法
+生成模型与判别模型 在机器学习中，通常有两种模型，生成模型 (generative model) 和判别模型 (discriminative model)。对于无监督学习，聚类问题中，同样是也是以 K-Means 和 高斯混合模型 (Gaussian Mixture Model) 为经典的代表。
+ 还记得今年年初刚开始系统性学习机器学习的时候，这两个概念不是很清楚，现在弄懂了，以后有时间可以专门讲下。
+ 对于判别模型，通常就是计算边界 (boudary)，如果以数学公式来表达通常就是直接从 training data 计算$P(\mathcal{predict} | \mathcal{data})$。相反的，生成模型则会假设我们的先验概率 (prior) 和 近似概率 (likelihood) 的模型，从 training data求出他们的参数，最后通过经典的贝叶斯公式求出： $$ P(\mathcal{predict} | \mathcal{data}) = \frac{P(\mathcal{data} | \mathcal{predict}) \times P(predict)}{P(data)} $$
+K-Means 及衍生算法 K-Means K-Means 是 EM 算法的特殊例子，因为它用的是欧几里德 (Euclidean Distance) 距离，它的目标functon如下： $$ J=\sum{i=1}^{m} \sum{k=1}^{K} w{i k}\left|x^{i}-\mu{k}\right|^{2} $$ m 代表data instances，K代表目前cluster的数量。当$w{ik}=1$表示这个数据点属于cluster k，若$w{ik}= 0$则表示这个点不属于这个cluster。
+那么算法本身可以分为 E-Step 和 M-Step。E-Step 主要计算欧几里德距离，M-Step则是算objective function J对于$\mu$的梯度。 $$ \begin{aligned} &amp; \text{E-Step：} \frac{\partial J}{\partial w{i k}}=\sum{i=1}^{m} \sum{k=1}^{K} &amp;\left|x^{i}-\mu{k}\right|^{2} \"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-04-07T11:23:28-04:00">
     
-    <meta property="article:modified_time" content="2020-04-18T23:03:42-04:00">
   
 
   
@@ -300,12 +308,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://faithio.cn/post/classification/"
+    "@id": "https://faithio.cn/post/k-means-vs-fuzzy-c-means/"
   },
-  "headline": "Classification",
+  "headline": "",
   
-  "datePublished": "2020-04-07T11:23:28-04:00",
-  "dateModified": "2020-04-18T23:03:42-04:00",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -320,7 +328,7 @@
       "url": "https://faithio.cn/images/icon_hu1c14c98ea2b483290770e44504a291fb_22334_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "$$ \\begin{array}{l}P(Y | X)=\\frac{P(X | Y) P(Y)}{P(X)} \\propto(P(X | Y) \\cdot P(Y) \\ M A P \\ P(Y=0 | X) \\Rightarrow P(Y=1 | X)\\end{array} $$ Classification 改进 不同的class可以share参数，如果参数越多，variance会越大，就会导致o"
+  "description": "K-Means 及其衍生算法\n生成模型与判别模型 在机器学习中，通常有两种模型，生成模型 (generative model) 和判别模型 (discriminative model)。对于无监督学习，聚类问题中，同样是也是以 K-Means 和 高斯混合模型 (Gaussian Mixture Model) 为经典的代表。\n 还记得今年年初刚开始系统性学习机器学习的时候，这两个概念不是很清楚，现在弄懂了，以后有时间可以专门讲下。\n 对于判别模型，通常就是计算边界 (boudary)，如果以数学公式来表达通常就是直接从 training data 计算$P(\\mathcal{predict} | \\mathcal{data})$。相反的，生成模型则会假设我们的先验概率 (prior) 和 近似概率 (likelihood) 的模型，从 training data求出他们的参数，最后通过经典的贝叶斯公式求出： $$ P(\\mathcal{predict} | \\mathcal{data}) = \\frac{P(\\mathcal{data} | \\mathcal{predict}) \\times P(predict)}{P(data)} $$\nK-Means 及衍生算法 K-Means K-Means 是 EM 算法的特殊例子，因为它用的是欧几里德 (Euclidean Distance) 距离，它的目标functon如下： $$ J=\\sum{i=1}^{m} \\sum{k=1}^{K} w{i k}\\left|x^{i}-\\mu{k}\\right|^{2} $$ m 代表data instances，K代表目前cluster的数量。当$w{ik}=1$表示这个数据点属于cluster k，若$w{ik}= 0$则表示这个点不属于这个cluster。\n那么算法本身可以分为 E-Step 和 M-Step。E-Step 主要计算欧几里德距离，M-Step则是算objective function J对于$\\mu$的梯度。 $$ \\begin{aligned} \u0026amp; \\text{E-Step：} \\frac{\\partial J}{\\partial w{i k}}=\\sum{i=1}^{m} \\sum{k=1}^{K} \u0026amp;\\left|x^{i}-\\mu{k}\\right|^{2} \\"
 }
 </script>
 
@@ -372,7 +380,7 @@ code.has-jax {font: inherit;
 
 
 
-  <title>Classification | Zixiang&#39;s Personal Page</title>
+  <title> | Zixiang&#39;s Personal Page</title>
 
 </head>
 
@@ -627,7 +635,7 @@ code.has-jax {font: inherit;
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Classification</h1>
+  <h1 itemprop="name"></h1>
 
   
 
@@ -645,10 +653,8 @@ code.has-jax {font: inherit;
     
     
       
-          Last updated on
-      
     
-    Apr 18, 2020
+    Jan 1, 0001
   </span>
   
 
@@ -717,141 +723,158 @@ code.has-jax {font: inherit;
     <div class="article-style">
     
 
-<p><img src="./image-20200407112526341.png" alt="image-20200407112526341" /></p>
+<p>K-Means 及其衍生算法</p>
 
-<p><img src="./image-20200407112551869.png" alt="image-20200407112551869" />
+<h2 id="生成模型与判别模型">生成模型与判别模型</h2>
+
+<p>在机器学习中，通常有两种模型，生成模型 (generative model) 和判别模型 (discriminative model)。对于无监督学习，聚类问题中，同样是也是以 K-Means 和 高斯混合模型 (Gaussian Mixture Model) 为经典的代表。</p>
+
+<blockquote>
+<p>还记得今年年初刚开始系统性学习机器学习的时候，这两个概念不是很清楚，现在弄懂了，以后有时间可以专门讲下。</p>
+</blockquote>
+
+<p>对于判别模型，通常就是计算边界 (boudary)，如果以数学公式来表达通常就是直接从 training data 计算$P(\mathcal{predict} | \mathcal{data})$。相反的，生成模型则会假设我们的先验概率 (prior) 和 近似概率 (likelihood) 的模型，从 training data求出他们的参数，最后通过经典的贝叶斯公式求出：
 $$
-\begin{array}{l}P(Y | X)=\frac{P(X | Y) P(Y)}{P(X)} \propto(P(X | Y) \cdot P(Y) \
-M A P \ P(Y=0 | X) \Rightarrow P(Y=1 | X)\end{array}
+P(\mathcal{predict} | \mathcal{data}) = \frac{P(\mathcal{data} | \mathcal{predict}) \times P(predict)}{P(data)}
 $$</p>
 
-<h2 id="classification">Classification</h2>
+<h2 id="k-means-及衍生算法">K-Means 及衍生算法</h2>
 
-<p><img src="./image-20200418205909645.png" alt="image-20200418205909645" /></p>
+<h3 id="k-means">K-Means</h3>
 
-<p><img src="./image-20200418210055887.png" alt="image-20200418210055887" /></p>
+<p>K-Means 是 EM 算法的特殊例子，因为它用的是欧几里德 (Euclidean Distance) 距离，它的目标functon如下：
+$$
+J=\sum<em>{i=1}^{m} \sum</em>{k=1}^{K} w<em>{i k}\left|x^{i}-\mu</em>{k}\right|^{2}
+$$
+m 代表data instances，K代表目前cluster的数量。当$w<em>{ik}=1$表示这个数据点属于cluster k，若$w</em>{ik}= 0$则表示这个点不属于这个cluster。</p>
 
-<p><img src="./image-20200418210413842.png" alt="image-20200418210413842" /></p>
+<p>那么算法本身可以分为 E-Step 和 M-Step。E-Step 主要计算欧几里德距离，M-Step则是算objective function J对于$\mu$的梯度。
+$$
+\begin{aligned}
+&amp; \text{E-Step：} <br />
+\frac{\partial J}{\partial w<em>{i k}}=\sum</em>{i=1}^{m} \sum<em>{k=1}^{K} &amp;\left|x^{i}-\mu</em>{k}\right|^{2} \<br />
+\Rightarrow w<em>{i k} &amp;=\left{\begin{array}{ll}1 &amp; \text { if } k=\operatorname{argmin}</em>{j}\left|x^{i}-\mu_{j}\right|^{2} \ 0 &amp; \text { otherwise. }\end{array}\right.
+<br />
+&amp; \text{M-Step：} \</p>
 
-<p><img src="./image-20200418211630205.png" alt="image-20200418211630205" /></p>
+<p>\frac{\partial J}{\partial \mu<em>{k}}=2 \sum</em>{i=1}^{m} w<em>{i k}\left(x^{i}-\mu</em>{k}\right)=&amp; 0 \</p>
 
-<p><img src="./image-20200418211819580.png" alt="image-20200418211819580" /></p>
+<p>\Rightarrow \mu<em>{k} &amp;=\frac{\sum</em>{i=1}^{m} w<em>{i k} x^{i}}{\sum</em>{t-1}^{m} w_{i k}}</p>
 
-<p><img src="./image-20200418212423769.png" alt="image-20200418212423769" /></p>
+<p>\end{aligned} \</p>
 
-<h3 id="改进">改进</h3>
-
-<p><img src="./image-20200418212408745.png" alt="image-20200418212408745" /></p>
-
-<blockquote>
-<p>不同的class可以share参数，<strong>如果参数越多，variance会越大，就会导致overfiting</strong>。Feature和covariance的平方成正比</p>
-</blockquote>
-
-<p><img src="./image-20200418212749041.png" alt="image-20200418212749041" /></p>
-
-<p><img src="./image-20200418213117186.png" alt="image-20200418213117186" /></p>
-
-<blockquote>
-<p>当Gaussian 共用covariance的时候，boundary就是linear的，所以也可以成为linear model。但是如果不共用covariance就不是linear的</p>
-</blockquote>
-
-<p>简单的模型，参数少，bias大，variance小</p>
-
-<p>复杂的模型，参数多，bias小，variance大</p>
-
-<p><img src="./image-20200418214124978.png" alt="image-20200418214124978" /></p>
+<p>$$</p>
 
 <blockquote>
-<p>covariance除了对角线都是零，属性与属性之间是independent</p>
+<p>需要注意以下几点：</p>
+
+<ol>
+<li>如果数据集的variance过大，最好对数据做归一化 (Standardize)，使得他们的mean等于0，标准差等于1，以避免某些feature对于其他feature的影响。</li>
+<li>K-Means 依赖于初始化状态，很有可能陷入局部最优，所以建议多初始化几次，然后取最小的J</li>
+</ol>
 </blockquote>
 
-<p><img src="./image-20200418214356057.png" alt="image-20200418214356057" /></p>
+<h3 id="fuzzy-c-means-fcm">Fuzzy C-Means (FCM)</h3>
 
-<p><img src="./image-20200418214503762.png" alt="image-20200418214503762" /></p>
-
-<p><img src="./image-20200418214552654.png" alt="image-20200418214552654" /></p>
-
-<p><img src="./image-20200418214802448.png" alt="image-20200418214802448" /></p>
-
-<p><img src="./image-20200418215129639.png" alt="image-20200418215129639" /></p>
-
-<h2 id="logistic-regression">Logistic Regression</h2>
-
-<p><img src="./image-20200418215555308.png" alt="image-20200418215555308" /></p>
-
-<p><img src="./image-20200418215808021.png" alt="image-20200418215808021" /></p>
-
-<p><img src="./image-20200418220022300.png" alt="image-20200418220022300" /></p>
+<p>由于K-Means是硬分类，Fuzzy C-Means就是相当于Soft K-Means。这里的Soft是指给数据点对于每个cluster不再是硬分配，而且给每个cluster分配响应的概率。</p>
 
 <blockquote>
-<p>Cross entropy</p>
+<p>同理类似于SVM也有硬间隔和软间隔。</p>
 </blockquote>
 
-<p><img src="./image-20200418220335222.png" alt="image-20200418220335222" /></p>
+<p>这里我们同样可以写出它的objective function J：
+$$
+\begin{array}{l}
+\underset{C}{\arg \min } \sum<em>{i=1}^{m} \sum</em>{k=1}^{K} w<em>{i k}^{m}\left|\mathbf{x}</em>{i}-\mathbf{\mu}_{k}\right|^{2}</p>
+
+<p>\ \text { where: } \  w<em>{i j}=\frac{1}{\sum</em>{k=1}^{K}\left(\frac{\left|\mathbf{x}<em>{i}-\mathbf{\mu}</em>{j}\right|}{\left|\mathbf{x}<em>{i}-\mathbf{\mu}</em>{k}\right|}\right)^{\frac{2}{m-1}}}\end{array}
+$$</p>
 
 <blockquote>
-<p>为什么逻辑回归不用square error来定义loss function呢？</p>
+<p>FCM也是稍微将K-Means 变形，将w改为一个相对值，相对于其他所有点对应clusters的距离。分母其实就是Normalization constant，为了保证w处于0和1之间。</p>
 </blockquote>
 
-<p><img src="./image-20200418220637419.png" alt="image-20200418220637419" /></p>
+<h2 id="hierarchical-clustering">Hierarchical clustering</h2>
 
-<p><img src="./image-20200418220754427.png" alt="image-20200418220754427" /></p>
+<p>如果你留意上述的算法，他们都是要实现知道或者推断clusters的数量，我们可以通过下述方法推断：</p>
 
-<p><img src="./image-20200418220943512.png" alt="image-20200418220943512" /></p>
+<ol>
+<li>model selection criteria (MML/LEC/AIC/BIC等等)</li>
+<li>Elbow method (which uses the within cluster sums of squares)</li>
+<li>Average silhouette method</li>
+<li>Gap statistic method</li>
+</ol>
 
-<p><img src="./image-20200418221021157.png" alt="image-20200418221021157" /></p>
+<p>但是与K-Means Clustering不同的是，Hierarchical Clustering 可以帮我们找到最优的clusters数量。</p>
+
+<p>其算法很简单过程如下：</p>
+
+<ol>
+<li>首先假设每一个点都是一个cluster，因此N个数据点就有N个clusters</li>
+<li>通过计算cluster与cluster的距离并存在distance matrix里，将数据集中距离最近的两个点合并成一个cluster，此时有N-1个clusters</li>
+<li>重新计算距离distanc matrix</li>
+<li>不断重复知道只剩下一个cluster</li>
+</ol>
+
+<p>注意有五种方式计算距离：</p>
+
+<ol>
+<li>Single linkage: computes the <strong>minimum</strong> distance between clusters before merging them.</li>
+<li>Complete linkage: computes the <strong>maximum</strong> distance between clusters before merging them.</li>
+<li>Average linkage: computes the <strong>average distance</strong> between clusters before merging them.</li>
+<li>Centroid linkage: calculates centroids for both clusters, then computes the distance between the two before merging them.</li>
+<li>Ward’s (minimum variance) criterion: minimizes the total within-cluster variance and find the pair of clusters that leads to minimum increase in total within-cluster variance after merging.</li>
+</ol>
+
+<p>举例：</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkubodbuofj311c0qowfi.jpg" alt="二维图" /></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkubolbsmsj304103zgli.jpg" alt="点的笛卡尔坐标" /></p>
+
+<p>根据第一种距离公式：
+$$
+\sqrt{\left(x<em>{a}-x</em>{b}\right)^{2}+\left(y<em>{a}-y</em>{b}\right)^{2}}
+$$
+我们可以算出distance matrix：</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkubqb57a2j306q03fjrd.jpg" alt="distance matrix" /></p>
+
+<p>可以看出0.328是最小的，所以我们将2和4合并，此时合并高度为0.328：</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkubrhlyamj307a07sdft.jpg" alt="distance matrix" /></p>
+
+<p>然后再将2&amp;4和3合并，合并高度为0.483：</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkubsdvv6lj306y06laa0.jpg" alt="image-20201119113405570" /></p>
+
+<p>合并1和5，合并高度为0.942：</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkubthca9yj307105ajra.jpg" alt="distance matrix" /></p>
+
+<p>然后根据我们每次合并的数据绘制成树状图，最后的高度为1.530：</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkubumgc99j311c0qomyh.jpg" alt="树状图" /></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkubwysr9mj30p00hlq3o.jpg" alt="树状图" /></p>
+
+<p>此时最优的cluster 数目应该就是最大的合并高度下的竖线条数也就是2.</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkubynjz0vj31jy0nymyj.jpg" alt="树状图解释" /></p>
 
 <blockquote>
-<p>可以通过解least square error的方式，找最佳解，然后初始化</p>
+<p>注意：其实这里蕴涵了两种策略，Top-Down （从一个cluster开始，不断分解到N个clusters）或者 Bottom-Up （从N个clusers开始合并为一个cluser）</p>
 </blockquote>
 
-<h3 id="why-logistic-regression-cannot-use-square-error">Why Logistic Regression cannot use square error</h3>
+<h3 id="hierarchical-k-means-hkmeans">Hierarchical K-Means (HKMeans)</h3>
 
-<p><img src="./image-20200418221807965.png" alt="image-20200418221807965" /></p>
+<p>其实是Top-Down approach，就是递归调用K-Means不断将其划为clusters中。这种方式相对较快，时间复杂度为$O(K \log_kn)$。但是这种划分方法是greedy的也是hard的，相邻的两个点如果划为两个不同的cluster，他们再也不会划为同一个clusters.</p>
 
-<p><img src="./image-20200418221825935.png" alt="image-20200418221825935" /></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkuc5fop0aj30qm082n20.jpg" alt="HKmeans" /></p>
 
-<p><img src="./image-20200418221947036.png" alt="image-20200418221947036" /></p>
+<h2 id="总结">总结</h2>
 
-<h3 id="discriminative-vs-generative">Discriminative vs Generative</h3>
-
-<p>Gaussian 属于Generative，但是covarianceshare的话，model是一样的</p>
-
-<p><img src="./image-20200418222434264.png" alt="image-20200418222434264" /></p>
-
-<p>找出的parameter w b是不一样的</p>
-
-<p><img src="./image-20200418223045516.png" alt="image-20200418223045516" /></p>
-
-<p><img src="./image-20200418223100856.png" alt="image-20200418223100856" /></p>
-
-<p><img src="./image-20200418223119457.png" alt="image-20200418223119457" /></p>
-
-<p><img src="./image-20200418223427729.png" alt="image-20200418223427729" /></p>
-
-<p>如果当前label有问题，data是有noise的，generative model做了一些强的假设就可以排除干扰。</p>
-
-<p>prior 和 class-dependent probability来自不同的分布，语音辨识，prior是从网络上收集的文本（某一句话说出的几率），class-dependent才是声音和文本的结合。</p>
-
-<p>所以整个系统是generative的系统</p>
-
-<h3 id="multilass">Multilass</h3>
-
-<p><img src="./image-20200418224131427.png" alt="image-20200418224131427" /></p>
-
-<p>因为有exponential 大的值和小的值会被拉的更开，一定是正的。total sum 是，因为做了normalization。（softmax是强化）</p>
-
-<p>Softmax output用来统计posterior probability。有三个class， gaussian，共用covariance matrix，就会得到softmax。（Maximum entropy和Logistic regression一样的）</p>
-
-<p><img src="./image-20200418224827186.png" alt="image-20200418224827186" /></p>
-
-<h3 id="xor问题">XOR问题</h3>
-
-<p><img src="./image-20200418224940733.png" alt="image-20200418224940733" /></p>
-
-<p><img src="./image-20200418225134560.png" alt="image-20200418225134560" /></p>
-
-<p><img src="./image-20200418225644674.png" alt="image-20200418225644674" /></p>
+<p>本次我们细讲了无监督学习聚类的判别模型，对于判别模型最大的问题是无法解决数据集overlapping的问题，更无法做一些推断和预测。这时生成模型的好处就体现出来，他可以预测出数据集中没有的数据的。后面我会讲一下<strong>生成模型和判别模型在深度学习</strong>中的应用，欢迎继续关注。</p>
 
     </div>
 
@@ -874,7 +897,7 @@ $$</p>
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/post/classification/&amp;text=Classification" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://faithio.cn/post/k-means-vs-fuzzy-c-means/&amp;text=" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -887,7 +910,7 @@ $$</p>
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/post/classification/&amp;t=Classification" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://faithio.cn/post/k-means-vs-fuzzy-c-means/&amp;t=" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -900,7 +923,7 @@ $$</p>
       
       
       <li>
-        <a href="mailto:?subject=Classification&amp;body=https://faithio.cn/post/classification/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=&amp;body=https://faithio.cn/post/k-means-vs-fuzzy-c-means/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -913,7 +936,7 @@ $$</p>
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/post/classification/&amp;title=Classification" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://faithio.cn/post/k-means-vs-fuzzy-c-means/&amp;title=" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -926,7 +949,7 @@ $$</p>
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Classification%20https://faithio.cn/post/classification/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=%20https://faithio.cn/post/k-means-vs-fuzzy-c-means/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -939,7 +962,7 @@ $$</p>
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/post/classification/&amp;title=Classification" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://faithio.cn/post/k-means-vs-fuzzy-c-means/&amp;title=" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1174,16 +1197,10 @@ $$</p>
   
 <div class="post-nav-item">
 <div class="meta-nav">Next</div>
-  <a href="../../post/cnn/" rel="next">CNN</a>
+  <a href="../../post/logistic-regression-solvers-defintions-in-sklearn/" rel="next">Logistic Regression</a>
 </div>
 
   
-  
-<div class="post-nav-item">
-<div class="meta-nav">Previous</div>
-  <a href="../../post/svm/" rel="prev">SVM</a>
-</div>
-
 </div>
 
 

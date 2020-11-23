@@ -1824,5 +1824,78 @@ fi
 </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://faithio.cn/zh/post/%E4%BA%A4%E5%8F%89%E7%86%B5%E5%92%8Ckl%E6%95%A3%E5%BA%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://faithio.cn/zh/post/%E4%BA%A4%E5%8F%89%E7%86%B5%E5%92%8Ckl%E6%95%A3%E5%BA%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/</guid>
+      <description>
+
+&lt;p&gt;交叉熵和KL散度有什么区别？&lt;/p&gt;
+
+&lt;p&gt;交叉熵和KL散度都是用来测量两个概率分布。但是具体有什么区别呢？&lt;/p&gt;
+
+&lt;h3 id=&#34;熵-entropy&#34;&gt;熵 entropy&lt;/h3&gt;
+
+&lt;p&gt;首先我们考虑 classification 问题。我们可以用熵（entropy）来描述系统的不确定性，熵越大，信息量越大，不确定越大。熵的公式如下：&lt;/p&gt;
+
+&lt;p&gt;$$
+S(v)=-\sum&lt;em&gt;{i} p\left(v&lt;/em&gt;{i}\right) \log p\left(v_{i}\right)
+$$&lt;/p&gt;
+
+&lt;p&gt;$P(v_i)$ 表示在这个系统中的不同状态 $v_i$ 的概率。从信息论的角度来说，$S(v)$ 就是系统蕴含的信息量。当熵最小，就会让系统的确定性更大。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;QA: 已知区间下，&lt;strong&gt;均匀分布是最大熵分布，已知均值情况下，指数分布是最大熵分布。均值和标准差已知的情况下，正态分布是最大熵分布。&lt;/strong&gt;为什么？请读者思考下。&lt;/p&gt;
+
+&lt;p&gt;hint： 可以通过最大熵原理（MLE）推导。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;kl-散度-kl-divergence&#34;&gt;KL 散度 KL divergence&lt;/h3&gt;
+
+&lt;p&gt;KL 散度通常用来度量两个分布之间的差异。KL 散度全称叫kullback leibler 散度，也叫做相对熵（relative entropy）。在机器学习中常用到，譬如近似推断中，有变分推断和期望传播，都是通过 Minimize KL散度来实现推断实现逼近目标分布。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;除了KL散度还有 $\alpha$ 散度，aplha-beta散度&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;对于 A 和 B 分布之间的KL散度可以用以下公式表示：
+$$
+D&lt;em&gt;{K L}(A | B)=\sum&lt;/em&gt;{i} p&lt;em&gt;{A}\left(v&lt;/em&gt;{i}\right) \log p&lt;em&gt;{A}\left(v&lt;/em&gt;{i}\right)-p&lt;em&gt;{A}\left(v&lt;/em&gt;{i}\right) \log p&lt;em&gt;{B}\left(v&lt;/em&gt;{i}\right)
+$$
+在上述公式中第一部分表示 A 的entropy，第二个部分可以理解为事件B相对于A的期望值。所以整个KL散度可以理解为从A角度来看，B事件和A事件的差异性。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;延伸：请问读者 $D&lt;em&gt;{K L}(A | B)=? D&lt;/em&gt;{K L}(B | A)$ 成立吗？&lt;/p&gt;
+
+&lt;p&gt;考虑如果是连续的分布的话，上述的KL散度应该是积分，然后积分其实有方向的。对于变分推断和期望传播，分别是从左逼近和从右逼近，其实两者完全不一样。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;交叉熵-cross-entropy&#34;&gt;交叉熵 cross entropy&lt;/h3&gt;
+
+&lt;p&gt;我们知道在神经网络中loss function通常会 Minimize 交叉熵（Cross Entropy），在监督学习中，通常是train一个分布在标签的监督下，极大地近似target distribution，这个时候我们可以 Minimize 交叉熵。
+$$
+H(A, B)=-\sum&lt;em&gt;{i} p&lt;/em&gt;{A}\left(v&lt;em&gt;{i}\right) \log p&lt;/em&gt;{B}\left(v&lt;em&gt;{i}\right)
+$$
+从上述公式我们可以看到：
+$$
+H(A, B)=D&lt;/em&gt;{K L}(A | B)+S_{A}
+$$
+所以对于$S_A$是一个常数而言，最小化KL散度等同于最小化交叉熵。&lt;/p&gt;
+
+&lt;p&gt;在监督学习中，其实我们基于一个数据集$P(D)$训练，其实就是相当于A已知，所以我们只需要最小化交叉熵即可让我们的$P(model)$ 尽量接近于$P(D)$。最终我们希望收敛的结果是：
+$$
+P(\text {model}) \approx P(\mathcal{D}) \approx P(\text {truth})
+$$
+所以我们得出结论是：&lt;/p&gt;
+
+&lt;p&gt;最小化$D_{K L}(P(\mathcal{D}) | P(\text {model}))$ 其实相当于$D$ 已经知道，求$H(P(\mathcal{D}) | P(model))$&lt;/p&gt;
+
+&lt;h3 id=&#34;结语&#34;&gt;结语&lt;/h3&gt;
+
+&lt;p&gt;看完这个，相信大家对KL散度和交叉熵都很熟悉了。请继续保持关注，工作繁忙之余我们会以最简单的方式讲解机器学习中冗烦的公式。&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
